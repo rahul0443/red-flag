@@ -37,4 +37,7 @@ def analyze(message: str) -> dict:
             {"role": "user", "content": f"<message>\n{message}\n</message>"},
         ],
     )
-    return parse_json(resp.choices[0].message.content)
+    choice = resp.choices[0]
+    if choice.finish_reason == "length":
+        raise RuntimeError("Reply hit MAX_TOKENS (reasoning counts too). Raise MAX_TOKENS in .env.")
+    return parse_json(choice.message.content or "")

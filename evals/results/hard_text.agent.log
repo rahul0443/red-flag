@@ -9,6 +9,14 @@
   "precision": 1.0,
   "recall": 1.0,
   "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.839,
+   1
+  ],
+  "fpr_95ci": [
+   0,
+   0.161
+  ],
   "f1": 1.0,
   "confusion": {
    "tp": 20,
@@ -20,19 +28,27 @@
  "strict": {
   "n": 40,
   "errors": 0,
-  "accuracy": 0.925,
+  "accuracy": 0.85,
   "precision": 1.0,
-  "recall": 0.85,
+  "recall": 0.7,
   "false_positive_rate": 0.0,
-  "f1": 0.919,
+  "recall_95ci": [
+   0.481,
+   0.855
+  ],
+  "fpr_95ci": [
+   0,
+   0.161
+  ],
+  "f1": 0.824,
   "confusion": {
-   "tp": 17,
-   "fn": 3,
+   "tp": 14,
+   "fn": 6,
    "fp": 0,
    "tn": 20
   }
  },
- "median_seconds": 13.100000000000001,
- "avg_tokens": 6436,
- "avg_tool_calls": 1.75
+ "median_seconds": 15.25,
+ "avg_tokens": 7608,
+ "avg_tool_calls": 1.82
 }

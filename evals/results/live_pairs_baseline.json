@@ -4,36 +4,52 @@
   "mode": "baseline",
   "model": "muse-spark-1.3",
   "lenient": {
-   "n": 59,
-   "errors": 1,
-   "accuracy": 0.966,
-   "precision": 0.938,
+   "n": 60,
+   "errors": 0,
+   "accuracy": 0.983,
+   "precision": 0.968,
    "recall": 1.0,
-   "false_positive_rate": 0.069,
-   "f1": 0.968,
+   "false_positive_rate": 0.033,
+   "recall_95ci": [
+    0.886,
+    1
+   ],
+   "fpr_95ci": [
+    0.006,
+    0.167
+   ],
+   "f1": 0.984,
    "confusion": {
     "tp": 30,
     "fn": 0,
-    "fp": 2,
-    "tn": 27
+    "fp": 1,
+    "tn": 29
    }
   },
   "strict": {
-   "n": 59,
-   "errors": 1,
+   "n": 60,
+   "errors": 0,
    "accuracy": 1.0,
    "precision": 1.0,
    "recall": 1.0,
    "false_positive_rate": 0.0,
+   "recall_95ci": [
+    0.886,
+    1
+   ],
+   "fpr_95ci": [
+    0,
+    0.114
+   ],
    "f1": 1.0,
    "confusion": {
     "tp": 30,
     "fn": 0,
     "fp": 0,
-    "tn": 29
+    "tn": 30
    }
   },
-  "median_seconds": 4.7,
+  "median_seconds": 6.2,
   "avg_tokens": 0,
   "avg_tool_calls": 0
  },
@@ -47,7 +63,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.5
+   "seconds": 6.2
   },
   {
    "id": "live-001",
@@ -58,7 +74,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 7.0
   },
   {
    "id": "live-002",
@@ -69,7 +85,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 4.9
   },
   {
    "id": "live-003",
@@ -80,7 +96,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 7.9
   },
   {
    "id": "live-004",
@@ -91,7 +107,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 3.5
   },
   {
    "id": "live-005",
@@ -102,7 +118,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.3
+   "seconds": 7.2
   },
   {
    "id": "live-006",
@@ -113,7 +129,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 3.9
   },
   {
    "id": "live-007",
@@ -122,9 +138,9 @@
    "text": "Xfinity notice: a document was shared with you. Open it here: https://www.xfinity.com/mobile/account",
    "pair": 3,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 7.0
+   "seconds": 6.9
   },
   {
    "id": "live-008",
@@ -135,7 +151,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 2.8
   },
   {
    "id": "live-009",
@@ -146,7 +162,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 6.2
   },
   {
    "id": "live-010",
@@ -157,7 +173,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 5.0
   },
   {
    "id": "live-011",
@@ -168,7 +184,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.0
+   "seconds": 5.2
   },
   {
    "id": "live-012",
@@ -179,7 +195,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 4.5
   },
   {
    "id": "live-013",
@@ -188,9 +204,9 @@
    "text": "Hi, a quick note from Xfinity support about your account. Please take a look when you have a moment: https://www.xfinity.com/mobile/account",
    "pair": 6,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 6.8
+   "seconds": 7.4
   },
   {
    "id": "live-014",
@@ -199,9 +215,9 @@
    "text": "Facebook notice: a document was shared with you. Open it here: https://isecion822-cyber.github.io/facebook-/",
    "pair": 7,
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 4.9
+   "seconds": 3.3
   },
   {
    "id": "live-015",
@@ -212,7 +228,7 @@
    "verdict": "Suspicious",
    "confidence": 0.65,
    "usage": {},
-   "seconds": 12.8
+   "seconds": 9.6
   },
   {
    "id": "live-016",
@@ -223,7 +239,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 6.6
   },
   {
    "id": "live-017",
@@ -232,9 +248,9 @@
    "text": "Steam: We noticed a new sign-in to your account. You can review it here: https://steamcommunity.com/my/",
    "pair": 8,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 5.4
+   "seconds": 8.2
   },
   {
    "id": "live-018",
@@ -245,7 +261,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.6
+   "seconds": 7.0
   },
   {
    "id": "live-019",
@@ -254,9 +270,9 @@
    "text": "Roblox: Your account statement is ready to view: https://www.roblox.com/home",
    "pair": 9,
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 7.9
+   "seconds": 4.4
   },
   {
    "id": "live-020",
@@ -265,9 +281,9 @@
    "text": "Hi, a quick note from Roblox support about your account. Please take a look when you have a moment: https://www.roblox.ly/games/2753915549/Blox-Fruits?privateServerLinkCode=62497686304994103194950596782067",
    "pair": 10,
    "verdict": "Scam",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 6.7
+   "seconds": 7.9
   },
   {
    "id": "live-021",
@@ -278,7 +294,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.2
+   "seconds": 7.1
   },
   {
    "id": "live-022",
@@ -287,9 +303,9 @@
    "text": "MetaMask notice: a document was shared with you. Open it here: http://metamask-docs-keec0mi8n-consensys-ddffed67.vercel.app/metamask-connect/evm/guides/manage-user-accounts/",
    "pair": 11,
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 6.6
   },
   {
    "id": "live-023",
@@ -300,7 +316,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.9
+   "seconds": 13.1
   },
   {
    "id": "live-024",
@@ -309,9 +325,9 @@
    "text": "Roblox: We noticed a new sign-in to your account. You can review it here: https://www.roblox.je/games/132929771812494/X2-Cameraman-Tower-Defense?privateServerLinkCode=296817581803318434235849461157",
    "pair": 12,
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 5.4
   },
   {
    "id": "live-025",
@@ -320,9 +336,9 @@
    "text": "Roblox: We noticed a new sign-in to your account. You can review it here: https://www.roblox.com/home",
    "pair": 12,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 9.2
   },
   {
    "id": "live-026",
@@ -333,7 +349,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.5
+   "seconds": 5.4
   },
   {
    "id": "live-027",
@@ -344,7 +360,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.0
+   "seconds": 6.8
   },
   {
    "id": "live-028",
@@ -353,9 +369,9 @@
    "text": "Hi, a quick note from Microsoft support about your account. Please take a look when you have a moment: https://microsoftt-beta.vercel.app/",
    "pair": 14,
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 6.7
   },
   {
    "id": "live-029",
@@ -366,7 +382,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 4.9
   },
   {
    "id": "live-030",
@@ -375,9 +391,9 @@
    "text": "Adobe notice: a document was shared with you. Open it here: https://quintusgroup.org/adobe.co/",
    "pair": 15,
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 3.5
+   "seconds": 4.8
   },
   {
    "id": "live-031",
@@ -386,9 +402,9 @@
    "text": "Adobe notice: a document was shared with you. Open it here: https://account.adobe.com/",
    "pair": 15,
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 6.6
+   "seconds": 10.2
   },
   {
    "id": "live-032",
@@ -399,7 +415,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.9
+   "seconds": 5.8
   },
   {
    "id": "live-033",
@@ -408,9 +424,9 @@
    "text": "Apple iCloud: We noticed a new sign-in to your account. You can review it here: https://www.icloud.com/find",
    "pair": 16,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 7.3
   },
   {
    "id": "live-034",
@@ -421,7 +437,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 5.8
   },
   {
    "id": "live-035",
@@ -432,7 +448,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 5.0
   },
   {
    "id": "live-036",
@@ -443,7 +459,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 3.3
+   "seconds": 6.1
   },
   {
    "id": "live-037",
@@ -454,7 +470,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.2
+   "seconds": 10.3
   },
   {
    "id": "live-038",
@@ -463,9 +479,9 @@
    "text": "Roblox notice: a document was shared with you. Open it here: https://www.roblox.ss/users/884221804/profile",
    "pair": 19,
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 5.8
   },
   {
    "id": "live-039",
@@ -473,10 +489,10 @@
    "category": "live_twin_Roblox",
    "text": "Roblox notice: a document was shared with you. Open it here: https://www.roblox.com/home",
    "pair": 19,
-   "verdict": "Suspicious",
-   "confidence": 0.65,
+   "verdict": "Looks Safe",
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 7.0
+   "seconds": 11.9
   },
   {
    "id": "live-040",
@@ -487,7 +503,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.8
+   "seconds": 8.3
   },
   {
    "id": "live-041",
@@ -496,9 +512,9 @@
    "text": "Roblox: We noticed a new sign-in to your account. You can review it here: https://www.roblox.com/home",
    "pair": 20,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 5.7
   },
   {
    "id": "live-042",
@@ -509,7 +525,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.7
+   "seconds": 5.1
   },
   {
    "id": "live-043",
@@ -520,7 +536,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 2.9
   },
   {
    "id": "live-044",
@@ -529,9 +545,9 @@
    "text": "Hi, a quick note from Roblox support about your account. Please take a look when you have a moment: https://www.roblox.rw/games/13600218266/My-Movie?privateServerLinkCode=11040290185766545005746312904812&game_id=13600218266&game_name=My-Movie",
    "pair": 22,
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 5.9
   },
   {
    "id": "live-045",
@@ -542,7 +558,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.2
+   "seconds": 8.4
   },
   {
    "id": "live-046",
@@ -551,9 +567,9 @@
    "text": "DHL notice: a document was shared with you. Open it here: https://www.dhl.smarthub.vuelogix.ai/",
    "pair": 23,
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 6.1
   },
   {
    "id": "live-047",
@@ -564,7 +580,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 9.7
   },
   {
    "id": "live-048",
@@ -575,7 +591,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.9
+   "seconds": 7.7
   },
   {
    "id": "live-049",
@@ -584,9 +600,9 @@
    "text": "AT&T: We noticed a new sign-in to your account. You can review it here: https://www.att.com/my/",
    "pair": 24,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 4.9
+   "seconds": 6.0
   },
   {
    "id": "live-050",
@@ -597,7 +613,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 5.6
   },
   {
    "id": "live-051",
@@ -608,7 +624,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.1
+   "seconds": 5.6
   },
   {
    "id": "live-052",
@@ -617,9 +633,9 @@
    "text": "Hi, a quick note from MetaMask support about your account. Please take a look when you have a moment: http://metamask-docs-fbv47wj26-consensys-ddffed67.vercel.app/embedded-wallets/sdk/",
    "pair": 26,
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 7.1
   },
   {
    "id": "live-053",
@@ -627,10 +643,10 @@
    "category": "live_twin_MetaMask",
    "text": "Hi, a quick note from MetaMask support about your account. Please take a look when you have a moment: https://docs.metamask.io/",
    "pair": 26,
-   "verdict": "ERROR",
-   "error": "RuntimeError: Reply hit MAX_TOKENS (reasoning counts too). Raise MAX_TOKENS in .env.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 14.3
+   "seconds": 9.5
   },
   {
    "id": "live-054",
@@ -641,7 +657,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 6.8
   },
   {
    "id": "live-055",
@@ -650,9 +666,9 @@
    "text": "Adobe notice: a document was shared with you. Open it here: https://account.adobe.com/",
    "pair": 27,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 7.1
   },
   {
    "id": "live-056",
@@ -663,7 +679,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.5
+   "seconds": 5.0
   },
   {
    "id": "live-057",
@@ -672,9 +688,9 @@
    "text": "Roblox: We noticed a new sign-in to your account. You can review it here: https://www.roblox.com/home",
    "pair": 28,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 6.4
+   "seconds": 7.2
   },
   {
    "id": "live-058",
@@ -685,7 +701,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 5.2
   },
   {
    "id": "live-059",
@@ -696,7 +712,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 3.8
+   "seconds": 5.5
   }
  ]
 }

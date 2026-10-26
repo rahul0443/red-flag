@@ -35,6 +35,7 @@ button:disabled{opacity:.5;cursor:default}button.ghost{background:transparent;bo
 .sev.high{background:#5a2a2b;color:#ffb3b4}.sev.medium{background:#5a4520;color:#ffd58a}.sev.low{background:#2b3340;color:#b7c3d6}.sev.reassuring{background:#24543a;color:#9be3b6}
 .src{color:var(--mute);font-size:12px;margin-left:6px}.advice{margin-top:14px;padding:12px;background:#0000002e;border-radius:10px}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1}}@keyframes sp{to{transform:rotate(360deg)}}
+.shot{width:100%;border-radius:8px;border:1px solid var(--line);margin-top:6px}
 .quote{background:#0b0e13;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:4px;font-size:13.5px;white-space:pre-wrap;color:#c9d1dc}
 .empty{color:var(--mute);text-align:center;padding:50px 10px}.foot{color:var(--mute);font-size:12.5px;margin-top:22px}
 </style>
@@ -75,13 +76,14 @@ const EX=["USPS: Your package could not be delivered due to an unpaid customs fe
 "CVS Pharmacy: Your prescription is ready for pickup at 123 Main St. Reply STOP to opt out."];
 const $=id=>document.getElementById(id), tl=$("tl"), esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 document.querySelectorAll("[data-ex]").forEach(b=>b.onclick=()=>$("msg").value=EX[b.dataset.ex]);
-const LABEL={expand_url:"Following the link",rdap_lookup:"Checking domain registration",check_blocklists:"Checking phishing lists",official_contact_check:"Comparing with the real company"};
+const LABEL={expand_url:"Following the link",rdap_lookup:"Checking domain registration",check_blocklists:"Checking phishing lists",official_contact_check:"Comparing with the real company",inspect_link_sandbox:"Opening the link safely (isolated browser)"};
 function add(cls,title,body){$("empty").style.display="none";const li=document.createElement("li");li.className="step "+cls;li.innerHTML=`<div class="t">${title}</div><div class="b">${body}</div>`;tl.appendChild(li);li.scrollIntoView({block:"nearest",behavior:"smooth"})}
 function summarize(tool,r){
  if(r.error)return `<span class="chip warn">${esc(r.error)}</span>`;
  if(tool==="expand_url"){const note=r.chain?.[r.chain.length-1]?.note;return `<div class="chips"><span class="chip">${r.redirect_count} redirect(s)</span><span class="chip">lands on ${esc(r.final_domain)}</span>${note?`<span class="chip warn">${esc(note)}</span>`:""}</div>`}
  if(tool==="rdap_lookup"){const y=r.age_days!=null&&r.age_days<90;return `<div class="chips"><span class="chip ${y?"bad":"ok"}">${r.age_days!=null?r.age_days+" days old":"age unknown"}</span>${r.registrar?`<span class="chip">${esc(r.registrar)}</span>`:""}</div>`}
  if(tool==="check_blocklists"){const hit=r.listed_in.length;return `<div class="chips"><span class="chip ${hit?"bad":"ok"}">${hit?"listed in "+esc(r.listed_in.join(", ")):"not in known feeds (not proof of safety)"}</span>${r.suspicious_tld?'<span class="chip warn">suspicious TLD</span>':""}${r.hyphen_count_in_domain>1?'<span class="chip warn">many hyphens</span>':""}</div>`}
+ if(tool==="inspect_link_sandbox"){const forms=(r.form_actions||[]).filter(Boolean);return `<div class="chips"><span class="chip">page title: ${esc(r.title||"none")}</span>${r.lands_on_different_domain?`<span class="chip bad">redirected to ${esc((()=>{try{return new URL(r.final_url).hostname}catch(e){return r.final_url}})())}</span>`:""}${(r.password_fields>0||/password|sign in|log ?in/i.test(r.text||""))?'<span class="chip bad">asks you to log in</span>':""}${forms.length?`<span class="chip warn">form sends data to ${esc((()=>{try{return new URL(forms[0]).hostname}catch(e){return forms[0]}})())}</span>`:""}</div>${r.screenshot_b64?`<img class="shot" src="data:image/jpeg;base64,${r.screenshot_b64}" alt="Screenshot of the page, taken inside the isolated browser"><div style="color:var(--mute);font-size:12px">Screenshot taken inside an isolated cloud browser. Nothing was opened on your device.</div>`:""}`}
  if(tool==="official_contact_check"){if(!r.known)return `<span class="chip">brand not in database</span>`;return `<div class="chips"><span class="chip">official: ${esc(r.official_domains.join(", "))}</span>${"matches_official_domain" in r?`<span class="chip ${r.matches_official_domain?"ok":"bad"}">${r.matches_official_domain?"domain matches":"domain does NOT match"}</span>`:""}</div><div style="color:var(--mute);font-size:13px;margin-top:4px">${esc(r.company_policy)}</div>`}
  return esc(JSON.stringify(r)).slice(0,200)}
 function verdictCard(v){

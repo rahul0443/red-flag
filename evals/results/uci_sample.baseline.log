@@ -5,14 +5,22 @@
  "lenient": {
   "n": 80,
   "errors": 0,
-  "accuracy": 0.938,
-  "precision": 0.949,
-  "recall": 0.925,
+  "accuracy": 0.95,
+  "precision": 0.95,
+  "recall": 0.95,
   "false_positive_rate": 0.05,
-  "f1": 0.937,
+  "recall_95ci": [
+   0.835,
+   0.986
+  ],
+  "fpr_95ci": [
+   0.014,
+   0.165
+  ],
+  "f1": 0.95,
   "confusion": {
-   "tp": 37,
-   "fn": 3,
+   "tp": 38,
+   "fn": 2,
    "fp": 2,
    "tn": 38
   }
@@ -20,24 +28,31 @@
  "strict": {
   "n": 80,
   "errors": 0,
-  "accuracy": 0.887,
+  "accuracy": 0.912,
   "precision": 1.0,
-  "recall": 0.775,
+  "recall": 0.825,
   "false_positive_rate": 0.0,
-  "f1": 0.873,
+  "recall_95ci": [
+   0.68,
+   0.913
+  ],
+  "fpr_95ci": [
+   0,
+   0.088
+  ],
+  "f1": 0.904,
   "confusion": {
-   "tp": 31,
-   "fn": 9,
+   "tp": 33,
+   "fn": 7,
    "fp": 0,
    "tn": 40
   }
  },
- "median_seconds": 4.7,
+ "median_seconds": 5.9,
  "avg_tokens": 0,
  "avg_tool_calls": 0
 }
 MISS [scam->Looks Safe] uci_sample-005 uci_spam: "Do you realize that in about 40 years, we'll have thousands of old ladies running around w" 
-MISS [scam->Looks Safe] uci_sample-007 uci_spam: 'Buy Space Invaders 4 a chance 2 win orig Arcade Game console. Press 0 for Games Arcade (st' 
 MISS [scam->Looks Safe] uci_sample-028 uci_spam: "Hello from Orange. For 1 month's free access to games, news and sport, plus 10 free texts " 
 MISS [legit->Suspicious] uci_sample-049 uci_ham: 'Tell me again what your address is' 
 MISS [legit->Suspicious] uci_sample-071 uci_ham: 'I dont thnk its a wrong calling between us' 

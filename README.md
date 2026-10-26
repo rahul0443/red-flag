@@ -59,6 +59,10 @@ What this does and doesn't show (stated plainly):
 - No message content is written to disk by the app; use synthetic or public examples while on free API credits (Meta may use content on free credits).
 - Keys stay in `.env` (git-ignored); the front end never sees them. Token and step caps limit runaway cost.
 
+## Robustness
+
+`scripts/fuzz_api.py` throws 39 hostile or malformed inputs at the API (empty and 5,000-character text, emoji and right-to-left text, 50 links, private-IP and `file:`/`javascript:` links, HTML and prompt-injection text, fake tool markup, corrupt, oversized and wrong-type images and audio, silent audio). Every case ends in a verdict or a plain-language error, never a crash or a hang. Investigations are capped at 8 steps and 150 seconds, the isolated browser at 20 seconds of waiting, and the server limits concurrent and per-IP requests.
+
 ## Setup
 ```bash
 python3 -m venv .venv && source .venv/bin/activate

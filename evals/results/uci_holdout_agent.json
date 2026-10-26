@@ -6,52 +6,52 @@
   "lenient": {
    "n": 100,
    "errors": 0,
-   "accuracy": 0.99,
-   "precision": 0.98,
+   "accuracy": 0.97,
+   "precision": 0.943,
    "recall": 1.0,
-   "false_positive_rate": 0.02,
+   "false_positive_rate": 0.06,
    "recall_95ci": [
     0.929,
     1
    ],
    "fpr_95ci": [
-    0.004,
-    0.105
+    0.021,
+    0.162
    ],
-   "f1": 0.99,
+   "f1": 0.971,
    "confusion": {
     "tp": 50,
     "fn": 0,
-    "fp": 1,
-    "tn": 49
+    "fp": 3,
+    "tn": 47
    }
   },
   "strict": {
    "n": 100,
    "errors": 0,
-   "accuracy": 0.59,
+   "accuracy": 0.56,
    "precision": 1.0,
-   "recall": 0.18,
+   "recall": 0.12,
    "false_positive_rate": 0.0,
    "recall_95ci": [
-    0.098,
-    0.308
+    0.056,
+    0.238
    ],
    "fpr_95ci": [
     0,
     0.071
    ],
-   "f1": 0.305,
+   "f1": 0.214,
    "confusion": {
-    "tp": 9,
-    "fn": 41,
+    "tp": 6,
+    "fn": 44,
     "fp": 0,
     "tn": 50
    }
   },
-  "median_seconds": 14.1,
-  "avg_tokens": 6748,
-  "avg_tool_calls": 0.7
+  "median_seconds": 13.3,
+  "avg_tokens": 7395,
+  "avg_tool_calls": 0.79
  },
  "results": [
   {
@@ -59,16 +59,16 @@
    "label": "scam",
    "category": "uci_spam",
    "text": "Camera - You are awarded a SiPix Digital Camera! call 09061221066 fromm landline. Delivery within 28 days.",
-   "verdict": "Scam",
-   "confidence": 0.9,
+   "verdict": "Suspicious",
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 5973,
-    "completion_tokens": 4699,
-    "llm_calls": 3,
-    "tool_calls": 2
+    "prompt_tokens": 3845,
+    "completion_tokens": 4566,
+    "llm_calls": 2,
+    "tool_calls": 1
    },
-   "summary": "Unsolicited text saying you won a camera if you call a 0906 number is a classic prize scam to make money from the call.",
-   "seconds": 23.6
+   "summary": "Unsolicited win-a-camera text telling you to call an expensive 090 premium number is a classic prize-rate risk.",
+   "seconds": 16.7
   },
   {
    "id": "uci_holdout-001",
@@ -78,13 +78,13 @@
    "verdict": "Suspicious",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 3684,
-    "completion_tokens": 5568,
+    "prompt_tokens": 4011,
+    "completion_tokens": 4939,
     "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "Unexpected message claims you ordered a ringtone and will be charged, and wants you to call an unknown 090 number.",
-   "seconds": 25.7
+   "summary": "This looks like a premium-rate trap for a ringtone order you didn't place \u2014 don't call the number.",
+   "seconds": 18.7
   },
   {
    "id": "uci_holdout-002",
@@ -92,15 +92,15 @@
    "category": "uci_spam",
    "text": "SMS AUCTION - A BRAND NEW Nokia 7250 is up 4 auction today! Auction is FREE 2 join & take part! Txt NOKIA to 86021 now! HG/Suite342/2Lands Row/W1J6HL",
    "verdict": "Suspicious",
-   "confidence": 0.78,
+   "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 3849,
-    "completion_tokens": 3356,
+    "prompt_tokens": 3873,
+    "completion_tokens": 3443,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This unexpected text pushes you to enter a phone auction by texting a short number while claiming it is free, which could cost you money.",
-   "seconds": 17.2
+   "summary": "This looks like a risky premium-text auction invite that claims to be free but asks you to text a shortcode.",
+   "seconds": 12.0
   },
   {
    "id": "uci_holdout-003",
@@ -108,15 +108,15 @@
    "category": "uci_spam",
    "text": "83039 62735=\u00a3450 UK Break AccommodationVouchers terms & conditions apply. 2 claim you mustprovide your claim number which is 15541 ",
    "verdict": "Suspicious",
-   "confidence": 0.78,
+   "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 3799,
-    "completion_tokens": 4708,
+    "prompt_tokens": 3839,
+    "completion_tokens": 3828,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like an unsolicited prize message asking you to contact unknown numbers, so don't respond.",
-   "seconds": 21.6
+   "summary": "Unsolicited \u00a3450 voucher win asking you to use short numbers and a claim number cannot be verified and could cost you money.",
+   "seconds": 13.0
   },
   {
    "id": "uci_holdout-004",
@@ -124,15 +124,15 @@
    "category": "uci_spam",
    "text": "No. 1 Nokia Tone 4 ur mob every week! Just txt NOK to 87021. 1st Tone FREE ! so get txtin now and tell ur friends. 150p/tone. 16 reply HL 4info",
    "verdict": "Suspicious",
-   "confidence": 0.85,
+   "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 3844,
-    "completion_tokens": 2829,
+    "prompt_tokens": 3890,
+    "completion_tokens": 2995,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is an invite to a premium-rate weekly ringtone service that could charge you \u00a31.50 each time.",
-   "seconds": 12.0
+   "summary": "Unsolicited text asking you to join a weekly paid ringtone service on a premium shortcode \u2014 best ignored.",
+   "seconds": 10.1
   },
   {
    "id": "uci_holdout-005",
@@ -142,13 +142,13 @@
    "verdict": "Suspicious",
    "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 6030,
-    "completion_tokens": 6063,
-    "llm_calls": 3,
-    "tool_calls": 2
+    "prompt_tokens": 4187,
+    "completion_tokens": 4060,
+    "llm_calls": 2,
+    "tool_calls": 3
    },
-   "summary": "Unsolicited free-phone and cheap-contract offer asking you to call an unknown number you cannot verify.",
-   "seconds": 29.4
+   "summary": "Unsolicited text offering free phones if you call an unknown number you cannot verify.",
+   "seconds": 14.0
   },
   {
    "id": "uci_holdout-006",
@@ -156,31 +156,31 @@
    "category": "uci_spam",
    "text": "Free tones Hope you enjoyed your new content. text stop to 61610 to unsubscribe. help:08712400602450p Provided by tones2you.co.uk",
    "verdict": "Suspicious",
-   "confidence": 0.85,
+   "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 6567,
-    "completion_tokens": 4343,
-    "llm_calls": 3,
-    "tool_calls": 4
+    "prompt_tokens": 9758,
+    "completion_tokens": 4356,
+    "llm_calls": 4,
+    "tool_calls": 7
    },
-   "summary": "This looks like a premium-rate ringtone subscription trap using free tones as bait with costly unsubscribe and help numbers.",
-   "seconds": 23.8
+   "summary": "This looks like a premium-rate ringtone subscription that could charge you if you reply or call.",
+   "seconds": 18.0
   },
   {
    "id": "uci_holdout-007",
    "label": "scam",
    "category": "uci_spam",
    "text": "Congrats! 2 mobile 3G Videophones R yours. call 09063458130 now! videochat wid your mates, play java games, Dload polyPH music, noline rentl.",
-   "verdict": "Suspicious",
-   "confidence": 0.85,
+   "verdict": "Scam",
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1838,
-    "completion_tokens": 3174,
-    "llm_calls": 1,
-    "tool_calls": 0
+    "prompt_tokens": 3888,
+    "completion_tokens": 4823,
+    "llm_calls": 2,
+    "tool_calls": 1
    },
-   "summary": "Unexpected prize win asking you to call an expensive 0906 number is not safe to trust.",
-   "seconds": 15.7
+   "summary": "You did not win free phones \u2013 this is a classic premium-rate scam that makes money if you call.",
+   "seconds": 16.6
   },
   {
    "id": "uci_holdout-008",
@@ -190,13 +190,13 @@
    "verdict": "Suspicious",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 1847,
-    "completion_tokens": 2753,
-    "llm_calls": 1,
+    "prompt_tokens": 3754,
+    "completion_tokens": 4439,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This is an unsolicited text offering a free ringtone that signs you up for \u00a31.50 a week if you reply, so don't reply.",
-   "seconds": 14.2
+   "summary": "This unsolicited text offers a free ringtone but signs you up for \u00a31.50 a week if you reply, so don't reply.",
+   "seconds": 15.6
   },
   {
    "id": "uci_holdout-009",
@@ -204,31 +204,31 @@
    "category": "uci_spam",
    "text": "U can WIN \u00a3100 of Music Gift Vouchers every week starting NOW Txt the word DRAW to 87066 TsCs www.ldew.com SkillGame,1Winaweek, age16.150ppermessSubscription",
    "verdict": "Suspicious",
-   "confidence": 0.8,
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 6780,
-    "completion_tokens": 2831,
+    "prompt_tokens": 6996,
+    "completion_tokens": 3526,
     "llm_calls": 3,
-    "tool_calls": 5
+    "tool_calls": 6
    },
-   "summary": "This is an unsolicited prize offer asking you to join a paid text subscription that will charge you per message.",
-   "seconds": 17.1
+   "summary": "This is a prize text that would sign you up for expensive premium texts, so don't reply or click.",
+   "seconds": 13.3
   },
   {
    "id": "uci_holdout-010",
    "label": "scam",
    "category": "uci_spam",
    "text": "Congratulations! Thanks to a good friend U have WON the \u00a32,000 Xmas prize. 2 claim is easy, just call 08718726978 NOW! Only 10p per minute. BT-national-rate",
-   "verdict": "Scam",
-   "confidence": 0.95,
+   "verdict": "Suspicious",
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 1841,
-    "completion_tokens": 2516,
-    "llm_calls": 1,
-    "tool_calls": 0
+    "prompt_tokens": 3877,
+    "completion_tokens": 4545,
+    "llm_calls": 2,
+    "tool_calls": 1
    },
-   "summary": "Unsolicited \u00a32,000 prize text urging you to call a costly 0871 number is a premium-rate prize scam.",
-   "seconds": 13.0
+   "summary": "Unsolicited \u00a32,000 prize win asking you to call an expensive 0871 number is a classic premium-rate prize trap.",
+   "seconds": 17.4
   },
   {
    "id": "uci_holdout-011",
@@ -236,15 +236,15 @@
    "category": "uci_spam",
    "text": "Want explicit SEX in 30 secs? Ring 02073162414 now! Costs 20p/min",
    "verdict": "Suspicious",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 3656,
-    "completion_tokens": 3508,
-    "llm_calls": 2,
+    "prompt_tokens": 1838,
+    "completion_tokens": 1940,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is an unsolicited paid adult-chat invite to call an unknown number \u2014 don't call it.",
-   "seconds": 17.4
+   "summary": "Unsolicited offer of paid phone sex that could cost you money if you call.",
+   "seconds": 7.9
   },
   {
    "id": "uci_holdout-012",
@@ -254,45 +254,45 @@
    "verdict": "Suspicious",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 1826,
-    "completion_tokens": 2453,
-    "llm_calls": 1,
-    "tool_calls": 0
+    "prompt_tokens": 3871,
+    "completion_tokens": 3994,
+    "llm_calls": 2,
+    "tool_calls": 1
    },
-   "summary": "An unexpected prize message asking you to text a shortcode is not safe to trust.",
-   "seconds": 12.1
+   "summary": "An unexpected prize text asking you to text a shortcode, which can mean hidden charges, so don't reply.",
+   "seconds": 13.4
   },
   {
    "id": "uci_holdout-013",
    "label": "scam",
    "category": "uci_spam",
    "text": "To review and KEEP the fantastic Nokia N-Gage game deck with Club Nokia, go 2 www.cnupdates.com/newsletter. unsubscribe from alerts reply with the word OUT",
-   "verdict": "Scam",
-   "confidence": 0.9,
+   "verdict": "Suspicious",
+   "confidence": 0.78,
    "usage": {
-    "prompt_tokens": 4354,
-    "completion_tokens": 3319,
+    "prompt_tokens": 4401,
+    "completion_tokens": 4330,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This is a fake free-prize lure that leads to a dead for-sale web page and pushes paid text alerts, not a real Nokia offer.",
-   "seconds": 19.2
+   "summary": "Unsolicited free N-Gage offer links to a domain that is now for sale, not to Club Nokia.",
+   "seconds": 16.8
   },
   {
    "id": "uci_holdout-014",
    "label": "scam",
    "category": "uci_spam",
    "text": "URGENT! Your Mobile number has been awarded with a \u00a32000 prize GUARANTEED. Call 09061790126 from land line. Claim 3030. Valid 12hrs only 150ppm",
-   "verdict": "Scam",
-   "confidence": 0.95,
+   "verdict": "Suspicious",
+   "confidence": 0.4,
    "usage": {
-    "prompt_tokens": 4006,
-    "completion_tokens": 6338,
-    "llm_calls": 2,
-    "tool_calls": 0
+    "prompt_tokens": 22378,
+    "completion_tokens": 10514,
+    "llm_calls": 8,
+    "tool_calls": 2
    },
-   "summary": "Fake prize message trying to get you to call a very expensive 150p-per-minute number.",
-   "seconds": 29.4
+   "summary": "The investigation could not reach a firm conclusion, so treat this message with caution.",
+   "seconds": 45.6
   },
   {
    "id": "uci_holdout-015",
@@ -302,13 +302,13 @@
    "verdict": "Suspicious",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 3848,
-    "completion_tokens": 4454,
+    "prompt_tokens": 3889,
+    "completion_tokens": 5385,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "Unsolicited adult-chat message trying to get you to reply to an expensive 150p-per-message number.",
-   "seconds": 21.6
+   "summary": "Unsolicited sex-chat message inviting you to reply to an expensive \u00a31.50-per-message number.",
+   "seconds": 26.1
   },
   {
    "id": "uci_holdout-016",
@@ -318,13 +318,13 @@
    "verdict": "Suspicious",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 6295,
-    "completion_tokens": 4052,
+    "prompt_tokens": 6210,
+    "completion_tokens": 5009,
     "llm_calls": 3,
     "tool_calls": 3
    },
-   "summary": "This is an unsolicited text offering a cheap new phone if you text a premium shortcode, which can lead to high charges.",
-   "seconds": 21.2
+   "summary": "This unsolicited \u00a310 phone offer asking you to text a shortcode is likely a costly premium-text trap, not a real loyalty reward.",
+   "seconds": 23.4
   },
   {
    "id": "uci_holdout-017",
@@ -332,15 +332,15 @@
    "category": "uci_spam",
    "text": "ree entry in 2 a weekly comp for a chance to win an ipod. Txt POD to 80182 to get entry (std txt rate) T&C's apply 08452810073 for details 18+",
    "verdict": "Suspicious",
-   "confidence": 0.8,
+   "confidence": 0.78,
    "usage": {
-    "prompt_tokens": 1840,
-    "completion_tokens": 2738,
-    "llm_calls": 1,
+    "prompt_tokens": 4046,
+    "completion_tokens": 3519,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "Unsolicited iPod prize message asking you to text a shortcode is risky and could cost you money.",
-   "seconds": 13.1
+   "summary": "Unsolicited text promising an iPod if you message a shortcode is risky and could lead to extra phone charges, so don't reply.",
+   "seconds": 16.1
   },
   {
    "id": "uci_holdout-018",
@@ -350,13 +350,13 @@
    "verdict": "Suspicious",
    "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 6596,
-    "completion_tokens": 3637,
-    "llm_calls": 3,
+    "prompt_tokens": 4362,
+    "completion_tokens": 2966,
+    "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This is an unsolicited stranger's friend invite that asks you to reply to a shortcode and click a link, which could lead to unwanted paid texts.",
-   "seconds": 21.2
+   "summary": "Unsolicited friend invite asking you to text back to a shortcode and click a profile link could sign you up for paid texts.",
+   "seconds": 20.8
   },
   {
    "id": "uci_holdout-019",
@@ -366,13 +366,13 @@
    "verdict": "Suspicious",
    "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 3842,
-    "completion_tokens": 3741,
+    "prompt_tokens": 3878,
+    "completion_tokens": 4015,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like a paid quiz that could cost you money or sign you up for weekly charges, so don't reply.",
-   "seconds": 18.6
+   "summary": "This is an unverified prize quiz asking you to pay \u00a31.50 per text with hints of weekly charges.",
+   "seconds": 22.7
   },
   {
    "id": "uci_holdout-020",
@@ -380,15 +380,15 @@
    "category": "uci_spam",
    "text": "This is the 2nd time we have tried to contact u. U have won the \u00a31450 prize to claim just call 09053750005 b4 310303. T&Cs/stop SMS 08718725756. 140ppm",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.97,
    "usage": {
-    "prompt_tokens": 3867,
-    "completion_tokens": 4888,
-    "llm_calls": 2,
-    "tool_calls": 1
+    "prompt_tokens": 1868,
+    "completion_tokens": 3245,
+    "llm_calls": 1,
+    "tool_calls": 0
    },
-   "summary": "Unsolicited \u00a31450 prize win telling you to call an expensive 09 premium-rate number is a classic prize scam.",
-   "seconds": 25.8
+   "summary": "You didn't win anything \u2014 this is a classic premium-rate prize scam that makes money from the expensive 0905 call.",
+   "seconds": 19.4
   },
   {
    "id": "uci_holdout-021",
@@ -398,13 +398,13 @@
    "verdict": "Suspicious",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 3803,
-    "completion_tokens": 4101,
+    "prompt_tokens": 3841,
+    "completion_tokens": 4025,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is an unsolicited adult club subscription saying future texts cost \u00a31.50 each unless you get out.",
-   "seconds": 22.5
+   "summary": "This looks like an unsolicited premium-rate club that could charge you \u00a31.50 per message - do not reply.",
+   "seconds": 14.8
   },
   {
    "id": "uci_holdout-022",
@@ -414,13 +414,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3858,
-    "completion_tokens": 3281,
-    "llm_calls": 2,
-    "tool_calls": 1
+    "prompt_tokens": 6078,
+    "completion_tokens": 7730,
+    "llm_calls": 3,
+    "tool_calls": 2
    },
-   "summary": "This is a fake prize win message trying to get you to call an expensive 0905 number.",
-   "seconds": 18.6
+   "summary": "This is a fake prize message pressuring you to call an unknown 090 number within 12 hours to claim money you never won.",
+   "seconds": 28.8
   },
   {
    "id": "uci_holdout-023",
@@ -428,15 +428,15 @@
    "category": "uci_spam",
    "text": "Do you want 750 anytime any network mins 150 text and a NEW video phone for only five pounds per week call 08000776320 now or reply for delivery Tomorrow",
    "verdict": "Suspicious",
-   "confidence": 0.75,
+   "confidence": 0.7,
    "usage": {
-    "prompt_tokens": 3971,
-    "completion_tokens": 3620,
-    "llm_calls": 2,
-    "tool_calls": 2
+    "prompt_tokens": 1851,
+    "completion_tokens": 1741,
+    "llm_calls": 1,
+    "tool_calls": 0
    },
-   "summary": "Unsolicited cheap phone deal asking you to call or reply to an unknown number you cannot verify.",
-   "seconds": 19.6
+   "summary": "Unsolicited too-good-to-be-true phone deal asking you to call an unknown number or reply.",
+   "seconds": 5.9
   },
   {
    "id": "uci_holdout-024",
@@ -444,15 +444,15 @@
    "category": "uci_spam",
    "text": "Free Msg: get Gnarls Barkleys \"Crazy\" ringtone TOTALLY FREE just reply GO to this message right now!",
    "verdict": "Suspicious",
-   "confidence": 0.75,
+   "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 3664,
-    "completion_tokens": 4094,
+    "prompt_tokens": 3960,
+    "completion_tokens": 4165,
     "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "An unsolicited text offering a totally free ringtone if you reply GO right now is a classic hidden-subscription trap.",
-   "seconds": 21.6
+   "summary": "This free-ringtone text asking you to reply GO could sign you up for paid texts, so don't reply.",
+   "seconds": 14.5
   },
   {
    "id": "uci_holdout-025",
@@ -460,15 +460,15 @@
    "category": "uci_spam",
    "text": "PRIVATE! Your 2004 Account Statement for 078498****7 shows 786 unredeemed Bonus Points. To claim call 08719180219 Identifier Code: 45239 Expires 06.05.05",
    "verdict": "Suspicious",
-   "confidence": 0.85,
+   "confidence": 0.82,
    "usage": {
-    "prompt_tokens": 15098,
-    "completion_tokens": 13548,
-    "llm_calls": 6,
-    "tool_calls": 3
+    "prompt_tokens": 4057,
+    "completion_tokens": 4790,
+    "llm_calls": 2,
+    "tool_calls": 0
    },
-   "summary": "A vague bonus-points message urges you to call an unknown 0871 number with a code before a deadline.",
-   "seconds": 83.8
+   "summary": "Unnamed bonus-points message asking you to call an unknown 0871 number with a code before an expiry date is risky and unverifiable.",
+   "seconds": 16.4
   },
   {
    "id": "uci_holdout-026",
@@ -476,47 +476,47 @@
    "category": "uci_spam",
    "text": "Gr8 Poly tones 4 ALL mobs direct 2u rply with POLY TITLE to 8007 eg POLY BREATHE1 Titles: CRAZYIN, SLEEPINGWITH, FINEST, YMCA :getzed.co.uk POBox365O4W45WQ 300p",
    "verdict": "Suspicious",
-   "confidence": 0.8,
+   "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 6626,
-    "completion_tokens": 3658,
+    "prompt_tokens": 6748,
+    "completion_tokens": 4377,
     "llm_calls": 3,
     "tool_calls": 4
    },
-   "summary": "This is a premium-rate ringtone ad asking you to text 8007 costing 300p, from an unverifiable company whose website no longer works.",
-   "seconds": 20.9
+   "summary": "This is a premium-rate ringtone offer to text 8007 for \u00a33 that you cannot verify, so don't reply.",
+   "seconds": 18.2
   },
   {
    "id": "uci_holdout-027",
    "label": "scam",
    "category": "uci_spam",
    "text": "Todays Vodafone numbers ending with 4882 are selected to a receive a \u00a3350 award. If your number matches call 09064019014 to receive your \u00a3350 award.",
-   "verdict": "Scam",
-   "confidence": 0.9,
+   "verdict": "Suspicious",
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 6003,
-    "completion_tokens": 5517,
+    "prompt_tokens": 6036,
+    "completion_tokens": 4575,
     "llm_calls": 3,
     "tool_calls": 2
    },
-   "summary": "This is a fake Vodafone prize message trying to trick you into calling 09064019014 to claim \u00a3350 you did not win.",
-   "seconds": 31.3
+   "summary": "An unexpected prize message asking you to call an unknown 0906 number to claim \u00a3350 is not verifiable and is high-risk.",
+   "seconds": 18.4
   },
   {
    "id": "uci_holdout-028",
    "label": "scam",
    "category": "uci_spam",
    "text": "Urgent UR awarded a complimentary trip to EuroDisinc Trav, Aco&Entry41 Or \u00a31000. To claim txt DIS to 87121 18+6*\u00a31.50(moreFrmMob. ShrAcomOrSglSuplt)10, LS1 3AJ",
-   "verdict": "Suspicious",
-   "confidence": 0.85,
+   "verdict": "Scam",
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 6049,
-    "completion_tokens": 5059,
+    "prompt_tokens": 6120,
+    "completion_tokens": 5692,
     "llm_calls": 3,
     "tool_calls": 2
    },
-   "summary": "Unsolicited prize win asking you to pay via premium texts to claim it - do not reply.",
-   "seconds": 27.1
+   "summary": "You did not win a free Euro Disney trip \u2013 this text tries to trick you into sending expensive premium texts to claim it.",
+   "seconds": 21.0
   },
   {
    "id": "uci_holdout-029",
@@ -524,15 +524,15 @@
    "category": "uci_spam",
    "text": "Hi I'm sue. I am 20 years old and work as a lapdancer. I love sex. Text me live - I'm i my bedroom now. text SUE to 89555. By TextOperator G2 1DA 150ppmsg 18+",
    "verdict": "Suspicious",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 3865,
-    "completion_tokens": 4672,
+    "prompt_tokens": 3778,
+    "completion_tokens": 5377,
     "llm_calls": 2,
-    "tool_calls": 1
+    "tool_calls": 0
    },
-   "summary": "This is an unsolicited adult message urging you to text an expensive premium number that could run up large phone charges.",
-   "seconds": 25.8
+   "summary": "This is an unsolicited adult message asking you to text an expensive premium number that will charge you.",
+   "seconds": 18.7
   },
   {
    "id": "uci_holdout-030",
@@ -542,13 +542,13 @@
    "verdict": "Suspicious",
    "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 1833,
-    "completion_tokens": 2176,
-    "llm_calls": 1,
-    "tool_calls": 0
+    "prompt_tokens": 6064,
+    "completion_tokens": 6007,
+    "llm_calls": 3,
+    "tool_calls": 2
    },
-   "summary": "Unsolicited phone-deal message offering a free camcorder that asks you to call or text back an unknown number.",
-   "seconds": 12.4
+   "summary": "This is an unverified sales message asking you to call back about a phone deal, so don't reply or call.",
+   "seconds": 22.7
   },
   {
    "id": "uci_holdout-031",
@@ -556,15 +556,15 @@
    "category": "uci_spam",
    "text": "Knock Knock Txt whose there to 80082 to enter r weekly draw 4 a \u00a3250 gift voucher 4 a store of yr choice. T&Cs www.tkls.com age16 to stoptxtstop\u00a31.50/week",
    "verdict": "Suspicious",
-   "confidence": 0.75,
+   "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 6631,
-    "completion_tokens": 3635,
+    "prompt_tokens": 6696,
+    "completion_tokens": 3556,
     "llm_calls": 3,
     "tool_calls": 4
    },
-   "summary": "This unsolicited text invites you to join a \u00a31.50-a-week prize draw by texting a premium number, which could lead to ongoing charges.",
-   "seconds": 22.8
+   "summary": "This is a paid prize-draw invite that could charge \u00a31.50 every week if you reply, from a sender you cannot verify.",
+   "seconds": 15.1
   },
   {
    "id": "uci_holdout-032",
@@ -572,15 +572,15 @@
    "category": "uci_spam",
    "text": "Am new 2 club & dont fink we met yet Will B gr8 2 C U Please leave msg 2day wiv ur area 09099726553 reply promised CARLIE x Calls\u00a31/minMobsmore LKPOBOX177HP51FL",
    "verdict": "Suspicious",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 1852,
-    "completion_tokens": 3642,
+    "prompt_tokens": 1872,
+    "completion_tokens": 2925,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is an unsolicited invite to call a \u00a31-a-minute chat line that could run up a large phone bill.",
-   "seconds": 22.0
+   "summary": "This is an unsolicited flirty text trying to get you to call a very expensive \u00a31-a-minute number.",
+   "seconds": 10.1
   },
   {
    "id": "uci_holdout-033",
@@ -590,13 +590,13 @@
    "verdict": "Suspicious",
    "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 3840,
-    "completion_tokens": 2642,
+    "prompt_tokens": 3888,
+    "completion_tokens": 2660,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is an unsolicited quiz offer that will charge you \u00a31.50 every week if you text back, so don't reply.",
-   "seconds": 16.3
+   "summary": "Unsolicited prize quiz asking you to join a \u00a31.50-a-week text service you can't verify as legitimate.",
+   "seconds": 10.7
   },
   {
    "id": "uci_holdout-034",
@@ -604,15 +604,15 @@
    "category": "uci_spam",
    "text": "Shop till u Drop, IS IT YOU, either 10K, 5K, \u00a3500 Cash or \u00a3100 Travel voucher, Call now, 09064011000. NTT PO Box CR01327BT fixedline Cost 150ppm mobile vary",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 12065,
-    "completion_tokens": 8537,
-    "llm_calls": 5,
+    "prompt_tokens": 3902,
+    "completion_tokens": 3118,
+    "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "Unsolicited prize text pushing you to call a \u00a31.50-a-minute premium number - a classic prize-line scam.",
-   "seconds": 48.8
+   "summary": "This is a fake prize message trying to trick you into calling a very expensive premium-rate number.",
+   "seconds": 11.7
   },
   {
    "id": "uci_holdout-035",
@@ -622,13 +622,13 @@
    "verdict": "Suspicious",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 3783,
-    "completion_tokens": 5444,
-    "llm_calls": 2,
-    "tool_calls": 1
+    "prompt_tokens": 6031,
+    "completion_tokens": 5737,
+    "llm_calls": 3,
+    "tool_calls": 2
    },
-   "summary": "This looks like a prize-call trick that profits if you call back, so don't call the number.",
-   "seconds": 32.2
+   "summary": "An out-of-the-blue free camera prize that makes you call an expensive 0906 number is not a real win.",
+   "seconds": 21.6
   },
   {
    "id": "uci_holdout-036",
@@ -636,15 +636,15 @@
    "category": "uci_spam",
    "text": "Thanks for your subscription to Ringtone UK your mobile will be charged \u00a35/month Please confirm by replying YES or NO. If you reply NO you will not be charged",
    "verdict": "Suspicious",
-   "confidence": 0.75,
+   "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 3804,
-    "completion_tokens": 3168,
+    "prompt_tokens": 3845,
+    "completion_tokens": 3888,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This unsolicited text about a \u00a35-a-month charge cannot be verified, so don't reply.",
-   "seconds": 17.5
+   "summary": "An unexpected message claims you owe \u00a35 a month for ringtones and wants you to reply, which is a classic premium-subscription trap.",
+   "seconds": 13.9
   },
   {
    "id": "uci_holdout-037",
@@ -654,13 +654,13 @@
    "verdict": "Suspicious",
    "confidence": 0.65,
    "usage": {
-    "prompt_tokens": 6039,
-    "completion_tokens": 4408,
-    "llm_calls": 3,
-    "tool_calls": 2
+    "prompt_tokens": 3906,
+    "completion_tokens": 4534,
+    "llm_calls": 2,
+    "tool_calls": 1
    },
-   "summary": "An unverified message asking you to spend money by texting a premium number for a charity ringtone.",
-   "seconds": 24.1
+   "summary": "This charity ringtone text asks you to spend money by texting a premium number that cannot be verified as official.",
+   "seconds": 15.3
   },
   {
    "id": "uci_holdout-038",
@@ -668,15 +668,15 @@
    "category": "uci_spam",
    "text": "RT-KIng Pro Video Club>> Need help? info@ringtoneking.co.uk or call 08701237397 You must be 16+ Club credits redeemable at www.ringtoneking.co.uk! Enjoy!",
    "verdict": "Suspicious",
-   "confidence": 0.7,
+   "confidence": 0.72,
    "usage": {
-    "prompt_tokens": 4344,
-    "completion_tokens": 3004,
-    "llm_calls": 2,
+    "prompt_tokens": 6429,
+    "completion_tokens": 3369,
+    "llm_calls": 3,
     "tool_calls": 4
    },
-   "summary": "This looks like an old-style premium club text for redeemable credits that could mean hidden phone charges, and its website no longer works so you cannot verify it.",
-   "seconds": 18.9
+   "summary": "This looks like a phone club sign-up that could mean extra charges, and its website no longer works so you cannot verify it.",
+   "seconds": 12.9
   },
   {
    "id": "uci_holdout-039",
@@ -684,15 +684,15 @@
    "category": "uci_spam",
    "text": "EASTENDERS TV Quiz. What FLOWER does DOT compare herself to? D= VIOLET E= TULIP F= LILY txt D E or F to 84025 NOW 4 chance 2 WIN \u00a3100 Cash WKENT/150P16+",
    "verdict": "Suspicious",
-   "confidence": 0.78,
+   "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 6034,
-    "completion_tokens": 4062,
+    "prompt_tokens": 6099,
+    "completion_tokens": 3436,
     "llm_calls": 3,
     "tool_calls": 2
    },
-   "summary": "This is a paid quiz text asking you to spend \u00a31.50 to text 84025 for a chance to win cash, which you cannot verify as a real BBC quiz.",
-   "seconds": 23.8
+   "summary": "This unsolicited quiz text asks you to pay to enter by texting a premium number, so don't reply.",
+   "seconds": 12.8
   },
   {
    "id": "uci_holdout-040",
@@ -700,15 +700,15 @@
    "category": "uci_spam",
    "text": "Gr8 new service - live sex video chat on your mob - see the sexiest dirtiest girls live on ur phone - 4 details text horny to 89070 to cancel send STOP to 89070",
    "verdict": "Suspicious",
-   "confidence": 0.9,
+   "confidence": 0.88,
    "usage": {
-    "prompt_tokens": 1840,
-    "completion_tokens": 2337,
-    "llm_calls": 1,
-    "tool_calls": 0
+    "prompt_tokens": 3902,
+    "completion_tokens": 3337,
+    "llm_calls": 2,
+    "tool_calls": 1
    },
-   "summary": "This is unsolicited adult spam urging you to text a shortcode that could cost you money.",
-   "seconds": 13.2
+   "summary": "Unsolicited adult message pushing you to text a premium-looking shortcode with no price or company details \u2014 do not reply.",
+   "seconds": 13.6
   },
   {
    "id": "uci_holdout-041",
@@ -716,15 +716,15 @@
    "category": "uci_spam",
    "text": "22 days to kick off! For Euro2004 U will be kept up to date with the latest news and results daily. To be removed send GET TXT STOP to 83222",
    "verdict": "Suspicious",
-   "confidence": 0.72,
+   "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 3832,
-    "completion_tokens": 3781,
+    "prompt_tokens": 3879,
+    "completion_tokens": 4260,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "Unsolicited daily-message subscription that tells you to text a shortcode to stop, with no price stated.",
-   "seconds": 22.1
+   "summary": "This looks like an unwanted text subscription that could charge you for daily messages.",
+   "seconds": 14.2
   },
   {
    "id": "uci_holdout-042",
@@ -732,15 +732,15 @@
    "category": "uci_spam",
    "text": "Refused a loan? Secured or Unsecured? Can't get credit? Call free now 0800 195 6669 or text back 'help' & we will!",
    "verdict": "Suspicious",
-   "confidence": 0.8,
+   "confidence": 0.78,
    "usage": {
-    "prompt_tokens": 1831,
-    "completion_tokens": 2756,
+    "prompt_tokens": 1851,
+    "completion_tokens": 2004,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is an unverified loan offer that asks you to call or text an unknown number, so do not respond.",
-   "seconds": 14.0
+   "summary": "This unexpected loan text asking you to call or text back could be a loan-fee trap, so don't respond.",
+   "seconds": 6.7
   },
   {
    "id": "uci_holdout-043",
@@ -748,15 +748,15 @@
    "category": "uci_spam",
    "text": "Our dating service has been asked 2 contact U by someone shy! CALL 09058091870 NOW all will be revealed. POBox84, M26 3UZ 150p",
    "verdict": "Suspicious",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 3688,
-    "completion_tokens": 6039,
+    "prompt_tokens": 3866,
+    "completion_tokens": 3692,
     "llm_calls": 2,
-    "tool_calls": 0
+    "tool_calls": 1
    },
-   "summary": "This is an unsolicited dating message pushing you to call an expensive premium-rate number, so don't call it.",
-   "seconds": 32.7
+   "summary": "Unsolicited secret-admirer invite asking you to call an expensive 090 number \u2014 don't call.",
+   "seconds": 13.3
   },
   {
    "id": "uci_holdout-044",
@@ -766,13 +766,13 @@
    "verdict": "Suspicious",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 3841,
-    "completion_tokens": 3013,
+    "prompt_tokens": 3887,
+    "completion_tokens": 4031,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "Unsolicited prize win asking you to text a shortcode is likely to cost you money \u2014 do not reply.",
-   "seconds": 17.2
+   "summary": "This is an unsolicited prize text trying to get you to send a costly text to 86021 to claim a phone you never won.",
+   "seconds": 14.8
   },
   {
    "id": "uci_holdout-045",
@@ -780,15 +780,15 @@
    "category": "uci_spam",
    "text": "December only! Had your mobile 11mths+? You are entitled to update to the latest colour camera mobile for Free! Call The Mobile Update VCo FREE on 08002986906 ",
    "verdict": "Suspicious",
-   "confidence": 0.75,
+   "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 3815,
-    "completion_tokens": 3967,
+    "prompt_tokens": 3877,
+    "completion_tokens": 4311,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "An unsolicited text promising a free phone if you call an unknown number is an unverifiable offer you should not trust.",
-   "seconds": 21.4
+   "summary": "An unverified message promises a free new camera phone to anyone and pressures you to call an unknown number.",
+   "seconds": 16.2
   },
   {
    "id": "uci_holdout-046",
@@ -796,15 +796,15 @@
    "category": "uci_spam",
    "text": "Thanks for your Ringtone Order, Reference T91. You will be charged GBP 4 per week. You can unsubscribe at anytime by calling customer services on 09057039994",
    "verdict": "Suspicious",
-   "confidence": 0.85,
+   "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 3684,
-    "completion_tokens": 4964,
-    "llm_calls": 2,
-    "tool_calls": 0
+    "prompt_tokens": 5916,
+    "completion_tokens": 6470,
+    "llm_calls": 3,
+    "tool_calls": 1
    },
-   "summary": "This looks like a subscription trap claiming you owe \u00a34 a week for ringtones and pushing you to call an expensive 090 number to cancel.",
-   "seconds": 29.1
+   "summary": "This looks like a fake weekly ringtone charge trying to get you to call an expensive unknown number.",
+   "seconds": 23.0
   },
   {
    "id": "uci_holdout-047",
@@ -812,15 +812,15 @@
    "category": "uci_spam",
    "text": "HOT LIVE FANTASIES call now 08707509020 Just 20p per min NTT Ltd, PO Box 1327 Croydon CR9 5WB 0870 is a national rate call",
    "verdict": "Suspicious",
-   "confidence": 0.85,
+   "confidence": 0.72,
    "usage": {
-    "prompt_tokens": 3849,
-    "completion_tokens": 4632,
+    "prompt_tokens": 3888,
+    "completion_tokens": 5288,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is an unsolicited adult-chat invite asking you to call a paid 0870 number that will charge you.",
-   "seconds": 25.2
+   "summary": "This is an unverified advert asking you to call a charged adult chat number.",
+   "seconds": 20.2
   },
   {
    "id": "uci_holdout-048",
@@ -828,15 +828,15 @@
    "category": "uci_spam",
    "text": "Urgent! call 09061749602 from Landline. Your complimentary 4* Tenerife Holiday or \u00a310,000 cash await collection SAE T&Cs BOX 528 HP20 1YF 150ppm 18+",
    "verdict": "Scam",
-   "confidence": 0.97,
+   "confidence": 0.96,
    "usage": {
-    "prompt_tokens": 3858,
-    "completion_tokens": 4186,
+    "prompt_tokens": 3890,
+    "completion_tokens": 4232,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is a classic premium-rate prize scam \u2014 calling will charge you \u00a31.50 a minute and there is no free holiday or cash.",
-   "seconds": 21.8
+   "summary": "Unsolicited prize message pushing you to call an expensive \u00a31.50-a-minute number to collect a free holiday or cash that does not exist.",
+   "seconds": 16.5
   },
   {
    "id": "uci_holdout-049",
@@ -846,13 +846,13 @@
    "verdict": "Suspicious",
    "confidence": 0.8,
    "usage": {
-    "prompt_tokens": 6545,
-    "completion_tokens": 5219,
+    "prompt_tokens": 6888,
+    "completion_tokens": 4860,
     "llm_calls": 3,
-    "tool_calls": 3
+    "tool_calls": 4
    },
-   "summary": "This looks like a prize text that wants you to send a paid text but you cannot check the real cost or terms.",
-   "seconds": 29.2
+   "summary": "This prize text asks you to message a premium shortcode with unclear subscription charges and broken terms, so it is not safe to reply.",
+   "seconds": 16.9
   },
   {
    "id": "uci_holdout-050",
@@ -860,15 +860,15 @@
    "category": "uci_ham",
    "text": "Haha, just what I was thinkin",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1805,
-    "completion_tokens": 810,
+    "prompt_tokens": 1825,
+    "completion_tokens": 814,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like harmless everyday chat with nothing risky in it.",
-   "seconds": 4.3
+   "summary": "This looks like a harmless casual chat reply with no scam signs.",
+   "seconds": 2.7
   },
   {
    "id": "uci_holdout-051",
@@ -878,13 +878,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3630,
-    "completion_tokens": 2192,
+    "prompt_tokens": 3670,
+    "completion_tokens": 2337,
     "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary everyday message with no scam signs.",
-   "seconds": 10.2
+   "summary": "This looks like an ordinary everyday message with nothing risky in it.",
+   "seconds": 7.4
   },
   {
    "id": "uci_holdout-052",
@@ -892,15 +892,15 @@
    "category": "uci_ham",
    "text": "I want to be inside you every night...",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3875,
-    "completion_tokens": 2466,
-    "llm_calls": 2,
+    "prompt_tokens": 1824,
+    "completion_tokens": 1220,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just a short personal intimate message with no scam request in it.",
-   "seconds": 12.5
+   "summary": "This is just a short personal message with no scam request in it.",
+   "seconds": 4.1
   },
   {
    "id": "uci_holdout-053",
@@ -910,13 +910,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1802,
-    "completion_tokens": 1566,
+    "prompt_tokens": 1822,
+    "completion_tokens": 1762,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a harmless stray chat message with no scam request in it.",
-   "seconds": 7.6
+   "summary": "This looks like a harmless casual chat fragment with no scam request.",
+   "seconds": 6.5
   },
   {
    "id": "uci_holdout-054",
@@ -924,15 +924,15 @@
    "category": "uci_ham",
    "text": "Dear how is chechi. Did you talk to her",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3893,
-    "completion_tokens": 2941,
-    "llm_calls": 2,
+    "prompt_tokens": 6246,
+    "completion_tokens": 3044,
+    "llm_calls": 3,
     "tool_calls": 0
    },
-   "summary": "This looks like a normal personal message between people who know each other, with no scam signs.",
-   "seconds": 15.0
+   "summary": "This looks like ordinary personal chat with no scam request.",
+   "seconds": 10.6
   },
   {
    "id": "uci_holdout-055",
@@ -942,13 +942,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 1818,
-    "completion_tokens": 1466,
+    "prompt_tokens": 1838,
+    "completion_tokens": 2382,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary chat fragment with no scam request in it.",
-   "seconds": 7.6
+   "summary": "This looks like an ordinary private chat fragment with no scam request in it.",
+   "seconds": 7.2
   },
   {
    "id": "uci_holdout-056",
@@ -956,15 +956,15 @@
    "category": "uci_ham",
    "text": "U don't remember that old commercial?",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 1802,
-    "completion_tokens": 988,
-    "llm_calls": 1,
+    "prompt_tokens": 6222,
+    "completion_tokens": 3427,
+    "llm_calls": 3,
     "tool_calls": 0
    },
-   "summary": "This looks like ordinary casual chat with no scam request in it.",
-   "seconds": 4.8
+   "summary": "This looks like harmless casual chat with no scam signs.",
+   "seconds": 11.8
   },
   {
    "id": "uci_holdout-057",
@@ -974,13 +974,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1811,
-    "completion_tokens": 1215,
+    "prompt_tokens": 1831,
+    "completion_tokens": 1210,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary friendly note with no scam request in it.",
-   "seconds": 5.6
+   "summary": "This looks like an ordinary casual message with no scam request in it.",
+   "seconds": 3.8
   },
   {
    "id": "uci_holdout-058",
@@ -988,15 +988,15 @@
    "category": "uci_ham",
    "text": "K sure am in my relatives home. Sms me de. Pls:-)",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 1811,
-    "completion_tokens": 1220,
-    "llm_calls": 1,
+    "prompt_tokens": 6258,
+    "completion_tokens": 3138,
+    "llm_calls": 3,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary friendly text with no scam signs.",
-   "seconds": 5.8
+   "summary": "This looks like ordinary casual chat with no scam request in it.",
+   "seconds": 23.9
   },
   {
    "id": "uci_holdout-059",
@@ -1004,15 +1004,15 @@
    "category": "uci_ham",
    "text": "No plans yet. What are you doing ?",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 1804,
-    "completion_tokens": 1197,
+    "prompt_tokens": 1824,
+    "completion_tokens": 1455,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just ordinary small talk with no scam signs.",
-   "seconds": 6.1
+   "summary": "This looks like ordinary small talk with no scam signs.",
+   "seconds": 14.9
   },
   {
    "id": "uci_holdout-060",
@@ -1020,15 +1020,15 @@
    "category": "uci_ham",
    "text": "Lovely smell on this bus and it ain't tobacco... ",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 3835,
-    "completion_tokens": 2252,
+    "prompt_tokens": 3873,
+    "completion_tokens": 1737,
     "llm_calls": 2,
     "tool_calls": 0
    },
    "summary": "This looks like a harmless casual comment with no scam request in it.",
-   "seconds": 10.4
+   "seconds": 8.7
   },
   {
    "id": "uci_holdout-061",
@@ -1038,29 +1038,29 @@
    "verdict": "Looks Safe",
    "confidence": 0.99,
    "usage": {
-    "prompt_tokens": 1833,
-    "completion_tokens": 1032,
-    "llm_calls": 1,
+    "prompt_tokens": 3950,
+    "completion_tokens": 1804,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This is just a harmless joke about beer and petrol prices with no scam risk.",
-   "seconds": 4.5
+   "summary": "This is just a harmless joke about beer and petrol prices with nothing to click or pay.",
+   "seconds": 7.5
   },
   {
    "id": "uci_holdout-062",
    "label": "legit",
    "category": "uci_ham",
    "text": "My sort code is  and acc no is . The bank is natwest. Can you reply to confirm i've sent this to the right person!",
-   "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "verdict": "Suspicious",
+   "confidence": 0.7,
    "usage": {
-    "prompt_tokens": 3966,
-    "completion_tokens": 3720,
+    "prompt_tokens": 3957,
+    "completion_tokens": 7094,
     "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like a personal message sent to the wrong number, not a scam.",
-   "seconds": 18.0
+   "summary": "A stranger sent bank details and asked you to reply to confirm, so don't respond.",
+   "seconds": 34.7
   },
   {
    "id": "uci_holdout-063",
@@ -1070,13 +1070,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1842,
-    "completion_tokens": 1400,
+    "prompt_tokens": 1862,
+    "completion_tokens": 1161,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a personal message to someone you already know, with no scam request in it.",
-   "seconds": 6.2
+   "summary": "This looks like a personal message with no scam request in it.",
+   "seconds": 5.8
   },
   {
    "id": "uci_holdout-064",
@@ -1086,13 +1086,13 @@
    "verdict": "Suspicious",
    "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 1805,
-    "completion_tokens": 2187,
+    "prompt_tokens": 1825,
+    "completion_tokens": 1645,
     "llm_calls": 1,
     "tool_calls": 0
    },
    "summary": "This looks like a classic wrong-number opener trying to get you to reply.",
-   "seconds": 9.9
+   "seconds": 7.3
   },
   {
    "id": "uci_holdout-065",
@@ -1102,13 +1102,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1806,
-    "completion_tokens": 937,
+    "prompt_tokens": 1826,
+    "completion_tokens": 1170,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like harmless casual chatter with no scam request in it.",
-   "seconds": 4.2
+   "summary": "This looks like harmless casual chat with no scam request in it.",
+   "seconds": 4.8
   },
   {
    "id": "uci_holdout-066",
@@ -1118,13 +1118,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1809,
-    "completion_tokens": 1278,
+    "prompt_tokens": 1829,
+    "completion_tokens": 1164,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a normal personal check-in with no scam signs.",
-   "seconds": 5.7
+   "summary": "This looks like an ordinary casual message between people who know each other with no scam request in it.",
+   "seconds": 11.7
   },
   {
    "id": "uci_holdout-067",
@@ -1132,15 +1132,15 @@
    "category": "uci_ham",
    "text": "Huh but i cant go 2 ur house empty handed right?",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 1809,
-    "completion_tokens": 1166,
-    "llm_calls": 1,
+    "prompt_tokens": 3678,
+    "completion_tokens": 2142,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like a harmless, ordinary chat message about visiting someone, with no scam signs.",
-   "seconds": 4.8
+   "summary": "Just casual chat about visiting, with no scam request in it.",
+   "seconds": 14.3
   },
   {
    "id": "uci_holdout-068",
@@ -1150,13 +1150,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 3628,
-    "completion_tokens": 2247,
+    "prompt_tokens": 3897,
+    "completion_tokens": 4074,
     "llm_calls": 2,
     "tool_calls": 0
    },
    "summary": "This looks like ordinary casual chat with no scam request in it.",
-   "seconds": 10.0
+   "seconds": 21.6
   },
   {
    "id": "uci_holdout-069",
@@ -1164,15 +1164,15 @@
    "category": "uci_ham",
    "text": "Update your face book status frequently :)",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.99,
    "usage": {
-    "prompt_tokens": 1802,
-    "completion_tokens": 1413,
-    "llm_calls": 1,
+    "prompt_tokens": 11206,
+    "completion_tokens": 3763,
+    "llm_calls": 5,
     "tool_calls": 0
    },
-   "summary": "This looks like harmless friendly chat with no scam request.",
-   "seconds": 6.5
+   "summary": "Harmless casual message with no scam request.",
+   "seconds": 19.0
   },
   {
    "id": "uci_holdout-070",
@@ -1180,15 +1180,15 @@
    "category": "uci_ham",
    "text": "Thankyou so much for the call. I appreciate your care.",
    "verdict": "Looks Safe",
-   "confidence": 0.96,
+   "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 1808,
-    "completion_tokens": 1222,
-    "llm_calls": 1,
+    "prompt_tokens": 11217,
+    "completion_tokens": 3340,
+    "llm_calls": 5,
     "tool_calls": 0
    },
-   "summary": "This looks like a harmless thank-you note with no scam signs.",
-   "seconds": 5.6
+   "summary": "This is just a harmless thank-you note with nothing risky in it.",
+   "seconds": 16.5
   },
   {
    "id": "uci_holdout-071",
@@ -1196,15 +1196,15 @@
    "category": "uci_ham",
    "text": "It's fine, imma get a drink or somethin. Want me to come find you?",
    "verdict": "Looks Safe",
-   "confidence": 0.96,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3878,
-    "completion_tokens": 2324,
-    "llm_calls": 2,
+    "prompt_tokens": 1835,
+    "completion_tokens": 1050,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like ordinary casual chat with no scam request in it.",
-   "seconds": 12.3
+   "summary": "This is just casual chat about getting a drink with no scam request.",
+   "seconds": 4.7
   },
   {
    "id": "uci_holdout-072",
@@ -1214,13 +1214,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1804,
-    "completion_tokens": 989,
+    "prompt_tokens": 1824,
+    "completion_tokens": 1089,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like ordinary casual chat with no scam request in it.",
-   "seconds": 5.0
+   "summary": "This looks like casual personal chat with no scam request in it.",
+   "seconds": 4.2
   },
   {
    "id": "uci_holdout-073",
@@ -1228,15 +1228,15 @@
    "category": "uci_ham",
    "text": "....photoshop makes my computer shut down.",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.99,
    "usage": {
-    "prompt_tokens": 1804,
-    "completion_tokens": 923,
-    "llm_calls": 1,
+    "prompt_tokens": 3909,
+    "completion_tokens": 2997,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like a harmless fragment of everyday conversation about a computer problem.",
-   "seconds": 5.1
+   "summary": "This looks like a harmless everyday comment about a computer problem with no scam signs.",
+   "seconds": 11.5
   },
   {
    "id": "uci_holdout-074",
@@ -1244,15 +1244,15 @@
    "category": "uci_ham",
    "text": "Oh god..taken the teeth?is it paining",
    "verdict": "Looks Safe",
-   "confidence": 0.97,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 6168,
-    "completion_tokens": 2749,
-    "llm_calls": 3,
+    "prompt_tokens": 1827,
+    "completion_tokens": 814,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary personal check-in with no scam request.",
-   "seconds": 13.2
+   "summary": "This looks like an ordinary personal check-in about dental pain with no scam request.",
+   "seconds": 4.3
   },
   {
    "id": "uci_holdout-075",
@@ -1262,13 +1262,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1818,
-    "completion_tokens": 1218,
-    "llm_calls": 1,
+    "prompt_tokens": 3902,
+    "completion_tokens": 2486,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like a personal argument message with no scam request in it.",
-   "seconds": 6.8
+   "summary": "This is just a personal argument-type message with no scam request in it.",
+   "seconds": 10.4
   },
   {
    "id": "uci_holdout-076",
@@ -1276,15 +1276,15 @@
    "category": "uci_ham",
    "text": "No, I decided that only people who care about stuff vote and caring about stuff is for losers",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 1816,
-    "completion_tokens": 1826,
+    "prompt_tokens": 1836,
+    "completion_tokens": 963,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like ordinary casual chat with no scam request in it.",
-   "seconds": 8.2
+   "summary": "This is just a casual opinion about voting with no scam request in it.",
+   "seconds": 4.4
   },
   {
    "id": "uci_holdout-077",
@@ -1292,15 +1292,15 @@
    "category": "uci_ham",
    "text": "HEY MATE! HOWS U HONEY?DID U AVE GOOD HOLIDAY? GIMMI DE GOSS!x",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1823,
-    "completion_tokens": 1188,
-    "llm_calls": 1,
+    "prompt_tokens": 3920,
+    "completion_tokens": 2427,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like ordinary friendly small talk with no scam request in it.",
-   "seconds": 5.8
+   "summary": "This looks like ordinary friendly chat with no scam request in it.",
+   "seconds": 8.9
   },
   {
    "id": "uci_holdout-078",
@@ -1310,13 +1310,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 6070,
-    "completion_tokens": 2792,
-    "llm_calls": 3,
+    "prompt_tokens": 1826,
+    "completion_tokens": 837,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just harmless everyday chat with no scam signs.",
-   "seconds": 15.3
+   "summary": "This looks like a harmless casual remark with no scam request.",
+   "seconds": 3.7
   },
   {
    "id": "uci_holdout-079",
@@ -1326,13 +1326,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1834,
-    "completion_tokens": 1353,
+    "prompt_tokens": 1854,
+    "completion_tokens": 1426,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just a friendly early Valentine's greeting with no scam signs.",
-   "seconds": 5.7
+   "summary": "This is just a friendly Valentine's greeting with no scam signs.",
+   "seconds": 7.1
   },
   {
    "id": "uci_holdout-080",
@@ -1342,13 +1342,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 8752,
-    "completion_tokens": 3375,
-    "llm_calls": 4,
+    "prompt_tokens": 1842,
+    "completion_tokens": 896,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like harmless everyday chit-chat with no scam request in it.",
-   "seconds": 17.3
+   "summary": "This is just casual chatter with no scam request in it.",
+   "seconds": 4.2
   },
   {
    "id": "uci_holdout-081",
@@ -1356,15 +1356,15 @@
    "category": "uci_ham",
    "text": "S:-)if we have one good partnership going we will take lead:)",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 3640,
-    "completion_tokens": 2031,
-    "llm_calls": 2,
+    "prompt_tokens": 1830,
+    "completion_tokens": 1238,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just a casual chat fragment with no scam request in it.",
-   "seconds": 11.0
+   "summary": "This looks like harmless everyday chatter with no scam request in it.",
+   "seconds": 5.3
   },
   {
    "id": "uci_holdout-082",
@@ -1372,15 +1372,15 @@
    "category": "uci_ham",
    "text": "I've told you everything will stop. Just dont let her get dehydrated.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1810,
-    "completion_tokens": 1657,
-    "llm_calls": 1,
+    "prompt_tokens": 3680,
+    "completion_tokens": 2558,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like a short personal message fragment with no scam request in it.",
-   "seconds": 8.0
+   "summary": "This looks like a harmless fragment of a private conversation with no scam request in it.",
+   "seconds": 11.3
   },
   {
    "id": "uci_holdout-083",
@@ -1390,13 +1390,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3834,
-    "completion_tokens": 1790,
-    "llm_calls": 2,
+    "prompt_tokens": 1828,
+    "completion_tokens": 1074,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary casual remark with no scam request in it.",
-   "seconds": 8.0
+   "summary": "This looks like an ordinary personal remark with no scam request in it.",
+   "seconds": 4.6
   },
   {
    "id": "uci_holdout-084",
@@ -1406,12 +1406,12 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1805,
-    "completion_tokens": 1340,
+    "prompt_tokens": 1825,
+    "completion_tokens": 1372,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a harmless casual question with no scam signs.",
+   "summary": "This is just a short question about downloading movies with no links or requests for money or personal information.",
    "seconds": 6.0
   },
   {
@@ -1422,29 +1422,29 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3628,
-    "completion_tokens": 2157,
-    "llm_calls": 2,
+    "prompt_tokens": 6141,
+    "completion_tokens": 2022,
+    "llm_calls": 3,
     "tool_calls": 0
    },
-   "summary": "This looks like harmless casual chat with no scam signs.",
-   "seconds": 11.1
+   "summary": "This looks like harmless casual chat with no scam request in it.",
+   "seconds": 12.0
   },
   {
    "id": "uci_holdout-086",
    "label": "legit",
    "category": "uci_ham",
    "text": "There are no other charges after transfer charges and you can withdraw anyhow you like",
-   "verdict": "Looks Safe",
-   "confidence": 0.75,
+   "verdict": "Suspicious",
+   "confidence": 0.65,
    "usage": {
-    "prompt_tokens": 3862,
-    "completion_tokens": 4023,
+    "prompt_tokens": 3938,
+    "completion_tokens": 5202,
     "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like a short chat fragment about fees with no link or request to act.",
-   "seconds": 19.8
+   "summary": "This talks about paying a fee to withdraw money, which is a common advance-fee pattern that cannot be verified from this line alone.",
+   "seconds": 26.4
   },
   {
    "id": "uci_holdout-087",
@@ -1452,14 +1452,14 @@
    "category": "uci_ham",
    "text": "Wife.how she knew the time of murder exactly",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 1807,
-    "completion_tokens": 1105,
+    "prompt_tokens": 1827,
+    "completion_tokens": 1296,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a harmless fragment of conversation with no scam request.",
+   "summary": "This looks like a harmless chat fragment with no scam request in it.",
    "seconds": 5.2
   },
   {
@@ -1470,13 +1470,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 1815,
-    "completion_tokens": 1091,
+    "prompt_tokens": 1835,
+    "completion_tokens": 1312,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just ordinary casual chat about a power outage with no scam signs.",
-   "seconds": 5.3
+   "summary": "This is just everyday venting about a power outage with no scam signs.",
+   "seconds": 6.7
   },
   {
    "id": "uci_holdout-089",
@@ -1486,13 +1486,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1819,
-    "completion_tokens": 1418,
-    "llm_calls": 1,
+    "prompt_tokens": 8848,
+    "completion_tokens": 3550,
+    "llm_calls": 4,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary message about picking something up, with no signs of a scam.",
-   "seconds": 6.8
+   "summary": "This looks like a normal pickup coordination message with no scam signs.",
+   "seconds": 19.9
   },
   {
    "id": "uci_holdout-090",
@@ -1500,15 +1500,15 @@
    "category": "uci_ham",
    "text": "Ok no prob... I'll come after lunch then...",
    "verdict": "Looks Safe",
-   "confidence": 0.96,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1805,
-    "completion_tokens": 1431,
+    "prompt_tokens": 1825,
+    "completion_tokens": 945,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary casual reply about visiting after lunch, with no scam signs.",
-   "seconds": 6.7
+   "summary": "This looks like a harmless, everyday message between people who know each other.",
+   "seconds": 5.0
   },
   {
    "id": "uci_holdout-091",
@@ -1518,13 +1518,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1840,
-    "completion_tokens": 1401,
+    "prompt_tokens": 1860,
+    "completion_tokens": 1016,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just a personal birthday story with no request or scam sign, so it looks harmless.",
-   "seconds": 6.5
+   "summary": "This is just a sad personal story about a forgotten birthday with no scam request.",
+   "seconds": 5.3
   },
   {
    "id": "uci_holdout-092",
@@ -1532,15 +1532,15 @@
    "category": "uci_ham",
    "text": "I got it before the new year cos yetunde said she wanted to surprise you with it but when i didnt see money i returned it mid january before the  &lt;#&gt; day return period ended.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1838,
-    "completion_tokens": 1396,
-    "llm_calls": 1,
+    "prompt_tokens": 6370,
+    "completion_tokens": 3168,
+    "llm_calls": 3,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary personal message about returning an item, with no scam request in it.",
-   "seconds": 7.1
+   "summary": "This looks like ordinary personal chat about returning an item, with no scam signs.",
+   "seconds": 16.8
   },
   {
    "id": "uci_holdout-093",
@@ -1550,13 +1550,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1817,
-    "completion_tokens": 1309,
+    "prompt_tokens": 1837,
+    "completion_tokens": 1190,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just a friendly greeting with no scam request in it.",
-   "seconds": 6.3
+   "summary": "This is just a friendly well-wish with no scam request in it.",
+   "seconds": 6.2
   },
   {
    "id": "uci_holdout-094",
@@ -1566,13 +1566,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3642,
-    "completion_tokens": 2222,
-    "llm_calls": 2,
+    "prompt_tokens": 1831,
+    "completion_tokens": 1127,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a normal friendly chat message with no scam signs.",
-   "seconds": 10.8
+   "summary": "This looks like normal friendly chat with no scam request in it.",
+   "seconds": 6.1
   },
   {
    "id": "uci_holdout-095",
@@ -1580,15 +1580,15 @@
    "category": "uci_ham",
    "text": "FRAN I DECIDED 2 GO N E WAY IM COMPLETELY BROKE AN KNACKERED I GOT UP BOUT 3 C U 2MRW LOVE JANX P.S THIS IS MY DADS FONE, -NO CREDIT",
    "verdict": "Looks Safe",
-   "confidence": 0.97,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 6422,
+    "prompt_tokens": 9117,
     "completion_tokens": 5416,
-    "llm_calls": 3,
+    "llm_calls": 4,
     "tool_calls": 0
    },
-   "summary": "This looks like a normal personal text between people who know each other, not a scam.",
-   "seconds": 23.6
+   "summary": "Ordinary personal text between people who know each other with no scam request.",
+   "seconds": 24.9
   },
   {
    "id": "uci_holdout-096",
@@ -1596,15 +1596,15 @@
    "category": "uci_ham",
    "text": "I thk \u00fc gotta go home by urself. Cos i'll b going out shopping 4 my frens present. ",
    "verdict": "Looks Safe",
-   "confidence": 0.97,
+   "confidence": 0.96,
    "usage": {
-    "prompt_tokens": 1821,
-    "completion_tokens": 1132,
-    "llm_calls": 1,
+    "prompt_tokens": 6272,
+    "completion_tokens": 2956,
+    "llm_calls": 3,
     "tool_calls": 0
    },
-   "summary": "This looks like an ordinary personal message with no scam request in it.",
-   "seconds": 5.3
+   "summary": "This looks like an ordinary personal message with no scam signs.",
+   "seconds": 14.9
   },
   {
    "id": "uci_holdout-097",
@@ -1614,13 +1614,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3626,
-    "completion_tokens": 1831,
-    "llm_calls": 2,
+    "prompt_tokens": 1823,
+    "completion_tokens": 1183,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "Just a harmless everyday chat about watching a match with no scam request.",
-   "seconds": 8.1
+   "summary": "This looks like harmless small talk with no scam request in it.",
+   "seconds": 5.6
   },
   {
    "id": "uci_holdout-098",
@@ -1628,15 +1628,15 @@
    "category": "uci_ham",
    "text": "Y?WHERE U AT DOGBREATH? ITS JUST SOUNDING LIKE JAN C THAT\u0092S AL!!!!!!!!!",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1819,
-    "completion_tokens": 1621,
-    "llm_calls": 1,
+    "prompt_tokens": 3939,
+    "completion_tokens": 1967,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like casual banter with no scam request in it.",
-   "seconds": 7.3
+   "summary": "This looks like ordinary casual chat with no scam request in it.",
+   "seconds": 10.0
   },
   {
    "id": "uci_holdout-099",
@@ -1646,13 +1646,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 11710,
-    "completion_tokens": 3433,
-    "llm_calls": 5,
+    "prompt_tokens": 3948,
+    "completion_tokens": 2118,
+    "llm_calls": 2,
     "tool_calls": 0
    },
-   "summary": "This looks like ordinary personal chat between people who know each other, not a scam.",
-   "seconds": 17.2
+   "summary": "This is just angry banter between people who know each other, with no scam attempt.",
+   "seconds": 10.6
   }
  ]
 }

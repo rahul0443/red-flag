@@ -131,6 +131,7 @@ function handle(ev){
  if(ev.type==="extracting")add("",ev.source==="voicemail"?"Transcribing voicemail":"Reading screenshot",'<span class="spinner"></span>'+(ev.source==="voicemail"?"Muse Voice Transcribe is listening":"Muse Spark is reading the image"));
  else if(ev.type==="extracted")add("res",ev.source==="voicemail"?"Transcript":"Text found in screenshot",`<div class="quote">${esc(ev.text)}</div>`);
  else if(ev.type==="start"){add("","Message received",ev.urls_found.length?`Found ${ev.urls_found.length} link(s): ${ev.urls_found.map(u=>`<code>${esc(u)}</code>`).join(" ")}`:"No links found — checking wording and claims")}
+ else if(ev.type==="triage")add("res","Open-weight first look",`<b>${esc(ev.verdict||"?")}</b> in ${(ev.latency_ms/1000).toFixed(1)}s &middot; <code>${esc(ev.model)}</code> (open weights, served by Baseten)`);
  else if(ev.type==="thought")add("","Agent thinking",esc(ev.text));
  else if(ev.type==="tool_call")add("tool",LABEL[ev.tool]||ev.tool,`<code>${esc(ev.args.url||ev.args.domain||ev.args.brand||"")}</code>`);
  else if(ev.type==="tool_result")add("res","Result",summarize(ev.tool,ev.result));

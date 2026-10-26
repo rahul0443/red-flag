@@ -21,7 +21,9 @@ _TODO: accuracy, false-positive rate_
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env   # then add MODEL_API_KEY
-python scripts/quick_verdict.py samples/usps_smish.txt
+python scripts/quick_verdict.py samples/usps_smish.txt   # one-shot verdict
+python scripts/investigate.py samples/usps_smish.txt     # full agent, CLI
+uvicorn redflag.api.server:app --port 8000               # web app at http://localhost:8000
 ```
 
 ## Safety

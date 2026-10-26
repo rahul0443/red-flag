@@ -9,6 +9,14 @@
   "precision": 1.0,
   "recall": 1.0,
   "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.886,
+   1
+  ],
+  "fpr_95ci": [
+   0,
+   0.114
+  ],
   "f1": 1.0,
   "confusion": {
    "tp": 30,
@@ -24,6 +32,14 @@
   "precision": 1.0,
   "recall": 1.0,
   "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.886,
+   1
+  ],
+  "fpr_95ci": [
+   0,
+   0.114
+  ],
   "f1": 1.0,
   "confusion": {
    "tp": 30,
@@ -32,7 +48,7 @@
    "tn": 30
   }
  },
- "median_seconds": 12.05,
- "avg_tokens": 6713,
- "avg_tool_calls": 3.8
+ "median_seconds": 10.3,
+ "avg_tokens": 7006,
+ "avg_tool_calls": 3.65
 }

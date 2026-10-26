@@ -20,8 +20,6 @@ TOOLS = [
     _fn("official_contact_check", "Look up a company's official domains and its known policies (what it never does), and compare against a domain seen in the message.",
         {"brand": {"type": "string", "description": "company the message claims to be from"},
          "observed_url_or_domain": {"type": "string", "description": "URL/domain/sender seen in the message, if any"}}, ["brand"]),
-    _fn("inspect_link_sandbox", "Open a still-suspicious URL in an isolated throwaway browser (never on the user's machine) and report the final URL, page text, login/password forms, where forms submit, and a screenshot. Slow (10-40s): use at most once, only after cheaper checks leave doubt.",
-        {"url": {"type": "string"}}, ["url"]),
     _fn("submit_verdict", "FINAL STEP. Submit your conclusion once you are confident. Every evidence item must come from the message or a tool result.",
         {"verdict": {"type": "string", "enum": ["Scam", "Suspicious", "Looks Safe"]},
          "confidence": {"type": "number", "description": "0 to 1"},
@@ -44,5 +42,10 @@ def inspect_link_sandbox(url: str) -> dict:
 _DISABLED = {t for t in os.getenv("DISABLE_TOOLS", "").split(",") if t}  # ablation studies
 TOOLS = [t for t in TOOLS if t["function"]["name"] not in _DISABLED]
 
+_SANDBOX_OK = "inspect_link_sandbox" not in _DISABLED and (
+    os.path.exists(os.path.expanduser("~/.modal.toml")) or bool(os.getenv("MODAL_TOKEN_ID")))
+
 DISPATCH = {"expand_url": expand_url, "rdap_lookup": rdap_lookup,
-            "check_blocklists": check_blocklists, "inspect_link_sandbox": inspect_link_sandbox, "official_contact_check": official_contact_check}
+            "check_blocklists": check_blocklists, "official_contact_check": official_contact_check}
+if _SANDBOX_OK:  # started by the system, not offered to the model as a tool
+    DISPATCH["inspect_link_sandbox"] = inspect_link_sandbox

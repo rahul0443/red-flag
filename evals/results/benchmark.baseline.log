@@ -9,6 +9,14 @@
   "precision": 1.0,
   "recall": 0.974,
   "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.868,
+   0.995
+  ],
+  "fpr_95ci": [
+   0,
+   0.088
+  ],
   "f1": 0.987,
   "confusion": {
    "tp": 38,
@@ -24,6 +32,14 @@
   "precision": 1.0,
   "recall": 0.949,
   "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.831,
+   0.986
+  ],
+  "fpr_95ci": [
+   0,
+   0.088
+  ],
   "f1": 0.974,
   "confusion": {
    "tp": 37,
@@ -32,7 +48,7 @@
    "tn": 40
   }
  },
- "median_seconds": 4.5,
+ "median_seconds": 4.6,
  "avg_tokens": 0,
  "avg_tool_calls": 0
 }

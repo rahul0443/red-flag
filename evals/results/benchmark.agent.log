@@ -3,37 +3,52 @@
  "mode": "agent",
  "model": "muse-spark-1.3",
  "lenient": {
-  "n": 78,
-  "errors": 1,
+  "n": 79,
+  "errors": 0,
   "accuracy": 1.0,
   "precision": 1.0,
   "recall": 1.0,
   "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.91,
+   1
+  ],
+  "fpr_95ci": [
+   0,
+   0.088
+  ],
   "f1": 1.0,
   "confusion": {
    "tp": 39,
    "fn": 0,
    "fp": 0,
-   "tn": 39
+   "tn": 40
   }
  },
  "strict": {
-  "n": 78,
-  "errors": 1,
-  "accuracy": 0.974,
+  "n": 79,
+  "errors": 0,
+  "accuracy": 0.949,
   "precision": 1.0,
-  "recall": 0.949,
+  "recall": 0.897,
   "false_positive_rate": 0.0,
-  "f1": 0.974,
+  "recall_95ci": [
+   0.764,
+   0.959
+  ],
+  "fpr_95ci": [
+   0,
+   0.088
+  ],
+  "f1": 0.946,
   "confusion": {
-   "tp": 37,
-   "fn": 2,
+   "tp": 35,
+   "fn": 4,
    "fp": 0,
-   "tn": 39
+   "tn": 40
   }
  },
- "median_seconds": 9.2,
- "avg_tokens": 5301,
- "avg_tool_calls": 2.1
+ "median_seconds": 10.9,
+ "avg_tokens": 6355,
+ "avg_tool_calls": 2.13
 }
-MISS [legit->ERROR] benchmark-055 receipt: 'Subject: Your Apple receipt. Order ID MQ2X8841. MacBook Air charger $79.00. View your rece' BadRequestError: Error code: 400 - only `"auto"` is supported for `tool_choice`. `"none"`, `"required"`, and named function choices are not currently supported

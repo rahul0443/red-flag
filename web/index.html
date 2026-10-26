@@ -35,6 +35,7 @@ button:disabled{opacity:.5;cursor:default}button.ghost{background:transparent;bo
 .sev.high{background:#5a2a2b;color:#ffb3b4}.sev.medium{background:#5a4520;color:#ffd58a}.sev.low{background:#2b3340;color:#b7c3d6}.sev.reassuring{background:#24543a;color:#9be3b6}
 .src{color:var(--mute);font-size:12px;margin-left:6px}.advice{margin-top:14px;padding:12px;background:#0000002e;border-radius:10px}
 @keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1}}@keyframes sp{to{transform:rotate(360deg)}}
+.quote{background:#0b0e13;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:4px;font-size:13.5px;white-space:pre-wrap;color:#c9d1dc}
 .empty{color:var(--mute);text-align:center;padding:50px 10px}.foot{color:var(--mute);font-size:12.5px;margin-top:22px}
 </style>
 </head>
@@ -52,6 +53,14 @@ button:disabled{opacity:.5;cursor:default}button.ghost{background:transparent;bo
         <button class="ghost" data-ex="1">Example: IRS</button>
         <button class="ghost" data-ex="2">Example: real pharmacy</button>
       </div>
+      <div class="row">
+        <button class="ghost" id="imgBtn">📷 Upload screenshot</button>
+        <button class="ghost" id="audBtn">🎙 Upload voicemail</button>
+        <button class="ghost" id="recBtn">⏺ Record voicemail</button>
+        <input type="file" id="imgIn" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+        <input type="file" id="audIn" accept="audio/*,.wav,.m4a,.mp3,.ogg,.webm" hidden>
+      </div>
+      <p class="foot" style="margin-top:10px">Tip: you can also paste a screenshot anywhere on this page (Cmd/Ctrl+V).</p>
       <p class="foot">Red Flag never replies to or contacts the sender, never sends your message to any link in it, and keeps nothing after the check. Use synthetic or public examples only.</p>
     </div>
     <div>
@@ -79,20 +88,47 @@ function verdictCard(v){
  const k=v.verdict==="Looks Safe"?"Safe":v.verdict, ev=(v.evidence||[]).map(e=>`<li><span class="sev ${esc(e.severity)}">${esc(e.severity)}</span>${esc(e.finding)}<span class="src">${esc(e.source)}</span></li>`).join("");
  $("verdict").innerHTML=`<div class="verdict ${k}"><div class="vt">${esc(v.verdict)}<span class="conf">${Math.round((v.confidence||0)*100)}% confident</span></div><div style="margin-top:6px">${esc(v.summary)}</div>
  ${v.tactics?.length?`<div class="chips" style="margin-top:10px">${v.tactics.map(t=>`<span class="chip bad">${esc(t)}</span>`).join("")}</div>`:""}<ul class="ev">${ev}</ul><div class="advice"><b>What to do:</b> ${esc(v.advice)}</div></div>`}
-$("go").onclick=async()=>{
- const text=$("msg").value.trim();if(!text)return;
- tl.innerHTML="";$("verdict").innerHTML="";$("empty").style.display="none";$("go").disabled=true;
- add("","Starting",'<span class="spinner"></span>Reading the message');
+async function run(url,init){
+ tl.innerHTML="";$("verdict").innerHTML="";$("empty").style.display="none";setBusy(true);
  try{
-  const res=await fetch("/api/investigate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text})});
+  const res=await fetch(url,init);
   if(!res.ok)throw new Error("Server returned "+res.status);
   const rd=res.body.getReader(),dec=new TextDecoder();let buf="";
   while(true){const {done,value}=await rd.read();if(done)break;buf+=dec.decode(value,{stream:true});
    let i;while((i=buf.indexOf("\n\n"))>=0){const line=buf.slice(0,i).replace(/^data: /,"");buf=buf.slice(i+2);if(!line)continue;handle(JSON.parse(line))}}
  }catch(e){add("","Error",esc(e.message))}
- $("go").disabled=false};
+ setBusy(false)}
+function setBusy(b){["go","imgBtn","audBtn","recBtn"].forEach(id=>$(id).disabled=b)}
+$("go").onclick=()=>{const text=$("msg").value.trim();if(!text)return;
+ run("/api/investigate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text})})};
+function sendFile(url,blob,name){const fd=new FormData();fd.append("file",blob,name);run(url,{method:"POST",body:fd})}
+$("imgBtn").onclick=()=>$("imgIn").click();
+$("imgIn").onchange=e=>{const f=e.target.files[0];if(f)sendFile("/api/investigate/image",f,f.name);e.target.value=""};
+document.addEventListener("paste",e=>{const it=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith("image/"));if(it&&!$("go").disabled){e.preventDefault();const f=it.getAsFile();sendFile("/api/investigate/image",f,"pasted.png")}});
+// Voicemail: the Meta ASR API accepts WAV only, so convert any audio to 16 kHz mono WAV in the browser.
+async function toWav(blob){
+ const ac=new (window.AudioContext||window.webkitAudioContext)();const buf=await ac.decodeAudioData(await blob.arrayBuffer());ac.close();
+ const sr=16000,off=new OfflineAudioContext(1,Math.ceil(buf.duration*sr),sr),src=off.createBufferSource();src.buffer=buf;src.connect(off.destination);src.start();
+ const pcm=(await off.startRendering()).getChannelData(0),out=new DataView(new ArrayBuffer(44+pcm.length*2));
+ const w=(o,t)=>[...t].forEach((c,i)=>out.setUint8(o+i,c.charCodeAt(0)));
+ w(0,"RIFF");out.setUint32(4,36+pcm.length*2,true);w(8,"WAVEfmt ");out.setUint32(16,16,true);out.setUint16(20,1,true);out.setUint16(22,1,true);out.setUint32(24,sr,true);out.setUint32(28,sr*2,true);out.setUint16(32,2,true);out.setUint16(34,16,true);w(36,"data");out.setUint32(40,pcm.length*2,true);
+ for(let i=0;i<pcm.length;i++)out.setInt16(44+i*2,Math.max(-1,Math.min(1,pcm[i]))*0x7fff,true);
+ return new Blob([out],{type:"audio/wav"})}
+async function sendAudio(blob,name){try{sendFile("/api/investigate/audio",await toWav(blob),name+".wav")}catch(e){tl.innerHTML="";add("","Error","Could not read that audio file: "+esc(e.message))}}
+$("audBtn").onclick=()=>$("audIn").click();
+$("audIn").onchange=e=>{const f=e.target.files[0];if(f)sendAudio(f,f.name.replace(/\.[^.]+$/,""));e.target.value=""};
+let rec=null,chunks=[];
+$("recBtn").onclick=async()=>{
+ if(rec){rec.stop();return}
+ try{const st=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];rec=new MediaRecorder(st);
+  rec.ondataavailable=e=>chunks.push(e.data);
+  rec.onstop=()=>{st.getTracks().forEach(t=>t.stop());rec=null;$("recBtn").textContent="⏺ Record voicemail";sendAudio(new Blob(chunks),"recording")};
+  rec.start();$("recBtn").textContent="⏹ Stop and investigate"}
+ catch(e){alert("Microphone unavailable: "+e.message)}};
 function handle(ev){
- if(ev.type==="start"){tl.innerHTML="";add("","Message received",ev.urls_found.length?`Found ${ev.urls_found.length} link(s): ${ev.urls_found.map(u=>`<code>${esc(u)}</code>`).join(" ")}`:"No links found — checking wording and claims")}
+ if(ev.type==="extracting")add("",ev.source==="voicemail"?"Transcribing voicemail":"Reading screenshot",'<span class="spinner"></span>'+(ev.source==="voicemail"?"Muse Voice Transcribe is listening":"Muse Spark is reading the image"));
+ else if(ev.type==="extracted")add("res",ev.source==="voicemail"?"Transcript":"Text found in screenshot",`<div class="quote">${esc(ev.text)}</div>`);
+ else if(ev.type==="start"){add("","Message received",ev.urls_found.length?`Found ${ev.urls_found.length} link(s): ${ev.urls_found.map(u=>`<code>${esc(u)}</code>`).join(" ")}`:"No links found — checking wording and claims")}
  else if(ev.type==="thought")add("","Agent thinking",esc(ev.text));
  else if(ev.type==="tool_call")add("tool",LABEL[ev.tool]||ev.tool,`<code>${esc(ev.args.url||ev.args.domain||ev.args.brand||"")}</code>`);
  else if(ev.type==="tool_result")add("res","Result",summarize(ev.tool,ev.result));

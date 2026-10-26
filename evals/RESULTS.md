@@ -38,3 +38,17 @@ Positive = flagged (verdict Scam or Suspicious). Intervals are 95% Wilson. Gener
 | UCI SMS held-out (public, spam not scam) | agent | 12.0% |
 
 The agent reserves 'Scam' for concrete evidence; polite scams with nothing checkable are returned as 'Suspicious'. That is a deliberate calibration, and it lowers strict recall.
+
+
+## Same agent on open-weight Muse Spark Open (Baseten)
+
+Identical prompt, tools and sets; only the model changes (AGENT_BACKEND=open). The prompt was tuned on closed Muse Spark, not on this model.
+
+| Set | n | Accuracy | Scam recall | False-positive rate (95% CI) |
+|---|---|---|---|---|
+| Benchmark (hand-written, 39 scam / 40 legit) | 79 | 89.9% | 100.0% | 20.0% (10.5%-34.8%) |
+| Hard text (polite scams vs urgent-sounding legit) | 40 | 87.5% | 95.0% | 20.0% (8.1%-41.6%) |
+| Live phishing pairs (OpenPhish snapshot vs real-brand twin) | 60 | 95.0% | 100.0% | 10.0% (3.5%-25.6%) |
+| UCI SMS held-out (public, spam not scam) | 100 | 70.0% | 100.0% | 60.0% (46.2%-72.4%) |
+
+The open model finds the scams but is less calibrated than closed Muse Spark: it raises more false alarms on legitimate and casual messages. It shows the agent runs end to end on open weights; closed Muse Spark remains the default.

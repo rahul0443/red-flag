@@ -70,7 +70,7 @@ python scripts/investigate.py samples/usps_smish.txt   # CLI
 ```
 
 ## Repo map
-`redflag/agent` the loop · `redflag/tools` URL expansion, RDAP, blocklists, official-contact DB, Modal sandbox · `redflag/inputs.py` vision + transcription · `redflag/api` FastAPI SSE server · `web/` UI · `evals/` datasets, runner, results · `training/` Muse Glimmer triage fine-tuning · `docs/DEMO_SCRIPT.md`.
+`redflag/agent` the loop · `redflag/tools` URL expansion, RDAP, blocklists, official-contact DB, Modal sandbox · `redflag/inputs.py` vision + transcription · `redflag/api` FastAPI SSE server · `web/` UI · `evals/` datasets, runner, results · `training/` unused Glimmer fine-tune groundwork · `docs/DEMO_SCRIPT.md`.
 
 ## Built during the hackathon
 Everything in this repository was written during the event. First commit: Oct 26 2026, 1:18 PM ET, after the 12:00 PM ET kickoff. Organizers confirmed in Discord #questions that post-kickoff work on Oct 26 counts as the building period. See `git log` for the full history.
@@ -80,5 +80,10 @@ Everything in this repository was written during the event. First commit: Oct 26
 - OpenPhish community feed (openphish.com), a snapshot used only for a small live-phishing test set, stored defanged.
 - All other messages and templates were written for this project (CC0). Muse Spark outputs were **not** used as training data.
 
+## Open weights
+
+The same agent runs on open-weight **Muse Spark Open** served by Baseten (`AGENT_BACKEND=open`, key in `BASETEN_API_KEY`; reproduce with `scripts/run_open_evals.sh`). It catches the scams (100% recall on three of four sets, 95% on hard text) but raises more false alarms than closed Muse Spark (10-20% on our realistic sets, 60% on casual UCI chat), because the prompt was tuned on closed Muse Spark. Full table in `evals/RESULTS.md`. Closed Muse Spark is the default.
+
 ## Status
-Muse Glimmer 30B first-pass triage fine-tune (Modal, QLoRA): in progress. This README will only claim results that exist in `evals/results/`.
+
+Complete: text, screenshot and voicemail inputs, tool-using agent, link sandbox, evals on closed and open-weight models. The planned Muse Glimmer fine-tune was dropped (no GPU budget); `training/` is kept as unused groundwork. This README only claims results that exist in `evals/results/`.

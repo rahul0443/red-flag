@@ -1,0 +1,682 @@
+{
+ "summary": {
+  "set": "hard_text",
+  "mode": "agent",
+  "model": "muse-spark-1.3",
+  "lenient": {
+   "n": 40,
+   "errors": 0,
+   "accuracy": 1.0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "false_positive_rate": 0.0,
+   "f1": 1.0,
+   "confusion": {
+    "tp": 20,
+    "fn": 0,
+    "fp": 0,
+    "tn": 20
+   }
+  },
+  "strict": {
+   "n": 40,
+   "errors": 0,
+   "accuracy": 1.0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "false_positive_rate": 0.0,
+   "f1": 1.0,
+   "confusion": {
+    "tp": 20,
+    "fn": 0,
+    "fp": 0,
+    "tn": 20
+   }
+  },
+  "median_seconds": 12.0,
+  "avg_tokens": 5629,
+  "avg_tool_calls": 1.6
+ },
+ "results": [
+  {
+   "id": "hard_text-000",
+   "label": "scam",
+   "category": "polite_impersonation",
+   "text": "Hello Mr. Johnson, this is Karen from the Medicare benefits review office. We are updating records for members in your county and just need to confirm your Medicare number. You can call me back at 602-555-0171 whenever convenient.",
+   "verdict": "Scam",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 2941,
+    "completion_tokens": 2469,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake Medicare call trying to steal your Medicare number \u2014 do not call back or share it.",
+   "seconds": 12.1
+  },
+  {
+   "id": "hard_text-001",
+   "label": "scam",
+   "category": "refund_overpay",
+   "text": "Hi, our billing system refunded you $2,990 instead of $299 by mistake. Could you please send back the $2,691 difference using a Walmart money transfer today? Thank you for helping us fix this.",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 1367,
+    "completion_tokens": 1942,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This is a classic overpayment scam trying to trick you into sending your own money by Walmart transfer.",
+   "seconds": 9.6
+  },
+  {
+   "id": "hard_text-002",
+   "label": "scam",
+   "category": "job_background",
+   "text": "Thanks for applying! We would love to move you forward as a data entry assistant. The interview will be done over Google Chat. Before we start, please send a photo of your driver's license and your SSN for the background check.",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 4464,
+    "completion_tokens": 4773,
+    "llm_calls": 3,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake job offer trying to steal your identity \u2014 real employers never ask for a license photo and SSN over chat before an interview.",
+   "seconds": 23.3
+  },
+  {
+   "id": "hard_text-003",
+   "label": "scam",
+   "category": "landlord_account",
+   "text": "Hi tenants, we have changed our banking provider. Starting this month please send rent by Zelle to our new account at pm.rentoffice2026@gmail.com. The old account is closed. Thanks!",
+   "verdict": "Scam",
+   "confidence": 0.88,
+   "usage": {
+    "prompt_tokens": 2919,
+    "completion_tokens": 3831,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a fake landlord message trying to reroute your rent to a scammer's Zelle account.",
+   "seconds": 20.4
+  },
+  {
+   "id": "hard_text-004",
+   "label": "scam",
+   "category": "wire_closing",
+   "text": "Hello, this is Dana at Hartley Title. Please note our wire instructions have changed for your closing on Friday. Updated routing and account numbers are attached. Kindly wire the $48,200 down payment by Thursday noon.",
+   "verdict": "Scam",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 2874,
+    "completion_tokens": 1939,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like classic closing-cost wire fraud \u2014 a fake change to wire instructions to steal your down payment.",
+   "seconds": 10.2
+  },
+  {
+   "id": "hard_text-005",
+   "label": "scam",
+   "category": "vendor_bank",
+   "text": "Hi Accounts Payable, please update our remittance details for invoice #7741. Our new bank information is attached. Kindly confirm once changed and process the $12,480 payment this week.",
+   "verdict": "Scam",
+   "confidence": 0.85,
+   "usage": {
+    "prompt_tokens": 1361,
+    "completion_tokens": 2046,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This is a classic fake-vendor bank-change scam asking you to send $12,480 to criminals.",
+   "seconds": 9.9
+  },
+  {
+   "id": "hard_text-006",
+   "label": "scam",
+   "category": "recovery_scam",
+   "text": "We are a licensed digital asset recovery firm. Our records show you may have lost funds in a crypto platform failure. For a small upfront retainer of $450 we can recover up to 95% of your funds.",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 1366,
+    "completion_tokens": 1540,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This is a fake crypto recovery offer trying to steal a $450 upfront fee.",
+   "seconds": 6.5
+  },
+  {
+   "id": "hard_text-007",
+   "label": "scam",
+   "category": "grant",
+   "text": "Congratulations, you have been selected to receive a $9,000 federal community grant. There is nothing to repay. A $150 verification fee by prepaid card is required to release the funds.",
+   "verdict": "Scam",
+   "confidence": 0.97,
+   "usage": {
+    "prompt_tokens": 4522,
+    "completion_tokens": 2873,
+    "llm_calls": 3,
+    "tool_calls": 2
+   },
+   "summary": "This is a fake federal grant scam trying to steal a $150 prepaid card payment from you.",
+   "seconds": 14.3
+  },
+  {
+   "id": "hard_text-008",
+   "label": "scam",
+   "category": "car_warranty",
+   "text": "We've been trying to reach you about your vehicle's extended warranty. Your coverage is about to lapse. Please call 888-555-0166 so we can go over your options.",
+   "verdict": "Scam",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 2889,
+    "completion_tokens": 2929,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This is the classic fake extended-warranty call that tries to scare you into calling back and sharing personal or payment information.",
+   "seconds": 14.8
+  },
+  {
+   "id": "hard_text-009",
+   "label": "scam",
+   "category": "new_phone",
+   "text": "Hi mum, I dropped my phone in the sink and this is my new number. Can you save it? Also can you help me pay a bill today, my banking app is locked.",
+   "verdict": "Scam",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 1360,
+    "completion_tokens": 1533,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This is the classic 'Hi Mum' scam pretending to be your child to get you to pay a bill.",
+   "seconds": 7.8
+  },
+  {
+   "id": "hard_text-010",
+   "label": "scam",
+   "category": "friendly_crypto",
+   "text": "Hey! Long time no see. I started trading with this platform my aunt recommended and made a decent profit last month, happy to show you how it works if you're curious. No pressure!",
+   "verdict": "Scam",
+   "confidence": 0.85,
+   "usage": {
+    "prompt_tokens": 1360,
+    "completion_tokens": 2149,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This friendly hello about trading profits is a common first message of an investment scam \u2014 don't reply.",
+   "seconds": 10.8
+  },
+  {
+   "id": "hard_text-011",
+   "label": "scam",
+   "category": "package_address",
+   "text": "Your package from Amazon could not be delivered because the address is incomplete. Please reply with your full address and the card on file so we can reship.",
+   "verdict": "Scam",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 2868,
+    "completion_tokens": 2394,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake Amazon delivery text trying to steal your address and card details.",
+   "seconds": 11.2
+  },
+  {
+   "id": "hard_text-012",
+   "label": "scam",
+   "category": "utility_portal",
+   "text": "Your electric company has moved to a new online payment portal. To avoid any interruption of service, please re-enter your payment details at the new portal by Friday: https://srp-billing-portal.com/login",
+   "verdict": "Scam",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 5224,
+    "completion_tokens": 2918,
+    "llm_calls": 3,
+    "tool_calls": 4
+   },
+   "summary": "This is a fake utility-billing message trying to steal your payment information through a bogus new portal link.",
+   "seconds": 15.9
+  },
+  {
+   "id": "hard_text-013",
+   "label": "scam",
+   "category": "hospital",
+   "text": "Hello, I am calling from Banner Health. Your brother was admitted after an accident and needs a deposit before surgery. Can you wire $3,000 right now? I can give you the account number.",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2869,
+    "completion_tokens": 2405,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake family-emergency call trying to scare you into wiring money fast.",
+   "seconds": 11.6
+  },
+  {
+   "id": "hard_text-014",
+   "label": "scam",
+   "category": "sweepstakes",
+   "text": "Hi Linda, this is Bob from Publishers Prize Patrol. You have won $1.2 million and a new Mercedes! Before we deliver the prize we just need you to cover the $890 insurance and tax in advance.",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 4523,
+    "completion_tokens": 2465,
+    "llm_calls": 3,
+    "tool_calls": 2
+   },
+   "summary": "This is a fake prize win trying to trick you into paying $890 upfront.",
+   "seconds": 14.3
+  },
+  {
+   "id": "hard_text-015",
+   "label": "scam",
+   "category": "irs_payment_plan",
+   "text": "This is a courtesy reminder from the Internal Revenue Service. You are eligible for a reduced settlement of your tax debt. To lock in the discount please call 480-555-0144 and have a payment method ready.",
+   "verdict": "Scam",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 2875,
+    "completion_tokens": 1775,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake IRS message trying to get you to call and pay.",
+   "seconds": 9.4
+  },
+  {
+   "id": "hard_text-016",
+   "label": "scam",
+   "category": "romance_med",
+   "text": "Honey, my business trip hit a problem and my account is frozen here. Can you help me with $1,500 for the hotel until my bank fixes it? I will pay you back as soon as I'm home, I promise.",
+   "verdict": "Scam",
+   "confidence": 0.85,
+   "usage": {
+    "prompt_tokens": 2887,
+    "completion_tokens": 4920,
+    "llm_calls": 2,
+    "tool_calls": 0
+   },
+   "summary": "This looks like a stranded-traveler emergency money scam pretending to be someone close to you.",
+   "seconds": 24.8
+  },
+  {
+   "id": "hard_text-017",
+   "label": "scam",
+   "category": "tech_invoice",
+   "text": "Your annual subscription of $499.99 for Norton 360 has been renewed and will be charged to your card. If you want to cancel, our support desk at 1-844-555-0112 will assist you with the refund.",
+   "verdict": "Scam",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 2907,
+    "completion_tokens": 1876,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake Norton renewal bill trying to scare you into calling scammers about a refund.",
+   "seconds": 10.8
+  },
+  {
+   "id": "hard_text-018",
+   "label": "scam",
+   "category": "bank_employee",
+   "text": "Hi, this is Tom from your bank's fraud team. We've noticed some transfers on your account. To protect your money we need you to move your funds to a temporary safe account. I'll guide you through it.",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 4701,
+    "completion_tokens": 3372,
+    "llm_calls": 3,
+    "tool_calls": 3
+   },
+   "summary": "This is a classic \u201csafe account\u201d scam \u2014 real banks never ask you to move money to protect it.",
+   "seconds": 16.3
+  },
+  {
+   "id": "hard_text-019",
+   "label": "scam",
+   "category": "student_aid",
+   "text": "This is the Office of Student Aid. Your account shows an unclaimed refund of $1,832. To release it please confirm your bank login and student ID on our secure page.",
+   "verdict": "Scam",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 2866,
+    "completion_tokens": 2261,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "Fake student-aid refund trick trying to steal your bank login and student ID.",
+   "seconds": 12.0
+  },
+  {
+   "id": "hard_text-020",
+   "label": "legit",
+   "category": "bank_lock_real",
+   "text": "Chase: We locked your card ending 4421 after unusual activity. Call the number on the back of your card or visit chase.com/fraud. We will never ask for your PIN or full card number.",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 3311,
+    "completion_tokens": 2212,
+    "llm_calls": 2,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a real Chase safety notice that points you to trusted contacts and tells you it will never ask for your PIN.",
+   "seconds": 12.0
+  },
+  {
+   "id": "hard_text-021",
+   "label": "legit",
+   "category": "registration",
+   "text": "Arizona MVD: Your vehicle registration expires in 5 days. Renew online at azmvdnow.gov to avoid a late fee. Reply STOP to opt out.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 3207,
+    "completion_tokens": 2585,
+    "llm_calls": 2,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a real Arizona MVD renewal reminder linking to its official azmvdnow.gov website.",
+   "seconds": 12.6
+  },
+  {
+   "id": "hard_text-022",
+   "label": "legit",
+   "category": "rent_reminder",
+   "text": "Reminder from Cactus Ridge Apartments: rent is due on the 1st and a late fee applies after the 5th. Pay through the resident portal you already use.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 2858,
+    "completion_tokens": 1882,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a harmless rent reminder with no links or tricks in it.",
+   "seconds": 8.9
+  },
+  {
+   "id": "hard_text-023",
+   "label": "legit",
+   "category": "service_notice",
+   "text": "Verizon: Your account is past due $87.30. To avoid service suspension on Nov 3, pay at verizon.com/myverizon or in the My Verizon app.",
+   "verdict": "Looks Safe",
+   "confidence": 0.88,
+   "usage": {
+    "prompt_tokens": 4826,
+    "completion_tokens": 2933,
+    "llm_calls": 3,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a normal Verizon payment reminder that points to Verizon's own website and app.",
+   "seconds": 15.7
+  },
+  {
+   "id": "hard_text-024",
+   "label": "legit",
+   "category": "password_expiry",
+   "text": "ASU IT: Your password expires in 2 days. Change it at the ASU password page you reach through your MyASU account. IT will never ask for your password by email.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 2869,
+    "completion_tokens": 2304,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a normal IT reminder with no link and no request for your password.",
+   "seconds": 10.9
+  },
+  {
+   "id": "hard_text-025",
+   "label": "legit",
+   "category": "final_pickup",
+   "text": "USPS: Final notice. Your package could not be delivered and is being held at the Mesa Post Office through Nov 2. Bring a photo ID to pick it up.",
+   "verdict": "Looks Safe",
+   "confidence": 0.85,
+   "usage": {
+    "prompt_tokens": 2896,
+    "completion_tokens": 2652,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a simple package pickup reminder with nothing dangerous to click or pay \u2014 just bring ID to the post office if you are expecting a package.",
+   "seconds": 13.9
+  },
+  {
+   "id": "hard_text-026",
+   "label": "legit",
+   "category": "labs",
+   "text": "Banner Health: Your lab results are ready. Log in to your patient portal to view them. If you need help, call the number on your appointment card.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 2849,
+    "completion_tokens": 1725,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a normal lab-ready reminder with no link or request for information, telling you to use your own portal and card.",
+   "seconds": 10.1
+  },
+  {
+   "id": "hard_text-027",
+   "label": "legit",
+   "category": "fraud_alert",
+   "text": "Capital One: Did you make a $212.40 purchase at BEST BUY on Oct 25 with your card ending 1034? Reply YES or NO. We'll never ask for your full card number.",
+   "verdict": "Looks Safe",
+   "confidence": 0.85,
+   "usage": {
+    "prompt_tokens": 2883,
+    "completion_tokens": 2182,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a normal Capital One fraud check with no warning signs.",
+   "seconds": 11.4
+  },
+  {
+   "id": "hard_text-028",
+   "label": "legit",
+   "category": "coinbase_real",
+   "text": "Coinbase: New sign-in from Chrome on macOS in Phoenix. If this was you, no action needed. If not, secure your account at coinbase.com/security.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 3234,
+    "completion_tokens": 1681,
+    "llm_calls": 2,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a normal Coinbase sign-in notice with a link to Coinbase's real website.",
+   "seconds": 10.7
+  },
+  {
+   "id": "hard_text-029",
+   "label": "legit",
+   "category": "apple_signin",
+   "text": "Your Apple ID was used to sign in to iMessage on a new Mac. If this was you, you can ignore this message. If not, change your password at appleid.apple.com.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 4946,
+    "completion_tokens": 2435,
+    "llm_calls": 3,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a normal Apple security notice that points to Apple's real website, not a scam.",
+   "seconds": 13.6
+  },
+  {
+   "id": "hard_text-030",
+   "label": "legit",
+   "category": "medicare_enroll",
+   "text": "Medicare: Open enrollment ends Dec 7. Review your plan options at medicare.gov/plan-compare. Medicare will never call you to sell a plan or ask for your number.",
+   "verdict": "Looks Safe",
+   "confidence": 0.97,
+   "usage": {
+    "prompt_tokens": 3269,
+    "completion_tokens": 1943,
+    "llm_calls": 2,
+    "tool_calls": 3
+   },
+   "summary": "This is a legitimate Medicare reminder that uses the real medicare.gov website and correctly warns you about phone scams.",
+   "seconds": 10.1
+  },
+  {
+   "id": "hard_text-031",
+   "label": "legit",
+   "category": "school_urgent",
+   "text": "URGENT from Desert View High: Early dismissal today at 12:30 due to a power outage. Please arrange pickup. Buses will run on the revised schedule.",
+   "verdict": "Looks Safe",
+   "confidence": 0.8,
+   "usage": {
+    "prompt_tokens": 2857,
+    "completion_tokens": 3056,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a normal school pickup notice with no scam signs.",
+   "seconds": 15.8
+  },
+  {
+   "id": "hard_text-032",
+   "label": "legit",
+   "category": "paypal_real",
+   "text": "PayPal: You received $50.00 USD from Alex Chen. The money is in your PayPal balance. See details at paypal.com/activity.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 3304,
+    "completion_tokens": 1784,
+    "llm_calls": 2,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a normal PayPal money-received notice pointing to the real PayPal website.",
+   "seconds": 10.2
+  },
+  {
+   "id": "hard_text-033",
+   "label": "legit",
+   "category": "amazon_verify",
+   "text": "Amazon: Your order #112-4488201 needs your attention: the delivery address couldn't be verified. Update it in Your Orders at amazon.com/your-orders within 24 hours.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 5581,
+    "completion_tokens": 3199,
+    "llm_calls": 3,
+    "tool_calls": 3
+   },
+   "summary": "This link goes to the real Amazon website, not a fake copy, so it looks safe if you were expecting an Amazon order.",
+   "seconds": 19.6
+  },
+  {
+   "id": "hard_text-034",
+   "label": "legit",
+   "category": "insurance_cancel",
+   "text": "Geico: Your payment of $184.20 was declined. Your policy may lapse on Nov 1 if payment is not received. Update your payment method at geico.com or in the Geico app.",
+   "verdict": "Looks Safe",
+   "confidence": 0.88,
+   "usage": {
+    "prompt_tokens": 3197,
+    "completion_tokens": 2710,
+    "llm_calls": 2,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a normal GEICO billing reminder that points to the real GEICO website and app.",
+   "seconds": 15.6
+  },
+  {
+   "id": "hard_text-035",
+   "label": "legit",
+   "category": "tax_notice",
+   "text": "Subject: IRS: Your Notice CP14 for tax year 2025 is available. Read it at irs.gov and review your payment options. The IRS will never demand payment by gift card or crypto.",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 3240,
+    "completion_tokens": 3081,
+    "llm_calls": 2,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a safe reminder pointing to the real IRS website, not a scam payment demand.",
+   "seconds": 17.2
+  },
+  {
+   "id": "hard_text-036",
+   "label": "legit",
+   "category": "utility_shutoff",
+   "text": "SRP: Your account is 45 days past due ($212.18). Service may be disconnected on Nov 10. Pay at srpnet.com or call the number on your bill to set up a payment plan.",
+   "verdict": "Looks Safe",
+   "confidence": 0.82,
+   "usage": {
+    "prompt_tokens": 3249,
+    "completion_tokens": 2992,
+    "llm_calls": 2,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a normal past-due utility reminder pointing to a decades-old website and your own bill, not a scam link.",
+   "seconds": 16.5
+  },
+  {
+   "id": "hard_text-037",
+   "label": "legit",
+   "category": "bank_new_device",
+   "text": "Bank of America: Your online banking was accessed from a new device. If this was you, no action is needed. If not, call the number on the back of your card. We'll never ask for your passcode.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 2879,
+    "completion_tokens": 1740,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a safe bank security notice with no link or request for personal information.",
+   "seconds": 10.7
+  },
+  {
+   "id": "hard_text-038",
+   "label": "legit",
+   "category": "employer_hr",
+   "text": "Subject: Action required: complete your I-9 verification by Friday. Bring your documents to the HR office in Tempe, 2nd floor, or use the HR portal you were given at orientation.",
+   "verdict": "Looks Safe",
+   "confidence": 0.82,
+   "usage": {
+    "prompt_tokens": 1363,
+    "completion_tokens": 1934,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This looks like a normal HR reminder to finish work paperwork in person, with no scam signs.",
+   "seconds": 10.1
+  },
+  {
+   "id": "hard_text-039",
+   "label": "legit",
+   "category": "subscription_end",
+   "text": "Spotify: Your Premium subscription ends tomorrow. Renew in the app under Account > Subscription at spotify.com/account.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 3350,
+    "completion_tokens": 2411,
+    "llm_calls": 2,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a normal Spotify renewal reminder that points to Spotify's real website and app.",
+   "seconds": 12.5
+  }
+ ]
+}

@@ -20,17 +20,29 @@ TOOLS = [
     _fn("official_contact_check", "Look up a company's official domains and its known policies (what it never does), and compare against a domain seen in the message.",
         {"brand": {"type": "string", "description": "company the message claims to be from"},
          "observed_url_or_domain": {"type": "string", "description": "URL/domain/sender seen in the message, if any"}}, ["brand"]),
+    _fn("inspect_link_sandbox", "Open a still-suspicious URL in an isolated throwaway browser (never on the user's machine) and report the final URL, page text, login/password forms, where forms submit, and a screenshot. Slow (10-40s): use at most once, only after cheaper checks leave doubt.",
+        {"url": {"type": "string"}}, ["url"]),
     _fn("submit_verdict", "FINAL STEP. Submit your conclusion once you are confident. Every evidence item must come from the message or a tool result.",
         {"verdict": {"type": "string", "enum": ["Scam", "Suspicious", "Looks Safe"]},
          "confidence": {"type": "number", "description": "0 to 1"},
          "summary": {"type": "string", "description": "one plain-language sentence for a non-technical reader"},
          "evidence": {"type": "array", "items": {"type": "object", "properties": {
-             "finding": {"type": "string"}, "source": {"type": "string", "description": "message | expand_url | rdap_lookup | check_blocklists | official_contact_check"},
+             "finding": {"type": "string"}, "source": {"type": "string", "description": "message | expand_url | rdap_lookup | check_blocklists | official_contact_check | inspect_link_sandbox"},
              "severity": {"type": "string", "enum": ["high", "medium", "low", "reassuring"]}}, "required": ["finding", "source", "severity"]}},
          "tactics": {"type": "array", "items": {"type": "string"}, "description": "manipulation tactics: urgency, threat, impersonation, gift-card/crypto payment, secrecy, too-good-to-be-true..."},
          "advice": {"type": "string", "description": "what the person should do next"}},
         ["verdict", "confidence", "summary", "evidence", "tactics", "advice"]),
 ]
 
+import os
+
+def inspect_link_sandbox(url: str) -> dict:
+    from redflag.tools.sandbox import inspect_link_sandbox as run  # lazy: modal import is heavy
+    return run(url)
+
+
+_DISABLED = {t for t in os.getenv("DISABLE_TOOLS", "").split(",") if t}  # ablation studies
+TOOLS = [t for t in TOOLS if t["function"]["name"] not in _DISABLED]
+
 DISPATCH = {"expand_url": expand_url, "rdap_lookup": rdap_lookup,
-            "check_blocklists": check_blocklists, "official_contact_check": official_contact_check}
+            "check_blocklists": check_blocklists, "inspect_link_sandbox": inspect_link_sandbox, "official_contact_check": official_contact_check}

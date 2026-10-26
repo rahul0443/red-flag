@@ -34,7 +34,7 @@ with sync_playwright() as p:
     page.on("response", lambda r: out["redirects"].append({"url": r.url, "status": r.status}) if r.request.is_navigation_request() else None)
     page.on("download", lambda d: out["errors"].append("download blocked: " + d.suggested_filename))
     try:
-        page.goto(url, wait_until="load", timeout=25000)
+        page.goto(url, wait_until="load", timeout=15000)
         page.wait_for_timeout(2500)
     except Exception as e:
         out["errors"].append(type(e).__name__ + ": " + str(e)[:160])

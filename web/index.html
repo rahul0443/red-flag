@@ -94,19 +94,33 @@ async function run(url,init){
  tl.innerHTML="";$("verdict").innerHTML="";$("empty").style.display="none";setBusy(true);
  try{
   const res=await fetch(url,init);
+  if(res.status===422){add("","Problem","That input could not be checked (it may be empty or too long, max 4000 characters).");setBusy(false);return}
   if(!res.ok)throw new Error("Server returned "+res.status);
-  const rd=res.body.getReader(),dec=new TextDecoder();let buf="";
+  const rd=res.body.getReader(),dec=new TextDecoder();let buf="",got=false;
   while(true){const {done,value}=await rd.read();if(done)break;buf+=dec.decode(value,{stream:true});
-   let i;while((i=buf.indexOf("\n\n"))>=0){const line=buf.slice(0,i).replace(/^data: /,"");buf=buf.slice(i+2);if(!line)continue;handle(JSON.parse(line))}}
- }catch(e){add("","Error",esc(e.message))}
+   let i;while((i=buf.indexOf("\n\n"))>=0){const line=buf.slice(0,i).replace(/^data: /,"");buf=buf.slice(i+2);if(!line)continue;let ev;try{ev=JSON.parse(line)}catch(e){continue}if(ev.type==="verdict")got=true;if(ev.type==="error")got=true;handle(ev)}}
+  if(!got)add("","Problem","The check ended without an answer. Please try again.")
+ }catch(e){add("","Problem","Lost the connection to the server. Please try again.")}
  setBusy(false)}
 function setBusy(b){["go","imgBtn","audBtn","recBtn"].forEach(id=>$(id).disabled=b)}
 $("go").onclick=()=>{const text=$("msg").value.trim();if(!text)return;
  run("/api/investigate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text})})};
+// Any image the browser can show (AVIF, HEIC on Safari, BMP, huge photos) becomes a JPEG of at most 2000px before upload.
+async function normalizeImage(file){
+ try{
+  const bmp=await createImageBitmap(file),k=Math.min(1,2000/Math.max(bmp.width,bmp.height)),c=document.createElement("canvas");
+  c.width=Math.max(1,Math.round(bmp.width*k));c.height=Math.max(1,Math.round(bmp.height*k));
+  const g=c.getContext("2d");g.fillStyle="#fff";g.fillRect(0,0,c.width,c.height);g.drawImage(bmp,0,0,c.width,c.height);
+  const b=await new Promise(r=>c.toBlob(r,"image/jpeg",0.92));if(!b)throw 0;return b
+ }catch(e){return null}}
+async function sendImage(file){
+ const b=await normalizeImage(file);
+ if(!b){tl.innerHTML="";$("verdict").innerHTML="";add("","Problem","That file could not be opened as an image. Try a normal screenshot (PNG or JPEG).");return}
+ sendFile("/api/investigate/image",b,"upload.jpg")}
 function sendFile(url,blob,name){const fd=new FormData();fd.append("file",blob,name);run(url,{method:"POST",body:fd})}
 $("imgBtn").onclick=()=>$("imgIn").click();
-$("imgIn").onchange=e=>{const f=e.target.files[0];if(f)sendFile("/api/investigate/image",f,f.name);e.target.value=""};
-document.addEventListener("paste",e=>{const it=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith("image/"));if(it&&!$("go").disabled){e.preventDefault();const f=it.getAsFile();sendFile("/api/investigate/image",f,"pasted.png")}});
+$("imgIn").onchange=e=>{const f=e.target.files[0];if(f)sendImage(f);e.target.value=""};
+document.addEventListener("paste",e=>{const it=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith("image/"));if(it&&!$("go").disabled){e.preventDefault();sendImage(it.getAsFile())}});
 // Voicemail: the Meta ASR API accepts WAV only, so convert any audio to 16 kHz mono WAV in the browser.
 async function toWav(blob){
  const ac=new (window.AudioContext||window.webkitAudioContext)();const buf=await ac.decodeAudioData(await blob.arrayBuffer());ac.close();

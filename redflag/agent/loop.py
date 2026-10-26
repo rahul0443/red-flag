@@ -79,6 +79,17 @@ def investigate(message: str, source: str = "text") -> Iterator[dict]:
         usage["tool_calls"] += 1
         yield {"type": "tool_call", "step": 0, "tool": "inspect_link_sandbox", "args": {"url": target}}
 
+    tri = {"fut": None}
+    if config.BASETEN_API_KEY and config.AGENT_BACKEND != "open":  # open-weight first look, in parallel with the investigation
+        from redflag.open_model import triage
+        tri["fut"] = ThreadPoolExecutor(max_workers=1).submit(triage, message)
+
+    def drain_triage():
+        if tri["fut"] is not None and tri["fut"].done():
+            r, tri["fut"] = tri["fut"].result(), None
+            if "error" not in r:
+                yield {"type": "triage", **r}
+
     def drain(block):
         """Report the sandbox result (and show it to the model) once it is ready, or wait for it if block=True."""
         if sb["reported"] or not (block or sb["fut"].done()):
@@ -100,6 +111,7 @@ def investigate(message: str, source: str = "text") -> Iterator[dict]:
         if last:  # the API only supports tool_choice "auto", so restrict the tool list and nudge instead
             msgs.append({"role": "user", "content": "Step limit reached. Call submit_verdict now with your best judgment."})
         yield from drain(False)
+        yield from drain_triage()
         kwargs = {"tools": submit_only if last else TOOLS}
         resp = client.chat.completions.create(model=model, max_tokens=config.MAX_TOKENS, messages=msgs, **kwargs)
         usage["llm_calls"] += 1
@@ -130,6 +142,7 @@ def investigate(message: str, source: str = "text") -> Iterator[dict]:
                     yield from drain(True)
                     calls = None
                     break
+                yield from drain_triage()
                 yield {"type": "verdict", **args, "usage": usage}
                 return
             calls.append((t, t.function.name, args))

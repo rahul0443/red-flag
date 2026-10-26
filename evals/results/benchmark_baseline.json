@@ -49,7 +49,7 @@
     "tn": 40
    }
   },
-  "median_seconds": 4.6,
+  "median_seconds": 4.7,
   "avg_tokens": 0,
   "avg_tool_calls": 0
  },
@@ -60,9 +60,9 @@
    "category": "package_fee",
    "text": "USPS: Your package could not be delivered due to an unpaid customs fee of $1.99. Pay within 12 hours or it will be returned: http://usps-redelivery-help.top/pay",
    "verdict": "Scam",
-   "confidence": 0.97,
+   "confidence": 0.98,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 4.9
   },
   {
    "id": "benchmark-001",
@@ -70,9 +70,9 @@
    "category": "package_fee",
    "text": "FedEx: We attempted delivery but nobody was home. Confirm your address and reschedule here: fedex-reschedule-now.info/track?id=88213",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 7.3
+   "seconds": 8.7
   },
   {
    "id": "benchmark-002",
@@ -82,7 +82,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.0
+   "seconds": 5.5
   },
   {
    "id": "benchmark-003",
@@ -92,7 +92,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.1
+   "seconds": 6.3
   },
   {
    "id": "benchmark-004",
@@ -100,9 +100,9 @@
    "category": "bank_alert",
    "text": "Chase Alert: Unusual $849.00 charge on your card. If this was not you, verify now or your account will be locked: chase-secure-verify.top/login",
    "verdict": "Scam",
-   "confidence": 0.96,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 4.4
   },
   {
    "id": "benchmark-005",
@@ -112,7 +112,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.9
+   "seconds": 8.3
   },
   {
    "id": "benchmark-006",
@@ -122,7 +122,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 8.2
   },
   {
    "id": "benchmark-007",
@@ -132,7 +132,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 6.5
   },
   {
    "id": "benchmark-008",
@@ -142,7 +142,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.0
+   "seconds": 4.7
   },
   {
    "id": "benchmark-009",
@@ -152,7 +152,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 4.9
   },
   {
    "id": "benchmark-010",
@@ -160,9 +160,9 @@
    "category": "order_call",
    "text": "Amazon: Your order of an iPhone 15 Pro for $1,149 has been placed. If you did not make this purchase call 1-877-555-0166 to cancel.",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 5.2
   },
   {
    "id": "benchmark-011",
@@ -170,9 +170,9 @@
    "category": "giftcard",
    "text": "Hi, this is Mark from the Amazon billing team. Your account has a security hold. To clear it purchase two $500 Amazon gift cards and read me the codes.",
    "verdict": "Scam",
-   "confidence": 0.99,
+   "confidence": 1,
    "usage": {},
-   "seconds": 3.6
+   "seconds": 4.3
   },
   {
    "id": "benchmark-012",
@@ -180,9 +180,9 @@
    "category": "irs",
    "text": "IRS FINAL NOTICE: You owe $2,847 in back taxes. A warrant will be issued for your arrest today. Call 855-555-0142 immediately and pay with Apple gift cards. Do not tell anyone.",
    "verdict": "Scam",
-   "confidence": 1,
+   "confidence": 1.0,
    "usage": {},
-   "seconds": 3.3
+   "seconds": 4.6
   },
   {
    "id": "benchmark-013",
@@ -192,7 +192,7 @@
    "verdict": "Scam",
    "confidence": 0.99,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 3.5
   },
   {
    "id": "benchmark-014",
@@ -202,7 +202,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 3.0
   },
   {
    "id": "benchmark-015",
@@ -212,7 +212,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 4.0
   },
   {
    "id": "benchmark-016",
@@ -220,9 +220,9 @@
    "category": "techsupport",
    "text": "WARNING: Your computer is infected with 5 viruses! Do not turn off your PC. Call Microsoft Support now at 1-800-555-0123.",
    "verdict": "Scam",
-   "confidence": 0.98,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 4.2
   },
   {
    "id": "benchmark-017",
@@ -232,7 +232,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.3
+   "seconds": 4.7
   },
   {
    "id": "benchmark-018",
@@ -252,7 +252,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.9
+   "seconds": 4.1
   },
   {
    "id": "benchmark-020",
@@ -260,9 +260,9 @@
    "category": "wrong_number",
    "text": "Hello, I got your number from a friend. I'm Emily, I just moved to the city and don't know anyone. Can we chat? \ud83d\ude0a",
    "verdict": "Suspicious",
-   "confidence": 0.65,
+   "confidence": 0.7,
    "usage": {},
-   "seconds": 5.9
+   "seconds": 11.3
   },
   {
    "id": "benchmark-021",
@@ -270,9 +270,9 @@
    "category": "crypto",
    "text": "I've been making $3,000 a week with a crypto trading platform my uncle taught me. I can show you how, small deposit of $250 to start, guaranteed returns. Message me on WhatsApp.",
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.9
+   "seconds": 4.2
   },
   {
    "id": "benchmark-022",
@@ -280,9 +280,9 @@
    "category": "romance",
    "text": "My dear, I am a US Army engineer deployed overseas. I have fallen in love with you. I need $800 in iTunes cards to take leave and come meet you.",
    "verdict": "Scam",
-   "confidence": 0.98,
+   "confidence": 0.99,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 5.2
   },
   {
    "id": "benchmark-023",
@@ -292,7 +292,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 6.3
+   "seconds": 5.5
   },
   {
    "id": "benchmark-024",
@@ -302,7 +302,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.9
+   "seconds": 5.1
   },
   {
    "id": "benchmark-025",
@@ -310,9 +310,9 @@
    "category": "fake_check",
    "text": "Congratulations on the personal assistant job! Enclosed is a check for $3,800. Deposit it and send $1,500 via Zelle to our equipment vendor, keep the rest as your pay.",
    "verdict": "Scam",
-   "confidence": 0.98,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 5.0
+   "seconds": 4.8
   },
   {
    "id": "benchmark-026",
@@ -322,7 +322,7 @@
    "verdict": "Scam",
    "confidence": 0.99,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 5.4
   },
   {
    "id": "benchmark-027",
@@ -332,7 +332,7 @@
    "verdict": "Scam",
    "confidence": 0.99,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 4.4
   },
   {
    "id": "benchmark-028",
@@ -342,7 +342,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.3
+   "seconds": 4.6
   },
   {
    "id": "benchmark-029",
@@ -352,7 +352,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 3.6
+   "seconds": 3.5
   },
   {
    "id": "benchmark-030",
@@ -362,7 +362,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.9
+   "seconds": 6.3
   },
   {
    "id": "benchmark-031",
@@ -372,7 +372,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.3
+   "seconds": 3.0
   },
   {
    "id": "benchmark-032",
@@ -382,7 +382,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.1
+   "seconds": 3.0
   },
   {
    "id": "benchmark-033",
@@ -392,7 +392,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.8
+   "seconds": 3.6
   },
   {
    "id": "benchmark-034",
@@ -412,7 +412,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.9
+   "seconds": 4.4
   },
   {
    "id": "benchmark-036",
@@ -422,7 +422,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 4.1
   },
   {
    "id": "benchmark-037",
@@ -430,9 +430,9 @@
    "category": "rental",
    "text": "Hi, I'm interested in your apartment listing. I'm out of the country so can't view it, but I can send a deposit via Zelle if you hold it for me. Please send your bank details.",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 8.7
+   "seconds": 7.6
   },
   {
    "id": "benchmark-038",
@@ -440,9 +440,9 @@
    "category": "charity",
    "text": "Hurricane relief fund: hundreds of families need help. Donate now with Apple gift cards, text us the codes. Every card counts!",
    "verdict": "Scam",
-   "confidence": 0.99,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 4.0
   },
   {
    "id": "benchmark-039",
@@ -452,7 +452,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.0
+   "seconds": 4.3
   },
   {
    "id": "benchmark-040",
@@ -462,7 +462,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 3.6
   },
   {
    "id": "benchmark-041",
@@ -472,7 +472,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.6
+   "seconds": 5.8
   },
   {
    "id": "benchmark-042",
@@ -480,9 +480,9 @@
    "category": "bank_fraud_real",
    "text": "Chase: Did you attempt a $42.18 purchase at TARGET on 10/24? Reply YES or NO. Msg & data rates may apply.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 5.4
+   "seconds": 4.1
   },
   {
    "id": "benchmark-043",
@@ -492,7 +492,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 4.5
   },
   {
    "id": "benchmark-044",
@@ -502,7 +502,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 4.8
   },
   {
    "id": "benchmark-045",
@@ -510,9 +510,9 @@
    "category": "2fa",
    "text": "Your Google verification code is 385721. Don't share it with anyone.",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 6.0
   },
   {
    "id": "benchmark-046",
@@ -520,9 +520,9 @@
    "category": "2fa",
    "text": "Uber: Your code is 8821. Never share this code. Reply STOP to unsubscribe.",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 6.1
   },
   {
    "id": "benchmark-047",
@@ -530,9 +530,9 @@
    "category": "appointment",
    "text": "Reminder: You have an appointment with Dr. Patel at Valley Family Medicine on Thu Oct 29 at 2:30 PM. Reply C to confirm or call 480-555-0134 to reschedule.",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 3.8
+   "seconds": 6.2
   },
   {
    "id": "benchmark-048",
@@ -542,7 +542,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 3.2
   },
   {
    "id": "benchmark-049",
@@ -552,7 +552,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.2
+   "seconds": 3.6
   },
   {
    "id": "benchmark-050",
@@ -562,7 +562,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 5.6
   },
   {
    "id": "benchmark-051",
@@ -572,7 +572,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.0
+   "seconds": 5.5
   },
   {
    "id": "benchmark-052",
@@ -582,7 +582,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 3.7
   },
   {
    "id": "benchmark-053",
@@ -592,7 +592,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 4.1
   },
   {
    "id": "benchmark-054",
@@ -600,9 +600,9 @@
    "category": "family",
    "text": "Mom: can you pick up milk and eggs on your way home? Thanks sweetie",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.98,
    "usage": {},
-   "seconds": 3.0
+   "seconds": 3.4
   },
   {
    "id": "benchmark-055",
@@ -612,7 +612,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 7.5
+   "seconds": 6.2
   },
   {
    "id": "benchmark-056",
@@ -620,9 +620,9 @@
    "category": "order",
    "text": "Subject: Your Amazon.com order of Bluetooth Headphones has shipped. Arriving Wednesday. Track at amazon.com/gp/your-account/order-history",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 5.4
   },
   {
    "id": "benchmark-057",
@@ -632,7 +632,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 5.1
   },
   {
    "id": "benchmark-058",
@@ -642,7 +642,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.1
+   "seconds": 5.8
   },
   {
    "id": "benchmark-059",
@@ -650,9 +650,9 @@
    "category": "church",
    "text": "Grace Community Church: Sunday service is at 10 AM. This week's potluck follows at noon in the fellowship hall. All welcome!",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.99,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 3.7
   },
   {
    "id": "benchmark-060",
@@ -662,7 +662,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.0
+   "seconds": 2.8
   },
   {
    "id": "benchmark-061",
@@ -670,9 +670,9 @@
    "category": "telecom",
    "text": "Verizon: Your bill of $87.30 is ready. Auto-pay will process on Nov 5. View at verizon.com/myverizon. Msg&data rates may apply.",
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 3.8
   },
   {
    "id": "benchmark-062",
@@ -680,9 +680,9 @@
    "category": "security_real",
    "text": "Google: New sign-in to your account on a Mac in Phoenix, AZ. If this was you, no action is needed. If not, review activity at myaccount.google.com/notifications",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 6.9
+   "seconds": 7.4
   },
   {
    "id": "benchmark-063",
@@ -690,9 +690,9 @@
    "category": "meeting",
    "text": "Zoom: Rahul is inviting you to a scheduled Zoom meeting. Topic: Project sync. Time: Oct 27, 10:00 AM MST. Join: https://asu.zoom.us/j/95512345678",
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 4.8
   },
   {
    "id": "benchmark-064",
@@ -700,9 +700,9 @@
    "category": "outage",
    "text": "SRP: A power outage is affecting your area. Crews are working to restore service by 4 PM. Updates at srpnet.com/outages",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 5.1
   },
   {
    "id": "benchmark-065",
@@ -712,7 +712,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.9
+   "seconds": 3.6
   },
   {
    "id": "benchmark-066",
@@ -722,7 +722,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 5.8
   },
   {
    "id": "benchmark-067",
@@ -730,9 +730,9 @@
    "category": "insurance",
    "text": "State Farm: Your auto policy renews on Dec 1. No action is needed. Your new premium is $612 for 6 months. View at statefarm.com",
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 4.1
   },
   {
    "id": "benchmark-068",
@@ -742,7 +742,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 5.9
   },
   {
    "id": "benchmark-069",
@@ -752,7 +752,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 4.9
   },
   {
    "id": "benchmark-070",
@@ -762,7 +762,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.1
+   "seconds": 5.2
   },
   {
    "id": "benchmark-071",
@@ -772,7 +772,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 3.9
+   "seconds": 4.3
   },
   {
    "id": "benchmark-072",
@@ -782,7 +782,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 8.8
   },
   {
    "id": "benchmark-073",
@@ -792,7 +792,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 5.3
   },
   {
    "id": "benchmark-074",
@@ -802,7 +802,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 3.8
   },
   {
    "id": "benchmark-075",
@@ -812,7 +812,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 5.6
   },
   {
    "id": "benchmark-076",
@@ -820,7 +820,7 @@
    "category": "social_real",
    "text": "Instagram: Your friend alex_m started following you.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
    "seconds": 4.5
   },
@@ -832,7 +832,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.6
+   "seconds": 5.7
   },
   {
    "id": "benchmark-078",

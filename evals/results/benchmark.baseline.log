@@ -48,7 +48,7 @@
    "tn": 40
   }
  },
- "median_seconds": 4.6,
+ "median_seconds": 4.7,
  "avg_tokens": 0,
  "avg_tool_calls": 0
 }

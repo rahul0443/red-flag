@@ -49,7 +49,7 @@
     "tn": 20
    }
   },
-  "median_seconds": 6.1,
+  "median_seconds": 5.95,
   "avg_tokens": 0,
   "avg_tool_calls": 0
  },
@@ -62,7 +62,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.1
+   "seconds": 7.5
   },
   {
    "id": "hard_text-001",
@@ -72,7 +72,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.1
+   "seconds": 5.0
   },
   {
    "id": "hard_text-002",
@@ -82,7 +82,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 7.5
   },
   {
    "id": "hard_text-003",
@@ -92,7 +92,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 9.9
+   "seconds": 8.7
   },
   {
    "id": "hard_text-004",
@@ -100,9 +100,9 @@
    "category": "wire_closing",
    "text": "Hello, this is Dana at Hartley Title. Please note our wire instructions have changed for your closing on Friday. Updated routing and account numbers are attached. Kindly wire the $48,200 down payment by Thursday noon.",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 6.8
   },
   {
    "id": "hard_text-005",
@@ -112,7 +112,7 @@
    "verdict": "Suspicious",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 10.0
+   "seconds": 11.6
   },
   {
    "id": "hard_text-006",
@@ -122,7 +122,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.9
+   "seconds": 5.6
   },
   {
    "id": "hard_text-007",
@@ -130,9 +130,9 @@
    "category": "grant",
    "text": "Congratulations, you have been selected to receive a $9,000 federal community grant. There is nothing to repay. A $150 verification fee by prepaid card is required to release the funds.",
    "verdict": "Scam",
-   "confidence": 0.97,
+   "confidence": 0.98,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 4.6
   },
   {
    "id": "hard_text-008",
@@ -142,7 +142,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 4.5
   },
   {
    "id": "hard_text-009",
@@ -152,7 +152,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 3.2
+   "seconds": 6.3
   },
   {
    "id": "hard_text-010",
@@ -160,9 +160,9 @@
    "category": "friendly_crypto",
    "text": "Hey! Long time no see. I started trading with this platform my aunt recommended and made a decent profit last month, happy to show you how it works if you're curious. No pressure!",
    "verdict": "Suspicious",
-   "confidence": 0.7,
+   "confidence": 0.65,
    "usage": {},
-   "seconds": 6.4
+   "seconds": 7.4
   },
   {
    "id": "hard_text-011",
@@ -172,7 +172,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 5.6
   },
   {
    "id": "hard_text-012",
@@ -180,9 +180,9 @@
    "category": "utility_portal",
    "text": "Your electric company has moved to a new online payment portal. To avoid any interruption of service, please re-enter your payment details at the new portal by Friday: https://srp-billing-portal.com/login",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.88,
    "usage": {},
-   "seconds": 6.6
+   "seconds": 5.8
   },
   {
    "id": "hard_text-013",
@@ -190,9 +190,9 @@
    "category": "hospital",
    "text": "Hello, I am calling from Banner Health. Your brother was admitted after an accident and needs a deposit before surgery. Can you wire $3,000 right now? I can give you the account number.",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.9
+   "seconds": 5.8
   },
   {
    "id": "hard_text-014",
@@ -202,7 +202,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 6.6
+   "seconds": 5.3
   },
   {
    "id": "hard_text-015",
@@ -212,7 +212,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 5.3
   },
   {
    "id": "hard_text-016",
@@ -220,9 +220,9 @@
    "category": "romance_med",
    "text": "Honey, my business trip hit a problem and my account is frozen here. Can you help me with $1,500 for the hotel until my bank fixes it? I will pay you back as soon as I'm home, I promise.",
    "verdict": "Suspicious",
-   "confidence": 0.65,
+   "confidence": 0.75,
    "usage": {},
-   "seconds": 7.2
+   "seconds": 15.0
   },
   {
    "id": "hard_text-017",
@@ -232,7 +232,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.1
+   "seconds": 5.4
   },
   {
    "id": "hard_text-018",
@@ -242,7 +242,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 4.8
   },
   {
    "id": "hard_text-019",
@@ -252,7 +252,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.4
+   "seconds": 5.3
   },
   {
    "id": "hard_text-020",
@@ -262,7 +262,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.1
+   "seconds": 5.3
   },
   {
    "id": "hard_text-021",
@@ -272,7 +272,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.2
+   "seconds": 7.6
   },
   {
    "id": "hard_text-022",
@@ -282,7 +282,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 4.2
   },
   {
    "id": "hard_text-023",
@@ -292,7 +292,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 8.1
+   "seconds": 9.2
   },
   {
    "id": "hard_text-024",
@@ -300,9 +300,9 @@
    "category": "password_expiry",
    "text": "ASU IT: Your password expires in 2 days. Change it at the ASU password page you reach through your MyASU account. IT will never ask for your password by email.",
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 4.1
   },
   {
    "id": "hard_text-025",
@@ -312,7 +312,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 9.1
+   "seconds": 8.0
   },
   {
    "id": "hard_text-026",
@@ -320,9 +320,9 @@
    "category": "labs",
    "text": "Banner Health: Your lab results are ready. Log in to your patient portal to view them. If you need help, call the number on your appointment card.",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.9
+   "seconds": 5.7
   },
   {
    "id": "hard_text-027",
@@ -330,9 +330,9 @@
    "category": "fraud_alert",
    "text": "Capital One: Did you make a $212.40 purchase at BEST BUY on Oct 25 with your card ending 1034? Reply YES or NO. We'll never ask for your full card number.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 7.2
+   "seconds": 6.0
   },
   {
    "id": "hard_text-028",
@@ -342,7 +342,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.7
+   "seconds": 6.4
   },
   {
    "id": "hard_text-029",
@@ -350,9 +350,9 @@
    "category": "apple_signin",
    "text": "Your Apple ID was used to sign in to iMessage on a new Mac. If this was you, you can ignore this message. If not, change your password at appleid.apple.com.",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 8.2
+   "seconds": 7.4
   },
   {
    "id": "hard_text-030",
@@ -362,7 +362,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.6
+   "seconds": 5.3
   },
   {
    "id": "hard_text-031",
@@ -372,7 +372,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.5
+   "seconds": 6.0
   },
   {
    "id": "hard_text-032",
@@ -380,9 +380,9 @@
    "category": "paypal_real",
    "text": "PayPal: You received $50.00 USD from Alex Chen. The money is in your PayPal balance. See details at paypal.com/activity.",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 6.8
+   "seconds": 7.0
   },
   {
    "id": "hard_text-033",
@@ -392,7 +392,7 @@
    "verdict": "Suspicious",
    "confidence": 0.6,
    "usage": {},
-   "seconds": 18.7
+   "seconds": 17.8
   },
   {
    "id": "hard_text-034",
@@ -400,9 +400,9 @@
    "category": "insurance_cancel",
    "text": "Geico: Your payment of $184.20 was declined. Your policy may lapse on Nov 1 if payment is not received. Update your payment method at geico.com or in the Geico app.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 8.2
+   "seconds": 6.9
   },
   {
    "id": "hard_text-035",
@@ -410,9 +410,9 @@
    "category": "tax_notice",
    "text": "Subject: IRS: Your Notice CP14 for tax year 2025 is available. Read it at irs.gov and review your payment options. The IRS will never demand payment by gift card or crypto.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 7.5
+   "seconds": 8.1
   },
   {
    "id": "hard_text-036",
@@ -422,7 +422,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.7
+   "seconds": 6.2
   },
   {
    "id": "hard_text-037",
@@ -432,7 +432,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.3
+   "seconds": 4.7
   },
   {
    "id": "hard_text-038",
@@ -442,7 +442,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.2
+   "seconds": 5.4
   },
   {
    "id": "hard_text-039",
@@ -450,9 +450,9 @@
    "category": "subscription_end",
    "text": "Spotify: Your Premium subscription ends tomorrow. Renew in the app under Account > Subscription at spotify.com/account.",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 6.2
+   "seconds": 5.9
   }
  ]
 }

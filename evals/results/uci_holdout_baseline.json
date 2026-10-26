@@ -6,50 +6,50 @@
   "lenient": {
    "n": 100,
    "errors": 0,
-   "accuracy": 0.98,
-   "precision": 0.98,
+   "accuracy": 0.96,
+   "precision": 0.942,
    "recall": 0.98,
-   "false_positive_rate": 0.02,
+   "false_positive_rate": 0.06,
    "recall_95ci": [
     0.895,
     0.996
    ],
    "fpr_95ci": [
-    0.004,
-    0.105
+    0.021,
+    0.162
    ],
-   "f1": 0.98,
+   "f1": 0.961,
    "confusion": {
     "tp": 49,
     "fn": 1,
-    "fp": 1,
-    "tn": 49
+    "fp": 3,
+    "tn": 47
    }
   },
   "strict": {
    "n": 100,
    "errors": 0,
-   "accuracy": 0.97,
-   "precision": 0.98,
-   "recall": 0.96,
+   "accuracy": 0.93,
+   "precision": 0.978,
+   "recall": 0.88,
    "false_positive_rate": 0.02,
    "recall_95ci": [
-    0.865,
-    0.989
+    0.762,
+    0.944
    ],
    "fpr_95ci": [
     0.004,
     0.105
    ],
-   "f1": 0.97,
+   "f1": 0.926,
    "confusion": {
-    "tp": 48,
-    "fn": 2,
+    "tp": 44,
+    "fn": 6,
     "fp": 1,
     "tn": 49
    }
   },
-  "median_seconds": 5.75,
+  "median_seconds": 4.8,
   "avg_tokens": 0,
   "avg_tool_calls": 0
  },
@@ -62,7 +62,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 5.4
   },
   {
    "id": "uci_holdout-001",
@@ -72,7 +72,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.4
+   "seconds": 7.8
   },
   {
    "id": "uci_holdout-002",
@@ -82,7 +82,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 9.8
+   "seconds": 5.5
   },
   {
    "id": "uci_holdout-003",
@@ -92,7 +92,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.2
+   "seconds": 6.3
   },
   {
    "id": "uci_holdout-004",
@@ -102,7 +102,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 9.7
+   "seconds": 10.0
   },
   {
    "id": "uci_holdout-005",
@@ -112,7 +112,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 10.7
+   "seconds": 7.8
   },
   {
    "id": "uci_holdout-006",
@@ -122,7 +122,7 @@
    "verdict": "Scam",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 13.7
+   "seconds": 9.3
   },
   {
    "id": "uci_holdout-007",
@@ -132,7 +132,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 6.5
   },
   {
    "id": "uci_holdout-008",
@@ -142,7 +142,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.0
+   "seconds": 5.1
   },
   {
    "id": "uci_holdout-009",
@@ -150,9 +150,9 @@
    "category": "uci_spam",
    "text": "U can WIN \u00a3100 of Music Gift Vouchers every week starting NOW Txt the word DRAW to 87066 TsCs www.ldew.com SkillGame,1Winaweek, age16.150ppermessSubscription",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 8.6
+   "seconds": 9.5
   },
   {
    "id": "uci_holdout-010",
@@ -172,7 +172,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 6.4
   },
   {
    "id": "uci_holdout-012",
@@ -182,17 +182,17 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.6
+   "seconds": 5.8
   },
   {
    "id": "uci_holdout-013",
    "label": "scam",
    "category": "uci_spam",
    "text": "To review and KEEP the fantastic Nokia N-Gage game deck with Club Nokia, go 2 www.cnupdates.com/newsletter. unsubscribe from alerts reply with the word OUT",
-   "verdict": "Scam",
-   "confidence": 0.85,
+   "verdict": "Suspicious",
+   "confidence": 0.65,
    "usage": {},
-   "seconds": 9.7
+   "seconds": 13.9
   },
   {
    "id": "uci_holdout-014",
@@ -202,7 +202,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 5.9
   },
   {
    "id": "uci_holdout-015",
@@ -212,7 +212,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.9
+   "seconds": 5.7
   },
   {
    "id": "uci_holdout-016",
@@ -220,9 +220,9 @@
    "category": "uci_spam",
    "text": "Hi 07734396839 IBH Customer Loyalty Offer: The NEW NOKIA6600 Mobile from ONLY \u00a310 at TXTAUCTION!Txt word:START to No:81151 & get Yours Now!4T&",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 7.0
+   "seconds": 5.8
   },
   {
    "id": "uci_holdout-017",
@@ -232,17 +232,17 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.6
+   "seconds": 7.1
   },
   {
    "id": "uci_holdout-018",
    "label": "scam",
    "category": "uci_spam",
    "text": "goldviking (29/M) is inviting you to be his friend. Reply YES-762 or NO-762 See him: www.SMS.ac/u/goldviking STOP? Send STOP FRND to 62468",
-   "verdict": "Scam",
-   "confidence": 0.85,
+   "verdict": "Suspicious",
+   "confidence": 0.8,
    "usage": {},
-   "seconds": 15.8
+   "seconds": 18.9
   },
   {
    "id": "uci_holdout-019",
@@ -250,9 +250,9 @@
    "category": "uci_spam",
    "text": "Sunshine Quiz Wkly Q! Win a top Sony DVD player if u know which country the Algarve is in? Txt ansr to 82277. \u00a31.50 SP:Tyrone",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 6.5
+   "seconds": 13.3
   },
   {
    "id": "uci_holdout-020",
@@ -262,7 +262,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 8.7
   },
   {
    "id": "uci_holdout-021",
@@ -272,7 +272,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.5
+   "seconds": 9.1
   },
   {
    "id": "uci_holdout-022",
@@ -280,19 +280,19 @@
    "category": "uci_spam",
    "text": "URGENT! We are trying to contact U. Todays draw shows that you have won a \u00a3800 prize GUARANTEED. Call 09050001295 from land line. Claim A21. Valid 12hrs only",
    "verdict": "Scam",
-   "confidence": 0.98,
+   "confidence": 0.97,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 3.8
   },
   {
    "id": "uci_holdout-023",
    "label": "scam",
    "category": "uci_spam",
    "text": "Do you want 750 anytime any network mins 150 text and a NEW video phone for only five pounds per week call 08000776320 now or reply for delivery Tomorrow",
-   "verdict": "Suspicious",
-   "confidence": 0.75,
+   "verdict": "Scam",
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 8.6
+   "seconds": 5.9
   },
   {
    "id": "uci_holdout-024",
@@ -302,7 +302,7 @@
    "verdict": "Scam",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 6.6
+   "seconds": 6.0
   },
   {
    "id": "uci_holdout-025",
@@ -312,17 +312,17 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.4
+   "seconds": 5.7
   },
   {
    "id": "uci_holdout-026",
    "label": "scam",
    "category": "uci_spam",
    "text": "Gr8 Poly tones 4 ALL mobs direct 2u rply with POLY TITLE to 8007 eg POLY BREATHE1 Titles: CRAZYIN, SLEEPINGWITH, FINEST, YMCA :getzed.co.uk POBox365O4W45WQ 300p",
-   "verdict": "Scam",
-   "confidence": 0.85,
+   "verdict": "Suspicious",
+   "confidence": 0.75,
    "usage": {},
-   "seconds": 12.1
+   "seconds": 7.9
   },
   {
    "id": "uci_holdout-027",
@@ -342,7 +342,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.4
+   "seconds": 5.0
   },
   {
    "id": "uci_holdout-029",
@@ -350,9 +350,9 @@
    "category": "uci_spam",
    "text": "Hi I'm sue. I am 20 years old and work as a lapdancer. I love sex. Text me live - I'm i my bedroom now. text SUE to 89555. By TextOperator G2 1DA 150ppmsg 18+",
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 10.9
+   "seconds": 4.6
   },
   {
    "id": "uci_holdout-030",
@@ -362,7 +362,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 4.7
   },
   {
    "id": "uci_holdout-031",
@@ -370,9 +370,9 @@
    "category": "uci_spam",
    "text": "Knock Knock Txt whose there to 80082 to enter r weekly draw 4 a \u00a3250 gift voucher 4 a store of yr choice. T&Cs www.tkls.com age16 to stoptxtstop\u00a31.50/week",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 10.7
+   "seconds": 6.2
   },
   {
    "id": "uci_holdout-032",
@@ -382,7 +382,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 7.0
+   "seconds": 6.0
   },
   {
    "id": "uci_holdout-033",
@@ -392,7 +392,7 @@
    "verdict": "Scam",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 11.1
+   "seconds": 9.8
   },
   {
    "id": "uci_holdout-034",
@@ -400,9 +400,9 @@
    "category": "uci_spam",
    "text": "Shop till u Drop, IS IT YOU, either 10K, 5K, \u00a3500 Cash or \u00a3100 Travel voucher, Call now, 09064011000. NTT PO Box CR01327BT fixedline Cost 150ppm mobile vary",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 5.2
   },
   {
    "id": "uci_holdout-035",
@@ -412,7 +412,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.6
+   "seconds": 3.3
   },
   {
    "id": "uci_holdout-036",
@@ -420,9 +420,9 @@
    "category": "uci_spam",
    "text": "Thanks for your subscription to Ringtone UK your mobile will be charged \u00a35/month Please confirm by replying YES or NO. If you reply NO you will not be charged",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 8.7
+   "seconds": 5.1
   },
   {
    "id": "uci_holdout-037",
@@ -430,19 +430,19 @@
    "category": "uci_spam",
    "text": "8007 25p 4 Alfie Moon's Children in Need song on ur mob. Tell ur m8s. Txt TONE CHARITY to 8007 for nokias or POLY CHARITY for polys :zed 08701417012 profit 2 charity ",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.8,
    "usage": {},
-   "seconds": 12.1
+   "seconds": 6.4
   },
   {
    "id": "uci_holdout-038",
    "label": "scam",
    "category": "uci_spam",
    "text": "RT-KIng Pro Video Club>> Need help? info@ringtoneking.co.uk or call 08701237397 You must be 16+ Club credits redeemable at www.ringtoneking.co.uk! Enjoy!",
-   "verdict": "Scam",
-   "confidence": 0.9,
+   "verdict": "Suspicious",
+   "confidence": 0.6,
    "usage": {},
-   "seconds": 16.9
+   "seconds": 10.8
   },
   {
    "id": "uci_holdout-039",
@@ -450,9 +450,9 @@
    "category": "uci_spam",
    "text": "EASTENDERS TV Quiz. What FLOWER does DOT compare herself to? D= VIOLET E= TULIP F= LILY txt D E or F to 84025 NOW 4 chance 2 WIN \u00a3100 Cash WKENT/150P16+",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 9.7
+   "seconds": 6.4
   },
   {
    "id": "uci_holdout-040",
@@ -460,9 +460,9 @@
    "category": "uci_spam",
    "text": "Gr8 new service - live sex video chat on your mob - see the sexiest dirtiest girls live on ur phone - 4 details text horny to 89070 to cancel send STOP to 89070",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 7.6
+   "seconds": 4.2
   },
   {
    "id": "uci_holdout-041",
@@ -470,9 +470,9 @@
    "category": "uci_spam",
    "text": "22 days to kick off! For Euro2004 U will be kept up to date with the latest news and results daily. To be removed send GET TXT STOP to 83222",
    "verdict": "Scam",
-   "confidence": 0.85,
+   "confidence": 0.89,
    "usage": {},
-   "seconds": 12.2
+   "seconds": 6.1
   },
   {
    "id": "uci_holdout-042",
@@ -480,9 +480,9 @@
    "category": "uci_spam",
    "text": "Refused a loan? Secured or Unsecured? Can't get credit? Call free now 0800 195 6669 or text back 'help' & we will!",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 9.9
+   "seconds": 8.0
   },
   {
    "id": "uci_holdout-043",
@@ -492,7 +492,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 4.9
   },
   {
    "id": "uci_holdout-044",
@@ -502,7 +502,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.2
+   "seconds": 5.4
   },
   {
    "id": "uci_holdout-045",
@@ -512,7 +512,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 3.2
   },
   {
    "id": "uci_holdout-046",
@@ -522,17 +522,17 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 5.6
   },
   {
    "id": "uci_holdout-047",
    "label": "scam",
    "category": "uci_spam",
    "text": "HOT LIVE FANTASIES call now 08707509020 Just 20p per min NTT Ltd, PO Box 1327 Croydon CR9 5WB 0870 is a national rate call",
-   "verdict": "Scam",
-   "confidence": 0.85,
+   "verdict": "Suspicious",
+   "confidence": 0.75,
    "usage": {},
-   "seconds": 11.3
+   "seconds": 12.3
   },
   {
    "id": "uci_holdout-048",
@@ -542,7 +542,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.9
+   "seconds": 3.3
   },
   {
    "id": "uci_holdout-049",
@@ -550,9 +550,9 @@
    "category": "uci_spam",
    "text": "WIN a year supply of CDs 4 a store of ur choice worth \u00a3500 & enter our \u00a3100 Weekly draw txt MUSIC to 87066 Ts&Cs www.Ldew.com.subs16+1win150ppmx3",
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 7.4
+   "seconds": 4.5
   },
   {
    "id": "uci_holdout-050",
@@ -562,7 +562,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 3.1
   },
   {
    "id": "uci_holdout-051",
@@ -570,7 +570,7 @@
    "category": "uci_ham",
    "text": "Wait 2 min..stand at bus stop",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
    "seconds": 4.5
   },
@@ -580,9 +580,9 @@
    "category": "uci_ham",
    "text": "I want to be inside you every night...",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 5.9
+   "seconds": 4.1
   },
   {
    "id": "uci_holdout-053",
@@ -590,9 +590,9 @@
    "category": "uci_ham",
    "text": "Jus finished avatar nigro",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 3.5
   },
   {
    "id": "uci_holdout-054",
@@ -600,9 +600,9 @@
    "category": "uci_ham",
    "text": "Dear how is chechi. Did you talk to her",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 3.8
   },
   {
    "id": "uci_holdout-055",
@@ -610,9 +610,9 @@
    "category": "uci_ham",
    "text": "I want to send something that can sell fast.  &lt;#&gt; k is not easy money.",
    "verdict": "Looks Safe",
-   "confidence": 0.8,
+   "confidence": 0.6,
    "usage": {},
-   "seconds": 8.4
+   "seconds": 4.5
   },
   {
    "id": "uci_holdout-056",
@@ -622,17 +622,17 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.3
+   "seconds": 4.2
   },
   {
    "id": "uci_holdout-057",
    "label": "legit",
    "category": "uci_ham",
    "text": "Just seeing your missed call my dear brother. Do have a gr8 day.",
-   "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "verdict": "Suspicious",
+   "confidence": 0.6,
    "usage": {},
-   "seconds": 5.6
+   "seconds": 7.8
   },
   {
    "id": "uci_holdout-058",
@@ -642,7 +642,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 3.4
   },
   {
    "id": "uci_holdout-059",
@@ -650,9 +650,9 @@
    "category": "uci_ham",
    "text": "No plans yet. What are you doing ?",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 7.2
+   "seconds": 3.4
   },
   {
    "id": "uci_holdout-060",
@@ -660,9 +660,9 @@
    "category": "uci_ham",
    "text": "Lovely smell on this bus and it ain't tobacco... ",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.99,
    "usage": {},
-   "seconds": 3.6
+   "seconds": 2.7
   },
   {
    "id": "uci_holdout-061",
@@ -670,19 +670,19 @@
    "category": "uci_ham",
    "text": "Finally it has happened..! Aftr decades..! BEER is now cheaper than PETROL! The goverment expects us to \"DRINK\". . . But don't \"DRIVE \"",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.99,
    "usage": {},
-   "seconds": 6.3
+   "seconds": 3.1
   },
   {
    "id": "uci_holdout-062",
    "label": "legit",
    "category": "uci_ham",
    "text": "My sort code is  and acc no is . The bank is natwest. Can you reply to confirm i've sent this to the right person!",
-   "verdict": "Looks Safe",
-   "confidence": 0.8,
+   "verdict": "Suspicious",
+   "confidence": 0.65,
    "usage": {},
-   "seconds": 10.9
+   "seconds": 7.8
   },
   {
    "id": "uci_holdout-063",
@@ -692,7 +692,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.6
+   "seconds": 5.1
   },
   {
    "id": "uci_holdout-064",
@@ -702,7 +702,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 3.1
   },
   {
    "id": "uci_holdout-065",
@@ -712,7 +712,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.8
+   "seconds": 3.1
   },
   {
    "id": "uci_holdout-066",
@@ -720,9 +720,9 @@
    "category": "uci_ham",
    "text": "Haf u eaten? Wat time u wan me 2 come?",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 5.0
+   "seconds": 6.0
   },
   {
    "id": "uci_holdout-067",
@@ -732,7 +732,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.4
+   "seconds": 2.5
   },
   {
    "id": "uci_holdout-068",
@@ -742,7 +742,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.0
+   "seconds": 4.8
   },
   {
    "id": "uci_holdout-069",
@@ -752,7 +752,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.6
+   "seconds": 2.9
   },
   {
    "id": "uci_holdout-070",
@@ -762,7 +762,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.6
+   "seconds": 2.5
   },
   {
    "id": "uci_holdout-071",
@@ -772,7 +772,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 2.7
   },
   {
    "id": "uci_holdout-072",
@@ -782,7 +782,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.6
+   "seconds": 4.0
   },
   {
    "id": "uci_holdout-073",
@@ -790,9 +790,9 @@
    "category": "uci_ham",
    "text": "....photoshop makes my computer shut down.",
    "verdict": "Looks Safe",
-   "confidence": 0.99,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 3.9
+   "seconds": 2.4
   },
   {
    "id": "uci_holdout-074",
@@ -802,7 +802,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 3.4
+   "seconds": 3.7
   },
   {
    "id": "uci_holdout-075",
@@ -812,7 +812,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 3.7
   },
   {
    "id": "uci_holdout-076",
@@ -822,7 +822,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.99,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 3.2
   },
   {
    "id": "uci_holdout-077",
@@ -832,7 +832,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 14.1
+   "seconds": 2.4
   },
   {
    "id": "uci_holdout-078",
@@ -840,9 +840,9 @@
    "category": "uci_ham",
    "text": "Well thats nice. Too bad i cant eat it",
    "verdict": "Looks Safe",
-   "confidence": 0.99,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 5.4
+   "seconds": 2.4
   },
   {
    "id": "uci_holdout-079",
@@ -852,7 +852,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 3.0
   },
   {
    "id": "uci_holdout-080",
@@ -862,7 +862,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 3.4
   },
   {
    "id": "uci_holdout-081",
@@ -870,9 +870,9 @@
    "category": "uci_ham",
    "text": "S:-)if we have one good partnership going we will take lead:)",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.8,
    "usage": {},
-   "seconds": 9.3
+   "seconds": 5.2
   },
   {
    "id": "uci_holdout-082",
@@ -880,9 +880,9 @@
    "category": "uci_ham",
    "text": "I've told you everything will stop. Just dont let her get dehydrated.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 6.2
+   "seconds": 6.0
   },
   {
    "id": "uci_holdout-083",
@@ -892,7 +892,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 6.0
   },
   {
    "id": "uci_holdout-084",
@@ -902,7 +902,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 4.8
   },
   {
    "id": "uci_holdout-085",
@@ -912,7 +912,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.0
+   "seconds": 3.5
   },
   {
    "id": "uci_holdout-086",
@@ -922,7 +922,7 @@
    "verdict": "Scam",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 3.7
   },
   {
    "id": "uci_holdout-087",
@@ -932,7 +932,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 4.0
   },
   {
    "id": "uci_holdout-088",
@@ -940,9 +940,9 @@
    "category": "uci_ham",
    "text": "For real tho this sucks. I can't even cook my whole electricity is out. And I'm hungry.",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 4.0
   },
   {
    "id": "uci_holdout-089",
@@ -952,7 +952,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 2.4
   },
   {
    "id": "uci_holdout-090",
@@ -962,7 +962,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.8
+   "seconds": 2.3
   },
   {
    "id": "uci_holdout-091",
@@ -972,7 +972,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.5
+   "seconds": 3.2
   },
   {
    "id": "uci_holdout-092",
@@ -982,7 +982,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.0
+   "seconds": 4.8
   },
   {
    "id": "uci_holdout-093",
@@ -990,9 +990,9 @@
    "category": "uci_ham",
    "text": "Wishing you a beautiful day. Each moment revealing even more things to keep you smiling. Do enjoy it.",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.98,
    "usage": {},
-   "seconds": 5.7
+   "seconds": 2.8
   },
   {
    "id": "uci_holdout-094",
@@ -1000,9 +1000,9 @@
    "category": "uci_ham",
    "text": "K..k..i'm also fine:)when will you complete the course?",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 3.7
   },
   {
    "id": "uci_holdout-095",
@@ -1010,9 +1010,9 @@
    "category": "uci_ham",
    "text": "FRAN I DECIDED 2 GO N E WAY IM COMPLETELY BROKE AN KNACKERED I GOT UP BOUT 3 C U 2MRW LOVE JANX P.S THIS IS MY DADS FONE, -NO CREDIT",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 3.5
   },
   {
    "id": "uci_holdout-096",
@@ -1022,7 +1022,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.9
+   "seconds": 2.8
   },
   {
    "id": "uci_holdout-097",
@@ -1032,7 +1032,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.99,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 3.3
   },
   {
    "id": "uci_holdout-098",
@@ -1040,9 +1040,9 @@
    "category": "uci_ham",
    "text": "Y?WHERE U AT DOGBREATH? ITS JUST SOUNDING LIKE JAN C THAT\u0092S AL!!!!!!!!!",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 3.6
   },
   {
    "id": "uci_holdout-099",
@@ -1050,9 +1050,9 @@
    "category": "uci_ham",
    "text": "Also fuck you and your family for going to rhode island or wherever the fuck and leaving me all alone the week I have a new bong &gt;:(",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 3.2
   }
  ]
 }

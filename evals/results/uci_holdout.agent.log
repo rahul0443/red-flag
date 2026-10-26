@@ -5,51 +5,53 @@
  "lenient": {
   "n": 100,
   "errors": 0,
-  "accuracy": 0.99,
-  "precision": 0.98,
+  "accuracy": 0.97,
+  "precision": 0.943,
   "recall": 1.0,
-  "false_positive_rate": 0.02,
+  "false_positive_rate": 0.06,
   "recall_95ci": [
    0.929,
    1
   ],
   "fpr_95ci": [
-   0.004,
-   0.105
+   0.021,
+   0.162
   ],
-  "f1": 0.99,
+  "f1": 0.971,
   "confusion": {
    "tp": 50,
    "fn": 0,
-   "fp": 1,
-   "tn": 49
+   "fp": 3,
+   "tn": 47
   }
  },
  "strict": {
   "n": 100,
   "errors": 0,
-  "accuracy": 0.59,
+  "accuracy": 0.56,
   "precision": 1.0,
-  "recall": 0.18,
+  "recall": 0.12,
   "false_positive_rate": 0.0,
   "recall_95ci": [
-   0.098,
-   0.308
+   0.056,
+   0.238
   ],
   "fpr_95ci": [
    0,
    0.071
   ],
-  "f1": 0.305,
+  "f1": 0.214,
   "confusion": {
-   "tp": 9,
-   "fn": 41,
+   "tp": 6,
+   "fn": 44,
    "fp": 0,
    "tn": 50
   }
  },
- "median_seconds": 14.1,
- "avg_tokens": 6748,
- "avg_tool_calls": 0.7
+ "median_seconds": 13.3,
+ "avg_tokens": 7395,
+ "avg_tool_calls": 0.79
 }
+MISS [legit->Suspicious] uci_holdout-062 uci_ham: "My sort code is  and acc no is . The bank is natwest. Can you reply to confirm i've sent t" 
 MISS [legit->Suspicious] uci_holdout-064 uci_ham: "Hey elaine, is today's meeting still on?" 
+MISS [legit->Suspicious] uci_holdout-086 uci_ham: 'There are no other charges after transfer charges and you can withdraw anyhow you like' 

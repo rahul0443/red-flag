@@ -5,24 +5,24 @@
  "lenient": {
   "n": 60,
   "errors": 0,
-  "accuracy": 0.983,
-  "precision": 0.968,
+  "accuracy": 0.933,
+  "precision": 0.882,
   "recall": 1.0,
-  "false_positive_rate": 0.033,
+  "false_positive_rate": 0.133,
   "recall_95ci": [
    0.886,
    1
   ],
   "fpr_95ci": [
-   0.006,
-   0.167
+   0.053,
+   0.297
   ],
-  "f1": 0.984,
+  "f1": 0.937,
   "confusion": {
    "tp": 30,
    "fn": 0,
-   "fp": 1,
-   "tn": 29
+   "fp": 4,
+   "tn": 26
   }
  },
  "strict": {
@@ -48,8 +48,11 @@
    "tn": 30
   }
  },
- "median_seconds": 6.2,
+ "median_seconds": 5.0,
  "avg_tokens": 0,
  "avg_tool_calls": 0
 }
+MISS [legit->Suspicious] live-003 live_twin_Facebook: 'Facebook: Your account statement is ready to view: https://www.facebook.com/settings' 
 MISS [legit->Suspicious] live-015 live_twin_Facebook: 'Facebook notice: a document was shared with you. Open it here: https://www.facebook.com/se' 
+MISS [legit->Suspicious] live-039 live_twin_Roblox: 'Roblox notice: a document was shared with you. Open it here: https://www.roblox.com/home' 
+MISS [legit->Suspicious] live-053 live_twin_MetaMask: 'Hi, a quick note from MetaMask support about your account. Please take a look when you hav' 

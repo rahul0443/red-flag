@@ -4,6 +4,7 @@ import json
 import logging
 import os
 import threading
+from contextlib import asynccontextmanager
 import time
 
 import anyio
@@ -22,12 +23,23 @@ WEB = Path(__file__).resolve().parent.parent.parent / "web"
 app = FastAPI(title="Red Flag")
 
 
+@asynccontextmanager
+async def _lifespan(_):
+    """Fetch the phishing feed once at boot so the first user does not wait for it."""
+    from redflag.tools.blocklists import _load_openphish
+    threading.Thread(target=_load_openphish, daemon=True).start()
+    yield
+
+
+app.router.lifespan_context = _lifespan
+
+
 class TextIn(BaseModel):
     text: str = Field(min_length=1, max_length=4000)
 
 
 log = logging.getLogger("redflag")
-MAX_CONCURRENT = 4          # investigations running at once (protects API credits)
+MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", "6"))          # investigations running at once (protects API credits)
 PER_IP_PER_MIN = int(os.getenv("PER_IP_PER_MIN", "12"))
 LEASE_S = 240               # a slot frees itself after this long, even if a client vanished mid-stream
 _active: dict[object, float] = {}
@@ -84,6 +96,11 @@ async def _sse(events, request: Request):
             yield chunk
         return
     tok = _acquire()
+    for _ in range(50):  # queue for up to 25 s instead of turning people away
+        if tok is not None:
+            break
+        await anyio.sleep(0.5)
+        tok = _acquire()
     if tok is None:
         for chunk in _one({"type": "error", "message": "Red Flag is busy right now. Try again in a few seconds."}):
             yield chunk

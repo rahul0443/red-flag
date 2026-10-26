@@ -21,16 +21,16 @@ def get_client() -> OpenAI:
     return OpenAI(api_key=config.API_KEY, base_url=config.BASE_URL, max_retries=2, timeout=60)
 
 
-def get_glimmer_client() -> OpenAI:
-    if not config.GLIMMER_API_KEY:
-        raise RuntimeError("GLIMMER_API_KEY is empty")
-    return OpenAI(api_key=config.GLIMMER_API_KEY, base_url=config.GLIMMER_BASE_URL, max_retries=1, timeout=40)
+def get_open_client() -> OpenAI:
+    if not config.BASETEN_API_KEY:
+        raise RuntimeError("BASETEN_API_KEY is empty")
+    return OpenAI(api_key=config.BASETEN_API_KEY, base_url=config.OPEN_BASE_URL, max_retries=1, timeout=40)
 
 
 def agent_client_and_model():
     """Client and model name for the investigation loop, chosen by AGENT_BACKEND."""
-    if config.AGENT_BACKEND == "glimmer":
-        return get_glimmer_client(), config.GLIMMER_MODEL
+    if config.AGENT_BACKEND == "open":
+        return get_open_client(), config.OPEN_MODEL
     return get_client(), config.MODEL
 
 

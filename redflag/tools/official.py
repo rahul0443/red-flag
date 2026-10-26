@@ -47,14 +47,17 @@ def _root(host: str) -> str:
 
 
 def official_contact_check(brand: str, observed_url_or_domain: str = "") -> dict:
-    key = brand.lower().strip()
-    entry = next((v for k, v in BRANDS.items() if k in key or key in k), None)
+    brand = str(brand or "")
+    key = brand.lower().strip()[:80]
+    entry = next((v for k, v in BRANDS.items() if k in key or (len(key) >= 3 and key in k)), None) if key else None
     if not entry:
         return {"brand": brand, "known": False,
                 "note": "Brand not in curated list; verify via the company's own website typed manually or the number on your card/statement."}
     out = {"brand": brand, "known": True, "official_domains": entry["domains"], "company_policy": entry["facts"]}
     if observed_url_or_domain:
-        host = urlparse(observed_url_or_domain if "//" in observed_url_or_domain else "//" + observed_url_or_domain).hostname or ""
+        from redflag.tools.safety import host_of
+        obs = str(observed_url_or_domain)[:500]
+        host = host_of(obs if "//" in obs else "//" + obs)
         match = _root(host) in entry["domains"]
         out.update(observed_domain=host, matches_official_domain=match)
     return out

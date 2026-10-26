@@ -27,6 +27,14 @@ def get_open_client() -> OpenAI:
     return OpenAI(api_key=config.BASETEN_API_KEY, base_url=config.OPEN_BASE_URL, max_retries=1, timeout=40)
 
 
+def backends() -> list[tuple]:
+    """Ordered (client, model, label) choices for the agent loop: the configured one first, the other as failover."""
+    spark = (lambda: (get_client(), config.MODEL, "Muse Spark")) if config.API_KEY else None
+    open_ = (lambda: (get_open_client(), config.OPEN_MODEL, "Muse Spark Open")) if config.BASETEN_API_KEY else None
+    order = [open_, spark] if config.AGENT_BACKEND == "open" else [spark, open_]
+    return [f() for f in order if f]
+
+
 def agent_client_and_model():
     """Client and model name for the investigation loop, chosen by AGENT_BACKEND."""
     if config.AGENT_BACKEND == "open":

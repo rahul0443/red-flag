@@ -32,11 +32,11 @@ Play 5 seconds of the voicemail: "Muse Voice Transcribe turns a scam voicemail i
 
 **1:50-2:25 It's measured, and honest**
 Show the eval table (agent vs. no-tools baseline, with confidence intervals).
-"On 279 held-out and hand-built messages the agent has zero false alarms on look-alike legitimate messages. I also found that Muse Spark alone is already strong, so the agent's value is evidence you can verify, not a bigger number. I report both."
+"Across 179 hand-built and live-phishing messages, the agent raised zero false alarms on 90 look-alike legitimate messages; Muse Spark with no tools raised five. I also found that Muse Spark alone is already strong, so the agent's value is evidence you can verify, not a bigger number. I report both."
 (Use the final numbers from `evals/results/` only.)
 
 **2:25-2:50 Meta stack**
-Muse Spark (reasoning + tool calling + vision), Muse Voice Transcribe, Muse Glimmer 30B fine-tuned for instant first-pass triage and served on Modal (open weights, Apache-2.0).
+Muse Spark (reasoning + tool calling + vision), Muse Voice Transcribe, and the same agent running on open-weight Muse Spark Open served by Baseten: show the "Open-weight first look" line in the timeline. Be upfront that the open model catches the scams but raises more false alarms (README table).
 
 **2:50-3:00 Close**
 "Red Flag never contacts scammers and never sends your data to a link. Forward a message, get proof. Open source, link below."

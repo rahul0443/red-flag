@@ -5,6 +5,8 @@ import logging
 import os
 import threading
 import time
+
+import anyio
 from collections import defaultdict, deque
 from pathlib import Path
 
@@ -27,7 +29,26 @@ class TextIn(BaseModel):
 log = logging.getLogger("redflag")
 MAX_CONCURRENT = 4          # investigations running at once (protects API credits)
 PER_IP_PER_MIN = int(os.getenv("PER_IP_PER_MIN", "12"))
-_slots = threading.BoundedSemaphore(MAX_CONCURRENT)
+LEASE_S = 240               # a slot frees itself after this long, even if a client vanished mid-stream
+_active: dict[object, float] = {}
+_lock = threading.Lock()
+
+
+def _acquire():
+    now = time.time()
+    with _lock:
+        for k in [k for k, t in _active.items() if now - t > LEASE_S]:
+            del _active[k]
+        if len(_active) >= MAX_CONCURRENT:
+            return None
+        tok = object()
+        _active[tok] = now
+        return tok
+
+
+def _release(tok):
+    with _lock:
+        _active.pop(tok, None)
 _hits: dict[str, deque] = defaultdict(deque)
 
 
@@ -44,17 +65,35 @@ def _one(ev):
     yield 'data: {"type": "done"}\n\n'
 
 
-def _sse(events, request: Request):
-    """Stream events. User-facing errors are plain sentences; internal details go to the server log only."""
+_END = object()
+
+
+def _next(it):
+    try:
+        return next(it)
+    except StopIteration:
+        return _END
+
+
+async def _sse(events, request: Request):
+    """Stream events. User-facing errors are plain sentences; internal details go to the server log only.
+    Async so that a client that disconnects cancels this generator and frees its slot at once."""
     ip = request.client.host if request.client else "?"
     if _limited(ip):
-        yield from _one({"type": "error", "message": "Too many checks in a minute. Wait a moment and try again."})
+        for chunk in _one({"type": "error", "message": "Too many checks in a minute. Wait a moment and try again."}):
+            yield chunk
         return
-    if not _slots.acquire(blocking=False):
-        yield from _one({"type": "error", "message": "Red Flag is busy right now. Try again in a few seconds."})
+    tok = _acquire()
+    if tok is None:
+        for chunk in _one({"type": "error", "message": "Red Flag is busy right now. Try again in a few seconds."}):
+            yield chunk
         return
     try:
-        for ev in events:
+        it = iter(events)
+        while True:
+            ev = await anyio.to_thread.run_sync(_next, it, abandon_on_cancel=True)
+            if ev is _END:
+                break
             yield f"data: {json.dumps(ev, default=str)}\n\n"
     except ValueError as e:  # expected, user-fixable problems raised with a readable message
         yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
@@ -62,7 +101,7 @@ def _sse(events, request: Request):
         log.exception("investigation failed")
         yield f"data: {json.dumps({'type': 'error', 'message': 'Something went wrong on our side. Please try again.'})}\n\n"
     finally:
-        _slots.release()
+        _release(tok)
     yield 'data: {"type": "done"}\n\n'
 
 

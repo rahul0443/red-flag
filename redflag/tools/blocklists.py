@@ -13,8 +13,9 @@ def _load_openphish():
     if time.time() - _cache["ts"] < 3600 and _cache["urls"]:
         return
     try:
-        r = httpx.get("https://openphish.com/feed.txt", timeout=10)
-        urls = {u.strip().lower() for u in r.text.splitlines() if u.strip()}
+        r = httpx.get("https://openphish.com/feed.txt", timeout=15, follow_redirects=True)
+        r.raise_for_status()
+        urls = {u.strip().lower() for u in r.text.splitlines() if u.strip().lower().startswith("http")}
         _cache.update(ts=time.time(), urls=urls, hosts={urlparse(u).hostname for u in urls})
     except httpx.HTTPError:
         _cache["ts"] = time.time()

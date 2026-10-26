@@ -1,0 +1,43 @@
+{
+ "set": "uci_sample",
+ "mode": "baseline",
+ "model": "muse-spark-1.3",
+ "lenient": {
+  "n": 80,
+  "errors": 0,
+  "accuracy": 0.938,
+  "precision": 0.949,
+  "recall": 0.925,
+  "false_positive_rate": 0.05,
+  "f1": 0.937,
+  "confusion": {
+   "tp": 37,
+   "fn": 3,
+   "fp": 2,
+   "tn": 38
+  }
+ },
+ "strict": {
+  "n": 80,
+  "errors": 0,
+  "accuracy": 0.887,
+  "precision": 1.0,
+  "recall": 0.775,
+  "false_positive_rate": 0.0,
+  "f1": 0.873,
+  "confusion": {
+   "tp": 31,
+   "fn": 9,
+   "fp": 0,
+   "tn": 40
+  }
+ },
+ "median_seconds": 4.7,
+ "avg_tokens": 0,
+ "avg_tool_calls": 0
+}
+MISS [scam->Looks Safe] uci_sample-005 uci_spam: "Do you realize that in about 40 years, we'll have thousands of old ladies running around w" 
+MISS [scam->Looks Safe] uci_sample-007 uci_spam: 'Buy Space Invaders 4 a chance 2 win orig Arcade Game console. Press 0 for Games Arcade (st' 
+MISS [scam->Looks Safe] uci_sample-028 uci_spam: "Hello from Orange. For 1 month's free access to games, news and sport, plus 10 free texts " 
+MISS [legit->Suspicious] uci_sample-049 uci_ham: 'Tell me again what your address is' 
+MISS [legit->Suspicious] uci_sample-071 uci_ham: 'I dont thnk its a wrong calling between us' 

@@ -1,0 +1,40 @@
+{
+ "set": "hard_text",
+ "mode": "baseline",
+ "model": "muse-spark-1.3",
+ "lenient": {
+  "n": 39,
+  "errors": 1,
+  "accuracy": 0.974,
+  "precision": 0.952,
+  "recall": 1.0,
+  "false_positive_rate": 0.053,
+  "f1": 0.975,
+  "confusion": {
+   "tp": 20,
+   "fn": 0,
+   "fp": 1,
+   "tn": 18
+  }
+ },
+ "strict": {
+  "n": 39,
+  "errors": 1,
+  "accuracy": 0.923,
+  "precision": 1.0,
+  "recall": 0.85,
+  "false_positive_rate": 0.0,
+  "f1": 0.919,
+  "confusion": {
+   "tp": 17,
+   "fn": 3,
+   "fp": 0,
+   "tn": 19
+  }
+ },
+ "median_seconds": 4.8,
+ "avg_tokens": 0,
+ "avg_tool_calls": 0
+}
+MISS [legit->ERROR] hard_text-025 final_pickup: 'USPS: Final notice. Your package could not be delivered and is being held at the Mesa Post' RuntimeError: Reply hit MAX_TOKENS (reasoning counts too). Raise MAX_TOKENS in .env.
+MISS [legit->Suspicious] hard_text-033 amazon_verify: "Amazon: Your order #112-4488201 needs your attention: the delivery address couldn't be ver" 

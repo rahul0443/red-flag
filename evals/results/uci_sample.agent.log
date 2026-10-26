@@ -1,0 +1,53 @@
+{
+ "set": "uci_sample",
+ "mode": "agent",
+ "model": "muse-spark-1.3",
+ "lenient": {
+  "n": 80,
+  "errors": 0,
+  "accuracy": 0.812,
+  "precision": 0.778,
+  "recall": 0.875,
+  "false_positive_rate": 0.25,
+  "f1": 0.824,
+  "confusion": {
+   "tp": 35,
+   "fn": 5,
+   "fp": 10,
+   "tn": 30
+  }
+ },
+ "strict": {
+  "n": 80,
+  "errors": 0,
+  "accuracy": 0.838,
+  "precision": 1.0,
+  "recall": 0.675,
+  "false_positive_rate": 0.0,
+  "f1": 0.806,
+  "confusion": {
+   "tp": 27,
+   "fn": 13,
+   "fp": 0,
+   "tn": 40
+  }
+ },
+ "median_seconds": 11.8,
+ "avg_tokens": 5400,
+ "avg_tool_calls": 0.72
+}
+MISS [scam->Looks Safe] uci_sample-001 uci_spam: 'SMS SERVICES For your inclusive text credits pls gotto www.comuk.net login 3qxj9 unsubscri' 
+MISS [scam->Looks Safe] uci_sample-005 uci_spam: "Do you realize that in about 40 years, we'll have thousands of old ladies running around w" 
+MISS [scam->Looks Safe] uci_sample-007 uci_spam: 'Buy Space Invaders 4 a chance 2 win orig Arcade Game console. Press 0 for Games Arcade (st' 
+MISS [scam->Looks Safe] uci_sample-011 uci_spam: 'SMS SERVICES. for your inclusive text credits, pls goto www.comuk.net login= 3qxj9 unsubsc' 
+MISS [scam->Looks Safe] uci_sample-028 uci_spam: "Hello from Orange. For 1 month's free access to games, news and sport, plus 10 free texts " 
+MISS [legit->Suspicious] uci_sample-042 uci_ham: 'U coming back 4 dinner rite? Dad ask me so i re confirm wif u...' 
+MISS [legit->Suspicious] uci_sample-045 uci_ham: 'Mmm so yummy babe ... Nice jolt to the suzy' 
+MISS [legit->Suspicious] uci_sample-047 uci_ham: 'Eh ur laptop got no stock lei... He say mon muz come again to take a look c got a not...' 
+MISS [legit->Suspicious] uci_sample-049 uci_ham: 'Tell me again what your address is' 
+MISS [legit->Suspicious] uci_sample-056 uci_ham: 'Jus finish watching tv... U?' 
+MISS [legit->Suspicious] uci_sample-059 uci_ham: "I've been trying to reach him without success" 
+MISS [legit->Suspicious] uci_sample-060 uci_ham: 'I just cooked a rather nice salmon a la you' 
+MISS [legit->Suspicious] uci_sample-062 uci_ham: 'Why you Dint come with us.' 
+MISS [legit->Suspicious] uci_sample-067 uci_ham: 'Are you planning to come chennai?' 
+MISS [legit->Suspicious] uci_sample-071 uci_ham: 'I dont thnk its a wrong calling between us' 

@@ -1,0 +1,38 @@
+{
+ "set": "live_pairs",
+ "mode": "agent",
+ "model": "muse-spark-1.3",
+ "lenient": {
+  "n": 60,
+  "errors": 0,
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "false_positive_rate": 0.0,
+  "f1": 1.0,
+  "confusion": {
+   "tp": 30,
+   "fn": 0,
+   "fp": 0,
+   "tn": 30
+  }
+ },
+ "strict": {
+  "n": 60,
+  "errors": 0,
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "false_positive_rate": 0.0,
+  "f1": 1.0,
+  "confusion": {
+   "tp": 30,
+   "fn": 0,
+   "fp": 0,
+   "tn": 30
+  }
+ },
+ "median_seconds": 12.05,
+ "avg_tokens": 6713,
+ "avg_tool_calls": 3.8
+}

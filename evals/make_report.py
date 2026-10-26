@@ -62,5 +62,10 @@ for s, title in SETS:
     for m in ("baseline", "agent"):
         out.append(f"| {title} | {m} | {pct(load(s, m)['summary']['strict']['recall'])} |")
 out += ["", "The agent reserves 'Scam' for concrete evidence; polite scams with nothing checkable are returned as 'Suspicious'. That is a deliberate calibration, and it lowers strict recall.", ""]
+out += ["", "## Same agent on open-weight Muse Spark Open (Baseten)", "", "Identical prompt, tools and sets; only the model changes (AGENT_BACKEND=open). The prompt was tuned on closed Muse Spark, not on this model.", "", "| Set | n | Accuracy | Scam recall | False-positive rate (95% CI) |", "|---|---|---|---|---|"]
+for s, title in SETS:
+    d = json.load(open(R / f"{s}_agent_open.json")); L = d["summary"]["lenient"]; tp, fn, fp, tn = counts(d); lo, hi = wilson(fp, fp + tn)
+    out.append(f"| {title} | {L['n']} | {pct(L['accuracy'])} | {pct(L['recall'])} | {pct(L['false_positive_rate'])} ({pct(lo)}-{pct(hi)}) |")
+out += ["", "The open model finds the scams but is less calibrated than closed Muse Spark: it raises more false alarms on legitimate and casual messages. It shows the agent runs end to end on open weights; closed Muse Spark remains the default.", ""]
 (Path(__file__).parent / "RESULTS.md").write_text("\n".join(out))
 print("\n".join(out))

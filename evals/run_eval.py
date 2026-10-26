@@ -76,7 +76,7 @@ def main():
         results = list(ex.map(lambda r: run_one(r, a.mode), rows))
     secs = [r["seconds"] for r in results if r["verdict"] != "ERROR"]
     toks = [r["usage"].get("prompt_tokens", 0) + r["usage"].get("completion_tokens", 0) for r in results]
-    summary = {"set": a.set, "mode": a.mode, "model": __import__("redflag.config", fromlist=["x"]).MODEL,
+    summary = {"set": a.set, "mode": a.mode, "model": (lambda c: c.OPEN_MODEL if c.AGENT_BACKEND == "open" and a.mode == "agent" else c.MODEL)(__import__("redflag.config", fromlist=["x"])),
                "lenient": metrics(results), "strict": metrics(results, strict=True),
                "median_seconds": statistics.median(secs) if secs else None,
                "avg_tokens": round(sum(toks) / len(toks)) if toks else None,

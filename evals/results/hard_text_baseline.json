@@ -29,27 +29,27 @@
   "strict": {
    "n": 40,
    "errors": 0,
-   "accuracy": 0.925,
+   "accuracy": 0.975,
    "precision": 1.0,
-   "recall": 0.85,
+   "recall": 0.95,
    "false_positive_rate": 0.0,
    "recall_95ci": [
-    0.64,
-    0.948
+    0.764,
+    0.991
    ],
    "fpr_95ci": [
     0,
     0.161
    ],
-   "f1": 0.919,
+   "f1": 0.974,
    "confusion": {
-    "tp": 17,
-    "fn": 3,
+    "tp": 19,
+    "fn": 1,
     "fp": 0,
     "tn": 20
    }
   },
-  "median_seconds": 5.95,
+  "median_seconds": 6.949999999999999,
   "avg_tokens": 0,
   "avg_tool_calls": 0
  },
@@ -72,7 +72,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.0
+   "seconds": 5.2
   },
   {
    "id": "hard_text-002",
@@ -82,7 +82,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 7.5
+   "seconds": 6.1
   },
   {
    "id": "hard_text-003",
@@ -92,7 +92,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.7
+   "seconds": 8.6
   },
   {
    "id": "hard_text-004",
@@ -100,19 +100,19 @@
    "category": "wire_closing",
    "text": "Hello, this is Dana at Hartley Title. Please note our wire instructions have changed for your closing on Friday. Updated routing and account numbers are attached. Kindly wire the $48,200 down payment by Thursday noon.",
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 6.8
+   "seconds": 6.0
   },
   {
    "id": "hard_text-005",
    "label": "scam",
    "category": "vendor_bank",
    "text": "Hi Accounts Payable, please update our remittance details for invoice #7741. Our new bank information is attached. Kindly confirm once changed and process the $12,480 payment this week.",
-   "verdict": "Suspicious",
-   "confidence": 0.85,
+   "verdict": "Scam",
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 11.6
+   "seconds": 20.9
   },
   {
    "id": "hard_text-006",
@@ -122,7 +122,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.6
+   "seconds": 5.5
   },
   {
    "id": "hard_text-007",
@@ -132,7 +132,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 3.9
   },
   {
    "id": "hard_text-008",
@@ -142,7 +142,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 7.1
   },
   {
    "id": "hard_text-009",
@@ -152,7 +152,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.3
+   "seconds": 5.9
   },
   {
    "id": "hard_text-010",
@@ -162,7 +162,7 @@
    "verdict": "Suspicious",
    "confidence": 0.65,
    "usage": {},
-   "seconds": 7.4
+   "seconds": 9.6
   },
   {
    "id": "hard_text-011",
@@ -170,9 +170,9 @@
    "category": "package_address",
    "text": "Your package from Amazon could not be delivered because the address is incomplete. Please reply with your full address and the card on file so we can reship.",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 5.6
+   "seconds": 8.2
   },
   {
    "id": "hard_text-012",
@@ -180,9 +180,9 @@
    "category": "utility_portal",
    "text": "Your electric company has moved to a new online payment portal. To avoid any interruption of service, please re-enter your payment details at the new portal by Friday: https://srp-billing-portal.com/login",
    "verdict": "Scam",
-   "confidence": 0.88,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 10.1
   },
   {
    "id": "hard_text-013",
@@ -190,9 +190,9 @@
    "category": "hospital",
    "text": "Hello, I am calling from Banner Health. Your brother was admitted after an accident and needs a deposit before surgery. Can you wire $3,000 right now? I can give you the account number.",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 6.5
   },
   {
    "id": "hard_text-014",
@@ -202,7 +202,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 4.8
   },
   {
    "id": "hard_text-015",
@@ -212,17 +212,17 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 6.2
   },
   {
    "id": "hard_text-016",
    "label": "scam",
    "category": "romance_med",
    "text": "Honey, my business trip hit a problem and my account is frozen here. Can you help me with $1,500 for the hotel until my bank fixes it? I will pay you back as soon as I'm home, I promise.",
-   "verdict": "Suspicious",
-   "confidence": 0.75,
+   "verdict": "Scam",
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 15.0
+   "seconds": 16.9
   },
   {
    "id": "hard_text-017",
@@ -232,7 +232,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.4
+   "seconds": 10.2
   },
   {
    "id": "hard_text-018",
@@ -242,7 +242,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 4.9
   },
   {
    "id": "hard_text-019",
@@ -252,7 +252,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 4.5
   },
   {
    "id": "hard_text-020",
@@ -260,9 +260,9 @@
    "category": "bank_lock_real",
    "text": "Chase: We locked your card ending 4421 after unusual activity. Call the number on the back of your card or visit chase.com/fraud. We will never ask for your PIN or full card number.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 6.8
   },
   {
    "id": "hard_text-021",
@@ -272,7 +272,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.6
+   "seconds": 9.1
   },
   {
    "id": "hard_text-022",
@@ -282,7 +282,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 4.7
   },
   {
    "id": "hard_text-023",
@@ -290,9 +290,9 @@
    "category": "service_notice",
    "text": "Verizon: Your account is past due $87.30. To avoid service suspension on Nov 3, pay at verizon.com/myverizon or in the My Verizon app.",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 9.2
+   "seconds": 17.6
   },
   {
    "id": "hard_text-024",
@@ -300,9 +300,9 @@
    "category": "password_expiry",
    "text": "ASU IT: Your password expires in 2 days. Change it at the ASU password page you reach through your MyASU account. IT will never ask for your password by email.",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.1
+   "seconds": 6.1
   },
   {
    "id": "hard_text-025",
@@ -310,9 +310,9 @@
    "category": "final_pickup",
    "text": "USPS: Final notice. Your package could not be delivered and is being held at the Mesa Post Office through Nov 2. Bring a photo ID to pick it up.",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 8.0
+   "seconds": 8.8
   },
   {
    "id": "hard_text-026",
@@ -330,9 +330,9 @@
    "category": "fraud_alert",
    "text": "Capital One: Did you make a $212.40 purchase at BEST BUY on Oct 25 with your card ending 1034? Reply YES or NO. We'll never ask for your full card number.",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 8.7
   },
   {
    "id": "hard_text-028",
@@ -342,7 +342,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.4
+   "seconds": 6.6
   },
   {
    "id": "hard_text-029",
@@ -352,7 +352,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.4
+   "seconds": 9.2
   },
   {
    "id": "hard_text-030",
@@ -362,7 +362,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 6.5
   },
   {
    "id": "hard_text-031",
@@ -372,7 +372,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 7.4
   },
   {
    "id": "hard_text-032",
@@ -382,7 +382,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.0
+   "seconds": 7.6
   },
   {
    "id": "hard_text-033",
@@ -390,9 +390,9 @@
    "category": "amazon_verify",
    "text": "Amazon: Your order #112-4488201 needs your attention: the delivery address couldn't be verified. Update it in Your Orders at amazon.com/your-orders within 24 hours.",
    "verdict": "Suspicious",
-   "confidence": 0.6,
+   "confidence": 0.62,
    "usage": {},
-   "seconds": 17.8
+   "seconds": 11.7
   },
   {
    "id": "hard_text-034",
@@ -402,7 +402,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 6.9
+   "seconds": 5.9
   },
   {
    "id": "hard_text-035",
@@ -410,9 +410,9 @@
    "category": "tax_notice",
    "text": "Subject: IRS: Your Notice CP14 for tax year 2025 is available. Read it at irs.gov and review your payment options. The IRS will never demand payment by gift card or crypto.",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 8.1
+   "seconds": 12.9
   },
   {
    "id": "hard_text-036",
@@ -422,7 +422,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.2
+   "seconds": 6.1
   },
   {
    "id": "hard_text-037",
@@ -432,7 +432,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 6.2
   },
   {
    "id": "hard_text-038",
@@ -440,9 +440,9 @@
    "category": "employer_hr",
    "text": "Subject: Action required: complete your I-9 verification by Friday. Bring your documents to the HR office in Tempe, 2nd floor, or use the HR portal you were given at orientation.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 5.4
+   "seconds": 8.0
   },
   {
    "id": "hard_text-039",
@@ -450,9 +450,9 @@
    "category": "subscription_end",
    "text": "Spotify: Your Premium subscription ends tomorrow. Renew in the app under Account > Subscription at spotify.com/account.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 5.9
+   "seconds": 11.0
   }
  ]
 }

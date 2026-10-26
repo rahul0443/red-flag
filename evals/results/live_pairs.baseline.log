@@ -48,11 +48,11 @@
    "tn": 30
   }
  },
- "median_seconds": 5.0,
+ "median_seconds": 7.800000000000001,
  "avg_tokens": 0,
  "avg_tool_calls": 0
 }
-MISS [legit->Suspicious] live-003 live_twin_Facebook: 'Facebook: Your account statement is ready to view: https://www.facebook.com/settings' 
+MISS [legit->Suspicious] live-007 live_twin_Xfinity: 'Xfinity notice: a document was shared with you. Open it here: https://www.xfinity.com/mobi' 
 MISS [legit->Suspicious] live-015 live_twin_Facebook: 'Facebook notice: a document was shared with you. Open it here: https://www.facebook.com/se' 
+MISS [legit->Suspicious] live-023 live_twin_MetaMask: 'MetaMask notice: a document was shared with you. Open it here: https://docs.metamask.io/' 
 MISS [legit->Suspicious] live-039 live_twin_Roblox: 'Roblox notice: a document was shared with you. Open it here: https://www.roblox.com/home' 
-MISS [legit->Suspicious] live-053 live_twin_MetaMask: 'Hi, a quick note from MetaMask support about your account. Please take a look when you hav' 

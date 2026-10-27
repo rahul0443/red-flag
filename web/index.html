@@ -124,6 +124,11 @@ body.running .examples,body.running .fine,body.done .fine{display:none}
 .win .tb span{margin-left:8px;font:12px var(--mono);color:var(--mute);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .win img{display:block;width:100%}
 .cap{font-size:12.5px;color:var(--mute);margin-top:8px}
+.agree{margin-top:14px;font-size:14px;color:var(--mute);display:flex;gap:8px;align-items:center}
+.agree b{color:var(--text);font-weight:600}.agree.no{color:var(--orange)}
+.report{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.report a{display:inline-block;margin:6px 8px 0 0;font-size:14px;color:var(--blue);text-decoration:none;border:1px solid var(--line2);border-radius:999px;padding:6px 13px}
+.report a:hover{background:var(--blue-bg)}
 /* log */
 .log{list-style:none;margin:0;padding:0}
 .log li{display:flex;gap:12px;padding:9px 0;font-size:14.5px;line-height:1.45;animation:rise .35s cubic-bezier(.2,.8,.2,1)}
@@ -222,7 +227,7 @@ const VICON={
 const TOOLS=[["expand_url","Follow the link",I.link],["rdap_lookup","Domain age",I.cal],["check_blocklists","Phishing lists",I.list],["official_contact_check","Real company",I.co],["inspect_link_sandbox","Safe browser",I.box],["triage","Open-weight second opinion",I.open]];
 const LABEL={expand_url:"Following the link",rdap_lookup:"Checking domain registration",check_blocklists:"Checking phishing lists",official_contact_check:"Comparing with the real company",inspect_link_sandbox:"Opening the link in an isolated browser"};
 const ta=$("msg"),stage=$("stage"),logEl=$("log");
-let busy=false,clockT=null,t0=0,lastVerdict=null,lastText="";
+let busy=false,clockT=null,t0=0,lastVerdict=null,lastText="",triageV=null;
 
 /* ---------- composer ---------- */
 function sync(){
@@ -236,7 +241,7 @@ function setBusy(b){busy=b;["imgBtn","audBtn","recBtn"].forEach(id=>{if(!(id==="
 
 /* ---------- case view ---------- */
 function resetCase(){
- logEl.innerHTML="";stage.innerHTML="";lastVerdict=null;
+ logEl.innerHTML="";stage.innerHTML="";lastVerdict=null;triageV=null;
  $("checks").innerHTML=TOOLS.map(([k,n,ic])=>`<div class="check" id="ck-${k}"><div class="ic">${ic}</div><div><div class="nm">${n}</div><div class="st">Waiting</div></div></div>`).join("");
  stage.innerHTML=`<div class="card wait"><div><div class="orb"></div><b>Investigating</b>Checking links, domains and the real company</div></div>`;
  document.body.className="running";t0=Date.now();clearInterval(clockT);
@@ -273,7 +278,7 @@ function handle(ev){
  if(t==="extracting"){log("","Reading",`<span>${ev.source==="voicemail"?"Muse Voice Transcribe is listening":"Muse Spark is reading the image"}</span>`);caseText(ev.source==="voicemail"?"Transcribing voicemail…":"Reading screenshot…")}
  else if(t==="extracted"){caseText(ev.text);log("res",ev.source==="voicemail"?"Transcript":"Text in screenshot",`<div class="quote">${esc(ev.text)}</div>`)}
  else if(t==="start"){log("","Message received",ev.urls_found?.length?`<span>${ev.urls_found.length} link${ev.urls_found.length>1?"s":""}: ${ev.urls_found.slice(0,3).map(u=>`<code>${esc(u)}</code>`).join(" ")}</span>`:"<span>No links found. Checking wording and claims.</span>");if(!ev.urls_found?.length)["expand_url","rdap_lookup","check_blocklists","inspect_link_sandbox"].forEach(k=>setCheck(k,"skip","No link to check",I.dash))}
- else if(t==="triage"){setCheck("triage",ev.verdict==="Looks Safe"?"ok":ev.verdict==="Scam"?"bad":"warn",`${ev.verdict||"?"} · ${(ev.latency_ms/1000).toFixed(1)}s on open weights`,ev.verdict==="Looks Safe"?I.ok:ev.verdict==="Scam"?I.x:I.bang);log("res","Open-weight second opinion",`<span><b>${esc(ev.verdict||"?")}</b> in ${(ev.latency_ms/1000).toFixed(1)}s from <code>${esc(ev.model)}</code>, served by Baseten</span>`)}
+ else if(t==="triage"){triageV=ev.verdict;renderAgree();setCheck("triage",ev.verdict==="Looks Safe"?"ok":ev.verdict==="Scam"?"bad":"warn",`${ev.verdict||"?"} · ${(ev.latency_ms/1000).toFixed(1)}s on open weights`,ev.verdict==="Looks Safe"?I.ok:ev.verdict==="Scam"?I.x:I.bang);log("res","Open-weight second opinion",`<span><b>${esc(ev.verdict||"?")}</b> in ${(ev.latency_ms/1000).toFixed(1)}s from <code>${esc(ev.model)}</code>, served by Baseten</span>`)}
  else if(t==="thought")log("",'Thinking',`<div class="think">${esc(ev.text)}</div>`);
  else if(t==="tool_call"){setCheck(ev.tool,"run","Checking…",I.spin);log("tool",LABEL[ev.tool]||ev.tool,`<code>${esc(ev.args.url||ev.args.domain||ev.args.brand||"")}</code>`)}
  else if(t==="tool_result"){checkFromResult(ev.tool,ev.result);log("res","Result",result(ev.tool,ev.result))}
@@ -288,21 +293,32 @@ function finish(v){
  const ev=(v.evidence||[]).map(e=>`<li><span class="dot ${esc(e.severity)}"></span><div>${esc(e.finding)}<span class="src">${esc(e.source)}</span></div></li>`).join("");
  stage.innerHTML=`<div class="card verdict ${k}" role="status"><div class="vhead"><div class="gauge"><svg viewBox="0 0 96 96"><circle class="tr" cx="48" cy="48" r="42"/><circle class="fg" id="fg" cx="48" cy="48" r="42"/></svg><div class="ico">${VICON[k]}</div></div><div><div class="vtitle">${esc(v.verdict)}</div><div class="vconf">${pct}% confident · ${Math.round((Date.now()-t0)/1000)} seconds</div></div></div>
  <div class="vbody"><p class="sum">${esc(v.summary)}</p>${v.tactics?.length?`<div class="chips">${v.tactics.map(x=>`<span class="chip t">${esc(x)}</span>`).join("")}</div>`:""}
- <div class="advice"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><div><b>What to do</b><span>${esc(v.advice)}</span></div></div>
+ <div class="agree" id="agree"></div><div class="advice"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg><div><b>What to do</b><span>${esc(v.advice)}</span></div></div>
  ${shot?`<div class="shotbox"><div class="evh" style="margin-top:0">What the link opens</div><div class="win"><div class="tb"><i></i><i></i><i></i><span>Isolated browser</span></div><img alt="The page the link opens" src="${shot.src}"></div><div class="cap">Captured inside an isolated cloud browser. Nothing was opened on your device.</div></div>`:""}
  ${ev?`<div class="evh">Evidence</div><ul class="ev">${ev}</ul>`:""}
- <div class="actions"><button class="btn2" id="copyBtn">Copy report</button><button class="btn2" id="againBtn">Check another</button></div></div></div>`;
+ ${k!=="Safe"?`<div class="report"><div class="evh" style="margin:0">Report it (US)</div><a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener noreferrer">FTC ReportFraud</a><a href="https://www.ic3.gov" target="_blank" rel="noopener noreferrer">FBI IC3</a><a href="sms:7726" rel="noopener">Forward the text to 7726</a></div>`:""}
+ <div class="actions"><button class="btn2" id="copyBtn">Copy report</button>${navigator.share?'<button class="btn2" id="shareBtn">Share</button>':""}<button class="btn2" id="againBtn">Check another</button></div></div></div>`;
+ renderAgree();
  requestAnimationFrame(()=>requestAnimationFrame(()=>{$("fg").style.strokeDashoffset=264*(1-Math.max(.04,v.confidence||0))}));
- $("copyBtn").onclick=copyReport;$("againBtn").onclick=again;
+ $("copyBtn").onclick=copyReport;$("againBtn").onclick=again;if($("shareBtn"))$("shareBtn").onclick=()=>navigator.share({title:"Red Flag verdict",text:reportText()}).catch(()=>{});
  stage.scrollIntoView({behavior:"smooth",block:"start"})}
 function fail(msg){
  clearInterval(clockT);document.body.className="done";
  stage.innerHTML=`<div class="card"><div class="errcard"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20zM12 10v4M12 17v.01"/></svg><div><b>We could not check that</b><p>${esc(msg)}</p><div class="actions" style="margin-top:16px"><button class="btn2" id="againBtn">Try again</button></div></div></div></div>`;
  $("againBtn").onclick=again}
 function again(){document.body.className="";stage.innerHTML="";window.scrollTo({top:0,behavior:"smooth"});ta.focus()}
+function renderAgree(){
+ const el=$("agree");if(!el||!lastVerdict||!triageV)return;
+ const same=triageV===lastVerdict.verdict,flag=x=>x==="Looks Safe"?0:1,close=same||flag(triageV)===flag(lastVerdict.verdict);
+ el.className="agree"+(close?"":" no");
+ el.innerHTML=same?`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>Two models agree.</b> Muse Spark and open-weight Muse Spark Open both say ${esc(triageV)}.</span>`
+  :close?`<span>Open-weight Muse Spark Open said <b>${esc(triageV)}</b>; both models flag it as a risk.</span>`
+  :`<span><b>The models disagree.</b> Open-weight Muse Spark Open said ${esc(triageV)}. Treat this message with extra caution.</span>`}
+function reportText(){
+ const v=lastVerdict;if(!v)return"";
+ return`Red Flag verdict: ${v.verdict} (${Math.round((v.confidence||0)*100)}% confident)\n${v.summary}\n\nEvidence:\n${(v.evidence||[]).map(e=>`- [${e.severity}] ${e.finding} (${e.source})`).join("\n")}\n\nWhat to do: ${v.advice}\n\nMessage checked:\n${lastText}`}
 function copyReport(){
- const v=lastVerdict;if(!v)return;
- const txt=`Red Flag verdict: ${v.verdict} (${Math.round((v.confidence||0)*100)}% confident)\n${v.summary}\n\nEvidence:\n${(v.evidence||[]).map(e=>`- [${e.severity}] ${e.finding} (${e.source})`).join("\n")}\n\nWhat to do: ${v.advice}\n\nMessage checked:\n${lastText}`;
+ const txt=reportText();if(!txt)return;
  navigator.clipboard.writeText(txt).then(()=>{$("copyBtn").textContent="Copied";setTimeout(()=>{const b=$("copyBtn");if(b)b.textContent="Copy report"},1800)},()=>{})}
 
 /* ---------- transport ---------- */

@@ -1,0 +1,64 @@
+{
+ "set": "uci_holdout",
+ "mode": "agent",
+ "model": "meta-models/muse-spark-open-1026",
+ "lenient": {
+  "n": 100,
+  "errors": 0,
+  "accuracy": 0.9,
+  "precision": 0.845,
+  "recall": 0.98,
+  "false_positive_rate": 0.18,
+  "recall_95ci": [
+   0.895,
+   0.996
+  ],
+  "fpr_95ci": [
+   0.098,
+   0.308
+  ],
+  "f1": 0.908,
+  "confusion": {
+   "tp": 49,
+   "fn": 1,
+   "fp": 9,
+   "tn": 41
+  }
+ },
+ "strict": {
+  "n": 100,
+  "errors": 0,
+  "accuracy": 0.73,
+  "precision": 1.0,
+  "recall": 0.46,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.33,
+   0.596
+  ],
+  "fpr_95ci": [
+   0,
+   0.071
+  ],
+  "f1": 0.63,
+  "confusion": {
+   "tp": 23,
+   "fn": 27,
+   "fp": 0,
+   "tn": 50
+  }
+ },
+ "median_seconds": 10.15,
+ "avg_tokens": 11615,
+ "avg_tool_calls": 1.55
+}
+MISS [scam->Looks Safe] uci_holdout-037 uci_spam: "8007 25p 4 Alfie Moon's Children in Need song on ur mob. Tell ur m8s. Txt TONE CHARITY to " 
+MISS [legit->Suspicious] uci_holdout-060 uci_ham: "Lovely smell on this bus and it ain't tobacco... " 
+MISS [legit->Suspicious] uci_holdout-062 uci_ham: "My sort code is  and acc no is . The bank is natwest. Can you reply to confirm i've sent t" 
+MISS [legit->Suspicious] uci_holdout-063 uci_ham: 'Remember all those whom i hurt during days of satanic imposter in me.need to pay a price,s' 
+MISS [legit->Suspicious] uci_holdout-064 uci_ham: "Hey elaine, is today's meeting still on?" 
+MISS [legit->Suspicious] uci_holdout-071 uci_ham: "It's fine, imma get a drink or somethin. Want me to come find you?" 
+MISS [legit->Suspicious] uci_holdout-077 uci_ham: 'HEY MATE! HOWS U HONEY?DID U AVE GOOD HOLIDAY? GIMMI DE GOSS!x' 
+MISS [legit->Suspicious] uci_holdout-086 uci_ham: 'There are no other charges after transfer charges and you can withdraw anyhow you like' 
+MISS [legit->Suspicious] uci_holdout-097 uci_ham: 'Simply sitting and watching match in office..' 
+MISS [legit->Suspicious] uci_holdout-099 uci_ham: 'Also fuck you and your family for going to rhode island or wherever the fuck and leaving m' 

@@ -62,3 +62,20 @@ def test_lookalike_signals_fire(host, expect):
 @pytest.mark.parametrize("host", ["www.paypal.com", "secure.usps.com", "www.chase.com", "wikipedia.org", "example.com", ""])
 def test_lookalike_signals_quiet_on_real_domains(host):
     assert domain_signals(host) == []
+
+
+@pytest.mark.parametrize("host,root", [("account.adobe.com", "adobe.com"), ("www.paypal.com", "paypal.com"), ("a.b.c.example.co.uk", "example.co.uk"),
+                                       ("example.com", "example.com"), ("x.usps-fee.top", "usps-fee.top"), ("shop.site.com.au", "site.com.au")])
+def test_registrable_root(host, root):
+    from redflag.tools.official import _root
+    assert _root(host) == root
+
+
+def test_rdap_queries_registrable_domain_not_subdomain(monkeypatch):
+    import redflag.tools.rdap as rd
+    seen = []
+    class R:
+        status_code = 404
+    monkeypatch.setattr(rd.httpx, "get", lambda url, **kw: (seen.append(url), R())[1])
+    rd.rdap_lookup("account.adobe.com")
+    assert seen == ["https://rdap.org/domain/adobe.com"]

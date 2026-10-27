@@ -124,6 +124,29 @@ def _sandbox_target(urls: list[str]) -> str | None:
     return None
 
 
+def _brands_in(message: str) -> list[str]:
+    """Brands from our curated list that the message names, so their official details can be fetched before the model asks."""
+    from redflag.tools.official import BRANDS
+    low = message.lower()
+    return [k for k in BRANDS if re.search(rf"(?<![a-z0-9]){re.escape(k)}(?![a-z0-9])", low)][:2]
+
+
+def _prefetch_jobs(message: str, urls: list[str]) -> list[tuple[str, dict]]:
+    """Cheap, safe, read-only checks that nearly every investigation needs. Running them at once, before the
+    first model call, lets the model decide with the evidence already in hand instead of spending a round asking."""
+    from redflag.tools.safety import host_of
+    jobs: list[tuple[str, dict]] = []
+    for u in urls[:2]:
+        jobs += [("expand_url", {"url": u}), ("check_blocklists", {"url": u})]
+        if host_of(u):
+            jobs.append(("rdap_lookup", {"domain": host_of(u)}))
+    first = host_of(urls[0]) if urls else ""
+    for b in _brands_in(message):
+        jobs.append(("official_contact_check", {"brand": b, "observed_url_or_domain": first}))
+    from redflag.tools.registry import _DISABLED
+    return [(n, a) for n, a in jobs if n in DISPATCH and n not in _DISABLED]
+
+
 def _run_tool(name: str, args: dict, sandbox_used: set) -> dict:
     fn = DISPATCH.get(name)
     if name == "inspect_link_sandbox" and sandbox_used:
@@ -168,6 +191,25 @@ def investigate(message: str, source: str = "text") -> Iterator[dict]:
         stop.set()
 
 
+def _effort(label: str, have_evidence: bool) -> str:
+    if label.endswith("Open"):
+        return config.OPEN_REASONING_EFFORT
+    return config.REASONING_EFFORT if have_evidence else config.NO_EVIDENCE_EFFORT
+
+
+def _cached_run(name: str, args: dict, sandbox_used: set, ran: dict) -> dict:
+    """Same tool with the same arguments is never run twice in one investigation."""
+    if name == "inspect_link_sandbox":
+        return _run_tool(name, args, sandbox_used)
+    try:
+        key = (name, json.dumps(args, sort_keys=True))
+    except TypeError:
+        return _run_tool(name, args, sandbox_used)
+    if key not in ran:
+        ran[key] = _run_tool(name, args, sandbox_used)
+    return dict(ran[key]) if isinstance(ran[key], dict) else ran[key]
+
+
 def _investigate(message: str, source: str, emit) -> Iterator[dict]:
     bk = backends()
     if not bk:
@@ -178,11 +220,31 @@ def _investigate(message: str, source: str, emit) -> Iterator[dict]:
     urls = extract_urls(message)
     yield {"type": "start", "source": source, "urls_found": urls}
 
-    user = f"<message>\n{message[:4000]}\n</message>\nURLs detected in the message: {urls or 'none'}"
-    msgs = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}]
     usage = {"prompt_tokens": 0, "completion_tokens": 0, "llm_calls": 0, "tool_calls": 0}
     sandbox_used: set = set()
     flags: dict = {}
+    ran: dict = {}  # (tool, args) -> result, so a repeated call is answered from memory
+
+    pre = []
+    if config.PREFETCH and not bk[0][2].endswith("Open"):  # measured: the open model over-flags legitimate messages when handed this evidence up front
+        jobs = _prefetch_jobs(message, urls)
+        for name, args in jobs:
+            usage["tool_calls"] += 1
+            yield {"type": "tool_call", "step": 0, "tool": name, "args": args}
+        if jobs:
+            with ThreadPoolExecutor(max_workers=len(jobs)) as pool0:
+                futs = {pool0.submit(_run_tool, n, a, set()): (n, a) for n, a in jobs}
+                for fut in as_completed(futs):
+                    n, a = futs[fut]
+                    r = fut.result()
+                    ran[(n, json.dumps(a, sort_keys=True))] = r
+                    _track(flags, n, r)
+                    pre.append({"tool": n, "args": a, "result": r})
+                    yield {"type": "tool_result", "step": 0, "tool": n, "result": r}
+    evidence = ("\nTool results already collected for you (do not repeat these; call a tool only if something is still unclear, "
+                "otherwise call submit_verdict):\n" + _trim(pre, 6000)) if pre else ""
+    user = f"<message>\n{message[:4000]}\n</message>\nURLs detected in the message: {urls or 'none'}{evidence}"
+    msgs = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}]
     sb = {"fut": None, "reported": True}
     target = _sandbox_target(urls) if "inspect_link_sandbox" in DISPATCH_ENABLED() else None
     if target:
@@ -242,7 +304,8 @@ def _investigate(message: str, source: str, emit) -> Iterator[dict]:
         while resp is None:
             client, model, label = bk[bi]
             try:
-                resp = client.chat.completions.create(model=model, max_tokens=config.MAX_TOKENS, messages=msgs, **kwargs)
+                resp = client.chat.completions.create(model=model, max_tokens=config.MAX_TOKENS, messages=msgs,
+                                                      extra_body={"reasoning_effort": _effort(label, bool(pre))}, **kwargs)
             except Exception as e:  # rate limit, outage, timeout, bad request: fail over once, then degrade gracefully
                 log.warning("model call failed on %s: %s", label, type(e).__name__)
                 if bi + 1 < len(bk):
@@ -299,7 +362,7 @@ def _investigate(message: str, source: str, emit) -> Iterator[dict]:
             yield {"type": "tool_call", "step": step, "tool": name, "args": args}
         results = {}
         with ThreadPoolExecutor(max_workers=len(calls)) as pool:
-            futures = {pool.submit(_run_tool, name, args, sandbox_used): t.id for t, name, args in calls}
+            futures = {pool.submit(_cached_run, name, args, sandbox_used, ran): t.id for t, name, args in calls}
             names = {t.id: name for t, name, _ in calls}
             for fut in as_completed(futures):
                 tid = futures[fut]

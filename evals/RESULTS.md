@@ -5,24 +5,24 @@ Positive = flagged (verdict Scam or Suspicious). Intervals are 95% Wilson. Gener
 | Set | Arm | n | Accuracy | Scam recall | False-positive rate (95% CI) | Median time | Avg tokens |
 |---|---|---|---|---|---|---|---|
 | Benchmark (hand-written, 39 scam / 40 legit) | Muse Spark, no tools | 79 | 98.7% | 97.4% | 0.0% (0.0%-8.8%) | 4s | 0 |
-| Benchmark (hand-written, 39 scam / 40 legit) | Red Flag agent | 79 | 98.7% | 100.0% | 2.5% (0.4%-12.9%) | 9s | 6510 |
+| Benchmark (hand-written, 39 scam / 40 legit) | Red Flag agent | 79 | 100.0% | 100.0% | 0.0% (0.0%-8.8%) | 4s | 4076 |
 | Hard text (polite scams vs urgent-sounding legit) | Muse Spark, no tools | 40 | 97.5% | 100.0% | 5.0% (0.9%-23.6%) | 7s | 0 |
-| Hard text (polite scams vs urgent-sounding legit) | Red Flag agent | 40 | 100.0% | 100.0% | 0.0% (0.0%-16.1%) | 20s | 6995 |
+| Hard text (polite scams vs urgent-sounding legit) | Red Flag agent | 40 | 100.0% | 100.0% | 0.0% (0.0%-16.1%) | 6s | 5214 |
 | Live phishing pairs (OpenPhish snapshot vs real-brand twin) | Muse Spark, no tools | 60 | 93.3% | 100.0% | 13.3% (5.3%-29.7%) | 8s | 0 |
-| Live phishing pairs (OpenPhish snapshot vs real-brand twin) | Red Flag agent | 60 | 100.0% | 100.0% | 0.0% (0.0%-11.4%) | 15s | 7021 |
+| Live phishing pairs (OpenPhish snapshot vs real-brand twin) | Red Flag agent | 60 | 100.0% | 100.0% | 0.0% (0.0%-11.4%) | 3s | 3359 |
 | UCI SMS held-out (public, spam not scam) | Muse Spark, no tools | 100 | 97.0% | 98.0% | 4.0% (1.1%-13.5%) | 9s | 0 |
-| UCI SMS held-out (public, spam not scam) | Red Flag agent | 100 | 99.0% | 100.0% | 2.0% (0.4%-10.5%) | 13s | 5991 |
+| UCI SMS held-out (public, spam not scam) | Red Flag agent | 100 | 98.0% | 100.0% | 4.0% (1.1%-13.5%) | 6s | 4603 |
 
 ## Pooled over benchmark + hard text + live pairs (the sets that contain realistic scams and look-alike legitimate messages)
 
 - **No-tools baseline**: 5 false alarms on 90 legitimate messages (5.6%, CI 2.4%-12.4%); caught 88 of 89 scams.
-- **Red Flag agent**: 1 false alarms on 90 legitimate messages (1.1%, CI 0.2%-6.0%); caught 89 of 89 scams.
-- False-alarm difference, Fisher exact two-sided p = 0.211 (small counts: suggestive, not conclusive).
+- **Red Flag agent**: 0 false alarms on 90 legitimate messages (0.0%, CI 0.0%-4.1%); caught 89 of 89 scams.
+- False-alarm difference, Fisher exact two-sided p = 0.059 (small counts: suggestive, not conclusive).
 
 ## Ablation: agent without the phishing-feed check
 
-- live_pairs: accuracy 100.0%, recall 100.0%, false-positive rate 0.0% (n=60). The other tools (redirects, domain age, official-domain match) carry the verdict without the feed.
-- hard_text: accuracy 97.5%, recall 95.0%, false-positive rate 0.0% (n=40). The other tools (redirects, domain age, official-domain match) carry the verdict without the feed.
+- live_pairs: accuracy 98.3%, recall 100.0%, false-positive rate 3.3% (n=60). The other tools (redirects, domain age, official-domain match) carry the verdict without the feed.
+- hard_text: accuracy 100.0%, recall 100.0%, false-positive rate 0.0% (n=40). The other tools (redirects, domain age, official-domain match) carry the verdict without the feed.
 
 ## Strict view: only 'Scam' counts as flagged
 
@@ -31,11 +31,11 @@ Positive = flagged (verdict Scam or Suspicious). Intervals are 95% Wilson. Gener
 | Benchmark (hand-written, 39 scam / 40 legit) | baseline | 94.9% |
 | Benchmark (hand-written, 39 scam / 40 legit) | agent | 89.7% |
 | Hard text (polite scams vs urgent-sounding legit) | baseline | 95.0% |
-| Hard text (polite scams vs urgent-sounding legit) | agent | 70.0% |
+| Hard text (polite scams vs urgent-sounding legit) | agent | 60.0% |
 | Live phishing pairs (OpenPhish snapshot vs real-brand twin) | baseline | 100.0% |
 | Live phishing pairs (OpenPhish snapshot vs real-brand twin) | agent | 100.0% |
 | UCI SMS held-out (public, spam not scam) | baseline | 96.0% |
-| UCI SMS held-out (public, spam not scam) | agent | 20.0% |
+| UCI SMS held-out (public, spam not scam) | agent | 18.0% |
 
 The agent reserves 'Scam' for concrete evidence; polite scams with nothing checkable are returned as 'Suspicious'. That is a deliberate calibration, and it lowers strict recall.
 
@@ -46,10 +46,10 @@ Identical prompt, tools and sets; only the model changes (AGENT_BACKEND=open). T
 
 | Set | n | Accuracy | Scam recall | False-positive rate (95% CI) |
 |---|---|---|---|---|
-| Benchmark (hand-written, 39 scam / 40 legit) | 79 | 100.0% | 100.0% | 0.0% (0.0%-8.8%) |
+| Benchmark (hand-written, 39 scam / 40 legit) | 79 | 98.7% | 100.0% | 2.5% (0.4%-12.9%) |
 | Hard text (polite scams vs urgent-sounding legit) | 40 | 100.0% | 100.0% | 0.0% (0.0%-16.1%) |
 | Live phishing pairs (OpenPhish snapshot vs real-brand twin) | 60 | 100.0% | 100.0% | 0.0% (0.0%-11.4%) |
-| UCI SMS held-out (public, spam not scam) | 100 | 94.0% | 100.0% | 12.0% (5.6%-23.8%) |
+| UCI SMS held-out (public, spam not scam) | 100 | 90.0% | 98.0% | 18.0% (9.8%-30.8%) |
 
 The prompt was tuned on closed Muse Spark, so these are out-of-the-box results for the open model. Closed Muse Spark remains the default; the app fails over between the two.
 
@@ -65,3 +65,16 @@ The prompt was tuned on closed Muse Spark, so these are out-of-the-box results f
 | Red Flag agent (Muse Spark Open) | 24/24 (95% CI 86.2%-100.0%) | 0 | 0/8 |
 
 The attacks were written by us, so this shows resistance to common injection styles, not to a determined adaptive attacker. Untrusted text is always delimited, the model is told never to obey it, tool results and page text are labelled untrusted, and a blocklist hit can never be downgraded to 'Looks Safe' by the model.
+
+
+## Speed: median seconds to a verdict
+
+The first configuration called tools one model round at a time with default reasoning; the final one runs the standard checks before the first model call and uses lower reasoning where evidence is already in hand (closed Muse Spark only).
+
+| Set | First configuration | Final configuration |
+|---|---|---|
+| Benchmark (hand-written, 39 scam / 40 legit) | 9s | 4s |
+| Hard text (polite scams vs urgent-sounding legit) | 20s | 6s |
+| Live phishing pairs (OpenPhish snapshot vs real-brand twin) | 15s | 3s |
+| UCI SMS held-out (public, spam not scam) | 13s | 6s |
+| Prompt-injection set | 10s | 3s |

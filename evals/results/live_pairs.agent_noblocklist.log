@@ -5,24 +5,24 @@
  "lenient": {
   "n": 60,
   "errors": 0,
-  "accuracy": 1.0,
-  "precision": 1.0,
+  "accuracy": 0.983,
+  "precision": 0.968,
   "recall": 1.0,
-  "false_positive_rate": 0.0,
+  "false_positive_rate": 0.033,
   "recall_95ci": [
    0.886,
    1
   ],
   "fpr_95ci": [
-   0,
-   0.114
+   0.006,
+   0.167
   ],
-  "f1": 1.0,
+  "f1": 0.984,
   "confusion": {
    "tp": 30,
    "fn": 0,
-   "fp": 0,
-   "tn": 30
+   "fp": 1,
+   "tn": 29
   }
  },
  "strict": {
@@ -48,7 +48,8 @@
    "tn": 30
   }
  },
- "median_seconds": 14.45,
- "avg_tokens": 7712,
- "avg_tool_calls": 2.8
+ "median_seconds": 2.5,
+ "avg_tokens": 2884,
+ "avg_tool_calls": 3.02
 }
+MISS [legit->Suspicious] live-053 live_twin_MetaMask: 'Hi, a quick note from MetaMask support about your account. Please take a look when you hav' 

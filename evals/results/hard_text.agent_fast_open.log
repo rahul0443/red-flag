@@ -1,0 +1,65 @@
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+{
+ "set": "hard_text",
+ "mode": "agent",
+ "model": "meta-models/muse-spark-open-1026",
+ "lenient": {
+  "n": 40,
+  "errors": 0,
+  "accuracy": 0.925,
+  "precision": 0.87,
+  "recall": 1.0,
+  "false_positive_rate": 0.15,
+  "recall_95ci": [
+   0.839,
+   1
+  ],
+  "fpr_95ci": [
+   0.052,
+   0.36
+  ],
+  "f1": 0.93,
+  "confusion": {
+   "tp": 20,
+   "fn": 0,
+   "fp": 3,
+   "tn": 17
+  }
+ },
+ "strict": {
+  "n": 40,
+  "errors": 0,
+  "accuracy": 0.875,
+  "precision": 1.0,
+  "recall": 0.75,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.531,
+   0.888
+  ],
+  "fpr_95ci": [
+   0,
+   0.161
+  ],
+  "f1": 0.857,
+  "confusion": {
+   "tp": 15,
+   "fn": 5,
+   "fp": 0,
+   "tn": 20
+  }
+ },
+ "median_seconds": 6.4,
+ "avg_tokens": 10143,
+ "avg_tool_calls": 2.08
+}
+MISS [legit->Suspicious] hard_text-025 final_pickup: 'USPS: Final notice. Your package could not be delivered and is being held at the Mesa Post' 
+MISS [legit->Suspicious] hard_text-035 tax_notice: 'Subject: IRS: Your Notice CP14 for tax year 2025 is available. Read it at irs.gov and revi' 
+MISS [legit->Suspicious] hard_text-038 employer_hr: 'Subject: Action required: complete your I-9 verification by Friday. Bring your documents t' 

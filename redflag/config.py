@@ -17,3 +17,9 @@ OPEN_BASE_URL = os.getenv("OPEN_BASE_URL", "https://inference.baseten.co/v1")
 OPEN_MODEL = os.getenv("OPEN_MODEL", "meta-models/muse-spark-open-1026")
 # AGENT_BACKEND=open runs the whole investigation loop on the open-weight model instead of Muse Spark.
 AGENT_BACKEND = os.getenv("AGENT_BACKEND", "spark")
+# Reasoning budget for the agent's model calls: minimal | low | medium | high (lower is faster)
+REASONING_EFFORT = os.getenv("REASONING_EFFORT", "low")            # closed Muse Spark with tool evidence in hand
+OPEN_REASONING_EFFORT = os.getenv("OPEN_REASONING_EFFORT", "medium")  # the open model does worse at low (measured), so it keeps more
+NO_EVIDENCE_EFFORT = os.getenv("NO_EVIDENCE_EFFORT", "medium")        # no link or brand to check: the model has only its own reading, so think more
+TRIAGE_EFFORT = os.getenv("TRIAGE_EFFORT", "low")
+PREFETCH = os.getenv("PREFETCH", "1") == "1"

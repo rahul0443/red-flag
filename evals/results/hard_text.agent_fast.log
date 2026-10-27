@@ -1,0 +1,55 @@
+{
+ "set": "hard_text",
+ "mode": "agent",
+ "model": "muse-spark-1.3",
+ "lenient": {
+  "n": 40,
+  "errors": 0,
+  "accuracy": 0.975,
+  "precision": 1.0,
+  "recall": 0.95,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.764,
+   0.991
+  ],
+  "fpr_95ci": [
+   0,
+   0.161
+  ],
+  "f1": 0.974,
+  "confusion": {
+   "tp": 19,
+   "fn": 1,
+   "fp": 0,
+   "tn": 20
+  }
+ },
+ "strict": {
+  "n": 40,
+  "errors": 0,
+  "accuracy": 0.75,
+  "precision": 1.0,
+  "recall": 0.5,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.299,
+   0.701
+  ],
+  "fpr_95ci": [
+   0,
+   0.161
+  ],
+  "f1": 0.667,
+  "confusion": {
+   "tp": 10,
+   "fn": 10,
+   "fp": 0,
+   "tn": 20
+  }
+ },
+ "median_seconds": 4.75,
+ "avg_tokens": 4188,
+ "avg_tool_calls": 1.88
+}
+MISS [scam->Looks Safe] hard_text-010 friendly_crypto: 'Hey! Long time no see. I started trading with this platform my aunt recommended and made a' 

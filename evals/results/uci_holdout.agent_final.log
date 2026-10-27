@@ -1,0 +1,56 @@
+{
+ "set": "uci_holdout",
+ "mode": "agent",
+ "model": "muse-spark-1.3",
+ "lenient": {
+  "n": 100,
+  "errors": 0,
+  "accuracy": 0.98,
+  "precision": 0.962,
+  "recall": 1.0,
+  "false_positive_rate": 0.04,
+  "recall_95ci": [
+   0.929,
+   1
+  ],
+  "fpr_95ci": [
+   0.011,
+   0.135
+  ],
+  "f1": 0.981,
+  "confusion": {
+   "tp": 50,
+   "fn": 0,
+   "fp": 2,
+   "tn": 48
+  }
+ },
+ "strict": {
+  "n": 100,
+  "errors": 0,
+  "accuracy": 0.59,
+  "precision": 1.0,
+  "recall": 0.18,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.098,
+   0.308
+  ],
+  "fpr_95ci": [
+   0,
+   0.071
+  ],
+  "f1": 0.305,
+  "confusion": {
+   "tp": 9,
+   "fn": 41,
+   "fp": 0,
+   "tn": 50
+  }
+ },
+ "median_seconds": 5.5,
+ "avg_tokens": 4603,
+ "avg_tool_calls": 0.55
+}
+MISS [legit->Suspicious] uci_holdout-064 uci_ham: "Hey elaine, is today's meeting still on?" 
+MISS [legit->Suspicious] uci_holdout-086 uci_ham: 'There are no other charges after transfer charges and you can withdraw anyhow you like' 

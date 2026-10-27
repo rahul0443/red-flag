@@ -65,6 +65,16 @@ What this does and doesn't show (stated plainly):
 
 `scripts/fuzz_api.py` throws 39 hostile or malformed inputs at the API (empty and 5,000-character text, emoji and right-to-left text, 50 links, private-IP and `file:`/`javascript:` links, HTML and prompt-injection text, fake tool markup, corrupt, oversized and wrong-type images and audio, silent audio). Every case ends in a verdict or a plain-language error, never a crash or a hang. Investigations are capped at 8 steps and 150 seconds, the isolated browser at 20 seconds of waiting, and the server limits concurrent and per-IP requests.
 
+## Tests
+
+```bash
+pip install -r requirements-dev.txt && playwright install chromium
+pytest            # 140 tests: tools, agent loop (scripted models), server, and a browser UI suite
+python scripts/fuzz_api.py   # 39 hostile inputs against a running server
+```
+
+The UI suite (Playwright) drives the real page against scripted event streams across 5 viewports and light/dark: layout overflow, WCAG contrast, 44px touch targets, keyboard focus, reduced motion, screen-reader announcements, XSS payloads in every field, malformed streams, failure recovery, double submits, and a strict Content-Security-Policy (no inline scripts, no third-party requests).
+
 ## Setup
 ```bash
 python3 -m venv .venv && source .venv/bin/activate

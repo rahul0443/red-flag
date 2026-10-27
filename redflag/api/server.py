@@ -154,6 +154,26 @@ async def investigate_audio(request: Request, file: UploadFile = File(...)):
                              media_type="text/event-stream", headers={"Cache-Control": "no-cache"})
 
 
+CSP = ("default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; "
+       "connect-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'")
+
+
+@app.middleware("http")
+async def security_headers(request: Request, call_next):
+    resp = await call_next(request)
+    resp.headers.update({
+        "Content-Security-Policy": CSP,
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "no-referrer",
+        "X-Frame-Options": "DENY",
+        "Permissions-Policy": "microphone=(self), camera=(), geolocation=(), payment=()",
+        "Cross-Origin-Opener-Policy": "same-origin",
+    })
+    if request.url.path.startswith("/api/"):
+        resp.headers["Cache-Control"] = "no-store"
+    return resp
+
+
 @app.get("/")
 def index():
     return FileResponse(WEB / "index.html")

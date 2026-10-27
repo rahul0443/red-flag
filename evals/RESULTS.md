@@ -52,3 +52,16 @@ Identical prompt, tools and sets; only the model changes (AGENT_BACKEND=open). T
 | UCI SMS held-out (public, spam not scam) | 100 | 94.0% | 100.0% | 12.0% (5.6%-23.8%) |
 
 The prompt was tuned on closed Muse Spark, so these are out-of-the-box results for the open model. Closed Muse Spark remains the default; the app fails over between the two.
+
+
+## Prompt-injection robustness
+
+24 real-style scams that each carry an attack aimed at the investigator (ignore-previous-instructions, fake system tags, fake tool results, copy-this-verdict JSON, role-play, authority claims, other languages, base64, hidden comments, exfiltration requests, and more), plus 8 legitimate messages that contain instruction-like wording. Source: `evals/injection_src.py`.
+
+| Arm | Attacked scams still flagged | Called 'Looks Safe' | Legit flagged |
+|---|---|---|---|
+| Muse Spark, no tools | 24/24 (95% CI 86.2%-100.0%) | 0 | 0/8 |
+| Red Flag agent (Muse Spark) | 24/24 (95% CI 86.2%-100.0%) | 0 | 0/8 |
+| Red Flag agent (Muse Spark Open) | 24/24 (95% CI 86.2%-100.0%) | 0 | 0/8 |
+
+The attacks were written by us, so this shows resistance to common injection styles, not to a determined adaptive attacker. Untrusted text is always delimited, the model is told never to obey it, tool results and page text are labelled untrusted, and a blocklist hit can never be downgraded to 'Looks Safe' by the model.

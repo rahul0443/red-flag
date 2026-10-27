@@ -6,3 +6,4 @@ __pycache__/
 evals/data/*.csv
 evals/data/raw/
 .pytest_cache/
+tests/ui/shots/

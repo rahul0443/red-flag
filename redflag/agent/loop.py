@@ -5,6 +5,8 @@ Hard caps on steps and tokens. The agent never contacts the sender and never sen
 """
 import json
 import logging
+import queue
+import threading
 import time
 import re
 from concurrent.futures import TimeoutError
@@ -132,7 +134,41 @@ def _run_tool(name: str, args: dict, sandbox_used: set) -> dict:
         return {"error": f"{type(e).__name__}: {e}"}
 
 
+_DONE = object()
+
+
 def investigate(message: str, source: str = "text") -> Iterator[dict]:
+    """Run the investigation in a worker thread and stream its events through a queue, so side checks
+    (the open-weight first look, the isolated browser) reach the screen the moment they finish
+    instead of waiting for the main model call. Closing this generator stops the worker."""
+    q: queue.Queue = queue.Queue()
+    stop = threading.Event()
+
+    def worker():
+        try:
+            for ev in _investigate(message, source, q.put):
+                if stop.is_set():
+                    return
+                q.put(ev)
+        except Exception as e:
+            q.put({"type": "__exc__", "exc": e})
+        finally:
+            q.put(_DONE)
+
+    threading.Thread(target=worker, daemon=True, name="investigation").start()
+    try:
+        while True:
+            ev = q.get()
+            if ev is _DONE:
+                return
+            if ev.get("type") == "__exc__":
+                raise ev["exc"]
+            yield ev
+    finally:
+        stop.set()
+
+
+def _investigate(message: str, source: str, emit) -> Iterator[dict]:
     bk = backends()
     if not bk:
         yield {"type": "error", "message": "No model is configured. Add MODEL_API_KEY to .env."}
@@ -152,34 +188,46 @@ def investigate(message: str, source: str = "text") -> Iterator[dict]:
     if target:
         sb["fut"] = ThreadPoolExecutor(max_workers=1).submit(_run_tool, "inspect_link_sandbox", {"url": target}, set())
         sb["reported"] = False
+
+        def sandbox_done(f):
+            """Show the result on screen the moment it exists; the model is told at its next step."""
+            try:
+                r = f.result()
+            except Exception as e:
+                r = {"error": f"sandbox failed: {type(e).__name__}"}
+            shot = r.pop("screenshot_b64", None) if isinstance(r, dict) else None
+            sb["shown"] = True
+            emit({"type": "tool_result", "step": 0, "tool": "inspect_link_sandbox", "result": {**r, "screenshot_b64": shot} if shot else r})
+
+        sb["fut"].add_done_callback(sandbox_done)
         usage["tool_calls"] += 1
         yield {"type": "tool_call", "step": 0, "tool": "inspect_link_sandbox", "args": {"url": target}}
 
-    tri = {"fut": None}
     if config.BASETEN_API_KEY and config.AGENT_BACKEND != "open":  # open-weight first look, in parallel with the investigation
         from redflag.open_model import triage
-        tri["fut"] = ThreadPoolExecutor(max_workers=1).submit(triage, message)
 
-    def drain_triage():
-        if tri["fut"] is not None and tri["fut"].done():
-            r, tri["fut"] = tri["fut"].result(), None
+        def triage_done(f):
+            r = f.result()
             if "error" not in r:
-                yield {"type": "triage", **r}
+                emit({"type": "triage", **r})
+
+        ThreadPoolExecutor(max_workers=1).submit(triage, message).add_done_callback(triage_done)
 
     def drain(block):
-        """Report the sandbox result (and show it to the model) once it is ready, or wait for it if block=True."""
+        """Tell the model about the sandbox result once it is ready, or wait for it if block=True."""
         if sb["reported"] or not (block or sb["fut"].done()):
             return
         try:
             result = sb["fut"].result(timeout=SANDBOX_WAIT_S)
+            if not sb.get("shown"):  # callback is still about to fire; the model gets the text either way
+                pass
         except TimeoutError:
             result = {"error": "the isolated browser took too long (site slow or unreachable); decide without it"}
+            sb["shown"] = True
+            yield {"type": "tool_result", "step": 0, "tool": "inspect_link_sandbox", "result": result}
         except Exception as e:
             result = {"error": f"sandbox failed: {type(e).__name__}"}
         sb["reported"] = True
-        shot = result.pop("screenshot_b64", None) if isinstance(result, dict) else None
-        yield {"type": "tool_result", "step": 0, "tool": "inspect_link_sandbox",
-               "result": {**result, "screenshot_b64": shot} if shot else result}
         msgs.append({"role": "user", "content": "Sandbox result (untrusted page data): " + _trim(result)})
 
     submit_only = [t for t in TOOLS if t["function"]["name"] == "submit_verdict"]
@@ -189,7 +237,6 @@ def investigate(message: str, source: str = "text") -> Iterator[dict]:
         if last:  # the API only supports tool_choice "auto", so restrict the tool list and nudge instead
             msgs.append({"role": "user", "content": "Step limit reached. Call submit_verdict now with your best judgment."})
         yield from drain(False)
-        yield from drain_triage()
         kwargs = {"tools": submit_only if last else TOOLS}
         resp = None
         while resp is None:
@@ -218,7 +265,6 @@ def investigate(message: str, source: str = "text") -> Iterator[dict]:
                 msgs.append({"role": "assistant", "content": "(verdict deferred)"})
                 yield from drain(True)
                 continue
-            yield from drain_triage()
             yield {"type": "verdict", **_normalize(recovered, flags), "usage": usage}
             return
         if not m.tool_calls:
@@ -241,7 +287,6 @@ def investigate(message: str, source: str = "text") -> Iterator[dict]:
                     yield from drain(True)
                     calls = None
                     break
-                yield from drain_triage()
                 yield {"type": "verdict", **_normalize(args, flags), "usage": usage}
                 return
             calls.append((t, t.function.name, args))

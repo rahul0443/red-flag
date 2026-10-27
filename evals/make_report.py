@@ -66,6 +66,6 @@ out += ["", "## Same agent on open-weight Muse Spark Open (Baseten)", "", "Ident
 for s, title in SETS:
     d = json.load(open(R / f"{s}_agent_open.json")); L = d["summary"]["lenient"]; tp, fn, fp, tn = counts(d); lo, hi = wilson(fp, fp + tn)
     out.append(f"| {title} | {L['n']} | {pct(L['accuracy'])} | {pct(L['recall'])} | {pct(L['false_positive_rate'])} ({pct(lo)}-{pct(hi)}) |")
-out += ["", "The open model finds the scams but is less calibrated than closed Muse Spark: it raises more false alarms on legitimate and casual messages. It shows the agent runs end to end on open weights; closed Muse Spark remains the default.", ""]
+out += ["", "The prompt was tuned on closed Muse Spark, so these are out-of-the-box results for the open model. Closed Muse Spark remains the default; the app fails over between the two.", ""]
 (Path(__file__).parent / "RESULTS.md").write_text("\n".join(out))
 print("\n".join(out))

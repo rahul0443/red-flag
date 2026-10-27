@@ -5,58 +5,50 @@
  "lenient": {
   "n": 79,
   "errors": 0,
-  "accuracy": 0.899,
-  "precision": 0.83,
+  "accuracy": 1.0,
+  "precision": 1.0,
   "recall": 1.0,
-  "false_positive_rate": 0.2,
+  "false_positive_rate": 0.0,
   "recall_95ci": [
    0.91,
    1
   ],
   "fpr_95ci": [
-   0.105,
-   0.348
+   0,
+   0.088
   ],
-  "f1": 0.907,
+  "f1": 1.0,
   "confusion": {
    "tp": 39,
    "fn": 0,
-   "fp": 8,
-   "tn": 32
+   "fp": 0,
+   "tn": 40
   }
  },
  "strict": {
   "n": 79,
   "errors": 0,
-  "accuracy": 0.924,
+  "accuracy": 0.949,
   "precision": 1.0,
-  "recall": 0.846,
+  "recall": 0.897,
   "false_positive_rate": 0.0,
   "recall_95ci": [
-   0.703,
-   0.928
+   0.764,
+   0.959
   ],
   "fpr_95ci": [
    0,
    0.088
   ],
-  "f1": 0.917,
+  "f1": 0.946,
   "confusion": {
-   "tp": 33,
-   "fn": 6,
+   "tp": 35,
+   "fn": 4,
    "fp": 0,
    "tn": 40
   }
  },
- "median_seconds": 11.4,
- "avg_tokens": 12223,
- "avg_tool_calls": 2.76
+ "median_seconds": 7.7,
+ "avg_tokens": 8543,
+ "avg_tool_calls": 2.66
 }
-MISS [legit->Suspicious] benchmark-048 pharmacy: 'CVS Pharmacy: Your prescription is ready for pickup at 123 Main St. Reply STOP to opt out.' 
-MISS [legit->Suspicious] benchmark-053 friend: 'Running 10 min late, grab us a table! Order me the iced coffee.' 
-MISS [legit->Suspicious] benchmark-054 family: 'Mom: can you pick up milk and eggs on your way home? Thanks sweetie' 
-MISS [legit->Suspicious] benchmark-059 church: "Grace Community Church: Sunday service is at 10 AM. This week's potluck follows at noon in" 
-MISS [legit->Suspicious] benchmark-060 dentist: 'Smile Dental: Your cleaning is scheduled for Nov 3 at 9:00 AM. Reply YES to confirm. Call ' 
-MISS [legit->Suspicious] benchmark-061 telecom: 'Verizon: Your bill of $87.30 is ready. Auto-pay will process on Nov 5. View at verizon.com' 
-MISS [legit->Suspicious] benchmark-064 outage: 'SRP: A power outage is affecting your area. Crews are working to restore service by 4 PM. ' 
-MISS [legit->Suspicious] benchmark-068 payroll: 'Subject: Reminder: benefits enrollment closes Nov 15. Log in to the HR portal your company' 

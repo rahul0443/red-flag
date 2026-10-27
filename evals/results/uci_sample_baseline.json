@@ -6,50 +6,50 @@
   "lenient": {
    "n": 80,
    "errors": 0,
-   "accuracy": 0.938,
-   "precision": 0.949,
+   "accuracy": 0.95,
+   "precision": 0.974,
    "recall": 0.925,
-   "false_positive_rate": 0.05,
+   "false_positive_rate": 0.025,
    "recall_95ci": [
     0.801,
     0.974
    ],
    "fpr_95ci": [
-    0.014,
-    0.165
+    0.004,
+    0.129
    ],
-   "f1": 0.937,
+   "f1": 0.949,
    "confusion": {
     "tp": 37,
     "fn": 3,
-    "fp": 2,
-    "tn": 38
+    "fp": 1,
+    "tn": 39
    }
   },
   "strict": {
    "n": 80,
    "errors": 0,
-   "accuracy": 0.887,
+   "accuracy": 0.912,
    "precision": 1.0,
-   "recall": 0.775,
+   "recall": 0.825,
    "false_positive_rate": 0.0,
    "recall_95ci": [
-    0.625,
-    0.877
+    0.68,
+    0.913
    ],
    "fpr_95ci": [
     0,
     0.088
    ],
-   "f1": 0.873,
+   "f1": 0.904,
    "confusion": {
-    "tp": 31,
-    "fn": 9,
+    "tp": 33,
+    "fn": 7,
     "fp": 0,
     "tn": 40
    }
   },
-  "median_seconds": 5.65,
+  "median_seconds": 6.1,
   "avg_tokens": 0,
   "avg_tool_calls": 0
  },
@@ -62,17 +62,17 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.6
+   "seconds": 6.8
   },
   {
    "id": "uci_sample-001",
    "label": "scam",
    "category": "uci_spam",
    "text": "SMS SERVICES For your inclusive text credits pls gotto www.comuk.net login 3qxj9 unsubscribe with STOP no extra charge help 08702840625 comuk.220cm2 9AE",
-   "verdict": "Suspicious",
-   "confidence": 0.7,
+   "verdict": "Scam",
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 12.0
+   "seconds": 11.6
   },
   {
    "id": "uci_sample-002",
@@ -82,7 +82,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.0
+   "seconds": 9.2
   },
   {
    "id": "uci_sample-003",
@@ -92,7 +92,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 9.7
+   "seconds": 9.2
   },
   {
    "id": "uci_sample-004",
@@ -102,7 +102,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 10.0
+   "seconds": 15.3
   },
   {
    "id": "uci_sample-005",
@@ -112,7 +112,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.99,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 3.6
   },
   {
    "id": "uci_sample-006",
@@ -120,9 +120,9 @@
    "category": "uci_spam",
    "text": "For ur chance to win a \u00a3250 cash every wk TXT: ACTION to 80608. T's&C's www.movietrivia.tv custcare 08712405022, 1x150p/wk",
    "verdict": "Scam",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 10.4
+   "seconds": 9.8
   },
   {
    "id": "uci_sample-007",
@@ -130,19 +130,19 @@
    "category": "uci_spam",
    "text": "Buy Space Invaders 4 a chance 2 win orig Arcade Game console. Press 0 for Games Arcade (std WAP charge) See o2.co.uk/games 4 Terms + settings. No purchase",
    "verdict": "Suspicious",
-   "confidence": 0.65,
+   "confidence": 0.7,
    "usage": {},
-   "seconds": 10.2
+   "seconds": 19.1
   },
   {
    "id": "uci_sample-008",
    "label": "scam",
    "category": "uci_spam",
    "text": "Want the latest Video handset? 750 anytime any network mins? Half price line rental? Reply or call 08000930705 for delivery tomorrow",
-   "verdict": "Suspicious",
-   "confidence": 0.75,
+   "verdict": "Scam",
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 8.9
+   "seconds": 12.6
   },
   {
    "id": "uci_sample-009",
@@ -152,7 +152,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 7.4
   },
   {
    "id": "uci_sample-010",
@@ -160,9 +160,9 @@
    "category": "uci_spam",
    "text": "Sorry I missed your call let's talk when you have the time. I'm on 07090201529",
    "verdict": "Suspicious",
-   "confidence": 0.6,
+   "confidence": 0.7,
    "usage": {},
-   "seconds": 9.0
+   "seconds": 8.8
   },
   {
    "id": "uci_sample-011",
@@ -172,7 +172,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 9.6
+   "seconds": 12.2
   },
   {
    "id": "uci_sample-012",
@@ -180,9 +180,9 @@
    "category": "uci_spam",
    "text": "Natalja (25/F) is inviting you to be her friend. Reply YES-440 or NO-440 See her: www.SMS.ac/u/nat27081980 STOP? Send STOP FRND to 62468",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 5.4
+   "seconds": 9.6
   },
   {
    "id": "uci_sample-013",
@@ -192,7 +192,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.7
+   "seconds": 8.7
   },
   {
    "id": "uci_sample-014",
@@ -202,7 +202,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 8.6
+   "seconds": 15.2
   },
   {
    "id": "uci_sample-015",
@@ -212,7 +212,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 5.6
   },
   {
    "id": "uci_sample-016",
@@ -222,7 +222,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.5
+   "seconds": 7.8
   },
   {
    "id": "uci_sample-017",
@@ -232,7 +232,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.3
+   "seconds": 5.9
   },
   {
    "id": "uci_sample-018",
@@ -242,7 +242,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.1
+   "seconds": 7.0
   },
   {
    "id": "uci_sample-019",
@@ -252,7 +252,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 7.6
   },
   {
    "id": "uci_sample-020",
@@ -262,7 +262,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.3
+   "seconds": 7.5
   },
   {
    "id": "uci_sample-021",
@@ -282,7 +282,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 3.6
+   "seconds": 6.7
   },
   {
    "id": "uci_sample-023",
@@ -290,9 +290,9 @@
    "category": "uci_spam",
    "text": "Auction round 4. The highest bid is now \u00a354. Next maximum bid is \u00a371. To bid, send BIDS e. g. 10 (to bid \u00a310) to 83383. Good luck.",
    "verdict": "Suspicious",
-   "confidence": 0.65,
+   "confidence": 0.75,
    "usage": {},
-   "seconds": 7.1
+   "seconds": 15.6
   },
   {
    "id": "uci_sample-024",
@@ -302,7 +302,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 5.7
+   "seconds": 7.4
   },
   {
    "id": "uci_sample-025",
@@ -312,7 +312,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.2
+   "seconds": 7.8
   },
   {
    "id": "uci_sample-026",
@@ -322,7 +322,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 6.3
+   "seconds": 7.6
   },
   {
    "id": "uci_sample-027",
@@ -330,9 +330,9 @@
    "category": "uci_spam",
    "text": "Tone Club: Your subs has now expired 2 re-sub reply MONOC 4 monos or POLYC 4 polys 1 weekly @ 150p per week Txt STOP 2 stop This msg free Stream 0871212025016",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 9.2
+   "seconds": 10.2
   },
   {
    "id": "uci_sample-028",
@@ -342,7 +342,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.8,
    "usage": {},
-   "seconds": 13.3
+   "seconds": 10.4
   },
   {
    "id": "uci_sample-029",
@@ -352,7 +352,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 11.8
+   "seconds": 8.3
   },
   {
    "id": "uci_sample-030",
@@ -360,9 +360,9 @@
    "category": "uci_spam",
    "text": "Dear 0776xxxxxxx U've been invited to XCHAT. This is our final attempt to contact u! Txt CHAT to 86688 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs ",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 5.5
+   "seconds": 5.8
   },
   {
    "id": "uci_sample-031",
@@ -370,7 +370,7 @@
    "category": "uci_spam",
    "text": "URGENT! We are trying to contact U. Todays draw shows that you have won a \u00a3800 prize GUARANTEED. Call 09050003091 from land line. Claim C52. Valid 12hrs only",
    "verdict": "Scam",
-   "confidence": 0.97,
+   "confidence": 0.98,
    "usage": {},
    "seconds": 6.1
   },
@@ -382,7 +382,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.0
+   "seconds": 4.5
   },
   {
    "id": "uci_sample-033",
@@ -392,7 +392,7 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 5.0
   },
   {
    "id": "uci_sample-034",
@@ -402,7 +402,7 @@
    "verdict": "Scam",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 11.5
+   "seconds": 10.3
   },
   {
    "id": "uci_sample-035",
@@ -412,7 +412,7 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 6.3
   },
   {
    "id": "uci_sample-036",
@@ -420,9 +420,9 @@
    "category": "uci_spam",
    "text": "from www.Applausestore.com MonthlySubscription@50p/msg max6/month T&CsC web age16 2stop txt stop",
    "verdict": "Suspicious",
-   "confidence": 0.75,
+   "confidence": 0.6,
    "usage": {},
-   "seconds": 11.5
+   "seconds": 10.6
   },
   {
    "id": "uci_sample-037",
@@ -432,7 +432,7 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 7.3
+   "seconds": 7.4
   },
   {
    "id": "uci_sample-038",
@@ -442,7 +442,7 @@
    "verdict": "Scam",
    "confidence": 0.85,
    "usage": {},
-   "seconds": 8.6
+   "seconds": 11.1
   },
   {
    "id": "uci_sample-039",
@@ -462,7 +462,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 8.5
   },
   {
    "id": "uci_sample-041",
@@ -472,7 +472,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.9
+   "seconds": 4.8
   },
   {
    "id": "uci_sample-042",
@@ -480,7 +480,7 @@
    "category": "uci_ham",
    "text": "U coming back 4 dinner rite? Dad ask me so i re confirm wif u...",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
    "seconds": 5.5
   },
@@ -490,9 +490,9 @@
    "category": "uci_ham",
    "text": "After completed degree. There is no use in joining finance.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 5.8
+   "seconds": 3.3
   },
   {
    "id": "uci_sample-044",
@@ -502,7 +502,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 6.0
+   "seconds": 4.4
   },
   {
    "id": "uci_sample-045",
@@ -512,7 +512,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 8.2
+   "seconds": 10.9
   },
   {
    "id": "uci_sample-046",
@@ -520,9 +520,9 @@
    "category": "uci_ham",
    "text": "Roger that. We\u2018re probably going to rem in about 20",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 5.6
+   "seconds": 5.5
   },
   {
    "id": "uci_sample-047",
@@ -532,7 +532,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 3.9
   },
   {
    "id": "uci_sample-048",
@@ -540,19 +540,19 @@
    "category": "uci_ham",
    "text": "\"HEY KATE, HOPE UR OK... WILL GIVE U A BUZ WEDLUNCH. GO OUTSOMEWHERE 4 ADRINK IN TOWN..CUD GO 2WATERSHD 4 A BIT? PPL FROMWRK WILL BTHERE. LOVE PETEXXX.\"",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {},
-   "seconds": 6.9
+   "seconds": 4.6
   },
   {
    "id": "uci_sample-049",
    "label": "legit",
    "category": "uci_ham",
    "text": "Tell me again what your address is",
-   "verdict": "Suspicious",
-   "confidence": 0.45,
+   "verdict": "Looks Safe",
+   "confidence": 0.85,
    "usage": {},
-   "seconds": 7.7
+   "seconds": 7.3
   },
   {
    "id": "uci_sample-050",
@@ -560,9 +560,9 @@
    "category": "uci_ham",
    "text": "Yes..he is really great..bhaji told kallis best cricketer after sachin in world:).very tough to get out.",
    "verdict": "Looks Safe",
-   "confidence": 0.99,
+   "confidence": 0.98,
    "usage": {},
-   "seconds": 2.9
+   "seconds": 4.5
   },
   {
    "id": "uci_sample-051",
@@ -570,9 +570,9 @@
    "category": "uci_ham",
    "text": "S...i will take mokka players only:)",
    "verdict": "Looks Safe",
-   "confidence": 0.7,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 4.9
   },
   {
    "id": "uci_sample-052",
@@ -582,7 +582,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.99,
    "usage": {},
-   "seconds": 4.6
+   "seconds": 3.7
   },
   {
    "id": "uci_sample-053",
@@ -590,9 +590,9 @@
    "category": "uci_ham",
    "text": "Night has ended for another day, morning has come in a special way. May you smile like the sunny rays and leaves your worries at the blue blue bay. Gud mrng",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.98,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 4.6
   },
   {
    "id": "uci_sample-054",
@@ -602,7 +602,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 5.2
   },
   {
    "id": "uci_sample-055",
@@ -612,7 +612,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.2
+   "seconds": 3.4
   },
   {
    "id": "uci_sample-056",
@@ -620,9 +620,9 @@
    "category": "uci_ham",
    "text": "Jus finish watching tv... U?",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 6.4
+   "seconds": 5.0
   },
   {
    "id": "uci_sample-057",
@@ -632,7 +632,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 3.7
   },
   {
    "id": "uci_sample-058",
@@ -640,9 +640,9 @@
    "category": "uci_ham",
    "text": "Mm so you asked me not to call radio",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 7.2
+   "seconds": 5.9
   },
   {
    "id": "uci_sample-059",
@@ -650,9 +650,9 @@
    "category": "uci_ham",
    "text": "I've been trying to reach him without success",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.8
+   "seconds": 4.5
   },
   {
    "id": "uci_sample-060",
@@ -662,7 +662,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.99,
    "usage": {},
-   "seconds": 3.3
+   "seconds": 3.7
   },
   {
    "id": "uci_sample-061",
@@ -680,9 +680,9 @@
    "category": "uci_ham",
    "text": "Why you Dint come with us.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.8,
    "usage": {},
-   "seconds": 8.3
+   "seconds": 14.5
   },
   {
    "id": "uci_sample-063",
@@ -700,9 +700,9 @@
    "category": "uci_ham",
    "text": "No..few hours before.went to hair cut .",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 4.9
   },
   {
    "id": "uci_sample-065",
@@ -720,9 +720,9 @@
    "category": "uci_ham",
    "text": "Oh:)as usual vijay film or its different?",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.98,
    "usage": {},
-   "seconds": 3.4
+   "seconds": 4.9
   },
   {
    "id": "uci_sample-067",
@@ -730,9 +730,9 @@
    "category": "uci_ham",
    "text": "Are you planning to come chennai?",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 5.0
+   "seconds": 3.9
   },
   {
    "id": "uci_sample-068",
@@ -740,9 +740,9 @@
    "category": "uci_ham",
    "text": "No no. I will check all rooms befor activities",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 4.5
   },
   {
    "id": "uci_sample-069",
@@ -750,9 +750,9 @@
    "category": "uci_ham",
    "text": "Single line with a big meaning::::: \"Miss anything 4 ur \"Best Life\" but, don't miss ur best life for anything... Gud nyt...",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.99,
    "usage": {},
-   "seconds": 3.2
+   "seconds": 5.7
   },
   {
    "id": "uci_sample-070",
@@ -760,9 +760,9 @@
    "category": "uci_ham",
    "text": "5 nights...We nt staying at port step liao...Too ex",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 4.4
+   "seconds": 4.3
   },
   {
    "id": "uci_sample-071",
@@ -770,9 +770,9 @@
    "category": "uci_ham",
    "text": "I dont thnk its a wrong calling between us",
    "verdict": "Suspicious",
-   "confidence": 0.55,
+   "confidence": 0.6,
    "usage": {},
-   "seconds": 7.2
+   "seconds": 11.8
   },
   {
    "id": "uci_sample-072",
@@ -780,9 +780,9 @@
    "category": "uci_ham",
    "text": "Aight sorry I take ten years to shower. What's the plan?",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.95,
    "usage": {},
-   "seconds": 3.2
+   "seconds": 4.1
   },
   {
    "id": "uci_sample-073",
@@ -792,7 +792,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 4.7
   },
   {
    "id": "uci_sample-074",
@@ -800,9 +800,9 @@
    "category": "uci_ham",
    "text": "Aiya we discuss later lar... Pick \u00fc up at 4 is it?",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 3.7
+   "seconds": 4.3
   },
   {
    "id": "uci_sample-075",
@@ -812,7 +812,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 4.3
+   "seconds": 5.8
   },
   {
    "id": "uci_sample-076",
@@ -822,7 +822,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.6,
    "usage": {},
-   "seconds": 7.3
+   "seconds": 6.6
   },
   {
    "id": "uci_sample-077",
@@ -830,9 +830,9 @@
    "category": "uci_ham",
    "text": "Ok darlin i supose it was ok i just worry too much.i have to do some film stuff my mate and then have to babysit again! But you can call me there.xx",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {},
-   "seconds": 4.5
+   "seconds": 6.1
   },
   {
    "id": "uci_sample-078",
@@ -842,7 +842,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {},
-   "seconds": 4.7
+   "seconds": 4.0
   },
   {
    "id": "uci_sample-079",
@@ -852,7 +852,7 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {},
-   "seconds": 5.1
+   "seconds": 10.8
   }
  ]
 }

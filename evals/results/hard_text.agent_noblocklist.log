@@ -5,22 +5,22 @@
  "lenient": {
   "n": 40,
   "errors": 0,
-  "accuracy": 1.0,
+  "accuracy": 0.975,
   "precision": 1.0,
-  "recall": 1.0,
+  "recall": 0.95,
   "false_positive_rate": 0.0,
   "recall_95ci": [
-   0.839,
-   1
+   0.764,
+   0.991
   ],
   "fpr_95ci": [
    0,
    0.161
   ],
-  "f1": 1.0,
+  "f1": 0.974,
   "confusion": {
-   "tp": 20,
-   "fn": 0,
+   "tp": 19,
+   "fn": 1,
    "fp": 0,
    "tn": 20
   }
@@ -48,7 +48,8 @@
    "tn": 20
   }
  },
- "median_seconds": 13.5,
- "avg_tokens": 6952,
- "avg_tool_calls": 1.45
+ "median_seconds": 16.15,
+ "avg_tokens": 6542,
+ "avg_tool_calls": 1.38
 }
+MISS [scam->Looks Safe] hard_text-010 friendly_crypto: 'Hey! Long time no see. I started trading with this platform my aunt recommended and made a' 

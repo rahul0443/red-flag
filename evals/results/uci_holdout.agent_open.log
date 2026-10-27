@@ -1,0 +1,60 @@
+{
+ "set": "uci_holdout",
+ "mode": "agent",
+ "model": "meta-models/muse-spark-open-1026",
+ "lenient": {
+  "n": 100,
+  "errors": 0,
+  "accuracy": 0.94,
+  "precision": 0.893,
+  "recall": 1.0,
+  "false_positive_rate": 0.12,
+  "recall_95ci": [
+   0.929,
+   1
+  ],
+  "fpr_95ci": [
+   0.056,
+   0.238
+  ],
+  "f1": 0.943,
+  "confusion": {
+   "tp": 50,
+   "fn": 0,
+   "fp": 6,
+   "tn": 44
+  }
+ },
+ "strict": {
+  "n": 100,
+  "errors": 0,
+  "accuracy": 0.7,
+  "precision": 0.955,
+  "recall": 0.42,
+  "false_positive_rate": 0.02,
+  "recall_95ci": [
+   0.294,
+   0.558
+  ],
+  "fpr_95ci": [
+   0.004,
+   0.105
+  ],
+  "f1": 0.583,
+  "confusion": {
+   "tp": 21,
+   "fn": 29,
+   "fp": 1,
+   "tn": 49
+  }
+ },
+ "median_seconds": 16.05,
+ "avg_tokens": 11739,
+ "avg_tool_calls": 1.54
+}
+MISS [legit->Suspicious] uci_holdout-050 uci_ham: 'Haha, just what I was thinkin' 
+MISS [legit->Suspicious] uci_holdout-052 uci_ham: 'I want to be inside you every night...' 
+MISS [legit->Suspicious] uci_holdout-062 uci_ham: "My sort code is  and acc no is . The bank is natwest. Can you reply to confirm i've sent t" 
+MISS [legit->Suspicious] uci_holdout-064 uci_ham: "Hey elaine, is today's meeting still on?" 
+MISS [legit->Scam] uci_holdout-086 uci_ham: 'There are no other charges after transfer charges and you can withdraw anyhow you like' 
+MISS [legit->Suspicious] uci_holdout-094 uci_ham: "K..k..i'm also fine:)when will you complete the course?" 

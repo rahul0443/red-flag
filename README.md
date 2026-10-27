@@ -41,12 +41,12 @@ Pooled over the hand-written benchmark, the hard-text set and the live-phishing 
 | | False alarms on 90 legitimate messages | Scams caught (of 89) |
 |---|---|---|
 | Muse Spark alone (no tools) | 5 (5.6%) | 88 |
-| **Red Flag agent** | **0 (0.0%, 95% CI 0-4.1%)** | **89** |
+| **Red Flag agent** | **1 (1.1%, 95% CI 0.2-6.0%)** | **89** |
 
 What this does and doesn't show (stated plainly):
-- **Muse Spark alone is already strong** (96-99% accuracy). The agent doesn't win on raw accuracy; the gap in false alarms (0/90 vs 5/90, Fisher p = 0.059) is suggestive, not conclusive.
+- **Muse Spark alone is already strong** (96-99% accuracy). The agent doesn't win on raw accuracy; the gap in false alarms (1/90 vs 5/90, Fisher p = 0.21) points the right way but is **not statistically significant**. An earlier full run of the same sets gave 0/90 vs 5/90, so expect run-to-run variation.
 - The agent's real value is **verified, shown evidence**, and fewer false alarms on real brand messages because it checks the official domain instead of guessing.
-- The agent reserves "Scam" for concrete evidence. Polite scams with nothing checkable come back "Suspicious", so strict ("Scam" only) recall on the hard-text set is 65% vs 85% for the baseline. That's a deliberate calibration.
+- The agent reserves "Scam" for concrete evidence. Polite scams with nothing checkable come back "Suspicious", so strict ("Scam" only) recall on the hard-text set is 70% vs 95% for the baseline. That's a deliberate calibration.
 - **Live-phishing pairs**: each live phishing URL (OpenPhish snapshot, Oct 26 2026, stored defanged) is paired with the same message using the brand's real URL. The labels and the blocklist check come from the same feed, so we also ran an ablation without the blocklist: 100% accuracy on both sets, carried by redirects, domain checks and official-domain comparison.
 - **UCI SMS Spam is spam, not scams** (many are real O2/Orange promotions). We tuned the prompt on one UCI sample, then report only a **fresh held-out sample** (seed 99, no overlap).
 - Hand-written benchmark messages and training templates were written by the same author; the Glimmer training data was filtered against every eval message (756 candidates dropped for overlap).
@@ -86,7 +86,7 @@ Everything in this repository was written during the event. First commit: Oct 26
 
 ## Open weights
 
-The same agent runs on open-weight **Muse Spark Open** served by Baseten (`AGENT_BACKEND=open`, key in `BASETEN_API_KEY`; reproduce with `scripts/run_open_evals.sh`). It catches the scams (100% recall on three of four sets, 95% on hard text) but raises more false alarms than closed Muse Spark (10-20% on our realistic sets, 60% on casual UCI chat), because the prompt was tuned on closed Muse Spark. Full table in `evals/RESULTS.md`. Closed Muse Spark is the default.
+The same agent, unchanged, runs on open-weight **Muse Spark Open** served by Baseten (`AGENT_BACKEND=open`, key in `BASETEN_API_KEY`; reproduce with `scripts/run_open_evals.sh`). On the three realistic sets (179 messages) it caught every scam with no false alarms; on the held-out UCI chat set it scored 94% with a 12% false-alarm rate, versus 2% for closed Muse Spark. The prompt was tuned on closed Muse Spark, so this is a fair out-of-the-box result for the open model, not a tuned one. Full table in `evals/RESULTS.md`. The app also fails over automatically between the two models. Closed Muse Spark is the default.
 
 ## Status
 

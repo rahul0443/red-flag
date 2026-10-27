@@ -5,53 +5,50 @@
  "lenient": {
   "n": 60,
   "errors": 0,
-  "accuracy": 0.95,
-  "precision": 0.909,
+  "accuracy": 1.0,
+  "precision": 1.0,
   "recall": 1.0,
-  "false_positive_rate": 0.1,
+  "false_positive_rate": 0.0,
   "recall_95ci": [
    0.886,
    1
   ],
   "fpr_95ci": [
-   0.035,
-   0.256
+   0,
+   0.114
   ],
-  "f1": 0.952,
+  "f1": 1.0,
   "confusion": {
    "tp": 30,
    "fn": 0,
-   "fp": 3,
-   "tn": 27
+   "fp": 0,
+   "tn": 30
   }
  },
  "strict": {
   "n": 60,
   "errors": 0,
-  "accuracy": 0.983,
-  "precision": 0.968,
+  "accuracy": 1.0,
+  "precision": 1.0,
   "recall": 1.0,
-  "false_positive_rate": 0.033,
+  "false_positive_rate": 0.0,
   "recall_95ci": [
    0.886,
    1
   ],
   "fpr_95ci": [
-   0.006,
-   0.167
+   0,
+   0.114
   ],
-  "f1": 0.984,
+  "f1": 1.0,
   "confusion": {
    "tp": 30,
    "fn": 0,
-   "fp": 1,
-   "tn": 29
+   "fp": 0,
+   "tn": 30
   }
  },
- "median_seconds": 10.350000000000001,
- "avg_tokens": 8865,
- "avg_tool_calls": 4.38
+ "median_seconds": 8.8,
+ "avg_tokens": 8661,
+ "avg_tool_calls": 4.42
 }
-MISS [legit->Suspicious] live-017 live_twin_Steam: 'Steam: We noticed a new sign-in to your account. You can review it here: https://steamcomm' 
-MISS [legit->Scam] live-041 live_twin_Roblox: 'Roblox: We noticed a new sign-in to your account. You can review it here: https://www.robl' 
-MISS [legit->Suspicious] live-047 live_twin_DHL: 'DHL notice: a document was shared with you. Open it here: https://www.dhl.com/us-en/home/t' 

@@ -10,7 +10,7 @@ def triage(message: str) -> dict:
     t0 = time.time()
     try:
         resp = get_open_client().chat.completions.create(
-            model=config.OPEN_MODEL, max_tokens=config.MAX_TOKENS, temperature=0,
+            model=config.OPEN_MODEL, max_tokens=config.MAX_TOKENS, temperature=0, extra_body={"reasoning_effort": config.TRIAGE_EFFORT},
             messages=[{"role": "system", "content": SYSTEM_PROMPT},
                       {"role": "user", "content": f"<message>\n{message[:4000]}\n</message>"}])
         out = parse_json(resp.choices[0].message.content or "")

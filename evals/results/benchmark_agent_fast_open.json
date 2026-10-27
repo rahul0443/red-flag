@@ -1,0 +1,1322 @@
+{
+ "summary": {
+  "set": "benchmark",
+  "mode": "agent",
+  "model": "meta-models/muse-spark-open-1026",
+  "lenient": {
+   "n": 79,
+   "errors": 0,
+   "accuracy": 0.975,
+   "precision": 0.951,
+   "recall": 1.0,
+   "false_positive_rate": 0.05,
+   "recall_95ci": [
+    0.91,
+    1
+   ],
+   "fpr_95ci": [
+    0.014,
+    0.165
+   ],
+   "f1": 0.975,
+   "confusion": {
+    "tp": 39,
+    "fn": 0,
+    "fp": 2,
+    "tn": 38
+   }
+  },
+  "strict": {
+   "n": 79,
+   "errors": 0,
+   "accuracy": 0.911,
+   "precision": 1.0,
+   "recall": 0.821,
+   "false_positive_rate": 0.0,
+   "recall_95ci": [
+    0.673,
+    0.91
+   ],
+   "fpr_95ci": [
+    0,
+    0.088
+   ],
+   "f1": 0.902,
+   "confusion": {
+    "tp": 32,
+    "fn": 7,
+    "fp": 0,
+    "tn": 40
+   }
+  },
+  "median_seconds": 4.3,
+  "avg_tokens": 9762,
+  "avg_tool_calls": 2.37
+ },
+ "results": [
+  {
+   "id": "benchmark-000",
+   "label": "scam",
+   "category": "package_fee",
+   "text": "USPS: Your package could not be delivered due to an unpaid customs fee of $1.99. Pay within 12 hours or it will be returned: http://usps-redelivery-help.top/pay",
+   "verdict": "Suspicious",
+   "confidence": 0.4,
+   "usage": {
+    "prompt_tokens": 28633,
+    "completion_tokens": 2858,
+    "llm_calls": 8,
+    "tool_calls": 4
+   },
+   "summary": "The investigation could not finish (step limit reached), so treat this message with caution.",
+   "seconds": 12.6
+  },
+  {
+   "id": "benchmark-001",
+   "label": "scam",
+   "category": "package_fee",
+   "text": "FedEx: We attempted delivery but nobody was home. Confirm your address and reschedule here: fedex-reschedule-now.info/track?id=88213",
+   "verdict": "Scam",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 26859,
+    "completion_tokens": 2452,
+    "llm_calls": 8,
+    "tool_calls": 4
+   },
+   "summary": "Fake FedEx delivery text using an imitation domain that is not the real fedex.com.",
+   "seconds": 10.9
+  },
+  {
+   "id": "benchmark-002",
+   "label": "scam",
+   "category": "package_fee",
+   "text": "DHL Express: your parcel is held at our depot. A customs charge of $2.45 is required. Pay at dhl-customs-pay.xyz to release it.",
+   "verdict": "Suspicious",
+   "confidence": 0.4,
+   "usage": {
+    "prompt_tokens": 27383,
+    "completion_tokens": 2514,
+    "llm_calls": 8,
+    "tool_calls": 4
+   },
+   "summary": "The investigation could not finish (step limit reached), so treat this message with caution.",
+   "seconds": 12.7
+  },
+  {
+   "id": "benchmark-003",
+   "label": "scam",
+   "category": "toll",
+   "text": "NJ E-ZPass: You have an unpaid toll balance of $12.50. To avoid a $50 late fee, pay by today: ezpass-nj-tollpay.top/inv",
+   "verdict": "Scam",
+   "confidence": 0.93,
+   "usage": {
+    "prompt_tokens": 10258,
+    "completion_tokens": 1212,
+    "llm_calls": 4,
+    "tool_calls": 5
+   },
+   "summary": "This is a fake NJ E-ZPass toll smishing text pushing you to pay $12.50 to avoid a $50 fee at ezpass-nj-tollpay.top, which is not an official E-ZPass domain.",
+   "seconds": 8.7
+  },
+  {
+   "id": "benchmark-004",
+   "label": "scam",
+   "category": "bank_alert",
+   "text": "Chase Alert: Unusual $849.00 charge on your card. If this was not you, verify now or your account will be locked: chase-secure-verify.top/login",
+   "verdict": "Scam",
+   "confidence": 0.97,
+   "usage": {
+    "prompt_tokens": 2450,
+    "completion_tokens": 462,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "This is a fake Chase alert using a lookalike website to steal your information \u2014 do not click or enter anything.",
+   "seconds": 2.3
+  },
+  {
+   "id": "benchmark-005",
+   "label": "scam",
+   "category": "bank_alert",
+   "text": "Wells Fargo: Your account has been temporarily restricted. Call our fraud department at 1-855-555-0113 immediately to restore access.",
+   "verdict": "Scam",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 25693,
+    "completion_tokens": 3444,
+    "llm_calls": 8,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake Wells Fargo account restriction alert trying to get you to call a scammer's phone number.",
+   "seconds": 12.8
+  },
+  {
+   "id": "benchmark-006",
+   "label": "scam",
+   "category": "bank_code",
+   "text": "Bank of America: we detected a login from a new device. To cancel, reply with the 6-digit code we just sent you.",
+   "verdict": "Scam",
+   "confidence": 0.97,
+   "usage": {
+    "prompt_tokens": 2087,
+    "completion_tokens": 370,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is not from your bank \u2014 it's a scammer trying to steal the one-time code so they can log in as you.",
+   "seconds": 1.5
+  },
+  {
+   "id": "benchmark-007",
+   "label": "scam",
+   "category": "zelle",
+   "text": "Zelle: A payment of $500 to you is pending because your account is not upgraded. Send $100 to unlock it, you will be refunded instantly.",
+   "verdict": "Scam",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 2097,
+    "completion_tokens": 374,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake Zelle message \u2014 Zelle never requires you to send money to unlock a pending payment.",
+   "seconds": 1.7
+  },
+  {
+   "id": "benchmark-008",
+   "label": "scam",
+   "category": "venmo",
+   "text": "Venmo: you were sent $350 by mistake. Please return it via this link right away or your account will be suspended: venmo-refund-help.click/r",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2425,
+    "completion_tokens": 544,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "This is a fake Venmo message trying to steal a refund \u2014 it uses a lookalike link that is not venmo.com and threatens suspension to pressure you.",
+   "seconds": 2.7
+  },
+  {
+   "id": "benchmark-009",
+   "label": "scam",
+   "category": "invoice",
+   "text": "PayPal invoice #INV-44821 for $479.99 (Norton antivirus renewal) has been paid. If you did not authorize this, call 1-888-555-0177 within 24 hours to cancel.",
+   "verdict": "Scam",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 2108,
+    "completion_tokens": 440,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake PayPal invoice callback scam \u2014 you didn't pay anything, they want you to call the number so they can pressure you for money or access.",
+   "seconds": 1.8
+  },
+  {
+   "id": "benchmark-010",
+   "label": "scam",
+   "category": "order_call",
+   "text": "Amazon: Your order of an iPhone 15 Pro for $1,149 has been placed. If you did not make this purchase call 1-877-555-0166 to cancel.",
+   "verdict": "Scam",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 2109,
+    "completion_tokens": 521,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake Amazon order alert trying to get you to call a scammer instead of Amazon.",
+   "seconds": 2.5
+  },
+  {
+   "id": "benchmark-011",
+   "label": "scam",
+   "category": "giftcard",
+   "text": "Hi, this is Mark from the Amazon billing team. Your account has a security hold. To clear it purchase two $500 Amazon gift cards and read me the codes.",
+   "verdict": "Scam",
+   "confidence": 1.0,
+   "usage": {
+    "prompt_tokens": 2103,
+    "completion_tokens": 380,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a gift-card payment scam impersonating Amazon \u2014 Amazon never clears security holds by having you buy gift cards.",
+   "seconds": 1.8
+  },
+  {
+   "id": "benchmark-012",
+   "label": "scam",
+   "category": "irs",
+   "text": "IRS FINAL NOTICE: You owe $2,847 in back taxes. A warrant will be issued for your arrest today. Call 855-555-0142 immediately and pay with Apple gift cards. Do not tell anyone.",
+   "verdict": "Scam",
+   "confidence": 0.99,
+   "usage": {
+    "prompt_tokens": 24405,
+    "completion_tokens": 2362,
+    "llm_calls": 8,
+    "tool_calls": 2
+   },
+   "summary": "This is a fake IRS arrest threat demanding Apple gift cards, which the real IRS never does.",
+   "seconds": 10.0
+  },
+  {
+   "id": "benchmark-013",
+   "label": "scam",
+   "category": "ssa",
+   "text": "This is the Social Security Administration. Your social security number has been suspended due to suspicious activity. Call 855-555-0150 or a warrant will be issued for your arrest.",
+   "verdict": "Scam",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 2096,
+    "completion_tokens": 383,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a government impersonation scam pretending your Social Security number was suspended and threatening arrest if you don't call.",
+   "seconds": 1.9
+  },
+  {
+   "id": "benchmark-014",
+   "label": "scam",
+   "category": "medicare",
+   "text": "Medicare: you are eligible for a new 2026 benefits card with $1,200 in grocery allowance. Reply YES and confirm your Medicare number to receive it.",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2099,
+    "completion_tokens": 416,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This text impersonates Medicare with a fake $1,200 grocery allowance to steal your Medicare number.",
+   "seconds": 1.7
+  },
+  {
+   "id": "benchmark-015",
+   "label": "scam",
+   "category": "apple",
+   "text": "Apple ID: Your iCloud account is locked due to suspicious activity. Verify within 24h or all photos will be deleted: apple-id-unlock.support/verify",
+   "verdict": "Scam",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 7290,
+    "completion_tokens": 890,
+    "llm_calls": 3,
+    "tool_calls": 5
+   },
+   "summary": "This is a fake Apple alert trying to steal your login \u2013 the link is not on Apple's official apple.com or icloud.com.",
+   "seconds": 4.6
+  },
+  {
+   "id": "benchmark-016",
+   "label": "scam",
+   "category": "techsupport",
+   "text": "WARNING: Your computer is infected with 5 viruses! Do not turn off your PC. Call Microsoft Support now at 1-800-555-0123.",
+   "verdict": "Scam",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 2091,
+    "completion_tokens": 404,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake Microsoft virus warning trying to make you call a scammer's phone number.",
+   "seconds": 1.9
+  },
+  {
+   "id": "benchmark-017",
+   "label": "scam",
+   "category": "geeksquad",
+   "text": "Geek Squad: your 3-year protection plan renews today for $389.99. To cancel and get a refund call 1-866-555-0188.",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2095,
+    "completion_tokens": 361,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake Geek Squad renewal invoice that wants you to call to cancel - a well-known refund scam.",
+   "seconds": 1.6
+  },
+  {
+   "id": "benchmark-018",
+   "label": "scam",
+   "category": "subscription",
+   "text": "Netflix: your payment failed and your account will be closed. Update billing now: netflix-billing-update.top/account",
+   "verdict": "Scam",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 2412,
+    "completion_tokens": 488,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "This is a fake Netflix payment warning trying to steal your billing details via a non-Netflix website.",
+   "seconds": 2.7
+  },
+  {
+   "id": "benchmark-019",
+   "label": "scam",
+   "category": "wrong_number",
+   "text": "Hi Sarah, are we still on for dinner Friday? Let me know!",
+   "verdict": "Suspicious",
+   "confidence": 0.75,
+   "usage": {
+    "prompt_tokens": 4169,
+    "completion_tokens": 862,
+    "llm_calls": 2,
+    "tool_calls": 0
+   },
+   "summary": "This looks like a classic wrong-number opener that greets you as 'Sarah' to get you to reply, a common first step in relationship scams.",
+   "seconds": 4.8
+  },
+  {
+   "id": "benchmark-020",
+   "label": "scam",
+   "category": "wrong_number",
+   "text": "Hello, I got your number from a friend. I'm Emily, I just moved to the city and don't know anyone. Can we chat? \ud83d\ude0a",
+   "verdict": "Suspicious",
+   "confidence": 0.4,
+   "usage": {
+    "prompt_tokens": 21268,
+    "completion_tokens": 2379,
+    "llm_calls": 8,
+    "tool_calls": 0
+   },
+   "summary": "The investigation could not finish (step limit reached), so treat this message with caution.",
+   "seconds": 12.4
+  },
+  {
+   "id": "benchmark-021",
+   "label": "scam",
+   "category": "crypto",
+   "text": "I've been making $3,000 a week with a crypto trading platform my uncle taught me. I can show you how, small deposit of $250 to start, guaranteed returns. Message me on WhatsApp.",
+   "verdict": "Scam",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 1993,
+    "completion_tokens": 798,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This is a classic crypto investment scam promising impossible guaranteed $3,000/week returns for a $250 deposit and trying to move you to WhatsApp.",
+   "seconds": 5.0
+  },
+  {
+   "id": "benchmark-022",
+   "label": "scam",
+   "category": "romance",
+   "text": "My dear, I am a US Army engineer deployed overseas. I have fallen in love with you. I need $800 in iTunes cards to take leave and come meet you.",
+   "verdict": "Scam",
+   "confidence": 0.99,
+   "usage": {
+    "prompt_tokens": 8627,
+    "completion_tokens": 1055,
+    "llm_calls": 4,
+    "tool_calls": 2
+   },
+   "summary": "This is a classic military romance scam \u2014 real US Army soldiers never need gift cards to take leave and never ask strangers for money.",
+   "seconds": 7.1
+  },
+  {
+   "id": "benchmark-023",
+   "label": "scam",
+   "category": "grandparent",
+   "text": "Grandma it's me, I'm in jail and I need bail money, please don't tell mom and dad. Can you send $2,400 in Google Play cards? A lawyer will call you.",
+   "verdict": "Suspicious",
+   "confidence": 0.4,
+   "usage": {
+    "prompt_tokens": 24154,
+    "completion_tokens": 2490,
+    "llm_calls": 8,
+    "tool_calls": 1
+   },
+   "summary": "The investigation could not finish (step limit reached), so treat this message with caution.",
+   "seconds": 11.4
+  },
+  {
+   "id": "benchmark-024",
+   "label": "scam",
+   "category": "job",
+   "text": "Hi! We found your resume. Remote job, earn $200-$400 per day liking videos. No experience needed. Contact our manager on Telegram @workfromhome_jobs to start today.",
+   "verdict": "Scam",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 8506,
+    "completion_tokens": 1377,
+    "llm_calls": 4,
+    "tool_calls": 0
+   },
+   "summary": "This is a classic fake 'like videos for money' task scam \u2014 unsolicited job offer to contact a Telegram manager.",
+   "seconds": 7.2
+  },
+  {
+   "id": "benchmark-025",
+   "label": "scam",
+   "category": "fake_check",
+   "text": "Congratulations on the personal assistant job! Enclosed is a check for $3,800. Deposit it and send $1,500 via Zelle to our equipment vendor, keep the rest as your pay.",
+   "verdict": "Scam",
+   "confidence": 0.99,
+   "usage": {
+    "prompt_tokens": 2105,
+    "completion_tokens": 445,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake-check scam posing as a new job \u2014 the check will bounce after you send $1,500 by Zelle, which cannot be recovered.",
+   "seconds": 2.5
+  },
+  {
+   "id": "benchmark-026",
+   "label": "scam",
+   "category": "lottery",
+   "text": "CONGRATULATIONS! You've won $750,000 in the Mega Millions International Lottery. To claim, send a $199 processing fee. Reply with your full name and bank details.",
+   "verdict": "Scam",
+   "confidence": 0.99,
+   "usage": {
+    "prompt_tokens": 9012,
+    "completion_tokens": 1111,
+    "llm_calls": 4,
+    "tool_calls": 1
+   },
+   "summary": "You did not win a lottery \u2014 this is a classic advance-fee scam asking for a $199 fee and bank details to steal money.",
+   "seconds": 6.1
+  },
+  {
+   "id": "benchmark-027",
+   "label": "scam",
+   "category": "crypto_wallet",
+   "text": "Coinbase: a withdrawal of 0.8 BTC is pending. If this was not you, secure your wallet immediately by entering your 12-word recovery phrase: coinbase-secure-wallet.info",
+   "verdict": "Scam",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 28131,
+    "completion_tokens": 2924,
+    "llm_calls": 8,
+    "tool_calls": 4
+   },
+   "summary": "Fake Coinbase 0.8 BTC withdrawal alert trying to steal your 12-word recovery phrase via coinbase-secure-wallet.info, which is not the official Coinbase domain.",
+   "seconds": 11.3
+  },
+  {
+   "id": "benchmark-028",
+   "label": "scam",
+   "category": "tax_refund",
+   "text": "You are eligible for a tax refund of $1,462.18. Submit your request and bank details here to receive the payment: gov-taxrefund-claim.top",
+   "verdict": "Scam",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 4767,
+    "completion_tokens": 759,
+    "llm_calls": 2,
+    "tool_calls": 4
+   },
+   "summary": "This is a fake tax-refund message impersonating the IRS and directing you to a non-government site to steal your bank details.",
+   "seconds": 4.3
+  },
+  {
+   "id": "benchmark-029",
+   "label": "scam",
+   "category": "utility",
+   "text": "Duke Energy: your power will be disconnected in 1 hour due to an overdue balance of $312. Pay now using a Bitcoin ATM, call 1-800-555-0102 for instructions.",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 6282,
+    "completion_tokens": 866,
+    "llm_calls": 3,
+    "tool_calls": 1
+   },
+   "summary": "This claims your power will be cut in 1 hour unless you pay $312 via Bitcoin ATM \u2014 a classic utility disconnection scam.",
+   "seconds": 5.8
+  },
+  {
+   "id": "benchmark-030",
+   "label": "scam",
+   "category": "bec",
+   "text": "Hi, are you at your desk? I need you to buy 5 Target gift cards for a client gift, $200 each. I'm in a meeting so can't talk. I'll reimburse you today. Send me the codes. - Jim, CEO",
+   "verdict": "Scam",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 2003,
+    "completion_tokens": 603,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This is a classic boss-impersonation gift card scam \u2014 a real CEO would not ask you to buy gift cards and send codes by text/email while refusing to talk.",
+   "seconds": 3.7
+  },
+  {
+   "id": "benchmark-031",
+   "label": "scam",
+   "category": "dmv",
+   "text": "State DMV: you have an outstanding traffic violation. Failure to pay $58 within 48 hours will result in license suspension: dmv-state-pay.xyz/citation",
+   "verdict": "Scam",
+   "confidence": 0.93,
+   "usage": {
+    "prompt_tokens": 7209,
+    "completion_tokens": 883,
+    "llm_calls": 3,
+    "tool_calls": 4
+   },
+   "summary": "Message impersonates the DMV to demand $58 via a fake .xyz link that doesn't resolve and isn't a real DMV domain.",
+   "seconds": 6.1
+  },
+  {
+   "id": "benchmark-032",
+   "label": "scam",
+   "category": "student_loan",
+   "text": "You qualify for federal student loan forgiveness of up to $20,000. This offer ends tonight. Reply with your FSA ID and SSN to apply.",
+   "verdict": "Scam",
+   "confidence": 0.99,
+   "usage": {
+    "prompt_tokens": 20916,
+    "completion_tokens": 2033,
+    "llm_calls": 8,
+    "tool_calls": 4
+   },
+   "summary": "Fake federal loan forgiveness text trying to steal your FSA ID and Social Security Number via a rushed text reply.",
+   "seconds": 12.4
+  },
+  {
+   "id": "benchmark-033",
+   "label": "scam",
+   "category": "social",
+   "text": "Instagram: your account will be permanently disabled for copyright violation. Appeal within 12 hours: instagram-appeal-center.click/case",
+   "verdict": "Scam",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 2420,
+    "completion_tokens": 477,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "This is a fake Instagram copyright ban scam \u2014 the link is not on instagram.com and Instagram never threatens permanent bans with a 12-hour deadline via off-domain links.",
+   "seconds": 2.5
+  },
+  {
+   "id": "benchmark-034",
+   "label": "scam",
+   "category": "voicemail",
+   "text": "Hello, this is the fraud prevention department of Amazon. We have detected suspicious activity on your account and ordered a $1,299 item. Press 1 to speak with an agent to cancel this order.",
+   "verdict": "Scam",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 2110,
+    "completion_tokens": 458,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a fake Amazon fraud call trying to get you to press 1 and talk to a scammer about a $1,299 order you didn't place.",
+   "seconds": 2.9
+  },
+  {
+   "id": "benchmark-035",
+   "label": "scam",
+   "category": "docusign",
+   "text": "Subject: Please review and sign: Payroll_Update_Q4.pdf. You have a new secure document. Sign here to view: docusign-secure-review.top/doc/8812",
+   "verdict": "Suspicious",
+   "confidence": 0.4,
+   "usage": {
+    "prompt_tokens": 28309,
+    "completion_tokens": 2732,
+    "llm_calls": 8,
+    "tool_calls": 4
+   },
+   "summary": "The investigation could not finish (step limit reached), so treat this message with caution.",
+   "seconds": 10.4
+  },
+  {
+   "id": "benchmark-036",
+   "label": "scam",
+   "category": "office365",
+   "text": "Microsoft 365: your password expires today. Keep your current password by confirming here: o365-password-keep.info/login",
+   "verdict": "Scam",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2405,
+    "completion_tokens": 494,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "This is a phishing impersonation of Microsoft 365 trying to steal your password through a fake login link that does not belong to Microsoft.",
+   "seconds": 2.8
+  },
+  {
+   "id": "benchmark-037",
+   "label": "scam",
+   "category": "rental",
+   "text": "Hi, I'm interested in your apartment listing. I'm out of the country so can't view it, but I can send a deposit via Zelle if you hold it for me. Please send your bank details.",
+   "verdict": "Suspicious",
+   "confidence": 0.4,
+   "usage": {
+    "prompt_tokens": 23958,
+    "completion_tokens": 2850,
+    "llm_calls": 8,
+    "tool_calls": 1
+   },
+   "summary": "The investigation could not finish (step limit reached), so treat this message with caution.",
+   "seconds": 15.5
+  },
+  {
+   "id": "benchmark-038",
+   "label": "scam",
+   "category": "charity",
+   "text": "Hurricane relief fund: hundreds of families need help. Donate now with Apple gift cards, text us the codes. Every card counts!",
+   "verdict": "Scam",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 2082,
+    "completion_tokens": 379,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a donation scam asking for Apple gift card codes \u2014 no legitimate charity collects donations this way.",
+   "seconds": 2.1
+  },
+  {
+   "id": "benchmark-039",
+   "label": "legit",
+   "category": "delivery",
+   "text": "USPS Tracking: Your package 9400 1118 9922 3841 0027 56 is out for delivery today. Track at usps.com/tracking",
+   "verdict": "Suspicious",
+   "confidence": 0.4,
+   "usage": {
+    "prompt_tokens": 28068,
+    "completion_tokens": 2695,
+    "llm_calls": 8,
+    "tool_calls": 4
+   },
+   "summary": "The investigation could not finish (step limit reached), so treat this message with caution.",
+   "seconds": 12.8
+  },
+  {
+   "id": "benchmark-040",
+   "label": "legit",
+   "category": "delivery",
+   "text": "Amazon: Your package was delivered. It was left near your front door. Track your orders at amazon.com/your-orders",
+   "verdict": "Looks Safe",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 2812,
+    "completion_tokens": 398,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "This is a routine Amazon delivery notice that points to Amazon's real website with no request for payment or personal information.",
+   "seconds": 2.9
+  },
+  {
+   "id": "benchmark-041",
+   "label": "legit",
+   "category": "delivery",
+   "text": "UPS: Your package from Nike is scheduled for delivery tomorrow between 2 PM and 6 PM. Manage delivery at ups.com/mychoice",
+   "verdict": "Looks Safe",
+   "confidence": 0.97,
+   "usage": {
+    "prompt_tokens": 22513,
+    "completion_tokens": 2345,
+    "llm_calls": 7,
+    "tool_calls": 4
+   },
+   "summary": "This is a normal UPS delivery notification that points to the official UPS My Choice page.",
+   "seconds": 13.2
+  },
+  {
+   "id": "benchmark-042",
+   "label": "legit",
+   "category": "bank_fraud_real",
+   "text": "Chase: Did you attempt a $42.18 purchase at TARGET on 10/24? Reply YES or NO. Msg & data rates may apply.",
+   "verdict": "Looks Safe",
+   "confidence": 0.85,
+   "usage": {
+    "prompt_tokens": 2101,
+    "completion_tokens": 648,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a standard Chase purchase verification asking for a YES/NO reply with no link, phone number, or request for sensitive information.",
+   "seconds": 2.5
+  },
+  {
+   "id": "benchmark-043",
+   "label": "legit",
+   "category": "bank_2fa",
+   "text": "Your Bank of America verification code is 482913. Don't share this code with anyone. We'll never call or text you to ask for it.",
+   "verdict": "Suspicious",
+   "confidence": 0.4,
+   "usage": {
+    "prompt_tokens": 22718,
+    "completion_tokens": 1999,
+    "llm_calls": 8,
+    "tool_calls": 1
+   },
+   "summary": "The investigation could not finish (step limit reached), so treat this message with caution.",
+   "seconds": 9.9
+  },
+  {
+   "id": "benchmark-044",
+   "label": "legit",
+   "category": "bank_balance",
+   "text": "Wells Fargo: Your checking account ending in 4821 has a low balance of $48.20 as of 10/25. Manage alerts in the Wells Fargo mobile app.",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 2096,
+    "completion_tokens": 406,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "Plain low-balance alert with no link, payment request, or code request \u2014 consistent with legitimate bank notification to use the official app.",
+   "seconds": 2.3
+  },
+  {
+   "id": "benchmark-045",
+   "label": "legit",
+   "category": "2fa",
+   "text": "Your Google verification code is 385721. Don't share it with anyone.",
+   "verdict": "Looks Safe",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 2074,
+    "completion_tokens": 436,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This is a standard Google verification code notification with no links or requests, telling you not to share it.",
+   "seconds": 1.9
+  },
+  {
+   "id": "benchmark-046",
+   "label": "legit",
+   "category": "2fa",
+   "text": "Uber: Your code is 8821. Never share this code. Reply STOP to unsubscribe.",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 6255,
+    "completion_tokens": 800,
+    "llm_calls": 3,
+    "tool_calls": 2
+   },
+   "summary": "This is a standard one-time code message with no link or request to share the code, pay, or call.",
+   "seconds": 5.0
+  },
+  {
+   "id": "benchmark-047",
+   "label": "legit",
+   "category": "appointment",
+   "text": "Reminder: You have an appointment with Dr. Patel at Valley Family Medicine on Thu Oct 29 at 2:30 PM. Reply C to confirm or call 480-555-0134 to reschedule.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 4012,
+    "completion_tokens": 995,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a normal doctor's appointment reminder with no scam signs.",
+   "seconds": 5.4
+  },
+  {
+   "id": "benchmark-048",
+   "label": "legit",
+   "category": "pharmacy",
+   "text": "CVS Pharmacy: Your prescription is ready for pickup at 123 Main St. Reply STOP to opt out.",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 4057,
+    "completion_tokens": 495,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "Routine prescription-ready notification with no link, payment request, or sensitive data ask.",
+   "seconds": 3.8
+  },
+  {
+   "id": "benchmark-049",
+   "label": "legit",
+   "category": "utility",
+   "text": "Duke Energy: Your October bill of $118.42 is ready and due Nov 12. View and pay at duke-energy.com or in the app.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 4682,
+    "completion_tokens": 851,
+    "llm_calls": 2,
+    "tool_calls": 4
+   },
+   "summary": "This looks like a normal Duke Energy bill reminder pointing to its long-standing official website.",
+   "seconds": 5.7
+  },
+  {
+   "id": "benchmark-050",
+   "label": "legit",
+   "category": "airline",
+   "text": "Delta: Your flight DL 1432 to Atlanta on Oct 30 is delayed 45 minutes. New departure 6:15 PM, gate B12. Check the Fly Delta app for updates.",
+   "verdict": "Looks Safe",
+   "confidence": 0.93,
+   "usage": {
+    "prompt_tokens": 14070,
+    "completion_tokens": 1315,
+    "llm_calls": 6,
+    "tool_calls": 1
+   },
+   "summary": "Routine Delta delay notice with no links or requests for money or data.",
+   "seconds": 10.0
+  },
+  {
+   "id": "benchmark-051",
+   "label": "legit",
+   "category": "subscription",
+   "text": "Netflix: Your payment method was updated successfully. You can review your account anytime at netflix.com/account.",
+   "verdict": "Looks Safe",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2391,
+    "completion_tokens": 518,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "This looks like an ordinary Netflix account notice linking to Netflix's real website.",
+   "seconds": 4.6
+  },
+  {
+   "id": "benchmark-052",
+   "label": "legit",
+   "category": "school",
+   "text": "Lincoln Elementary: School will be closed Monday Oct 26 due to a water main break. Classes resume Tuesday. - Principal Davis",
+   "verdict": "Looks Safe",
+   "confidence": 0.99,
+   "usage": {
+    "prompt_tokens": 19918,
+    "completion_tokens": 1826,
+    "llm_calls": 8,
+    "tool_calls": 0
+   },
+   "summary": "Routine school closure notice from Principal Davis with no links or requests.",
+   "seconds": 10.9
+  },
+  {
+   "id": "benchmark-053",
+   "label": "legit",
+   "category": "friend",
+   "text": "Running 10 min late, grab us a table! Order me the iced coffee.",
+   "verdict": "Looks Safe",
+   "confidence": 0.99,
+   "usage": {
+    "prompt_tokens": 1969,
+    "completion_tokens": 323,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "Casual message between people who know each other with no request for money, codes, or links.",
+   "seconds": 2.0
+  },
+  {
+   "id": "benchmark-054",
+   "label": "legit",
+   "category": "family",
+   "text": "Mom: can you pick up milk and eggs on your way home? Thanks sweetie",
+   "verdict": "Looks Safe",
+   "confidence": 0.99,
+   "usage": {
+    "prompt_tokens": 1969,
+    "completion_tokens": 322,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This is a normal, harmless message from someone you know asking to pick up groceries, with no links, requests for money or personal information.",
+   "seconds": 1.4
+  },
+  {
+   "id": "benchmark-055",
+   "label": "legit",
+   "category": "receipt",
+   "text": "Subject: Your Apple receipt. Order ID MQ2X8841. MacBook Air charger $79.00. View your receipt at apple.com/account. Questions? support.apple.com",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 2666,
+    "completion_tokens": 431,
+    "llm_calls": 1,
+    "tool_calls": 7
+   },
+   "summary": "This looks like a normal Apple receipt notice that points to Apple's real official website.",
+   "seconds": 2.9
+  },
+  {
+   "id": "benchmark-056",
+   "label": "legit",
+   "category": "order",
+   "text": "Subject: Your Amazon.com order of Bluetooth Headphones has shipped. Arriving Wednesday. Track at amazon.com/gp/your-account/order-history",
+   "verdict": "Looks Safe",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2948,
+    "completion_tokens": 490,
+    "llm_calls": 1,
+    "tool_calls": 7
+   },
+   "summary": "This looks like a normal Amazon shipping notice linking to the real Amazon website.",
+   "seconds": 4.9
+  },
+  {
+   "id": "benchmark-057",
+   "label": "legit",
+   "category": "payment_app",
+   "text": "Venmo: You paid Sam Rivera $20.00 for 'Pizza Friday'. See details in the Venmo app.",
+   "verdict": "Looks Safe",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2080,
+    "completion_tokens": 372,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "This looks like a normal Venmo payment receipt with no link, request for money, or code \u2014 just directing you to check the Venmo app itself.",
+   "seconds": 2.0
+  },
+  {
+   "id": "benchmark-058",
+   "label": "legit",
+   "category": "job_real",
+   "text": "LinkedIn: 5 new jobs match your search for 'data analyst' in Phoenix. See them at linkedin.com/jobs",
+   "verdict": "Looks Safe",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 2376,
+    "completion_tokens": 351,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "Message is a standard LinkedIn job alert linking to the official LinkedIn jobs page with no suspicious elements.",
+   "seconds": 1.9
+  },
+  {
+   "id": "benchmark-059",
+   "label": "legit",
+   "category": "church",
+   "text": "Grace Community Church: Sunday service is at 10 AM. This week's potluck follows at noon in the fellowship hall. All welcome!",
+   "verdict": "Looks Safe",
+   "confidence": 0.98,
+   "usage": {
+    "prompt_tokens": 1978,
+    "completion_tokens": 306,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "This is a normal community announcement about a church service and potluck with no request for money, clicks, or personal information.",
+   "seconds": 1.9
+  },
+  {
+   "id": "benchmark-060",
+   "label": "legit",
+   "category": "dentist",
+   "text": "Smile Dental: Your cleaning is scheduled for Nov 3 at 9:00 AM. Reply YES to confirm. Call 623-555-0192 with questions.",
+   "verdict": "Looks Safe",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 1986,
+    "completion_tokens": 507,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "Routine dental appointment reminder with no links, payment requests, or sensitive information asked for.",
+   "seconds": 3.0
+  },
+  {
+   "id": "benchmark-061",
+   "label": "legit",
+   "category": "telecom",
+   "text": "Verizon: Your bill of $87.30 is ready. Auto-pay will process on Nov 5. View at verizon.com/myverizon. Msg&data rates may apply.",
+   "verdict": "Looks Safe",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 4851,
+    "completion_tokens": 695,
+    "llm_calls": 2,
+    "tool_calls": 4
+   },
+   "summary": "This is a routine Verizon bill notification linking to verizon.com/myverizon, which correctly redirects to Verizon's secure sign-in page.",
+   "seconds": 4.6
+  },
+  {
+   "id": "benchmark-062",
+   "label": "legit",
+   "category": "security_real",
+   "text": "Google: New sign-in to your account on a Mac in Phoenix, AZ. If this was you, no action is needed. If not, review activity at myaccount.google.com/notifications",
+   "verdict": "Looks Safe",
+   "confidence": 0.97,
+   "usage": {
+    "prompt_tokens": 20157,
+    "completion_tokens": 2204,
+    "llm_calls": 6,
+    "tool_calls": 4
+   },
+   "summary": "This is a standard Google new sign-in alert linking to Google's official domain.",
+   "seconds": 13.7
+  },
+  {
+   "id": "benchmark-063",
+   "label": "legit",
+   "category": "meeting",
+   "text": "Zoom: Rahul is inviting you to a scheduled Zoom meeting. Topic: Project sync. Time: Oct 27, 10:00 AM MST. Join: https://asu.zoom.us/j/95512345678",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 10272,
+    "completion_tokens": 1292,
+    "llm_calls": 4,
+    "tool_calls": 4
+   },
+   "summary": "Routine Zoom meeting invitation with standard university Zoom link and no request for money, codes, or sensitive data.",
+   "seconds": 9.0
+  },
+  {
+   "id": "benchmark-064",
+   "label": "legit",
+   "category": "outage",
+   "text": "SRP: A power outage is affecting your area. Crews are working to restore service by 4 PM. Updates at srpnet.com/outages",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 4850,
+    "completion_tokens": 758,
+    "llm_calls": 2,
+    "tool_calls": 4
+   },
+   "summary": "This is a routine utility outage notification directing you to srpnet.com for updates, with no request for money, personal data, or credentials.",
+   "seconds": 4.2
+  },
+  {
+   "id": "benchmark-065",
+   "label": "legit",
+   "category": "food",
+   "text": "DoorDash: Your Dasher is 5 minutes away with your order from Chipotle.",
+   "verdict": "Looks Safe",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 6166,
+    "completion_tokens": 597,
+    "llm_calls": 3,
+    "tool_calls": 1
+   },
+   "summary": "Routine DoorDash delivery update about your Chipotle order being 5 minutes away, with no links, payment requests, or sensitive data asked for.",
+   "seconds": 3.8
+  },
+  {
+   "id": "benchmark-066",
+   "label": "legit",
+   "category": "library",
+   "text": "Phoenix Public Library: your hold on 'The Remains of the Day' is ready for pickup at Burton Barr through Nov 2.",
+   "verdict": "Looks Safe",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 4067,
+    "completion_tokens": 464,
+    "llm_calls": 2,
+    "tool_calls": 1
+   },
+   "summary": "Hold-ready notice from Phoenix Public Library with no links, payment requests, or personal data asks.",
+   "seconds": 3.2
+  },
+  {
+   "id": "benchmark-067",
+   "label": "legit",
+   "category": "insurance",
+   "text": "State Farm: Your auto policy renews on Dec 1. No action is needed. Your new premium is $612 for 6 months. View at statefarm.com",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 4578,
+    "completion_tokens": 1122,
+    "llm_calls": 2,
+    "tool_calls": 4
+   },
+   "summary": "This looks like a normal State Farm renewal reminder with no action needed and a link to the real State Farm website.",
+   "seconds": 7.7
+  },
+  {
+   "id": "benchmark-068",
+   "label": "legit",
+   "category": "payroll",
+   "text": "Subject: Reminder: benefits enrollment closes Nov 15. Log in to the HR portal your company already uses to review your choices. - HR Team",
+   "verdict": "Looks Safe",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 1981,
+    "completion_tokens": 414,
+    "llm_calls": 1,
+    "tool_calls": 0
+   },
+   "summary": "Simple benefits-enrollment reminder that tells you to use the HR portal you already use, with no link, payment request, or personal-data demand.",
+   "seconds": 2.4
+  },
+  {
+   "id": "benchmark-069",
+   "label": "legit",
+   "category": "retail",
+   "text": "Costco: Your Costco Services order has been completed. Questions? Call 1-800-774-2678 or visit costco.com.",
+   "verdict": "Looks Safe",
+   "confidence": 0.9,
+   "usage": {
+    "prompt_tokens": 10582,
+    "completion_tokens": 1473,
+    "llm_calls": 4,
+    "tool_calls": 4
+   },
+   "summary": "Routine Costco order-completed notice pointing to the real costco.com with no payment, credential, or urgent request.",
+   "seconds": 6.1
+  },
+  {
+   "id": "benchmark-070",
+   "label": "legit",
+   "category": "charity_real",
+   "text": "Thank you for your $25 donation to the American Red Cross. Your tax receipt is available at redcross.org/receipts. Reply STOP to opt out.",
+   "verdict": "Looks Safe",
+   "confidence": 0.94,
+   "usage": {
+    "prompt_tokens": 2358,
+    "completion_tokens": 498,
+    "llm_calls": 1,
+    "tool_calls": 3
+   },
+   "summary": "This looks like a normal thank-you receipt notice from the American Red Cross pointing to its official website, with no request for money, passwords, or sensitive information.",
+   "seconds": 2.6
+  },
+  {
+   "id": "benchmark-071",
+   "label": "legit",
+   "category": "medicare_real",
+   "text": "Subject: Your Medicare Summary Notice is now available. Log in to your own account at medicare.gov to view it. We will never ask for your Medicare number by phone or text.",
+   "verdict": "Looks Safe",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 2421,
+    "completion_tokens": 504,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "This is a legitimate informational notice telling you to log in to your own account at the official Medicare website, with no request for money or personal information.",
+   "seconds": 3.1
+  },
+  {
+   "id": "benchmark-072",
+   "label": "legit",
+   "category": "bill_urgent",
+   "text": "Reminder from City of Tempe Utilities: your water bill of $64.10 is due in 3 days. Pay at tempe.gov/utilities or call 480-350-8361.",
+   "verdict": "Looks Safe",
+   "confidence": 0.96,
+   "usage": {
+    "prompt_tokens": 4782,
+    "completion_tokens": 679,
+    "llm_calls": 2,
+    "tool_calls": 4
+   },
+   "summary": "This is a routine bill reminder using the official City of Tempe government website, not a scam.",
+   "seconds": 4.3
+  },
+  {
+   "id": "benchmark-073",
+   "label": "legit",
+   "category": "marketing",
+   "text": "Target: Weekend sale! 20% off home decor in stores and online at target.com. Reply STOP to opt out.",
+   "verdict": "Looks Safe",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 16768,
+    "completion_tokens": 1679,
+    "llm_calls": 6,
+    "tool_calls": 5
+   },
+   "summary": "Standard retail promo linking to Target's official website with no sensitive request.",
+   "seconds": 11.2
+  },
+  {
+   "id": "benchmark-074",
+   "label": "legit",
+   "category": "bank_email",
+   "text": "Subject: Your Chase statement is ready. Sign in at chase.com or the Chase Mobile app to view it. We will never ask for your password or PIN by email.",
+   "verdict": "Looks Safe",
+   "confidence": 0.97,
+   "usage": {
+    "prompt_tokens": 21944,
+    "completion_tokens": 2119,
+    "llm_calls": 7,
+    "tool_calls": 4
+   },
+   "summary": "Routine Chase statement notice pointing to official chase.com and mobile app, not a scam.",
+   "seconds": 12.3
+  },
+  {
+   "id": "benchmark-075",
+   "label": "legit",
+   "category": "taxes_real",
+   "text": "Subject: IRS: Your e-file was accepted. Keep this for your records. Check refund status at irs.gov/refunds. The IRS does not call or text to demand payment.",
+   "verdict": "Looks Safe",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2423,
+    "completion_tokens": 470,
+    "llm_calls": 1,
+    "tool_calls": 4
+   },
+   "summary": "This appears to be a routine IRS e-file acceptance notice that points to the official IRS refund page and correctly states the IRS does not demand payment by phone or text.",
+   "seconds": 2.7
+  },
+  {
+   "id": "benchmark-076",
+   "label": "legit",
+   "category": "social_real",
+   "text": "Instagram: Your friend alex_m started following you.",
+   "verdict": "Looks Safe",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 2062,
+    "completion_tokens": 259,
+    "llm_calls": 1,
+    "tool_calls": 1
+   },
+   "summary": "Simple follower notification with no link, payment request, or action required.",
+   "seconds": 1.3
+  },
+  {
+   "id": "benchmark-077",
+   "label": "legit",
+   "category": "rx_refill",
+   "text": "Walgreens: Time to refill your prescription. Reply 1 to refill, or use the Walgreens app. Reply STOP to opt out.",
+   "verdict": "Looks Safe",
+   "confidence": 0.95,
+   "usage": {
+    "prompt_tokens": 6280,
+    "completion_tokens": 798,
+    "llm_calls": 3,
+    "tool_calls": 1
+   },
+   "summary": "Normal prescription refill reminder with no link, payment request, or personal data ask.",
+   "seconds": 5.3
+  },
+  {
+   "id": "benchmark-078",
+   "label": "legit",
+   "category": "vet",
+   "text": "Happy Paws Vet: Buddy is due for his annual vaccines. Call 602-555-0148 or book at happypawsvet.com.",
+   "verdict": "Looks Safe",
+   "confidence": 0.92,
+   "usage": {
+    "prompt_tokens": 17916,
+    "completion_tokens": 2184,
+    "llm_calls": 6,
+    "tool_calls": 4
+   },
+   "summary": "Ordinary veterinarian reminder to book annual vaccines with a phone number and website, with no payment demand, threats, or suspicious link behavior.",
+   "seconds": 9.9
+  }
+ ]
+}

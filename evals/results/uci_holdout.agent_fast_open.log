@@ -1,0 +1,72 @@
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+{
+ "set": "uci_holdout",
+ "mode": "agent",
+ "model": "meta-models/muse-spark-open-1026",
+ "lenient": {
+  "n": 100,
+  "errors": 0,
+  "accuracy": 0.91,
+  "precision": 0.873,
+  "recall": 0.96,
+  "false_positive_rate": 0.14,
+  "recall_95ci": [
+   0.865,
+   0.989
+  ],
+  "fpr_95ci": [
+   0.07,
+   0.262
+  ],
+  "f1": 0.914,
+  "confusion": {
+   "tp": 48,
+   "fn": 2,
+   "fp": 7,
+   "tn": 43
+  }
+ },
+ "strict": {
+  "n": 100,
+  "errors": 0,
+  "accuracy": 0.77,
+  "precision": 1.0,
+  "recall": 0.54,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.404,
+   0.67
+  ],
+  "fpr_95ci": [
+   0,
+   0.071
+  ],
+  "f1": 0.701,
+  "confusion": {
+   "tp": 27,
+   "fn": 23,
+   "fp": 0,
+   "tn": 50
+  }
+ },
+ "median_seconds": 6.699999999999999,
+ "avg_tokens": 10469,
+ "avg_tool_calls": 0.79
+}
+MISS [scam->Looks Safe] uci_holdout-037 uci_spam: "8007 25p 4 Alfie Moon's Children in Need song on ur mob. Tell ur m8s. Txt TONE CHARITY to " 
+MISS [scam->Looks Safe] uci_holdout-041 uci_spam: '22 days to kick off! For Euro2004 U will be kept up to date with the latest news and resul' 
+MISS [legit->Suspicious] uci_holdout-054 uci_ham: 'Dear how is chechi. Did you talk to her' 
+MISS [legit->Suspicious] uci_holdout-062 uci_ham: "My sort code is  and acc no is . The bank is natwest. Can you reply to confirm i've sent t" 
+MISS [legit->Suspicious] uci_holdout-064 uci_ham: "Hey elaine, is today's meeting still on?" 
+MISS [legit->Suspicious] uci_holdout-084 uci_ham: 'Where can download clear movies. Dvd copies.' 
+MISS [legit->Suspicious] uci_holdout-086 uci_ham: 'There are no other charges after transfer charges and you can withdraw anyhow you like' 
+MISS [legit->Suspicious] uci_holdout-093 uci_ham: 'Wishing you a beautiful day. Each moment revealing even more things to keep you smiling. D' 
+MISS [legit->Suspicious] uci_holdout-098 uci_ham: 'Y?WHERE U AT DOGBREATH? ITS JUST SOUNDING LIKE JAN C THAT\x92S AL!!!!!!!!!' 

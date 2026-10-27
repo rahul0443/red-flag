@@ -1,0 +1,54 @@
+{
+ "set": "hard_text",
+ "mode": "agent",
+ "model": "meta-models/muse-spark-open-1026",
+ "lenient": {
+  "n": 40,
+  "errors": 0,
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.839,
+   1
+  ],
+  "fpr_95ci": [
+   0,
+   0.161
+  ],
+  "f1": 1.0,
+  "confusion": {
+   "tp": 20,
+   "fn": 0,
+   "fp": 0,
+   "tn": 20
+  }
+ },
+ "strict": {
+  "n": 40,
+  "errors": 0,
+  "accuracy": 0.925,
+  "precision": 1.0,
+  "recall": 0.85,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.64,
+   0.948
+  ],
+  "fpr_95ci": [
+   0,
+   0.161
+  ],
+  "f1": 0.919,
+  "confusion": {
+   "tp": 17,
+   "fn": 3,
+   "fp": 0,
+   "tn": 20
+  }
+ },
+ "median_seconds": 9.2,
+ "avg_tokens": 11096,
+ "avg_tool_calls": 2.67
+}

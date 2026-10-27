@@ -1,0 +1,54 @@
+{
+ "set": "benchmark",
+ "mode": "agent",
+ "model": "muse-spark-1.3",
+ "lenient": {
+  "n": 79,
+  "errors": 0,
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.91,
+   1
+  ],
+  "fpr_95ci": [
+   0,
+   0.088
+  ],
+  "f1": 1.0,
+  "confusion": {
+   "tp": 39,
+   "fn": 0,
+   "fp": 0,
+   "tn": 40
+  }
+ },
+ "strict": {
+  "n": 79,
+  "errors": 0,
+  "accuracy": 0.937,
+  "precision": 1.0,
+  "recall": 0.872,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.733,
+   0.944
+  ],
+  "fpr_95ci": [
+   0,
+   0.088
+  ],
+  "f1": 0.932,
+  "confusion": {
+   "tp": 34,
+   "fn": 5,
+   "fp": 0,
+   "tn": 40
+  }
+ },
+ "median_seconds": 3.9,
+ "avg_tokens": 3681,
+ "avg_tool_calls": 2.32
+}

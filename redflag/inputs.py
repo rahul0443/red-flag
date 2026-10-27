@@ -43,7 +43,7 @@ def transcribe_image(data: bytes, mime: str) -> str:
     url = f"data:{mime};base64,{base64.b64encode(data).decode()}"
     try:
         resp = get_client().chat.completions.create(
-            model=config.MODEL, max_tokens=config.MAX_TOKENS,
+            model=config.MODEL, max_tokens=config.MAX_TOKENS, extra_body={"reasoning_effort": "low"},
             messages=[{"role": "user", "content": [
                 {"type": "text", "text": VISION_PROMPT},
                 {"type": "image_url", "image_url": {"url": url}}]}])

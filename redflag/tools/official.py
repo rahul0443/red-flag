@@ -41,9 +41,15 @@ BRANDS = {
 }
 
 
+_TWO_PART_SUFFIXES = {"co.uk", "org.uk", "gov.uk", "ac.uk", "me.uk", "com.au", "net.au", "org.au", "gov.au", "edu.au", "co.nz", "co.jp", "co.in",
+                      "com.br", "com.mx", "com.cn", "com.tr", "com.sg", "com.hk", "co.za", "co.kr", "com.ar", "com.co", "com.pk", "com.ng", "co.ke", "com.ph"}
+
+
 def _root(host: str) -> str:
-    parts = (host or "").lower().removeprefix("www.").split(".")
-    return ".".join(parts[-2:])
+    """Registrable domain: account.adobe.com -> adobe.com, shop.example.co.uk -> example.co.uk."""
+    parts = (host or "").lower().strip(".").removeprefix("www.").split(".")
+    keep = 3 if len(parts) >= 3 and ".".join(parts[-2:]) in _TWO_PART_SUFFIXES else 2
+    return ".".join(parts[-keep:])
 
 
 def official_contact_check(brand: str, observed_url_or_domain: str = "") -> dict:

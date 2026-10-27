@@ -8,12 +8,15 @@ _DOMAIN = re.compile(r"^(?=.{1,253}$)([a-z0-9_-]{1,63}\.)+[a-z0-9-]{2,63}$")
 
 
 def _clean(domain: str) -> str | None:
+    from redflag.tools.official import _root
     d = str(domain or "").lower().strip().removeprefix("www.").rstrip(".")
     try:
         d = d.encode("idna").decode("ascii")
     except UnicodeError:
         return None
-    return d if _DOMAIN.match(d) else None
+    if not _DOMAIN.match(d):
+        return None
+    return _root(d)  # registries answer for the registrable domain, not for subdomains
 
 
 def _event(data: dict, action: str):

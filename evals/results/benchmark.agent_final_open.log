@@ -1,0 +1,55 @@
+{
+ "set": "benchmark",
+ "mode": "agent",
+ "model": "meta-models/muse-spark-open-1026",
+ "lenient": {
+  "n": 79,
+  "errors": 0,
+  "accuracy": 0.987,
+  "precision": 0.975,
+  "recall": 1.0,
+  "false_positive_rate": 0.025,
+  "recall_95ci": [
+   0.91,
+   1
+  ],
+  "fpr_95ci": [
+   0.004,
+   0.129
+  ],
+  "f1": 0.987,
+  "confusion": {
+   "tp": 39,
+   "fn": 0,
+   "fp": 1,
+   "tn": 39
+  }
+ },
+ "strict": {
+  "n": 79,
+  "errors": 0,
+  "accuracy": 0.975,
+  "precision": 1.0,
+  "recall": 0.949,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.831,
+   0.986
+  ],
+  "fpr_95ci": [
+   0,
+   0.088
+  ],
+  "f1": 0.974,
+  "confusion": {
+   "tp": 37,
+   "fn": 2,
+   "fp": 0,
+   "tn": 40
+  }
+ },
+ "median_seconds": 6.2,
+ "avg_tokens": 7272,
+ "avg_tool_calls": 2.47
+}
+MISS [legit->Suspicious] benchmark-052 school: 'Lincoln Elementary: School will be closed Monday Oct 26 due to a water main break. Classes' 

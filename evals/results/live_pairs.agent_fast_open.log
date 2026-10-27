@@ -1,0 +1,77 @@
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+model call failed on Muse Spark Open: RateLimitError
+{
+ "set": "live_pairs",
+ "mode": "agent",
+ "model": "meta-models/muse-spark-open-1026",
+ "lenient": {
+  "n": 60,
+  "errors": 0,
+  "accuracy": 0.933,
+  "precision": 0.882,
+  "recall": 1.0,
+  "false_positive_rate": 0.133,
+  "recall_95ci": [
+   0.886,
+   1
+  ],
+  "fpr_95ci": [
+   0.053,
+   0.297
+  ],
+  "f1": 0.937,
+  "confusion": {
+   "tp": 30,
+   "fn": 0,
+   "fp": 4,
+   "tn": 26
+  }
+ },
+ "strict": {
+  "n": 60,
+  "errors": 0,
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "false_positive_rate": 0.0,
+  "recall_95ci": [
+   0.886,
+   1
+  ],
+  "fpr_95ci": [
+   0,
+   0.114
+  ],
+  "f1": 1.0,
+  "confusion": {
+   "tp": 30,
+   "fn": 0,
+   "fp": 0,
+   "tn": 30
+  }
+ },
+ "median_seconds": 6.15,
+ "avg_tokens": 11556,
+ "avg_tool_calls": 4.1
+}
+MISS [legit->Suspicious] live-041 live_twin_Roblox: 'Roblox: We noticed a new sign-in to your account. You can review it here: https://www.robl' 
+MISS [legit->Suspicious] live-045 live_twin_Roblox: 'Hi, a quick note from Roblox support about your account. Please take a look when you have ' 
+MISS [legit->Suspicious] live-047 live_twin_DHL: 'DHL notice: a document was shared with you. Open it here: https://www.dhl.com/us-en/home/t' 
+MISS [legit->Suspicious] live-049 live_twin_AT&T: 'AT&T: We noticed a new sign-in to your account. You can review it here: https://www.att.co' 

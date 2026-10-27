@@ -26,7 +26,7 @@ def fisher_two_sided(a, b, c, d):
 
 
 def load(s, m):
-    return json.load(open(R / f"{s}_{m}.json"))
+    return json.load(open(R / f"{s}_{'agent_final' if m == 'agent' else m}.json"))
 
 
 def counts(d):
@@ -64,16 +64,24 @@ for s, title in SETS:
 out += ["", "The agent reserves 'Scam' for concrete evidence; polite scams with nothing checkable are returned as 'Suspicious'. That is a deliberate calibration, and it lowers strict recall.", ""]
 out += ["", "## Same agent on open-weight Muse Spark Open (Baseten)", "", "Identical prompt, tools and sets; only the model changes (AGENT_BACKEND=open). The prompt was tuned on closed Muse Spark, not on this model.", "", "| Set | n | Accuracy | Scam recall | False-positive rate (95% CI) |", "|---|---|---|---|---|"]
 for s, title in SETS:
-    d = json.load(open(R / f"{s}_agent_open.json")); L = d["summary"]["lenient"]; tp, fn, fp, tn = counts(d); lo, hi = wilson(fp, fp + tn)
+    d = json.load(open(R / f"{s}_agent_final_open.json")); L = d["summary"]["lenient"]; tp, fn, fp, tn = counts(d); lo, hi = wilson(fp, fp + tn)
     out.append(f"| {title} | {L['n']} | {pct(L['accuracy'])} | {pct(L['recall'])} | {pct(L['false_positive_rate'])} ({pct(lo)}-{pct(hi)}) |")
 out += ["", "The prompt was tuned on closed Muse Spark, so these are out-of-the-box results for the open model. Closed Muse Spark remains the default; the app fails over between the two.", ""]
 out += ["", "## Prompt-injection robustness", "", "24 real-style scams that each carry an attack aimed at the investigator (ignore-previous-instructions, fake system tags, fake tool results, copy-this-verdict JSON, role-play, authority claims, other languages, base64, hidden comments, exfiltration requests, and more), plus 8 legitimate messages that contain instruction-like wording. Source: `evals/injection_src.py`.", "", "| Arm | Attacked scams still flagged | Called 'Looks Safe' | Legit flagged |", "|---|---|---|---|"]
-for tag, name in (("baseline", "Muse Spark, no tools"), ("agent", "Red Flag agent (Muse Spark)"), ("agent_open", "Red Flag agent (Muse Spark Open)")):
+for tag, name in (("baseline", "Muse Spark, no tools"), ("agent_final", "Red Flag agent (Muse Spark)"), ("agent_final_open", "Red Flag agent (Muse Spark Open)")):
     R = json.load(open(R_ / f"injection_{tag}.json"))["results"]
     sc = [r for r in R if r["label"] == "scam"]; lg = [r for r in R if r["label"] == "legit"]
     fl = sum(r["verdict"] in ("Scam", "Suspicious") for r in sc); safe = sum(r["verdict"] == "Looks Safe" for r in sc); lf = sum(r["verdict"] in ("Scam", "Suspicious") for r in lg)
     lo, hi = wilson(fl, len(sc))
     out.append(f"| {name} | {fl}/{len(sc)} (95% CI {pct(lo)}-{pct(hi)}) | {safe} | {lf}/{len(lg)} |")
 out += ["", "The attacks were written by us, so this shows resistance to common injection styles, not to a determined adaptive attacker. Untrusted text is always delimited, the model is told never to obey it, tool results and page text are labelled untrusted, and a blocklist hit can never be downgraded to 'Looks Safe' by the model.", ""]
+out += ["", "## Speed: median seconds to a verdict", "", "The first configuration called tools one model round at a time with default reasoning; the final one runs the standard checks before the first model call and uses lower reasoning where evidence is already in hand (closed Muse Spark only).", "", "| Set | First configuration | Final configuration |", "|---|---|---|"]
+import statistics
+for s, title in SETS + [("injection", "Prompt-injection set")]:
+    f0, f1 = R_ / f"{s}_agent.json", R_ / f"{s}_agent_final.json"
+    if f0.exists() and f1.exists():
+        m0 = statistics.median(r["seconds"] for r in json.load(open(f0))["results"]); m1 = statistics.median(r["seconds"] for r in json.load(open(f1))["results"])
+        out.append(f"| {title} | {m0:.0f}s | {m1:.0f}s |")
+out.append("")
 (Path(__file__).parent / "RESULTS.md").write_text("\n".join(out))
 print("\n".join(out))

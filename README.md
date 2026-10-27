@@ -61,6 +61,8 @@ What this does and doesn't show (stated plainly):
 
 ## Robustness
 
+**Prompt-injection test:** 24 scams that each try to talk the investigator into saying "Looks Safe" (fake system tags, fake tool results, role-play, authority claims, other languages, exfiltration requests...) were all still flagged by Muse Spark, Red Flag on Muse Spark, and Red Flag on Muse Spark Open (24/24, 95% CI 86-100%), with no false alarms on 8 legitimate messages that contain instruction-like wording. We wrote the attacks, so this is resistance to common styles, not proof against a determined attacker. Details: `evals/RESULTS.md`, reproduce with `scripts/run_injection_evals.sh`.
+
 `scripts/fuzz_api.py` throws 39 hostile or malformed inputs at the API (empty and 5,000-character text, emoji and right-to-left text, 50 links, private-IP and `file:`/`javascript:` links, HTML and prompt-injection text, fake tool markup, corrupt, oversized and wrong-type images and audio, silent audio). Every case ends in a verdict or a plain-language error, never a crash or a hang. Investigations are capped at 8 steps and 150 seconds, the isolated browser at 20 seconds of waiting, and the server limits concurrent and per-IP requests.
 
 ## Setup

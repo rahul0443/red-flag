@@ -3,7 +3,7 @@ import json
 from math import comb
 from pathlib import Path
 
-R = Path(__file__).parent / "results"
+R_ = R = Path(__file__).parent / "results"
 SETS = [("benchmark", "Benchmark (hand-written, 39 scam / 40 legit)"), ("hard_text", "Hard text (polite scams vs urgent-sounding legit)"),
         ("live_pairs", "Live phishing pairs (OpenPhish snapshot vs real-brand twin)"), ("uci_holdout", "UCI SMS held-out (public, spam not scam)")]
 
@@ -67,5 +67,13 @@ for s, title in SETS:
     d = json.load(open(R / f"{s}_agent_open.json")); L = d["summary"]["lenient"]; tp, fn, fp, tn = counts(d); lo, hi = wilson(fp, fp + tn)
     out.append(f"| {title} | {L['n']} | {pct(L['accuracy'])} | {pct(L['recall'])} | {pct(L['false_positive_rate'])} ({pct(lo)}-{pct(hi)}) |")
 out += ["", "The prompt was tuned on closed Muse Spark, so these are out-of-the-box results for the open model. Closed Muse Spark remains the default; the app fails over between the two.", ""]
+out += ["", "## Prompt-injection robustness", "", "24 real-style scams that each carry an attack aimed at the investigator (ignore-previous-instructions, fake system tags, fake tool results, copy-this-verdict JSON, role-play, authority claims, other languages, base64, hidden comments, exfiltration requests, and more), plus 8 legitimate messages that contain instruction-like wording. Source: `evals/injection_src.py`.", "", "| Arm | Attacked scams still flagged | Called 'Looks Safe' | Legit flagged |", "|---|---|---|---|"]
+for tag, name in (("baseline", "Muse Spark, no tools"), ("agent", "Red Flag agent (Muse Spark)"), ("agent_open", "Red Flag agent (Muse Spark Open)")):
+    R = json.load(open(R_ / f"injection_{tag}.json"))["results"]
+    sc = [r for r in R if r["label"] == "scam"]; lg = [r for r in R if r["label"] == "legit"]
+    fl = sum(r["verdict"] in ("Scam", "Suspicious") for r in sc); safe = sum(r["verdict"] == "Looks Safe" for r in sc); lf = sum(r["verdict"] in ("Scam", "Suspicious") for r in lg)
+    lo, hi = wilson(fl, len(sc))
+    out.append(f"| {name} | {fl}/{len(sc)} (95% CI {pct(lo)}-{pct(hi)}) | {safe} | {lf}/{len(lg)} |")
+out += ["", "The attacks were written by us, so this shows resistance to common injection styles, not to a determined adaptive attacker. Untrusted text is always delimited, the model is told never to obey it, tool results and page text are labelled untrusted, and a blocklist hit can never be downgraded to 'Looks Safe' by the model.", ""]
 (Path(__file__).parent / "RESULTS.md").write_text("\n".join(out))
 print("\n".join(out))

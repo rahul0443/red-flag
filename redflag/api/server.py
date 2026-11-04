@@ -64,6 +64,26 @@ def _release(tok):
 _hits: dict[str, deque] = defaultdict(deque)
 
 
+DAILY_CAP = int(os.getenv("DAILY_CAP", "0"))  # 0 = unlimited (local use); a public demo sets a cap to protect API credits
+_day = {"d": None, "n": 0}
+
+
+def _over_daily_cap() -> bool:
+    if not DAILY_CAP:
+        return False
+    today = time.strftime("%Y-%m-%d", time.gmtime())
+    with _lock:
+        if _day["d"] != today:
+            _day.update(d=today, n=0)
+        _day["n"] += 1
+        return _day["n"] > DAILY_CAP
+
+
+def _client_ip(request: Request) -> str:
+    fwd = request.headers.get("x-forwarded-for", "")
+    return fwd.split(",")[0].strip() or (request.client.host if request.client else "?")
+
+
 def _limited(ip: str) -> bool:
     now, q = time.time(), _hits[ip]
     while q and now - q[0] > 60:
@@ -90,7 +110,11 @@ def _next(it):
 async def _sse(events, request: Request):
     """Stream events. User-facing errors are plain sentences; internal details go to the server log only.
     Async so that a client that disconnects cancels this generator and frees its slot at once."""
-    ip = request.client.host if request.client else "?"
+    ip = _client_ip(request)
+    if _over_daily_cap():
+        for chunk in _one({"type": "error", "message": "The public demo has reached its daily limit to protect its API budget. Please try again tomorrow, or run it yourself from the GitHub repo."}):
+            yield chunk
+        return
     if _limited(ip):
         for chunk in _one({"type": "error", "message": "Too many checks in a minute. Wait a moment and try again."}):
             yield chunk

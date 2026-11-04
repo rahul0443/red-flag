@@ -116,3 +116,13 @@ def test_brand_database_is_well_formed():
     for name, b in BRANDS.items():
         assert b["domains"] and all("." in d and d == d.lower() for d in b["domains"]), name
         assert len(b["facts"]) > 20, name
+
+
+def test_free_hosting_domains_are_not_given_the_platforms_age():
+    r = rdap_lookup("microsoft09-one.vercel.app")
+    assert r["hosting_platform"] == "vercel.app" and r["age_days"] is None
+
+
+def test_free_hosting_is_a_lookalike_signal():
+    assert any("free site-builder" in s for s in domain_signals("microsoft09-one.vercel.app"))
+    assert domain_signals("www.paypal.com") == [] and domain_signals("vercel.app") == []

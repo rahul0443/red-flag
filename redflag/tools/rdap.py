@@ -27,6 +27,11 @@ def _event(data: dict, action: str):
 
 def rdap_lookup(domain: str) -> dict:
     raw = domain
+    from redflag.tools.signals import free_host
+    fh = free_host(str(raw or "").lower().strip().removeprefix("www."))
+    if fh:
+        return {"domain": str(raw)[:120], "hosting_platform": fh, "age_days": None,
+                "note": f"{fh} is a free hosting platform where anyone can publish a page, so its registration age says nothing about this page."}
     domain = _clean(domain)
     if not domain:
         return {"domain": str(raw)[:80], "error": "not a valid domain name, so no registration lookup was possible"}

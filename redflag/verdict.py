@@ -24,7 +24,7 @@ def get_client() -> OpenAI:
 def get_open_client() -> OpenAI:
     if not config.BASETEN_API_KEY:
         raise RuntimeError("BASETEN_API_KEY is empty")
-    return OpenAI(api_key=config.BASETEN_API_KEY, base_url=config.OPEN_BASE_URL, max_retries=1, timeout=40)
+    return OpenAI(api_key=config.BASETEN_API_KEY, base_url=config.OPEN_BASE_URL, max_retries=4, timeout=40)
 
 
 def backends() -> list[tuple]:

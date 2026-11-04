@@ -56,7 +56,7 @@ What this does and doesn't show (stated plainly):
 - The agent reserves "Scam" for concrete evidence. Polite scams with nothing checkable come back "Suspicious", so strict ("Scam" only) recall on the hard-text set is 55% vs 95% for the baseline. That's a deliberate calibration.
 - **Live-phishing pairs**: each live phishing URL (OpenPhish snapshot, Oct 26 2026, stored defanged) is paired with the same message using the brand's real URL. The labels and the blocklist check come from the same feed, so we also ran an ablation without the blocklist: 100% accuracy on both sets, carried by redirects, domain checks and official-domain comparison.
 - **UCI SMS Spam is spam, not scams** (many are real O2/Orange promotions). We tuned the prompt on one UCI sample, then report only a **fresh held-out sample** (seed 99, no overlap).
-- Hand-written benchmark messages and training templates were written by the same author; the Glimmer training data was filtered against every eval message (756 candidates dropped for overlap).
+- The hand-written benchmark, hard-text, injection and multilingual messages were written by the same author as the prompt, so they are friendlier than real-world traffic.
 - Model outputs vary run to run; the baseline's false-alarm rate on one set moved from 3% to 13% across two runs. Small samples; treat differences accordingly.
 
 ## Speed
@@ -103,20 +103,30 @@ python scripts/investigate.py samples/usps_smish.txt   # CLI
 ```
 
 ## Repo map
-`redflag/agent` the loop · `redflag/tools` URL expansion, RDAP, blocklists, official-contact DB, Modal sandbox · `redflag/inputs.py` vision + transcription · `redflag/api` FastAPI SSE server · `web/` UI · `evals/` datasets, runner, results · `training/` unused Glimmer fine-tune groundwork · `docs/DEMO_SCRIPT.md`.
+`redflag/agent` the loop · `redflag/tools` URL expansion, RDAP, blocklists, official-contact DB, Modal sandbox · `redflag/inputs.py` vision + transcription · `redflag/api` FastAPI SSE server · `web/` UI · `evals/` datasets, runner, results · `docs/DEMO_SCRIPT.md`.
 
 ## Built during the hackathon
 Everything in this repository was written during the event. First commit: Oct 26 2026, 1:18 PM ET, after the 12:00 PM ET kickoff. Organizers confirmed in Discord #questions that post-kickoff work on Oct 26 counts as the building period. See `git log` for the full history.
 
 ## Data and attribution
-- UCI SMS Spam Collection, Almeida & Hidalgo (2011), CC BY 4.0, doi:10.24432/C5CC84 (evaluation sample and part of the Glimmer training data).
+- UCI SMS Spam Collection, Almeida & Hidalgo (2011), CC BY 4.0, doi:10.24432/C5CC84 (held-out evaluation sample).
 - OpenPhish community feed (openphish.com), a snapshot used only for a small live-phishing test set, stored defanged.
-- All other messages and templates were written for this project (CC0). Muse Spark outputs were **not** used as training data.
+- All other messages were written for this project (CC0).
 
 ## Open weights
 
-The same agent runs on open-weight **Muse Spark Open** served by Baseten (`AGENT_BACKEND=open`, key in `BASETEN_API_KEY`; reproduce with `scripts/run_open_evals.sh`). On the three realistic sets (179 messages) it caught 88 of 89 scams with 2 false alarms on 90 legitimate messages; on the held-out UCI chat set its accuracy was 83% with a 34% false-alarm rate, versus 98% and 4% for closed Muse Spark (across three runs the open model scored 94%, 90% and 83% there, so it is noisy). The prompt was tuned on closed Muse Spark, so this is an out-of-the-box result for the open model, not a tuned one. Full table in `evals/RESULTS.md`. The app also fails over automatically between the two models. Closed Muse Spark is the default.
+The same agent runs on open-weight **Muse Spark Open** served by Baseten (`AGENT_BACKEND=open`, key in `BASETEN_API_KEY`; reproduce with `scripts/run_open_evals.sh`). On the three realistic sets (179 messages) it caught 88 of 89 scams with 2 false alarms on 90 legitimate messages; on the held-out UCI chat set its accuracy was 83% with a 34% false-alarm rate, versus 98% and 4% for closed Muse Spark (across three runs the open model scored 94%, 90% and 83% there, so it is noisy). The prompt was tuned on closed Muse Spark, so this is an out-of-the-box result for the open model, not a tuned one. Full table in `evals/RESULTS.md`. The instant open-weight first look shown in the UI (a single call, median 1.5-2.2 s) was measured separately: on the realistic sets it flagged 88 of 89 scams with 0 false alarms on 90 legitimate messages, and on the held-out UCI set 49 of 50 spam with 2 false alarms on 50 (`scripts/eval_triage.py`, `evals/results/triage.json`). The app also fails over automatically between the two models. Closed Muse Spark is the default.
+
+## Known limitations
+
+- **Our test sets are small and mostly written by us** (plus a public spam sample), so scores are friendlier than real traffic. Differences between arms are mostly within confidence intervals.
+- **The open-weight model is noisier on casual chat** than closed Muse Spark (see *Open weights*).
+- **Official-company details cover about 30 commonly impersonated brands.** For other brands the agent says so and relies on the link checks and its own reading.
+- **Only the first non-official link is opened** in the isolated browser, and unreachable sites yield no screenshot.
+- **No email-header authentication** (SPF/DKIM) analysis yet; sender spoofing is judged from the text and links only.
+- **Report-it links are US-specific** (FTC, FBI IC3, 7726).
+- **The public demo has a daily request cap** to protect API credits; run it locally for unlimited use.
 
 ## Status
 
-Complete: text, screenshot and voicemail inputs, tool-using agent, link sandbox, evals on closed and open-weight models. The planned Muse Glimmer fine-tune was dropped (no GPU budget); `training/` is kept as unused groundwork. This README only claims results that exist in `evals/results/`.
+Complete: text, screenshot and voicemail inputs, tool-using agent, isolated-browser link inspection, public deployment, evals on closed and open-weight models. This README only claims results that exist in `evals/results/`.

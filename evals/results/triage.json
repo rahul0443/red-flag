@@ -1,0 +1,42 @@
+{
+ "benchmark": {
+  "tp": 38,
+  "fn": 1,
+  "fp": 0,
+  "tn": 40,
+  "errors": 0,
+  "median_ms": 1524
+ },
+ "hard_text": {
+  "tp": 20,
+  "fn": 0,
+  "fp": 0,
+  "tn": 20,
+  "errors": 0,
+  "median_ms": 1700
+ },
+ "live_pairs": {
+  "tp": 30,
+  "fn": 0,
+  "fp": 0,
+  "tn": 30,
+  "errors": 0,
+  "median_ms": 1773
+ },
+ "uci_holdout": {
+  "tp": 49,
+  "fn": 1,
+  "fp": 2,
+  "tn": 48,
+  "errors": 0,
+  "median_ms": 2228
+ },
+ "injection": {
+  "tp": 23,
+  "fn": 1,
+  "fp": 0,
+  "tn": 8,
+  "errors": 1,
+  "median_ms": 1500
+ }
+}

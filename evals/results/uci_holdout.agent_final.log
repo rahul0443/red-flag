@@ -5,24 +5,24 @@
  "lenient": {
   "n": 100,
   "errors": 0,
-  "accuracy": 0.98,
-  "precision": 0.962,
+  "accuracy": 0.99,
+  "precision": 0.98,
   "recall": 1.0,
-  "false_positive_rate": 0.04,
+  "false_positive_rate": 0.02,
   "recall_95ci": [
    0.929,
    1
   ],
   "fpr_95ci": [
-   0.011,
-   0.135
+   0.004,
+   0.105
   ],
-  "f1": 0.981,
+  "f1": 0.99,
   "confusion": {
    "tp": 50,
    "fn": 0,
-   "fp": 2,
-   "tn": 48
+   "fp": 1,
+   "tn": 49
   }
  },
  "strict": {
@@ -48,9 +48,8 @@
    "tn": 50
   }
  },
- "median_seconds": 15.149999999999999,
- "avg_tokens": 4803,
- "avg_tool_calls": 0.55
+ "median_seconds": 12.85,
+ "avg_tokens": 4828,
+ "avg_tool_calls": 0.61
 }
-MISS [legit->Suspicious] uci_holdout-062 uci_ham: "My sort code is  and acc no is . The bank is natwest. Can you reply to confirm i've sent t" 
 MISS [legit->Suspicious] uci_holdout-064 uci_ham: "Hey elaine, is today's meeting still on?" 

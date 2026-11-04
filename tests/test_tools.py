@@ -79,3 +79,40 @@ def test_rdap_queries_registrable_domain_not_subdomain(monkeypatch):
     monkeypatch.setattr(rd.httpx, "get", lambda url, **kw: (seen.append(url), R())[1])
     rd.rdap_lookup("account.adobe.com")
     assert seen == ["https://rdap.org/domain/adobe.com"]
+
+
+# ---------- sender analysis and brand database ----------
+from redflag.tools.sender import check_sender
+from redflag.tools.official import BRANDS
+
+
+def test_sender_flags_free_mailbox_posing_as_organisation():
+    r = check_sender("From: UNICEF Careers <hr.unicef@gmail.com>\nWe have a part-time job for you, $500 a week.")
+    assert any("free mailbox" in s for s in r["signals"])
+
+
+def test_sender_flags_reply_to_mailbox_that_differs():
+    r = check_sender("Sender: Aisha <aisha@bot.go.tz>\nContact Dr Thomas via thomas@gmail.com about the job.")
+    assert any("differs from the sender" in s for s in r["signals"])
+
+
+def test_sender_flags_brand_domain_mismatch_and_lookalike():
+    r = check_sender("From: Chase Alerts <alerts@chase-secure-verify.top>\nVerify your Chase account now.")
+    assert any("not one of its official domains" in s for s in r["signals"]) and any("imitates" in s for s in r["signals"])
+
+
+@pytest.mark.parametrize("text", ["From: Chase <alerts@chase.com> Your statement is ready.", "hey it's Mike, my email is mike@gmail.com, call me", "no email here", "", None])
+def test_sender_quiet_on_legitimate_or_empty(text):
+    assert check_sender(text)["signals"] == []
+
+
+def test_sender_never_raises_on_junk():
+    for t in ["@@@", "a@b", "x" * 10000 + "@y.com", "From:\n", "From: <@>"]:
+        check_sender(t)
+
+
+def test_brand_database_is_well_formed():
+    assert len(BRANDS) >= 60
+    for name, b in BRANDS.items():
+        assert b["domains"] and all("." in d and d == d.lower() for d in b["domains"]), name
+        assert len(b["facts"]) > 20, name

@@ -1,6 +1,7 @@
 """Tool schemas shown to the model + dispatch."""
 from redflag.tools.blocklists import check_blocklists
 from redflag.tools.official import official_contact_check
+from redflag.tools.sender import check_sender
 from redflag.tools.rdap import rdap_lookup
 from redflag.tools.urls import expand_url
 
@@ -46,6 +47,7 @@ _SANDBOX_OK = "inspect_link_sandbox" not in _DISABLED and (
     os.path.exists(os.path.expanduser("~/.modal.toml")) or bool(os.getenv("MODAL_TOKEN_ID")) or os.getenv("REDFLAG_SANDBOX") == "1")
 
 DISPATCH = {"expand_url": expand_url, "rdap_lookup": rdap_lookup,
-            "check_blocklists": check_blocklists, "official_contact_check": official_contact_check}
+            "check_blocklists": check_blocklists, "official_contact_check": official_contact_check,
+            "check_sender": check_sender}  # check_sender is run by the system up front, not offered to the model
 if _SANDBOX_OK:  # started by the system, not offered to the model as a tool
     DISPATCH["inspect_link_sandbox"] = inspect_link_sandbox

@@ -34,6 +34,7 @@ Calibration (important, avoid both missed scams and false alarms):
 - 'Suspicious' means a real risk you cannot settle: an unverifiable ask involving money, codes, credentials, an unknown phone number, a premium-rate shortcode or a hidden subscription. It is not for harmless chat.
 - 'Scam' needs concrete evidence: lookalike or mismatched domain, young domain, blocklist hit, impersonation of an organisation that never contacts people this way, payment by gift card/crypto/wire, threats, or secrecy.
 - check_blocklists also returns lookalike_signals computed offline (imitated brand domains, punycode, shorteners, raw IPs). Treat any of them as strong evidence of impersonation.
+- check_sender (run for you when the message contains email addresses) reports free-mailbox senders posing as organisations, sender domains that do not match the brand named, and reply-to mailboxes that differ from the sender. Treat these as strong evidence.
 - Missing blocklist hits do not prove safety, and an old domain is not proof of legitimacy for an unsolicited ask.
 - Only state facts found in the message or tool results. Write for a non-technical reader.
 - Write the summary, evidence findings and advice in the same language as the message (English if it is English or unclear). Keep the verdict word exactly 'Scam', 'Suspicious' or 'Looks Safe', and keep tool/source names in English.
@@ -142,6 +143,8 @@ def _prefetch_jobs(message: str, urls: list[str]) -> list[tuple[str, dict]]:
         if host_of(u):
             jobs.append(("rdap_lookup", {"domain": host_of(u)}))
     first = host_of(urls[0]) if urls else ""
+    if re.search(r"[\w.+-]+@[\w-]+\.[a-z]{2,}", message, re.I):
+        jobs.append(("check_sender", {"text": message}))
     for b in _brands_in(message):
         jobs.append(("official_contact_check", {"brand": b, "observed_url_or_domain": first}))
     from redflag.tools.registry import _DISABLED

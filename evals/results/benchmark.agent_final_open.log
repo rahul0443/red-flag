@@ -48,9 +48,9 @@
    "tn": 40
   }
  },
- "median_seconds": 7.7,
- "avg_tokens": 9159,
- "avg_tool_calls": 2.76
+ "median_seconds": 7.3,
+ "avg_tokens": 9122,
+ "avg_tool_calls": 2.77
 }
 MISS [legit->Suspicious] benchmark-059 church: "Grace Community Church: Sunday service is at 10 AM. This week's potluck follows at noon in" 
-MISS [legit->Suspicious] benchmark-068 payroll: 'Subject: Reminder: benefits enrollment closes Nov 15. Log in to the HR portal your company' 
+MISS [legit->Suspicious] benchmark-066 library: "Phoenix Public Library: your hold on 'The Remains of the Day' is ready for pickup at Burto" 

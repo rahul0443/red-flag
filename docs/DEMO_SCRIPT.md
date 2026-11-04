@@ -6,7 +6,7 @@ Rule: show only what was built during the hackathon. Never show .env, API keys o
 ## Before recording (10-minute checklist)
 - [ ] Open the PUBLIC app: https://rahulmuddhapuram--redflag-web-web.us-east.modal.run (judges assess the live product). Browser at 1440x900, dark mode.
 - [ ] Do one dry run of every input so the site is warm and you know the timing. The Meta API is slower on busy days: if a run takes over 15 s, re-take it and cut the wait (speed up with a visible "4x" badge).
-- [ ] Live phishing demo message (check the link still loads; those pages die within hours, ask Claude to refresh it): a fake Microsoft 365 alert pointing at a live phishing page from the current OpenPhish feed (not stored in this repo, so we never publish a live phishing link).
+- [ ] Live phishing demo message (check the link still loads; those pages die within hours, so pick a fresh one from the feed): a fake Microsoft 365 alert pointing at a live phishing page from the current OpenPhish feed (not stored in this repo, so we never publish a live phishing link).
 - [ ] Inputs ready: (1) the text above, (2) `samples/scam_screenshot.png` (Chase text), (3) `samples/scam_voicemail.wav`.
 - [ ] Slides ready: `docs/slides/slide-1.png`, `slide-2.png`, `slide-3.png` (1920x1080).
 - [ ] Record the screen with QuickTime (File > New Screen Recording), voiceover in a second pass.

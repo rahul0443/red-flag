@@ -31,7 +31,7 @@ Paste the Microsoft message and press Investigate. Narrate while the checks ligh
 Drop the Chase screenshot: "Muse Spark's vision reads it, then the same agent investigates." Play 5 seconds of the voicemail: "Muse Voice Transcribe turns a scam voicemail into text." Then paste the Spanish test message "Su paquete está retenido. Pague 1,99 € de tasa aquí: http://correos-envio-pago.top/pagar": "And it answers in the language of the message."
 
 **1:50-2:30 Measured, and honest (slide 3)**
-"I tested it. Across 179 hand-built and live-phishing messages, Red Flag raised one false alarm on 90 look-alike legitimate messages; Muse Spark with no tools raised five. That gap is suggestive, not statistically proven, and I say so. All 24 prompt-injection attacks were resisted, all 18 scams in six languages were caught, and there are 147 automated tests. I also found Muse Spark alone is already strong, so the agent's value is evidence you can verify."
+"I tested it. Across 179 hand-built and live-phishing messages, Red Flag raised one false alarm on 90 look-alike legitimate messages; Muse Spark with no tools raised five. That gap is suggestive, not statistically proven, and I say so. All 24 prompt-injection attacks were resisted, all 18 scams in six languages were caught, and there are 157 automated tests. I also found Muse Spark alone is already strong, so the agent's value is evidence you can verify."
 
 **2:30-2:50 Meta stack (slide 2)**
 "Muse Spark for reasoning, tool calling and vision. Muse Voice Transcribe for voicemail. The whole agent also runs on open-weight Muse Spark Open on Baseten, and the app fails over between the two. On open weights it caught 88 of 89 scams, noisier than Muse Spark on casual chat, and I report that too."

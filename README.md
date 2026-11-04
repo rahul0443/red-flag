@@ -82,7 +82,7 @@ The agent now needs **1.4 model calls per investigation instead of 2.3** (measur
 
 ```bash
 pip install -r requirements-dev.txt && playwright install chromium
-pytest            # 140 tests: tools, agent loop (scripted models), server, and a browser UI suite
+pytest            # 157 tests: tools, agent loop (scripted models), server, and a browser UI suite
 python scripts/fuzz_api.py   # 39 hostile inputs against a running server
 ```
 

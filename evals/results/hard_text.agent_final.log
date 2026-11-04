@@ -28,27 +28,27 @@
  "strict": {
   "n": 40,
   "errors": 0,
-  "accuracy": 0.8,
+  "accuracy": 0.775,
   "precision": 1.0,
-  "recall": 0.6,
+  "recall": 0.55,
   "false_positive_rate": 0.0,
   "recall_95ci": [
-   0.387,
-   0.781
+   0.342,
+   0.742
   ],
   "fpr_95ci": [
    0,
    0.161
   ],
-  "f1": 0.75,
+  "f1": 0.71,
   "confusion": {
-   "tp": 12,
-   "fn": 8,
+   "tp": 11,
+   "fn": 9,
    "fp": 0,
    "tn": 20
   }
  },
- "median_seconds": 5.9,
- "avg_tokens": 5214,
+ "median_seconds": 15.600000000000001,
+ "avg_tokens": 5216,
  "avg_tool_calls": 1.98
 }

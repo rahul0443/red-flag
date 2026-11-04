@@ -5,60 +5,67 @@
  "lenient": {
   "n": 100,
   "errors": 0,
-  "accuracy": 0.9,
-  "precision": 0.845,
-  "recall": 0.98,
-  "false_positive_rate": 0.18,
+  "accuracy": 0.83,
+  "precision": 0.746,
+  "recall": 1.0,
+  "false_positive_rate": 0.34,
   "recall_95ci": [
-   0.895,
-   0.996
+   0.929,
+   1
   ],
   "fpr_95ci": [
-   0.098,
-   0.308
+   0.224,
+   0.478
   ],
-  "f1": 0.908,
+  "f1": 0.855,
   "confusion": {
-   "tp": 49,
-   "fn": 1,
-   "fp": 9,
-   "tn": 41
+   "tp": 50,
+   "fn": 0,
+   "fp": 17,
+   "tn": 33
   }
  },
  "strict": {
   "n": 100,
   "errors": 0,
-  "accuracy": 0.73,
-  "precision": 1.0,
+  "accuracy": 0.72,
+  "precision": 0.958,
   "recall": 0.46,
-  "false_positive_rate": 0.0,
+  "false_positive_rate": 0.02,
   "recall_95ci": [
    0.33,
    0.596
   ],
   "fpr_95ci": [
-   0,
-   0.071
+   0.004,
+   0.105
   ],
-  "f1": 0.63,
+  "f1": 0.622,
   "confusion": {
    "tp": 23,
    "fn": 27,
-   "fp": 0,
-   "tn": 50
+   "fp": 1,
+   "tn": 49
   }
  },
- "median_seconds": 10.15,
- "avg_tokens": 11615,
- "avg_tool_calls": 1.55
+ "median_seconds": 13.850000000000001,
+ "avg_tokens": 13111,
+ "avg_tool_calls": 1.48
 }
-MISS [scam->Looks Safe] uci_holdout-037 uci_spam: "8007 25p 4 Alfie Moon's Children in Need song on ur mob. Tell ur m8s. Txt TONE CHARITY to " 
-MISS [legit->Suspicious] uci_holdout-060 uci_ham: "Lovely smell on this bus and it ain't tobacco... " 
-MISS [legit->Suspicious] uci_holdout-062 uci_ham: "My sort code is  and acc no is . The bank is natwest. Can you reply to confirm i've sent t" 
-MISS [legit->Suspicious] uci_holdout-063 uci_ham: 'Remember all those whom i hurt during days of satanic imposter in me.need to pay a price,s' 
+MISS [legit->Suspicious] uci_holdout-050 uci_ham: 'Haha, just what I was thinkin' 
+MISS [legit->Suspicious] uci_holdout-051 uci_ham: 'Wait 2 min..stand at bus stop' 
+MISS [legit->Suspicious] uci_holdout-052 uci_ham: 'I want to be inside you every night...' 
+MISS [legit->Suspicious] uci_holdout-055 uci_ham: 'I want to send something that can sell fast.  &lt;#&gt; k is not easy money.' 
+MISS [legit->Suspicious] uci_holdout-057 uci_ham: 'Just seeing your missed call my dear brother. Do have a gr8 day.' 
+MISS [legit->Suspicious] uci_holdout-061 uci_ham: 'Finally it has happened..! Aftr decades..! BEER is now cheaper than PETROL! The goverment ' 
 MISS [legit->Suspicious] uci_holdout-064 uci_ham: "Hey elaine, is today's meeting still on?" 
+MISS [legit->Suspicious] uci_holdout-067 uci_ham: 'Huh but i cant go 2 ur house empty handed right?' 
+MISS [legit->Suspicious] uci_holdout-070 uci_ham: 'Thankyou so much for the call. I appreciate your care.' 
 MISS [legit->Suspicious] uci_holdout-071 uci_ham: "It's fine, imma get a drink or somethin. Want me to come find you?" 
+MISS [legit->Suspicious] uci_holdout-075 uci_ham: 'How stupid to say that i challenge god.You dont think at all on what i write instead you r' 
 MISS [legit->Suspicious] uci_holdout-077 uci_ham: 'HEY MATE! HOWS U HONEY?DID U AVE GOOD HOLIDAY? GIMMI DE GOSS!x' 
-MISS [legit->Suspicious] uci_holdout-086 uci_ham: 'There are no other charges after transfer charges and you can withdraw anyhow you like' 
-MISS [legit->Suspicious] uci_holdout-097 uci_ham: 'Simply sitting and watching match in office..' 
+MISS [legit->Suspicious] uci_holdout-079 uci_ham: '"Happy valentines day" I know its early but i have hundreds of handsomes and beauties to w' 
+MISS [legit->Scam] uci_holdout-086 uci_ham: 'There are no other charges after transfer charges and you can withdraw anyhow you like' 
+MISS [legit->Suspicious] uci_holdout-091 uci_ham: "Sad story of a Man - Last week was my b'day. My Wife did'nt wish me. My Parents forgot n s" 
+MISS [legit->Suspicious] uci_holdout-095 uci_ham: 'FRAN I DECIDED 2 GO N E WAY IM COMPLETELY BROKE AN KNACKERED I GOT UP BOUT 3 C U 2MRW LOVE' 
 MISS [legit->Suspicious] uci_holdout-099 uci_ham: 'Also fuck you and your family for going to rhode island or wherever the fuck and leaving m' 

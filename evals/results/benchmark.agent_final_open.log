@@ -5,24 +5,24 @@
  "lenient": {
   "n": 79,
   "errors": 0,
-  "accuracy": 0.987,
-  "precision": 0.975,
+  "accuracy": 0.975,
+  "precision": 0.951,
   "recall": 1.0,
-  "false_positive_rate": 0.025,
+  "false_positive_rate": 0.05,
   "recall_95ci": [
    0.91,
    1
   ],
   "fpr_95ci": [
-   0.004,
-   0.129
+   0.014,
+   0.165
   ],
-  "f1": 0.987,
+  "f1": 0.975,
   "confusion": {
    "tp": 39,
    "fn": 0,
-   "fp": 1,
-   "tn": 39
+   "fp": 2,
+   "tn": 38
   }
  },
  "strict": {
@@ -48,8 +48,9 @@
    "tn": 40
   }
  },
- "median_seconds": 6.2,
- "avg_tokens": 7272,
- "avg_tool_calls": 2.47
+ "median_seconds": 7.7,
+ "avg_tokens": 9159,
+ "avg_tool_calls": 2.76
 }
-MISS [legit->Suspicious] benchmark-052 school: 'Lincoln Elementary: School will be closed Monday Oct 26 due to a water main break. Classes' 
+MISS [legit->Suspicious] benchmark-059 church: "Grace Community Church: Sunday service is at 10 AM. This week's potluck follows at noon in" 
+MISS [legit->Suspicious] benchmark-068 payroll: 'Subject: Reminder: benefits enrollment closes Nov 15. Log in to the HR portal your company' 

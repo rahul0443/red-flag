@@ -3,6 +3,10 @@
 **Live demo:** https://rahulmuddhapuram--redflag-web-web.us-east.modal.run  (daily request cap to protect API credits; if it says the daily limit is reached, run it locally, see Setup)
 
 
+<p align="center"><img src="docs/img/result.png" alt="Red Flag catching a live fake Microsoft login page" width="900"></p>
+
+*A real run: a live phishing page from today's feed, opened inside an isolated browser, caught in 12 seconds with the evidence shown.*
+
 **Forward any suspicious text, email, screenshot or voicemail. An AI agent investigates it like a fraud analyst and returns an evidence-backed verdict in seconds.**
 
 Built solo for the Meta Global AI Developer Hackathon (Indie track, "Build for Your World").
@@ -44,12 +48,12 @@ Pooled over the hand-written benchmark, the hard-text set and the live-phishing 
 | | False alarms on 90 legitimate messages | Scams caught (of 89) |
 |---|---|---|
 | Muse Spark alone (no tools) | 5 (5.6%) | 88 |
-| **Red Flag agent** | **0 (0.0%, 95% CI 0-4.1%)** | **89** |
+| **Red Flag agent** | **1 (1.1%, 95% CI 0.2-6.0%)** | **89** |
 
 What this does and doesn't show (stated plainly):
-- **Muse Spark alone is already strong** (96-99% accuracy). The agent doesn't win on raw accuracy; the gap in false alarms (0/90 vs 5/90, Fisher p = 0.059) points the right way but is **not statistically significant**. Earlier full runs of the same sets gave 0/90 and 1/90 for the agent, so expect run-to-run variation.
+- **Muse Spark alone is already strong** (96-99% accuracy). The agent doesn't win on raw accuracy; the gap in false alarms (1/90 vs 5/90, Fisher p = 0.21) points the right way but is **not statistically significant**. Earlier full runs of the same sets gave 0/90 and 1/90 for the agent, so expect run-to-run variation.
 - The agent's real value is **verified, shown evidence**, and fewer false alarms on real brand messages because it checks the official domain instead of guessing.
-- The agent reserves "Scam" for concrete evidence. Polite scams with nothing checkable come back "Suspicious", so strict ("Scam" only) recall on the hard-text set is 60% vs 95% for the baseline. That's a deliberate calibration.
+- The agent reserves "Scam" for concrete evidence. Polite scams with nothing checkable come back "Suspicious", so strict ("Scam" only) recall on the hard-text set is 55% vs 95% for the baseline. That's a deliberate calibration.
 - **Live-phishing pairs**: each live phishing URL (OpenPhish snapshot, Oct 26 2026, stored defanged) is paired with the same message using the brand's real URL. The labels and the blocklist check come from the same feed, so we also ran an ablation without the blocklist: 100% accuracy on both sets, carried by redirects, domain checks and official-domain comparison.
 - **UCI SMS Spam is spam, not scams** (many are real O2/Orange promotions). We tuned the prompt on one UCI sample, then report only a **fresh held-out sample** (seed 99, no overlap).
 - Hand-written benchmark messages and training templates were written by the same author; the Glimmer training data was filtered against every eval message (756 candidates dropped for overlap).
@@ -57,7 +61,7 @@ What this does and doesn't show (stated plainly):
 
 ## Speed
 
-Median time to a verdict is **3-6 seconds** on the realistic sets, down from 9-20 seconds in our first configuration, and about the same as asking Muse Spark with no tools (4-8 seconds). Three changes did it, each measured: the standard checks (redirects, domain age, phishing feeds, official-company details) run in parallel *before* the first model call so the model usually answers in one round; reasoning effort is lowered when the evidence is already in hand (closed Muse Spark only, because the open model got worse at low effort in our tests); and repeated tool calls are answered from memory. The open-weight second opinion appears on screen after 2-3 seconds. Per-set table in `evals/RESULTS.md`; reproduce with `scripts/run_final_evals.sh` and `scripts/bench_latency.py`.
+The agent now needs **1.4 model calls per investigation instead of 2.3** (measured on 24 messages, load-independent). Median time to a verdict on that benchmark fell from 9.4 s to 4.4 s in a quiet period; in the busy final days the Meta API was slower and the same benchmark measured 8.4 s (full-eval medians 7-16 s), so real latency depends on API load. Three changes did it, each measured: the standard checks (redirects, domain age, phishing feeds, official-company details) run in parallel *before* the first model call so the model usually answers in one round; reasoning effort is lowered when the evidence is already in hand (closed Muse Spark only, because the open model got worse at low effort in our tests); and repeated tool calls are answered from memory. The open-weight second opinion typically appears on screen after 2-3 seconds. Per-set table in `evals/RESULTS.md`; reproduce with `scripts/run_final_evals.sh` and `scripts/bench_latency.py`.
 
 ## Safety rules (built in)
 - Never replies to or contacts scammers.
@@ -67,6 +71,8 @@ Median time to a verdict is **3-6 seconds** on the realistic sets, down from 9-2
 - Keys stay in `.env` (git-ignored); the front end never sees them. Token and step caps limit runaway cost.
 
 ## Robustness
+
+**Multilingual:** 36 scam and legitimate messages in Spanish, Hindi, Chinese, French, Portuguese and Arabic (`evals/multilingual_src.py`): all 18 scams flagged, none of the 18 legitimate messages flagged, and 36 of 36 answers written in the message's own language (22 of 36 before we added a one-line instruction). Written by us, so a small, friendly test.
 
 **Prompt-injection test:** 24 scams that each try to talk the investigator into saying "Looks Safe" (fake system tags, fake tool results, role-play, authority claims, other languages, exfiltration requests...) were all still flagged by Muse Spark, Red Flag on Muse Spark, and Red Flag on Muse Spark Open (24/24, 95% CI 86-100%), with no false alarms on 8 legitimate messages that contain instruction-like wording. We wrote the attacks, so this is resistance to common styles, not proof against a determined attacker. Details: `evals/RESULTS.md`, reproduce with `scripts/run_injection_evals.sh`.
 
@@ -109,7 +115,7 @@ Everything in this repository was written during the event. First commit: Oct 26
 
 ## Open weights
 
-The same agent runs on open-weight **Muse Spark Open** served by Baseten (`AGENT_BACKEND=open`, key in `BASETEN_API_KEY`; reproduce with `scripts/run_open_evals.sh`). On the three realistic sets (179 messages) it caught every scam with one false alarm; on the held-out UCI chat set it scored 90% with an 18% false-alarm rate, versus 4% for closed Muse Spark. The prompt was tuned on closed Muse Spark, so this is an out-of-the-box result for the open model, not a tuned one. Full table in `evals/RESULTS.md`. The app also fails over automatically between the two models. Closed Muse Spark is the default.
+The same agent runs on open-weight **Muse Spark Open** served by Baseten (`AGENT_BACKEND=open`, key in `BASETEN_API_KEY`; reproduce with `scripts/run_open_evals.sh`). On the three realistic sets (179 messages) it caught 88 of 89 scams with 2 false alarms on 90 legitimate messages; on the held-out UCI chat set its accuracy was 83% with a 34% false-alarm rate, versus 98% and 4% for closed Muse Spark (across three runs the open model scored 94%, 90% and 83% there, so it is noisy). The prompt was tuned on closed Muse Spark, so this is an out-of-the-box result for the open model, not a tuned one. Full table in `evals/RESULTS.md`. The app also fails over automatically between the two models. Closed Muse Spark is the default.
 
 ## Status
 

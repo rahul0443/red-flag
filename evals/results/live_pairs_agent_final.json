@@ -6,24 +6,24 @@
   "lenient": {
    "n": 60,
    "errors": 0,
-   "accuracy": 1.0,
-   "precision": 1.0,
+   "accuracy": 0.983,
+   "precision": 0.968,
    "recall": 1.0,
-   "false_positive_rate": 0.0,
+   "false_positive_rate": 0.033,
    "recall_95ci": [
     0.886,
     1
    ],
    "fpr_95ci": [
-    0,
-    0.114
+    0.006,
+    0.167
    ],
-   "f1": 1.0,
+   "f1": 0.984,
    "confusion": {
     "tp": 30,
     "fn": 0,
-    "fp": 0,
-    "tn": 30
+    "fp": 1,
+    "tn": 29
    }
   },
   "strict": {
@@ -49,9 +49,9 @@
     "tn": 30
    }
   },
-  "median_seconds": 2.95,
-  "avg_tokens": 3359,
-  "avg_tool_calls": 4.03
+  "median_seconds": 6.85,
+  "avg_tokens": 3200,
+  "avg_tool_calls": 4.05
  },
  "results": [
   {
@@ -61,15 +61,15 @@
    "text": "Adobe: We noticed a new sign-in to your account. You can review it here: https://www.dashboard.adobeexperience.com.br/",
    "pair": 0,
    "verdict": "Scam",
-   "confidence": 0.85,
+   "confidence": 0.88,
    "usage": {
-    "prompt_tokens": 2340,
-    "completion_tokens": 882,
+    "prompt_tokens": 2392,
+    "completion_tokens": 714,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This Adobe sign-in alert links to a fake-looking site that is not Adobe's real adobe.com address.",
-   "seconds": 4.9
+   "summary": "This fake Adobe sign-in alert links to a non-Adobe site to steal your login.",
+   "seconds": 7.6
   },
   {
    "id": "live-001",
@@ -78,15 +78,15 @@
    "text": "Adobe: We noticed a new sign-in to your account. You can review it here: https://account.adobe.com/",
    "pair": 0,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2304,
-    "completion_tokens": 504,
+    "prompt_tokens": 2356,
+    "completion_tokens": 715,
     "llm_calls": 1,
     "tool_calls": 4
    },
    "summary": "This looks like a normal Adobe sign-in notice linking to Adobe's real website.",
-   "seconds": 3.7
+   "seconds": 8.6
   },
   {
    "id": "live-002",
@@ -97,13 +97,13 @@
    "verdict": "Scam",
    "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 4622,
-    "completion_tokens": 1240,
-    "llm_calls": 2,
+    "prompt_tokens": 2353,
+    "completion_tokens": 725,
+    "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "Fake Facebook notice linking to a non-Facebook site that misspells 'business' on free github hosting.",
-   "seconds": 6.4
+   "summary": "This is a fake Facebook message trying to get you to click a lookalike link that is not Facebook.",
+   "seconds": 8.5
   },
   {
    "id": "live-003",
@@ -112,15 +112,15 @@
    "text": "Facebook: Your account statement is ready to view: https://www.facebook.com/settings",
    "pair": 1,
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2356,
-    "completion_tokens": 654,
+    "prompt_tokens": 2408,
+    "completion_tokens": 469,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This link goes to the real Facebook website, not an imitation, so it looks safe.",
-   "seconds": 3.7
+   "summary": "This looks like a normal notice linking to the real Facebook website, with no risky request.",
+   "seconds": 6.4
   },
   {
    "id": "live-004",
@@ -131,13 +131,13 @@
    "verdict": "Scam",
    "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2349,
-    "completion_tokens": 749,
+    "prompt_tokens": 2401,
+    "completion_tokens": 555,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This pretends to be Bank of America but links to a free-hosted site that is not Bank of America.",
-   "seconds": 3.0
+   "summary": "This is not from Bank of America \u2014 it uses a fake free-hosted link that does not match the bank's real website.",
+   "seconds": 5.3
   },
   {
    "id": "live-005",
@@ -146,15 +146,15 @@
    "text": "Hi, a quick note from Bank of America support about your account. Please take a look when you have a moment: https://www.bankofamerica.com/online-banking/",
    "pair": 2,
    "verdict": "Looks Safe",
-   "confidence": 0.88,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2473,
-    "completion_tokens": 1074,
+    "prompt_tokens": 2525,
+    "completion_tokens": 770,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This link goes to the real Bank of America website and doesn't ask for sensitive information.",
-   "seconds": 5.0
+   "summary": "This looks like a harmless note linking to Bank of America's real website, with no request for money or personal information.",
+   "seconds": 8.1
   },
   {
    "id": "live-006",
@@ -165,13 +165,13 @@
    "verdict": "Scam",
    "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2387,
-    "completion_tokens": 769,
+    "prompt_tokens": 2439,
+    "completion_tokens": 701,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Xfinity message trying to get you to open a document on a free Weebly site, not on Xfinity's real website.",
-   "seconds": 2.9
+   "summary": "Fake Xfinity notice linking to a lookalike Weebly site, not the real Xfinity website.",
+   "seconds": 6.5
   },
   {
    "id": "live-007",
@@ -180,15 +180,15 @@
    "text": "Xfinity notice: a document was shared with you. Open it here: https://www.xfinity.com/mobile/account",
    "pair": 3,
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2322,
-    "completion_tokens": 453,
+    "prompt_tokens": 2374,
+    "completion_tokens": 483,
     "llm_calls": 1,
     "tool_calls": 4
    },
    "summary": "This looks like a normal Xfinity notice linking to Xfinity's real website.",
-   "seconds": 2.1
+   "seconds": 4.7
   },
   {
    "id": "live-008",
@@ -199,13 +199,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2379,
-    "completion_tokens": 521,
+    "prompt_tokens": 2431,
+    "completion_tokens": 519,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Xfinity sign-in alert that sends you to a free Weebly site instead of the real Xfinity website.",
-   "seconds": 2.3
+   "summary": "This fake Xfinity sign-in alert sends you to a free Weebly site, not the real Xfinity website.",
+   "seconds": 5.3
   },
   {
    "id": "live-009",
@@ -214,15 +214,15 @@
    "text": "Xfinity: We noticed a new sign-in to your account. You can review it here: https://www.xfinity.com/mobile/account",
    "pair": 4,
    "verdict": "Looks Safe",
-   "confidence": 0.88,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2326,
-    "completion_tokens": 626,
+    "prompt_tokens": 2378,
+    "completion_tokens": 713,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Xfinity sign-in notice linking to the real Xfinity website.",
-   "seconds": 2.6
+   "summary": "This looks like a normal Xfinity sign-in notice linking to Xfinity's real website.",
+   "seconds": 6.2
   },
   {
    "id": "live-010",
@@ -231,15 +231,15 @@
    "text": "Roblox: Your account statement is ready to view: https://1url.at/www/robloxusers-95109909581-profile",
    "pair": 5,
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.88,
    "usage": {
-    "prompt_tokens": 2344,
-    "completion_tokens": 427,
+    "prompt_tokens": 2392,
+    "completion_tokens": 905,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a phishing scam pretending to be Roblox to get you to click a dangerous link.",
-   "seconds": 1.8
+   "summary": "This fake Roblox statement message uses a shortener link that is not on Roblox's real roblox.com site.",
+   "seconds": 8.7
   },
   {
    "id": "live-011",
@@ -248,15 +248,15 @@
    "text": "Roblox: Your account statement is ready to view: https://www.roblox.com/home",
    "pair": 5,
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2347,
-    "completion_tokens": 500,
+    "prompt_tokens": 2399,
+    "completion_tokens": 557,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Roblox notice linking to Roblox's real website.",
-   "seconds": 2.5
+   "summary": "This is a normal notice linking to Roblox's real website with no risky request.",
+   "seconds": 5.9
   },
   {
    "id": "live-012",
@@ -267,13 +267,13 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 4786,
-    "completion_tokens": 910,
-    "llm_calls": 2,
+    "prompt_tokens": 2435,
+    "completion_tokens": 672,
+    "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "Fake Xfinity note sending you to a free Weebly site instead of the real xfinity.com.",
-   "seconds": 4.0
+   "summary": "This is a fake Xfinity message sending you to a free Weebly site instead of the real Xfinity website.",
+   "seconds": 5.8
   },
   {
    "id": "live-013",
@@ -282,15 +282,15 @@
    "text": "Hi, a quick note from Xfinity support about your account. Please take a look when you have a moment: https://www.xfinity.com/mobile/account",
    "pair": 6,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2281,
-    "completion_tokens": 526,
+    "prompt_tokens": 2382,
+    "completion_tokens": 769,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal note pointing to the real Xfinity website, with no scam signs.",
-   "seconds": 2.3
+   "summary": "This looks like a plain note pointing to Xfinity's real official website, with no urgent demand or red flags.",
+   "seconds": 6.9
   },
   {
    "id": "live-014",
@@ -301,13 +301,13 @@
    "verdict": "Scam",
    "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 4670,
-    "completion_tokens": 1017,
-    "llm_calls": 2,
+    "prompt_tokens": 2380,
+    "completion_tokens": 525,
+    "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is not a real Facebook notice \u2014 the link goes to a free-hosted site, not Facebook.",
-   "seconds": 4.3
+   "summary": "This is not really from Facebook \u2014 the link goes to a fake site on free hosting, not facebook.com.",
+   "seconds": 5.3
   },
   {
    "id": "live-015",
@@ -315,16 +315,16 @@
    "category": "live_twin_Facebook",
    "text": "Facebook notice: a document was shared with you. Open it here: https://www.facebook.com/settings",
    "pair": 7,
-   "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "verdict": "Suspicious",
+   "confidence": 0.65,
    "usage": {
-    "prompt_tokens": 2302,
-    "completion_tokens": 837,
+    "prompt_tokens": 2412,
+    "completion_tokens": 1087,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This link goes to the real Facebook website, not a fake copy.",
-   "seconds": 3.8
+   "summary": "The link goes to the real Facebook site, but a settings page is not where shared documents appear, so this notice doesn't add up.",
+   "seconds": 12.5
   },
   {
    "id": "live-016",
@@ -335,13 +335,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 7255,
-    "completion_tokens": 1184,
-    "llm_calls": 3,
-    "tool_calls": 5
+    "prompt_tokens": 2473,
+    "completion_tokens": 534,
+    "llm_calls": 1,
+    "tool_calls": 4
    },
-   "summary": "This is a fake Steam sign-in alert leading to a lookalike site that steals accounts.",
-   "seconds": 5.1
+   "summary": "This is a fake Steam sign-in alert leading to a look-alike site to steal your account.",
+   "seconds": 5.2
   },
   {
    "id": "live-017",
@@ -352,13 +352,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2286,
-    "completion_tokens": 643,
+    "prompt_tokens": 2395,
+    "completion_tokens": 691,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a genuine Steam sign-in notice linking to Steam's real website.",
-   "seconds": 2.9
+   "summary": "This looks like a normal Steam sign-in notice linking to Steam's real website.",
+   "seconds": 7.3
   },
   {
    "id": "live-018",
@@ -369,13 +369,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 4795,
-    "completion_tokens": 751,
-    "llm_calls": 2,
-    "tool_calls": 5
+    "prompt_tokens": 2444,
+    "completion_tokens": 513,
+    "llm_calls": 1,
+    "tool_calls": 4
    },
-   "summary": "This is a fake Roblox link \u2014 it does not use Roblox's real roblox.com address.",
-   "seconds": 4.4
+   "summary": "This is a fake Roblox link impersonating the real roblox.com site to steal your account.",
+   "seconds": 8.3
   },
   {
    "id": "live-019",
@@ -384,15 +384,15 @@
    "text": "Roblox: Your account statement is ready to view: https://www.roblox.com/home",
    "pair": 9,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2290,
-    "completion_tokens": 399,
+    "prompt_tokens": 2399,
+    "completion_tokens": 611,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal notice linking to the real Roblox website.",
-   "seconds": 2.8
+   "summary": "This looks like a normal Roblox notice linking to the real Roblox website.",
+   "seconds": 6.0
   },
   {
    "id": "live-020",
@@ -403,13 +403,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2517,
-    "completion_tokens": 393,
+    "prompt_tokens": 2607,
+    "completion_tokens": 541,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Roblox support message linking to an imitation Roblox site that is flagged for phishing.",
-   "seconds": 1.9
+   "summary": "This is not really from Roblox \u2014 the link uses a fake look-alike site instead of the real roblox.com.",
+   "seconds": 7.4
   },
   {
    "id": "live-021",
@@ -420,13 +420,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2301,
-    "completion_tokens": 803,
+    "prompt_tokens": 2410,
+    "completion_tokens": 516,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This links to the real Roblox website, not a fake look-alike, with no urgent threat or request for money or codes.",
-   "seconds": 3.6
+   "summary": "This link goes to the real Roblox website, with no request for money, codes or personal details.",
+   "seconds": 5.5
   },
   {
    "id": "live-022",
@@ -437,13 +437,13 @@
    "verdict": "Scam",
    "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2501,
-    "completion_tokens": 480,
+    "prompt_tokens": 2594,
+    "completion_tokens": 521,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake MetaMask notice linking to an unofficial site that pretends to be MetaMask docs.",
-   "seconds": 1.8
+   "summary": "Fake MetaMask notice linking to an unofficial vercel.app site instead of metamask.io.",
+   "seconds": 5.4
   },
   {
    "id": "live-023",
@@ -452,15 +452,15 @@
    "text": "MetaMask notice: a document was shared with you. Open it here: https://docs.metamask.io/",
    "pair": 11,
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2253,
-    "completion_tokens": 634,
+    "prompt_tokens": 2308,
+    "completion_tokens": 616,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This link goes to MetaMask's real official docs site with no sign of forgery.",
-   "seconds": 2.6
+   "summary": "This links to MetaMask\u2019s real official documentation site with no suspicious request.",
+   "seconds": 6.5
   },
   {
    "id": "live-024",
@@ -471,13 +471,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2567,
-    "completion_tokens": 486,
+    "prompt_tokens": 2623,
+    "completion_tokens": 439,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Roblox sign-in alert leading to a lookalike domain that is not the real Roblox site.",
-   "seconds": 1.6
+   "summary": "This fake Roblox sign-in alert uses a lookalike domain that is not the real Roblox site.",
+   "seconds": 3.8
   },
   {
    "id": "live-025",
@@ -488,13 +488,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2298,
-    "completion_tokens": 552,
+    "prompt_tokens": 2407,
+    "completion_tokens": 454,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Roblox sign-in notice linking to Roblox's real website.",
-   "seconds": 2.7
+   "summary": "This looks like a normal Roblox sign-in notice linking to the real Roblox website.",
+   "seconds": 4.5
   },
   {
    "id": "live-026",
@@ -505,13 +505,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2438,
-    "completion_tokens": 671,
-    "llm_calls": 1,
-    "tool_calls": 4
+    "prompt_tokens": 5466,
+    "completion_tokens": 1022,
+    "llm_calls": 2,
+    "tool_calls": 7
    },
-   "summary": "This is a Roblox phishing scam using a shortened link that hides a fake roblox.com.et site.",
-   "seconds": 3.6
+   "summary": "This Roblox statement message hides a phishing link that leads to a fake Roblox site.",
+   "seconds": 10.5
   },
   {
    "id": "live-027",
@@ -522,13 +522,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2347,
-    "completion_tokens": 417,
+    "prompt_tokens": 2399,
+    "completion_tokens": 530,
     "llm_calls": 1,
     "tool_calls": 4
    },
    "summary": "This looks like a normal Roblox notice linking to the real Roblox website.",
-   "seconds": 2.0
+   "seconds": 5.2
   },
   {
    "id": "live-028",
@@ -539,13 +539,13 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2316,
-    "completion_tokens": 681,
+    "prompt_tokens": 2368,
+    "completion_tokens": 956,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Microsoft support message linking to an unofficial lookalike site, not Microsoft.",
-   "seconds": 3.4
+   "summary": "This is not a real Microsoft message \u2014 the link goes to a fake address outside Microsoft's official websites.",
+   "seconds": 10.1
   },
   {
    "id": "live-029",
@@ -554,15 +554,15 @@
    "text": "Hi, a quick note from Microsoft support about your account. Please take a look when you have a moment: https://account.microsoft.com/",
    "pair": 14,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 4487,
-    "completion_tokens": 514,
+    "prompt_tokens": 4552,
+    "completion_tokens": 793,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "The link goes to the real Microsoft account site, with no urgent request for money or codes.",
-   "seconds": 3.9
+   "summary": "This note links to Microsoft's real account site and shows no signs of a scam.",
+   "seconds": 10.8
   },
   {
    "id": "live-030",
@@ -571,15 +571,15 @@
    "text": "Adobe notice: a document was shared with you. Open it here: https://quintusgroup.org/adobe.co/",
    "pair": 15,
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.88,
    "usage": {
-    "prompt_tokens": 2328,
-    "completion_tokens": 871,
+    "prompt_tokens": 2380,
+    "completion_tokens": 830,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "Fake Adobe document notice linking to an unrelated site, not Adobe, to steal your login.",
-   "seconds": 4.2
+   "summary": "This fake Adobe share notice sends you to a non-Adobe website to steal your login.",
+   "seconds": 10.8
   },
   {
    "id": "live-031",
@@ -590,13 +590,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2300,
-    "completion_tokens": 465,
+    "prompt_tokens": 2352,
+    "completion_tokens": 486,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Adobe share notice pointing to Adobe's real website.",
-   "seconds": 1.9
+   "summary": "This looks like a normal Adobe notice linking to Adobe's real website.",
+   "seconds": 5.1
   },
   {
    "id": "live-032",
@@ -607,13 +607,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2333,
-    "completion_tokens": 406,
+    "prompt_tokens": 2385,
+    "completion_tokens": 576,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Apple sign-in alert leading to a lookalike site, not Apple.",
-   "seconds": 1.7
+   "summary": "Fake Apple iCloud sign-in alert leading to a lookalike site that is not Apple.",
+   "seconds": 6.0
   },
   {
    "id": "live-033",
@@ -624,13 +624,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2314,
-    "completion_tokens": 648,
+    "prompt_tokens": 2366,
+    "completion_tokens": 684,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Apple sign-in notice linking to Apple's real iCloud website.",
-   "seconds": 2.8
+   "summary": "This looks like a normal Apple sign-in notice pointing to Apple's real iCloud website.",
+   "seconds": 7.1
   },
   {
    "id": "live-034",
@@ -639,15 +639,15 @@
    "text": "Amazon: Your account statement is ready to view: https://ronitkp06-proj.github.io/Amazon-webpage/",
    "pair": 17,
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2348,
-    "completion_tokens": 460,
+    "prompt_tokens": 2396,
+    "completion_tokens": 654,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "Fake Amazon statement link on a non-Amazon site that is listed as phishing.",
-   "seconds": 2.3
+   "summary": "This pretends to be Amazon but links to a free GitHub site, not Amazon, so it is not a real Amazon statement.",
+   "seconds": 7.2
   },
   {
    "id": "live-035",
@@ -658,13 +658,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2666,
-    "completion_tokens": 475,
+    "prompt_tokens": 2629,
+    "completion_tokens": 647,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Amazon notice linking to Amazon's real website.",
-   "seconds": 2.5
+   "summary": "This looks like a normal Amazon notice linking to Amazon's real website to view your statement.",
+   "seconds": 7.2
   },
   {
    "id": "live-036",
@@ -675,13 +675,13 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2422,
-    "completion_tokens": 478,
+    "prompt_tokens": 2474,
+    "completion_tokens": 628,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This pretends to be Facebook support but uses a fake Facebook-like address that is not Facebook's real website.",
-   "seconds": 2.3
+   "summary": "This is a fake Facebook support note trying to get you to click an unofficial Facebook look-alike link.",
+   "seconds": 6.9
   },
   {
    "id": "live-037",
@@ -692,13 +692,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2368,
-    "completion_tokens": 476,
+    "prompt_tokens": 2420,
+    "completion_tokens": 809,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This link goes to the real Facebook website, so this note looks safe.",
-   "seconds": 1.9
+   "summary": "This link goes to the real Facebook website and the note makes no risky request, so it looks safe.",
+   "seconds": 8.5
   },
   {
    "id": "live-038",
@@ -709,13 +709,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 4704,
-    "completion_tokens": 529,
-    "llm_calls": 2,
+    "prompt_tokens": 2428,
+    "completion_tokens": 531,
+    "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Roblox link on a lookalike site that is already flagged for phishing.",
-   "seconds": 2.7
+   "summary": "This is a fake Roblox notice leading to a lookalike website that is not Roblox.",
+   "seconds": 5.5
   },
   {
    "id": "live-039",
@@ -726,13 +726,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 2294,
-    "completion_tokens": 1161,
+    "prompt_tokens": 2403,
+    "completion_tokens": 1125,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "The link goes to the real Roblox website, not a fake copy, so there is no sign of a scam in this message.",
-   "seconds": 4.7
+   "summary": "The link goes to the real Roblox website, not a fake copy, so it is safe to click though the document wording is odd.",
+   "seconds": 13.6
   },
   {
    "id": "live-040",
@@ -741,15 +741,15 @@
    "text": "Roblox: We noticed a new sign-in to your account. You can review it here: https://robloxc.com.es/users/1410683999/profile",
    "pair": 20,
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2340,
-    "completion_tokens": 421,
+    "prompt_tokens": 2391,
+    "completion_tokens": 424,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Roblox sign-in alert leading to a lookalike site, not the real Roblox.",
-   "seconds": 2.0
+   "summary": "Fake Roblox security alert linking to a lookalike site, not the real roblox.com.",
+   "seconds": 4.5
   },
   {
    "id": "live-041",
@@ -758,15 +758,15 @@
    "text": "Roblox: We noticed a new sign-in to your account. You can review it here: https://www.roblox.com/home",
    "pair": 20,
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2298,
-    "completion_tokens": 547,
+    "prompt_tokens": 2407,
+    "completion_tokens": 504,
     "llm_calls": 1,
     "tool_calls": 4
    },
    "summary": "This looks like a normal Roblox sign-in notice linking to Roblox's real website.",
-   "seconds": 2.5
+   "seconds": 5.7
   },
   {
    "id": "live-042",
@@ -775,15 +775,15 @@
    "text": "Xfinity: Your account statement is ready to view: http://xfinityhelplogin.weebly.com/",
    "pair": 21,
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 4668,
-    "completion_tokens": 1052,
+    "prompt_tokens": 4842,
+    "completion_tokens": 1239,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "Fake Xfinity bill notice linking to a free Weebly site instead of xfinity.com.",
-   "seconds": 4.5
+   "summary": "Fake Xfinity statement message links to a free Weebly site instead of the real xfinity.com.",
+   "seconds": 13.9
   },
   {
    "id": "live-043",
@@ -794,13 +794,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2269,
-    "completion_tokens": 463,
+    "prompt_tokens": 2370,
+    "completion_tokens": 686,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Xfinity notice linking to Xfinity's real website.",
-   "seconds": 2.0
+   "summary": "This looks like a normal Xfinity statement notice linking to Xfinity's real website.",
+   "seconds": 7.0
   },
   {
    "id": "live-044",
@@ -809,15 +809,15 @@
    "text": "Hi, a quick note from Roblox support about your account. Please take a look when you have a moment: https://www.roblox.rw/games/13600218266/My-Movie?privateServerLinkCode=11040290185766545005746312904812&game_id=13600218266&game_name=My-Movie",
    "pair": 22,
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.97,
    "usage": {
-    "prompt_tokens": 2656,
-    "completion_tokens": 406,
+    "prompt_tokens": 2735,
+    "completion_tokens": 530,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This fake Roblox support note uses a look-alike domain that is not the real Roblox site.",
-   "seconds": 3.9
+   "summary": "This is a fake Roblox support message linking to a lookalike site, not the real roblox.com.",
+   "seconds": 6.7
   },
   {
    "id": "live-045",
@@ -828,13 +828,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2301,
-    "completion_tokens": 755,
+    "prompt_tokens": 2410,
+    "completion_tokens": 596,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This link goes to the real Roblox website, not a fake copy, and the note is low-pressure with no risky request.",
-   "seconds": 3.7
+   "summary": "This looks like a harmless note pointing to the real Roblox website.",
+   "seconds": 6.7
   },
   {
    "id": "live-046",
@@ -843,15 +843,15 @@
    "text": "DHL notice: a document was shared with you. Open it here: https://www.dhl.smarthub.vuelogix.ai/",
    "pair": 23,
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2355,
-    "completion_tokens": 729,
+    "prompt_tokens": 2439,
+    "completion_tokens": 627,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake DHL message sending you to a non-DHL website to open a document.",
-   "seconds": 3.4
+   "summary": "This is a fake DHL message sending you to a site that is not DHL's real website.",
+   "seconds": 7.3
   },
   {
    "id": "live-047",
@@ -860,15 +860,15 @@
    "text": "DHL notice: a document was shared with you. Open it here: https://www.dhl.com/us-en/home/tracking.html",
    "pair": 23,
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2296,
-    "completion_tokens": 776,
+    "prompt_tokens": 2382,
+    "completion_tokens": 667,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This link goes to DHL's real official website with no sign of impersonation.",
-   "seconds": 10.7
+   "summary": "This link goes to DHL's real official website, so it looks safe.",
+   "seconds": 15.0
   },
   {
    "id": "live-048",
@@ -877,15 +877,15 @@
    "text": "AT&T: We noticed a new sign-in to your account. You can review it here: https://www.ticket-att.com/wireless/step01.php/",
    "pair": 24,
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2310,
-    "completion_tokens": 482,
+    "prompt_tokens": 2395,
+    "completion_tokens": 467,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "Fake AT&T sign-in alert linking to a lookalike site, not att.com.",
-   "seconds": 10.1
+   "summary": "This is a fake AT&T sign-in alert leading to a lookalike site that is not AT&T.",
+   "seconds": 13.0
   },
   {
    "id": "live-049",
@@ -894,15 +894,15 @@
    "text": "AT&T: We noticed a new sign-in to your account. You can review it here: https://www.att.com/my/",
    "pair": 24,
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2235,
-    "completion_tokens": 767,
+    "prompt_tokens": 2336,
+    "completion_tokens": 576,
     "llm_calls": 1,
     "tool_calls": 4
    },
    "summary": "This looks like a normal AT&T sign-in notice linking to AT&T's real website.",
-   "seconds": 3.7
+   "seconds": 5.9
   },
   {
    "id": "live-050",
@@ -913,13 +913,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2426,
-    "completion_tokens": 375,
+    "prompt_tokens": 2477,
+    "completion_tokens": 396,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake DHL message linking to a phishing site, not the real DHL website.",
-   "seconds": 9.6
+   "summary": "This is a fake DHL message leading to a non-DHL website.",
+   "seconds": 12.6
   },
   {
    "id": "live-051",
@@ -928,15 +928,15 @@
    "text": "DHL: Your account statement is ready to view: https://www.dhl.com/us-en/home/tracking.html",
    "pair": 25,
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2326,
-    "completion_tokens": 581,
+    "prompt_tokens": 2378,
+    "completion_tokens": 532,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a plain notice linking to DHL's real official website with no risky request.",
-   "seconds": 10.2
+   "summary": "This looks like a normal DHL notice linking to DHL's real website.",
+   "seconds": 13.3
   },
   {
    "id": "live-052",
@@ -947,13 +947,13 @@
    "verdict": "Scam",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2498,
+    "prompt_tokens": 2550,
     "completion_tokens": 424,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake MetaMask support message linking to an unofficial site that MetaMask would never use.",
-   "seconds": 2.1
+   "summary": "Fake MetaMask support note linking to an unofficial vercel.app site instead of metamask.io.",
+   "seconds": 4.8
   },
   {
    "id": "live-053",
@@ -962,15 +962,15 @@
    "text": "Hi, a quick note from MetaMask support about your account. Please take a look when you have a moment: https://docs.metamask.io/",
    "pair": 26,
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2264,
-    "completion_tokens": 746,
+    "prompt_tokens": 2316,
+    "completion_tokens": 779,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "The link goes to MetaMask's real official docs site and asks for nothing risky.",
-   "seconds": 2.6
+   "summary": "This link goes to MetaMask's real official docs site and shows no scam signs.",
+   "seconds": 8.6
   },
   {
    "id": "live-054",
@@ -979,15 +979,15 @@
    "text": "Adobe notice: a document was shared with you. Open it here: http://dashboard.adobeexperience.com.br/",
    "pair": 27,
    "verdict": "Scam",
-   "confidence": 0.85,
+   "confidence": 0.88,
    "usage": {
-    "prompt_tokens": 2307,
-    "completion_tokens": 905,
+    "prompt_tokens": 2359,
+    "completion_tokens": 1024,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a fake Adobe document notice leading to a site that is not Adobe's real site.",
-   "seconds": 3.9
+   "summary": "This Adobe document notice links to a lookalike site that is not Adobe's real adobe.com address.",
+   "seconds": 11.1
   },
   {
    "id": "live-055",
@@ -998,13 +998,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2300,
-    "completion_tokens": 447,
+    "prompt_tokens": 2352,
+    "completion_tokens": 582,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Adobe share notice linking to Adobe's real website.",
-   "seconds": 2.2
+   "summary": "This is a simple notice pointing to Adobe's real website to view a shared document.",
+   "seconds": 6.6
   },
   {
    "id": "live-056",
@@ -1013,15 +1013,15 @@
    "text": "Roblox: We noticed a new sign-in to your account. You can review it here: https://sprl.me/www-roblox-coms-users-5428725668-profile",
    "pair": 28,
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2364,
-    "completion_tokens": 807,
+    "prompt_tokens": 2416,
+    "completion_tokens": 692,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "Fake Roblox sign-in alert using a non-Roblox link to steal your login.",
-   "seconds": 3.2
+   "summary": "This is a fake Roblox sign-in alert that sends you to a non-Roblox link instead of roblox.com.",
+   "seconds": 7.4
   },
   {
    "id": "live-057",
@@ -1032,13 +1032,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2355,
-    "completion_tokens": 780,
+    "prompt_tokens": 2407,
+    "completion_tokens": 635,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This links to the real Roblox website to review a sign-in, with no sign of forgery.",
-   "seconds": 3.4
+   "summary": "This looks like a normal Roblox sign-in notice linking to Roblox's real website.",
+   "seconds": 6.6
   },
   {
    "id": "live-058",
@@ -1047,15 +1047,15 @@
    "text": "Netflix: Your account statement is ready to view: https://seyidovadrya6-star.github.io/netflix_proqramlasdirma/",
    "pair": 29,
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2388,
-    "completion_tokens": 736,
+    "prompt_tokens": 2440,
+    "completion_tokens": 591,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Netflix message linking to a non-Netflix free hosting site to steal your login.",
-   "seconds": 3.0
+   "summary": "This is not from Netflix \u2014 the link goes to a free github.io site, not netflix.com.",
+   "seconds": 6.8
   },
   {
    "id": "live-059",
@@ -1066,13 +1066,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2362,
-    "completion_tokens": 443,
+    "prompt_tokens": 2414,
+    "completion_tokens": 469,
     "llm_calls": 1,
     "tool_calls": 4
    },
    "summary": "This looks like a normal Netflix notice linking to the real Netflix website.",
-   "seconds": 2.1
+   "seconds": 4.8
   }
  ]
 }

@@ -49,9 +49,9 @@
     "tn": 40
    }
   },
-  "median_seconds": 3.5,
-  "avg_tokens": 4076,
-  "avg_tool_calls": 2.34
+  "median_seconds": 9.4,
+  "avg_tokens": 4185,
+  "avg_tool_calls": 2.3
  },
  "results": [
   {
@@ -60,15 +60,15 @@
    "category": "package_fee",
    "text": "USPS: Your package could not be delivered due to an unpaid customs fee of $1.99. Pay within 12 hours or it will be returned: http://usps-redelivery-help.top/pay",
    "verdict": "Scam",
-   "confidence": 0.97,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2360,
-    "completion_tokens": 515,
+    "prompt_tokens": 2412,
+    "completion_tokens": 490,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake USPS delivery-fee text leading to a fake web address that is not USPS.",
-   "seconds": 3.5
+   "summary": "This is a fake USPS delivery-fee text trying to steal your payment - USPS never asks for customs fees this way.",
+   "seconds": 6.2
   },
   {
    "id": "benchmark-001",
@@ -78,13 +78,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2354,
-    "completion_tokens": 483,
+    "prompt_tokens": 2406,
+    "completion_tokens": 537,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake FedEx delivery text leading to a fake FedEx address that is not FedEx's real website.",
-   "seconds": 3.5
+   "summary": "This is a fake FedEx delivery text trying to get you to click a lookalike link that is not FedEx.",
+   "seconds": 7.2
   },
   {
    "id": "benchmark-002",
@@ -94,13 +94,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2320,
-    "completion_tokens": 533,
+    "prompt_tokens": 2372,
+    "completion_tokens": 607,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake DHL customs-fee scam using a lookalike website that is not DHL's real site.",
-   "seconds": 3.5
+   "summary": "Fake DHL customs-fee message sending you to a copycat website that is not DHL.",
+   "seconds": 7.2
   },
   {
    "id": "benchmark-003",
@@ -110,13 +110,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 4673,
-    "completion_tokens": 973,
-    "llm_calls": 2,
-    "tool_calls": 4
+    "prompt_tokens": 7414,
+    "completion_tokens": 1170,
+    "llm_calls": 3,
+    "tool_calls": 5
    },
-   "summary": "This is a fake E-ZPass toll text trying to get you to click and pay on a bogus site.",
-   "seconds": 5.1
+   "summary": "This is a fake E-ZPass toll text trying to rush you to pay on a fake .top website that doesn't officially exist.",
+   "seconds": 14.6
   },
   {
    "id": "benchmark-004",
@@ -126,13 +126,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2358,
-    "completion_tokens": 518,
+    "prompt_tokens": 2410,
+    "completion_tokens": 504,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "Fake Chase alert trying to steal your login with an urgent link that is not Chase's real website.",
-   "seconds": 2.5
+   "summary": "Fake Chase text trying to scare you into clicking a fake login link to steal your account.",
+   "seconds": 5.3
   },
   {
    "id": "benchmark-005",
@@ -142,13 +142,13 @@
    "verdict": "Suspicious",
    "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 1993,
-    "completion_tokens": 1137,
+    "prompt_tokens": 2045,
+    "completion_tokens": 1394,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This looks like a fake bank lockout text pushing you to call an unknown number, not a verified Wells Fargo message.",
-   "seconds": 4.2
+   "summary": "A text claiming to be Wells Fargo says your account is restricted and pushes you to call an unknown number right away.",
+   "seconds": 16.7
   },
   {
    "id": "benchmark-006",
@@ -156,15 +156,15 @@
    "category": "bank_code",
    "text": "Bank of America: we detected a login from a new device. To cancel, reply with the 6-digit code we just sent you.",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 1991,
-    "completion_tokens": 716,
-    "llm_calls": 1,
+    "prompt_tokens": 4106,
+    "completion_tokens": 1241,
+    "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is a scam trying to steal your login code by pretending to be Bank of America.",
-   "seconds": 2.9
+   "summary": "A fake bank alert trying to steal your login code \u2014 Bank of America never asks for one-time codes.",
+   "seconds": 13.6
   },
   {
    "id": "benchmark-007",
@@ -174,13 +174,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2001,
-    "completion_tokens": 612,
+    "prompt_tokens": 2053,
+    "completion_tokens": 406,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This is a fake Zelle unlock-fee scam \u2014 don't send $100, there is no $500 payment.",
-   "seconds": 2.9
+   "summary": "This is a fake Zelle message trying to trick you into sending $100 to unlock a payment that doesn't exist.",
+   "seconds": 4.7
   },
   {
    "id": "benchmark-008",
@@ -190,13 +190,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2329,
-    "completion_tokens": 471,
+    "prompt_tokens": 2381,
+    "completion_tokens": 505,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Venmo refund message using a lookalike link to pressure you into sending money.",
-   "seconds": 2.2
+   "summary": "Fake Venmo refund message using a lookalike link and a suspension threat to pressure you to pay.",
+   "seconds": 5.5
   },
   {
    "id": "benchmark-009",
@@ -206,13 +206,13 @@
    "verdict": "Scam",
    "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2012,
-    "completion_tokens": 469,
+    "prompt_tokens": 2064,
+    "completion_tokens": 647,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This is a fake PayPal invoice refund scam trying to get you to call the scammers.",
-   "seconds": 1.8
+   "summary": "Fake PayPal/Norton invoice notice trying to get you to call a scammer to \u201ccancel\u201d a charge you never made.",
+   "seconds": 7.1
   },
   {
    "id": "benchmark-010",
@@ -220,15 +220,15 @@
    "category": "order_call",
    "text": "Amazon: Your order of an iPhone 15 Pro for $1,149 has been placed. If you did not make this purchase call 1-877-555-0166 to cancel.",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.88,
    "usage": {
-    "prompt_tokens": 2013,
-    "completion_tokens": 795,
-    "llm_calls": 1,
+    "prompt_tokens": 4150,
+    "completion_tokens": 2025,
+    "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "Fake Amazon order text trying to get you to call a scammer to cancel.",
-   "seconds": 3.2
+   "summary": "Fake Amazon order alert trying to get you to call a scammer to cancel a purchase you never made.",
+   "seconds": 23.2
   },
   {
    "id": "benchmark-011",
@@ -238,13 +238,13 @@
    "verdict": "Scam",
    "confidence": 0.99,
    "usage": {
-    "prompt_tokens": 2007,
-    "completion_tokens": 293,
+    "prompt_tokens": 2059,
+    "completion_tokens": 417,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This is a gift-card scam pretending to be Amazon billing.",
-   "seconds": 1.3
+   "summary": "This is a scam pretending to be Amazon to steal gift card money.",
+   "seconds": 4.7
   },
   {
    "id": "benchmark-012",
@@ -254,13 +254,13 @@
    "verdict": "Scam",
    "confidence": 1.0,
    "usage": {
-    "prompt_tokens": 2085,
-    "completion_tokens": 453,
+    "prompt_tokens": 2137,
+    "completion_tokens": 536,
     "llm_calls": 1,
     "tool_calls": 2
    },
-   "summary": "This is a fake IRS arrest threat trying to steal money with gift cards.",
-   "seconds": 1.7
+   "summary": "This is a fake IRS arrest threat trying to make you pay with gift cards in secret.",
+   "seconds": 5.7
   },
   {
    "id": "benchmark-013",
@@ -270,13 +270,13 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 4020,
-    "completion_tokens": 791,
+    "prompt_tokens": 4144,
+    "completion_tokens": 654,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is a fake Social Security arrest-threat scam \u2014 the real SSA never suspends SSNs or threatens arrest.",
-   "seconds": 3.3
+   "summary": "This is a fake Social Security arrest-threat scam trying to scare you into calling.",
+   "seconds": 7.4
   },
   {
    "id": "benchmark-014",
@@ -284,15 +284,15 @@
    "category": "medicare",
    "text": "Medicare: you are eligible for a new 2026 benefits card with $1,200 in grocery allowance. Reply YES and confirm your Medicare number to receive it.",
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2003,
-    "completion_tokens": 463,
+    "prompt_tokens": 2055,
+    "completion_tokens": 580,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This is a Medicare impersonation scam trying to steal your Medicare number with a fake $1,200 grocery benefit.",
-   "seconds": 1.6
+   "summary": "This is a fake Medicare text trying to steal your Medicare number with a promise of $1,200 for groceries.",
+   "seconds": 5.5
   },
   {
    "id": "benchmark-015",
@@ -302,13 +302,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 7533,
-    "completion_tokens": 1820,
-    "llm_calls": 3,
-    "tool_calls": 7
+    "prompt_tokens": 4546,
+    "completion_tokens": 1009,
+    "llm_calls": 2,
+    "tool_calls": 4
    },
-   "summary": "Fake Apple lock warning linking to a non-Apple site to steal your login.",
-   "seconds": 7.6
+   "summary": "Fake Apple lock warning trying to steal your Apple ID with a 24-hour photo-deletion threat.",
+   "seconds": 10.8
   },
   {
    "id": "benchmark-016",
@@ -318,13 +318,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1995,
-    "completion_tokens": 643,
+    "prompt_tokens": 2047,
+    "completion_tokens": 584,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This is a fake Microsoft virus warning trying to get you to call a scammer number.",
-   "seconds": 2.5
+   "summary": "This is a fake Microsoft virus warning trying to get you to call a scam support number.",
+   "seconds": 5.6
   },
   {
    "id": "benchmark-017",
@@ -332,15 +332,15 @@
    "category": "geeksquad",
    "text": "Geek Squad: your 3-year protection plan renews today for $389.99. To cancel and get a refund call 1-866-555-0188.",
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1999,
+    "prompt_tokens": 2051,
     "completion_tokens": 651,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This is a fake Geek Squad renewal notice trying to get you to call about a $389.99 charge.",
-   "seconds": 2.2
+   "summary": "Fake Geek Squad renewal notice trying to get you to call for a refund.",
+   "seconds": 7.4
   },
   {
    "id": "benchmark-018",
@@ -350,13 +350,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2320,
-    "completion_tokens": 378,
+    "prompt_tokens": 2372,
+    "completion_tokens": 456,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Netflix billing alert designed to steal your payment details.",
-   "seconds": 1.7
+   "summary": "This is a fake Netflix billing alert leading to a lookalike site that is not Netflix.",
+   "seconds": 4.9
   },
   {
    "id": "benchmark-019",
@@ -364,15 +364,15 @@
    "category": "wrong_number",
    "text": "Hi Sarah, are we still on for dinner Friday? Let me know!",
    "verdict": "Suspicious",
-   "confidence": 0.75,
+   "confidence": 0.65,
    "usage": {
-    "prompt_tokens": 1870,
-    "completion_tokens": 1759,
+    "prompt_tokens": 1922,
+    "completion_tokens": 1369,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a classic wrong-number opener used to start a scam conversation, so don't engage if you don't know the sender.",
-   "seconds": 5.5
+   "summary": "This looks like a classic wrong-number opener to start a conversation, not a confirmed safe chat.",
+   "seconds": 13.3
   },
   {
    "id": "benchmark-020",
@@ -380,15 +380,15 @@
    "category": "wrong_number",
    "text": "Hello, I got your number from a friend. I'm Emily, I just moved to the city and don't know anyone. Can we chat? \ud83d\ude0a",
    "verdict": "Suspicious",
-   "confidence": 0.7,
+   "confidence": 0.75,
    "usage": {
-    "prompt_tokens": 1886,
-    "completion_tokens": 2324,
+    "prompt_tokens": 1938,
+    "completion_tokens": 1975,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is a stranger trying to start a friendly chat out of nowhere, which is a common setup for a later romance or investment scam.",
-   "seconds": 7.2
+   "summary": "This is an unsolicited message from a stranger asking to chat, which is a common first step in wrong-number friendship scams.",
+   "seconds": 18.4
   },
   {
    "id": "benchmark-021",
@@ -396,15 +396,15 @@
    "category": "crypto",
    "text": "I've been making $3,000 a week with a crypto trading platform my uncle taught me. I can show you how, small deposit of $250 to start, guaranteed returns. Message me on WhatsApp.",
    "verdict": "Scam",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 3814,
-    "completion_tokens": 4740,
-    "llm_calls": 2,
+    "prompt_tokens": 1949,
+    "completion_tokens": 2172,
+    "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "A stranger promising $3,000 a week in guaranteed crypto profits for a $250 deposit and pushing you to WhatsApp is an investment scam.",
-   "seconds": 16.7
+   "summary": "This is a classic crypto investment scam promising impossible guaranteed profits to get a deposit.",
+   "seconds": 23.4
   },
   {
    "id": "benchmark-022",
@@ -412,15 +412,15 @@
    "category": "romance",
    "text": "My dear, I am a US Army engineer deployed overseas. I have fallen in love with you. I need $800 in iTunes cards to take leave and come meet you.",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 3932,
-    "completion_tokens": 1873,
+    "prompt_tokens": 4053,
+    "completion_tokens": 1916,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is a military romance scam asking for $800 in gift cards to pay for leave.",
-   "seconds": 6.7
+   "summary": "This is a romance scam \u2014 a fake soldier asking for $800 in gift cards to come meet you.",
+   "seconds": 20.3
   },
   {
    "id": "benchmark-023",
@@ -430,13 +430,13 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 2002,
-    "completion_tokens": 667,
+    "prompt_tokens": 2054,
+    "completion_tokens": 665,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This is the classic 'grandchild in jail' scam asking for bail in gift cards while telling you to keep it secret.",
-   "seconds": 3.0
+   "summary": "This is a grandparent scam pretending your grandchild is in jail to steal gift cards.",
+   "seconds": 7.1
   },
   {
    "id": "benchmark-024",
@@ -446,13 +446,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1893,
-    "completion_tokens": 2128,
+    "prompt_tokens": 1945,
+    "completion_tokens": 2303,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is a fake task-job offer promising easy high pay to pull you to Telegram.",
-   "seconds": 8.0
+   "summary": "This is a fake work-from-home task-job offer trying to pull you to Telegram to steal money or information.",
+   "seconds": 24.3
   },
   {
    "id": "benchmark-025",
@@ -462,13 +462,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2009,
-    "completion_tokens": 600,
+    "prompt_tokens": 2061,
+    "completion_tokens": 826,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This is a classic fake-check job scam \u2014 the check will bounce and any Zelle money you send is gone.",
-   "seconds": 2.6
+   "summary": "This is a classic fake-check job scam where the check will bounce and any Zelle money you send is lost.",
+   "seconds": 8.6
   },
   {
    "id": "benchmark-026",
@@ -476,15 +476,15 @@
    "category": "lottery",
    "text": "CONGRATULATIONS! You've won $750,000 in the Mega Millions International Lottery. To claim, send a $199 processing fee. Reply with your full name and bank details.",
    "verdict": "Scam",
-   "confidence": 0.97,
+   "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 3926,
-    "completion_tokens": 1794,
+    "prompt_tokens": 4031,
+    "completion_tokens": 1921,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is a fake lottery win trying to steal your money and bank details.",
-   "seconds": 6.1
+   "summary": "You did not win a lottery \u2014 this is a fake prize message trying to steal your money and bank details.",
+   "seconds": 20.7
   },
   {
    "id": "benchmark-027",
@@ -494,13 +494,13 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 2344,
-    "completion_tokens": 493,
+    "prompt_tokens": 2396,
+    "completion_tokens": 568,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake Coinbase alert trying to steal your crypto by asking for your 12-word recovery phrase on a fake website.",
-   "seconds": 2.1
+   "summary": "Fake Coinbase alert trying to steal your wallet by asking for your 12-word recovery phrase on a fake site.",
+   "seconds": 10.0
   },
   {
    "id": "benchmark-028",
@@ -510,13 +510,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 4617,
-    "completion_tokens": 783,
+    "prompt_tokens": 4725,
+    "completion_tokens": 918,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This is a fake IRS tax-refund message trying to steal your bank details with a look-alike website.",
-   "seconds": 3.7
+   "summary": "This is a fake tax-refund message trying to steal your bank details through a non-official link.",
+   "seconds": 9.4
   },
   {
    "id": "benchmark-029",
@@ -524,15 +524,15 @@
    "category": "utility",
    "text": "Duke Energy: your power will be disconnected in 1 hour due to an overdue balance of $312. Pay now using a Bitcoin ATM, call 1-800-555-0102 for instructions.",
    "verdict": "Scam",
-   "confidence": 0.98,
+   "confidence": 0.97,
    "usage": {
-    "prompt_tokens": 3935,
-    "completion_tokens": 1430,
+    "prompt_tokens": 4035,
+    "completion_tokens": 1473,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This is a fake Duke Energy shut-off scam that pressures you to pay quickly with Bitcoin.",
-   "seconds": 5.5
+   "summary": "This is a fake utility shut-off scam asking for payment by Bitcoin ATM.",
+   "seconds": 15.9
   },
   {
    "id": "benchmark-030",
@@ -540,15 +540,15 @@
    "category": "bec",
    "text": "Hi, are you at your desk? I need you to buy 5 Target gift cards for a client gift, $200 each. I'm in a meeting so can't talk. I'll reimburse you today. Send me the codes. - Jim, CEO",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.97,
    "usage": {
-    "prompt_tokens": 3862,
-    "completion_tokens": 2047,
+    "prompt_tokens": 4055,
+    "completion_tokens": 2526,
     "llm_calls": 2,
-    "tool_calls": 0
+    "tool_calls": 1
    },
-   "summary": "This is a gift-card scam pretending to be your CEO to steal $1,000 in gift card codes.",
-   "seconds": 7.3
+   "summary": "This is a fake boss gift-card scam trying to steal money from you.",
+   "seconds": 27.5
   },
   {
    "id": "benchmark-031",
@@ -558,13 +558,13 @@
    "verdict": "Scam",
    "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 4592,
-    "completion_tokens": 860,
-    "llm_calls": 2,
-    "tool_calls": 4
+    "prompt_tokens": 2265,
+    "completion_tokens": 815,
+    "llm_calls": 1,
+    "tool_calls": 3
    },
-   "summary": "This is a fake DMV text trying to scare you into paying via a bogus link.",
-   "seconds": 4.1
+   "summary": "This is a fake DMV text trying to scare you into paying via a bogus link that is not a real government site.",
+   "seconds": 8.9
   },
   {
    "id": "benchmark-032",
@@ -574,13 +574,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 6101,
-    "completion_tokens": 2670,
+    "prompt_tokens": 6340,
+    "completion_tokens": 2276,
     "llm_calls": 3,
     "tool_calls": 2
    },
-   "summary": "This is a fake loan-forgiveness text trying to steal your SSN and FSA ID.",
-   "seconds": 10.3
+   "summary": "This text falsely promises $20,000 in student loan forgiveness to steal your FSA ID and Social Security number.",
+   "seconds": 25.6
   },
   {
    "id": "benchmark-033",
@@ -590,13 +590,13 @@
    "verdict": "Scam",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2324,
-    "completion_tokens": 440,
+    "prompt_tokens": 2376,
+    "completion_tokens": 611,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "Fake Instagram copyright ban message sending you to a lookalike site that is not Instagram.",
-   "seconds": 2.3
+   "summary": "This is a fake Instagram copyright warning trying to scare you into clicking a fake appeal link.",
+   "seconds": 6.2
   },
   {
    "id": "benchmark-034",
@@ -604,15 +604,15 @@
    "category": "voicemail",
    "text": "Hello, this is the fraud prevention department of Amazon. We have detected suspicious activity on your account and ordered a $1,299 item. Press 1 to speak with an agent to cancel this order.",
    "verdict": "Scam",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2014,
-    "completion_tokens": 679,
+    "prompt_tokens": 2066,
+    "completion_tokens": 841,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This is a fake Amazon fraud call trying to scare you about a $1,299 order so you press 1.",
-   "seconds": 2.5
+   "summary": "Fake Amazon fraud call about a $1,299 order trying to get you to talk to a fake agent.",
+   "seconds": 7.6
   },
   {
    "id": "benchmark-035",
@@ -620,15 +620,15 @@
    "category": "docusign",
    "text": "Subject: Please review and sign: Payroll_Update_Q4.pdf. You have a new secure document. Sign here to view: docusign-secure-review.top/doc/8812",
    "verdict": "Scam",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2380,
-    "completion_tokens": 497,
+    "prompt_tokens": 2432,
+    "completion_tokens": 464,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This is a fake DocuSign payroll message using a lookalike website that is not the real DocuSign.",
-   "seconds": 2.4
+   "summary": "This is a fake DocuSign signing request using a lookalike website to steal your information.",
+   "seconds": 4.5
   },
   {
    "id": "benchmark-036",
@@ -638,13 +638,13 @@
    "verdict": "Scam",
    "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2309,
-    "completion_tokens": 943,
-    "llm_calls": 1,
+    "prompt_tokens": 4742,
+    "completion_tokens": 1181,
+    "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This is a fake Microsoft password message using an unofficial website to steal your password.",
-   "seconds": 3.9
+   "summary": "Fake Microsoft 365 password-expiry message linking to a non-Microsoft site to steal your password.",
+   "seconds": 13.2
   },
   {
    "id": "benchmark-037",
@@ -654,13 +654,13 @@
    "verdict": "Suspicious",
    "confidence": 0.78,
    "usage": {
-    "prompt_tokens": 2009,
-    "completion_tokens": 1186,
+    "prompt_tokens": 2061,
+    "completion_tokens": 735,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "Someone you can't verify wants to rent unseen and asks for your bank details \u2014 that's a classic rental-scam setup.",
-   "seconds": 4.8
+   "summary": "Someone you don't know wants your bank details to hold your apartment without seeing it, which is a classic rental-scam setup.",
+   "seconds": 8.6
   },
   {
    "id": "benchmark-038",
@@ -670,13 +670,13 @@
    "verdict": "Scam",
    "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 1986,
-    "completion_tokens": 586,
-    "llm_calls": 1,
+    "prompt_tokens": 4096,
+    "completion_tokens": 1140,
+    "llm_calls": 2,
     "tool_calls": 1
    },
    "summary": "This is a gift-card donation scam pretending to help hurricane families.",
-   "seconds": 2.5
+   "seconds": 16.7
   },
   {
    "id": "benchmark-039",
@@ -686,13 +686,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2373,
-    "completion_tokens": 823,
+    "prompt_tokens": 2425,
+    "completion_tokens": 564,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal USPS delivery notice linking to the real USPS website, with no payment or personal info request.",
-   "seconds": 3.9
+   "summary": "This looks like a normal USPS delivery update linking to the real USPS website.",
+   "seconds": 6.2
   },
   {
    "id": "benchmark-040",
@@ -700,15 +700,15 @@
    "category": "delivery",
    "text": "Amazon: Your package was delivered. It was left near your front door. Track your orders at amazon.com/your-orders",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 2361,
-    "completion_tokens": 417,
+    "prompt_tokens": 2683,
+    "completion_tokens": 643,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Amazon delivery notice linking to Amazon's real website.",
-   "seconds": 2.0
+   "summary": "This looks like a normal Amazon delivery notice pointing to Amazon's real website.",
+   "seconds": 7.9
   },
   {
    "id": "benchmark-041",
@@ -718,13 +718,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2302,
-    "completion_tokens": 719,
+    "prompt_tokens": 2354,
+    "completion_tokens": 406,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal UPS delivery notice linking to the real ups.com site.",
-   "seconds": 3.2
+   "summary": "This looks like a normal UPS delivery notice linking to the official UPS website.",
+   "seconds": 4.6
   },
   {
    "id": "benchmark-042",
@@ -732,15 +732,15 @@
    "category": "bank_fraud_real",
    "text": "Chase: Did you attempt a $42.18 purchase at TARGET on 10/24? Reply YES or NO. Msg & data rates may apply.",
    "verdict": "Looks Safe",
-   "confidence": 0.85,
+   "confidence": 0.78,
    "usage": {
-    "prompt_tokens": 4047,
-    "completion_tokens": 2505,
+    "prompt_tokens": 4134,
+    "completion_tokens": 1529,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like a normal Chase purchase check with no link or request for private info.",
-   "seconds": 10.3
+   "summary": "This looks like a normal Chase fraud-check text with no link or request for private info.",
+   "seconds": 17.1
   },
   {
    "id": "benchmark-043",
@@ -748,15 +748,15 @@
    "category": "bank_2fa",
    "text": "Your Bank of America verification code is 482913. Don't share this code with anyone. We'll never call or text you to ask for it.",
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 1992,
-    "completion_tokens": 638,
+    "prompt_tokens": 2044,
+    "completion_tokens": 796,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This looks like a normal Bank of America login code with a proper safety warning and no scam request.",
-   "seconds": 2.5
+   "summary": "This looks like a normal Bank of America security code message that warns you not to share it.",
+   "seconds": 9.2
   },
   {
    "id": "benchmark-044",
@@ -766,13 +766,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2000,
-    "completion_tokens": 488,
+    "prompt_tokens": 2052,
+    "completion_tokens": 569,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This looks like an ordinary low-balance alert telling you to use the official app, with no risky link or request.",
-   "seconds": 1.9
+   "summary": "This looks like an ordinary low-balance alert telling you to check the official app, with no link or request attached.",
+   "seconds": 5.5
   },
   {
    "id": "benchmark-045",
@@ -782,13 +782,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 1978,
-    "completion_tokens": 758,
+    "prompt_tokens": 2030,
+    "completion_tokens": 642,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This looks like a normal Google verification code with no scam signs.",
-   "seconds": 2.8
+   "summary": "This looks like an ordinary Google sign-in code telling you to keep it private.",
+   "seconds": 7.2
   },
   {
    "id": "benchmark-046",
@@ -798,13 +798,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 3894,
-    "completion_tokens": 1638,
+    "prompt_tokens": 3994,
+    "completion_tokens": 2091,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like a normal Uber login code with no scam signs \u2014 just don't share it.",
-   "seconds": 6.5
+   "summary": "This looks like a normal Uber verification code message with no link or request to share it.",
+   "seconds": 22.1
   },
   {
    "id": "benchmark-047",
@@ -814,13 +814,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 3959,
-    "completion_tokens": 1969,
+    "prompt_tokens": 4061,
+    "completion_tokens": 3223,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like an ordinary doctor's appointment reminder with no risky request.",
-   "seconds": 7.2
+   "summary": "This looks like an ordinary doctor's appointment reminder with no scam signs.",
+   "seconds": 35.3
   },
   {
    "id": "benchmark-048",
@@ -830,13 +830,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 3891,
-    "completion_tokens": 1628,
+    "prompt_tokens": 4002,
+    "completion_tokens": 1928,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like a routine prescription-ready reminder with no links or requests for money or information.",
-   "seconds": 5.7
+   "summary": "This looks like an ordinary prescription-ready reminder with no link or request for money or personal information.",
+   "seconds": 20.4
   },
   {
    "id": "benchmark-049",
@@ -846,13 +846,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.88,
    "usage": {
-    "prompt_tokens": 4604,
-    "completion_tokens": 826,
+    "prompt_tokens": 4713,
+    "completion_tokens": 1105,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Duke Energy bill reminder pointing to its long-standing official website.",
-   "seconds": 3.9
+   "summary": "This looks like a normal Duke Energy bill reminder pointing to its long-standing website.",
+   "seconds": 13.6
   },
   {
    "id": "benchmark-050",
@@ -862,13 +862,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 3933,
-    "completion_tokens": 1799,
+    "prompt_tokens": 4037,
+    "completion_tokens": 1962,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like a routine flight delay notice with no risky links or requests.",
-   "seconds": 6.4
+   "summary": "This looks like a routine flight-delay notice with no risky links or requests.",
+   "seconds": 22.0
   },
   {
    "id": "benchmark-051",
@@ -878,13 +878,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2391,
-    "completion_tokens": 487,
+    "prompt_tokens": 2443,
+    "completion_tokens": 449,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Netflix confirmation that points to Netflix's real website.",
-   "seconds": 3.1
+   "summary": "This is an ordinary informational notice pointing to Netflix's real website.",
+   "seconds": 5.7
   },
   {
    "id": "benchmark-052",
@@ -894,13 +894,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 1882,
-    "completion_tokens": 1428,
+    "prompt_tokens": 1934,
+    "completion_tokens": 1119,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a normal school closure notice with no scam signs.",
-   "seconds": 4.6
+   "summary": "This looks like a normal school closure notice with no scam request in it.",
+   "seconds": 12.3
   },
   {
    "id": "benchmark-053",
@@ -908,15 +908,15 @@
    "category": "friend",
    "text": "Running 10 min late, grab us a table! Order me the iced coffee.",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 1873,
-    "completion_tokens": 1087,
+    "prompt_tokens": 1925,
+    "completion_tokens": 865,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just a normal message about meeting for coffee with no scam signs.",
-   "seconds": 3.1
+   "summary": "This looks like a normal message between people who know each other about meeting for coffee.",
+   "seconds": 9.3
   },
   {
    "id": "benchmark-054",
@@ -926,13 +926,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 1873,
-    "completion_tokens": 929,
+    "prompt_tokens": 1925,
+    "completion_tokens": 1172,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This is just a normal family message asking for milk and eggs, not a scam.",
-   "seconds": 3.1
+   "summary": "This is just a normal family request with no scam signs.",
+   "seconds": 12.1
   },
   {
    "id": "benchmark-055",
@@ -942,13 +942,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2629,
-    "completion_tokens": 510,
+    "prompt_tokens": 2681,
+    "completion_tokens": 842,
     "llm_calls": 1,
     "tool_calls": 7
    },
-   "summary": "This looks like a normal Apple receipt notice using Apple's real website addresses with no scam request.",
-   "seconds": 2.6
+   "summary": "This looks like a normal Apple receipt notice pointing only to Apple's real websites.",
+   "seconds": 9.8
   },
   {
    "id": "benchmark-056",
@@ -958,13 +958,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2950,
-    "completion_tokens": 437,
+    "prompt_tokens": 2996,
+    "completion_tokens": 539,
     "llm_calls": 1,
     "tool_calls": 7
    },
-   "summary": "This looks like an ordinary Amazon shipping notice pointing to Amazon's real website.",
-   "seconds": 2.9
+   "summary": "This looks like a normal Amazon shipping notice pointing to Amazon's real website.",
+   "seconds": 6.0
   },
   {
    "id": "benchmark-057",
@@ -972,15 +972,15 @@
    "category": "payment_app",
    "text": "Venmo: You paid Sam Rivera $20.00 for 'Pizza Friday'. See details in the Venmo app.",
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 1984,
-    "completion_tokens": 955,
+    "prompt_tokens": 2036,
+    "completion_tokens": 740,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This looks like a plain payment receipt with no risky request, just check the Venmo app yourself if you need to verify it.",
-   "seconds": 3.4
+   "summary": "This looks like an ordinary Venmo payment receipt with no link or request to act.",
+   "seconds": 8.1
   },
   {
    "id": "benchmark-058",
@@ -988,15 +988,15 @@
    "category": "job_real",
    "text": "LinkedIn: 5 new jobs match your search for 'data analyst' in Phoenix. See them at linkedin.com/jobs",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.98,
    "usage": {
-    "prompt_tokens": 2280,
-    "completion_tokens": 504,
+    "prompt_tokens": 2332,
+    "completion_tokens": 515,
     "llm_calls": 1,
     "tool_calls": 4
    },
    "summary": "This looks like a normal LinkedIn job alert linking to LinkedIn's real website.",
-   "seconds": 1.8
+   "seconds": 5.9
   },
   {
    "id": "benchmark-059",
@@ -1004,15 +1004,15 @@
    "category": "church",
    "text": "Grace Community Church: Sunday service is at 10 AM. This week's potluck follows at noon in the fellowship hall. All welcome!",
    "verdict": "Looks Safe",
-   "confidence": 0.98,
+   "confidence": 0.99,
    "usage": {
-    "prompt_tokens": 1882,
-    "completion_tokens": 1417,
+    "prompt_tokens": 1934,
+    "completion_tokens": 1088,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a harmless church announcement with no scam signs.",
-   "seconds": 5.4
+   "summary": "This is a harmless church service and potluck announcement with no scam signs.",
+   "seconds": 11.0
   },
   {
    "id": "benchmark-060",
@@ -1020,15 +1020,15 @@
    "category": "dentist",
    "text": "Smile Dental: Your cleaning is scheduled for Nov 3 at 9:00 AM. Reply YES to confirm. Call 623-555-0192 with questions.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 3943,
-    "completion_tokens": 3441,
+    "prompt_tokens": 4023,
+    "completion_tokens": 2642,
     "llm_calls": 2,
     "tool_calls": 1
    },
    "summary": "This looks like a normal dentist appointment reminder with no links or payment requests.",
-   "seconds": 12.4
+   "seconds": 29.3
   },
   {
    "id": "benchmark-061",
@@ -1038,13 +1038,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 4688,
-    "completion_tokens": 878,
+    "prompt_tokens": 4790,
+    "completion_tokens": 793,
     "llm_calls": 2,
     "tool_calls": 4
    },
    "summary": "This looks like a normal Verizon bill reminder pointing to Verizon's real website.",
-   "seconds": 4.2
+   "seconds": 10.0
   },
   {
    "id": "benchmark-062",
@@ -1052,15 +1052,15 @@
    "category": "security_real",
    "text": "Google: New sign-in to your account on a Mac in Phoenix, AZ. If this was you, no action is needed. If not, review activity at myaccount.google.com/notifications",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 2563,
-    "completion_tokens": 401,
+    "prompt_tokens": 2615,
+    "completion_tokens": 681,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Google security alert linking to Google's real site.",
-   "seconds": 2.3
+   "summary": "This looks like a normal Google sign-in alert that points to Google's real website.",
+   "seconds": 7.9
   },
   {
    "id": "benchmark-063",
@@ -1070,13 +1070,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 4566,
-    "completion_tokens": 1013,
+    "prompt_tokens": 4668,
+    "completion_tokens": 1032,
     "llm_calls": 2,
     "tool_calls": 4
    },
    "summary": "This looks like a normal Zoom meeting invite with no risky request.",
-   "seconds": 4.6
+   "seconds": 11.6
   },
   {
    "id": "benchmark-064",
@@ -1086,13 +1086,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 4685,
-    "completion_tokens": 762,
+    "prompt_tokens": 4790,
+    "completion_tokens": 847,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This looks like a routine power-outage notice with an informational link and no scam request.",
-   "seconds": 3.2
+   "summary": "This looks like a normal utility outage notice pointing to SRP's long-standing website, with no risky request.",
+   "seconds": 9.4
   },
   {
    "id": "benchmark-065",
@@ -1100,15 +1100,15 @@
    "category": "food",
    "text": "DoorDash: Your Dasher is 5 minutes away with your order from Chipotle.",
    "verdict": "Looks Safe",
-   "confidence": 0.95,
+   "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 3887,
-    "completion_tokens": 1680,
+    "prompt_tokens": 3991,
+    "completion_tokens": 1530,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like a normal DoorDash delivery update with no risky request.",
-   "seconds": 5.4
+   "summary": "This looks like a normal food delivery status update with nothing dangerous in it.",
+   "seconds": 15.4
   },
   {
    "id": "benchmark-066",
@@ -1116,15 +1116,15 @@
    "category": "library",
    "text": "Phoenix Public Library: your hold on 'The Remains of the Day' is ready for pickup at Burton Barr through Nov 2.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "usage": {
-    "prompt_tokens": 3907,
-    "completion_tokens": 1886,
+    "prompt_tokens": 4008,
+    "completion_tokens": 1868,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like an ordinary library pickup reminder with nothing dangerous in it.",
-   "seconds": 7.2
+   "summary": "This looks like a normal library hold notice with no risky ask or link.",
+   "seconds": 20.3
   },
   {
    "id": "benchmark-067",
@@ -1134,13 +1134,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 4579,
-    "completion_tokens": 778,
+    "prompt_tokens": 4678,
+    "completion_tokens": 932,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal policy renewal reminder with no action or payment requested.",
-   "seconds": 3.9
+   "summary": "This looks like a normal policy renewal notice with no action requested.",
+   "seconds": 9.9
   },
   {
    "id": "benchmark-068",
@@ -1150,13 +1150,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 1885,
-    "completion_tokens": 1289,
+    "prompt_tokens": 1937,
+    "completion_tokens": 1734,
     "llm_calls": 1,
     "tool_calls": 0
    },
-   "summary": "This looks like a normal HR reminder with no link or request for personal info, just to use your usual work portal.",
-   "seconds": 4.3
+   "summary": "This looks like a normal HR reminder to review benefits in your usual company portal, with no risky links or requests.",
+   "seconds": 17.5
   },
   {
    "id": "benchmark-069",
@@ -1164,15 +1164,15 @@
    "category": "retail",
    "text": "Costco: Your Costco Services order has been completed. Questions? Call 1-800-774-2678 or visit costco.com.",
    "verdict": "Looks Safe",
-   "confidence": 0.92,
+   "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 4610,
-    "completion_tokens": 849,
+    "prompt_tokens": 4712,
+    "completion_tokens": 1177,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Costco order notice pointing to Costco's real website.",
-   "seconds": 3.5
+   "summary": "This looks like an ordinary Costco order notice pointing to the long-standing costco.com website, with no risky request.",
+   "seconds": 12.9
   },
   {
    "id": "benchmark-070",
@@ -1182,13 +1182,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 4688,
-    "completion_tokens": 836,
+    "prompt_tokens": 4792,
+    "completion_tokens": 978,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal donation thank-you with a receipt link on the Red Cross's real domain.",
-   "seconds": 3.9
+   "summary": "This looks like a normal donation receipt on the real Red Cross website with no risky request.",
+   "seconds": 10.0
   },
   {
    "id": "benchmark-071",
@@ -1198,13 +1198,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2325,
-    "completion_tokens": 483,
+    "prompt_tokens": 2377,
+    "completion_tokens": 442,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal notice telling you to check your Medicare account on the official medicare.gov site, with no request for personal information.",
-   "seconds": 2.1
+   "summary": "This looks like a normal notice telling you to check your Medicare account on the official site.",
+   "seconds": 4.9
   },
   {
    "id": "benchmark-072",
@@ -1212,15 +1212,15 @@
    "category": "bill_urgent",
    "text": "Reminder from City of Tempe Utilities: your water bill of $64.10 is due in 3 days. Pay at tempe.gov/utilities or call 480-350-8361.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 4614,
-    "completion_tokens": 660,
+    "prompt_tokens": 4717,
+    "completion_tokens": 869,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal water bill reminder pointing to the City of Tempe's official government website.",
-   "seconds": 2.9
+   "summary": "This looks like a normal water bill reminder from the City of Tempe on its official government website.",
+   "seconds": 8.8
   },
   {
    "id": "benchmark-073",
@@ -1228,15 +1228,15 @@
    "category": "marketing",
    "text": "Target: Weekend sale! 20% off home decor in stores and online at target.com. Reply STOP to opt out.",
    "verdict": "Looks Safe",
-   "confidence": 0.9,
+   "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 4581,
-    "completion_tokens": 802,
-    "llm_calls": 2,
-    "tool_calls": 4
+    "prompt_tokens": 2265,
+    "completion_tokens": 551,
+    "llm_calls": 1,
+    "tool_calls": 3
    },
-   "summary": "This looks like an ordinary Target sale notice with no risky request.",
-   "seconds": 3.9
+   "summary": "This looks like a normal Target sale text pointing to Target's real website.",
+   "seconds": 6.4
   },
   {
    "id": "benchmark-074",
@@ -1246,13 +1246,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2331,
-    "completion_tokens": 430,
+    "prompt_tokens": 2383,
+    "completion_tokens": 606,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal Chase statement notice pointing to the real chase.com.",
-   "seconds": 1.9
+   "summary": "This looks like a normal Chase statement notice pointing to Chase's real website and app, with no request for personal information.",
+   "seconds": 6.2
   },
   {
    "id": "benchmark-075",
@@ -1262,13 +1262,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.95,
    "usage": {
-    "prompt_tokens": 2327,
-    "completion_tokens": 608,
+    "prompt_tokens": 2379,
+    "completion_tokens": 567,
     "llm_calls": 1,
     "tool_calls": 4
    },
-   "summary": "This looks like a normal IRS e-file confirmation pointing to the official irs.gov site with no payment demand.",
-   "seconds": 3.0
+   "summary": "This looks like a normal IRS e-file acceptance notice pointing to the real IRS website, with no scam request.",
+   "seconds": 6.2
   },
   {
    "id": "benchmark-076",
@@ -1278,13 +1278,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.9,
    "usage": {
-    "prompt_tokens": 1966,
-    "completion_tokens": 695,
+    "prompt_tokens": 2018,
+    "completion_tokens": 623,
     "llm_calls": 1,
     "tool_calls": 1
    },
-   "summary": "This looks like a harmless follow notification with nothing to click or pay.",
-   "seconds": 3.1
+   "summary": "This looks like a harmless follower notification with nothing to click or pay.",
+   "seconds": 7.5
   },
   {
    "id": "benchmark-077",
@@ -1294,13 +1294,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 3914,
-    "completion_tokens": 2046,
+    "prompt_tokens": 4018,
+    "completion_tokens": 2405,
     "llm_calls": 2,
     "tool_calls": 1
    },
-   "summary": "This looks like a routine pharmacy refill reminder with no links or sensitive requests.",
-   "seconds": 8.0
+   "summary": "This looks like a normal prescription refill reminder with no link or risky request.",
+   "seconds": 24.3
   },
   {
    "id": "benchmark-078",
@@ -1310,13 +1310,13 @@
    "verdict": "Looks Safe",
    "confidence": 0.85,
    "usage": {
-    "prompt_tokens": 4635,
-    "completion_tokens": 1370,
+    "prompt_tokens": 4734,
+    "completion_tokens": 1040,
     "llm_calls": 2,
     "tool_calls": 4
    },
-   "summary": "This looks like an ordinary vet vaccine reminder with no scam signs.",
-   "seconds": 5.5
+   "summary": "This looks like an ordinary vet reminder for Buddy's vaccines with no risky request.",
+   "seconds": 10.7
   }
  ]
 }

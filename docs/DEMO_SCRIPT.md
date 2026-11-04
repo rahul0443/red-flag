@@ -4,16 +4,19 @@ Goal: judges see a working agent catch a real phishing page in seconds, with pro
 Rule: show only what was built during the hackathon. Never show real personal data.
 
 ## Before recording (checklist)
-- [ ] `uvicorn redflag.api.server:app` running, browser at 1440x900, dark mode, zoom 110%.
+- [ ] Use the PUBLIC live URL (judges assess the live product) and also show it working; browser at 1440x900, dark mode, zoom 110%.
 - [ ] Warm the sandbox once (first run builds the browser image) and pick a LIVE phishing URL from today's OpenPhish feed (`evals/data/raw/openphish_snapshot_*.txt` is stale by recording day; refetch). Check it still loads.
 - [ ] Record the live run twice. Keep the best take; keep a backup take in case Modal or the API is slow.
 - [ ] Prepare 3 inputs: (1) text with live phishing link, (2) the Chase screenshot, (3) the SSA voicemail WAV (`samples/`).
 - [ ] Screen-record at 60 fps with voiceover recorded separately.
 
+## Required opening line (hackathon rule, say it first, before 0:00)
+"Everything you're about to see was built this week for this hackathon. Nothing in this project existed before October 26."
+
 ## Timeline
 
 **0:00-0:20 Hook (voiceover over a messy phone with scam texts)**
-"Americans lost over 12 billion dollars to fraud last year, and the people hit hardest are older adults. Spam filters say 'maybe spam'. Nobody tells you WHY, or what to do. Red Flag investigates."
+"Scams cost people billions of dollars every year, and older adults are hit hardest. Spam filters say 'maybe spam'. Nobody tells you WHY, or what to do. Red Flag investigates."
 (Verify any statistic before using it; cite the FTC source on screen or drop the number.)
 
 **0:20-1:20 Live investigation (the money shot)**

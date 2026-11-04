@@ -1,5 +1,8 @@
 # 🚩 Red Flag
 
+**Live demo:** https://rahulmuddhapuram--redflag-web-web.us-east.modal.run  (daily request cap to protect API credits; if it says the daily limit is reached, run it locally, see Setup)
+
+
 **Forward any suspicious text, email, screenshot or voicemail. An AI agent investigates it like a fraud analyst and returns an evidence-backed verdict in seconds.**
 
 Built solo for the Meta Global AI Developer Hackathon (Indie track, "Build for Your World").
@@ -78,6 +81,10 @@ python scripts/fuzz_api.py   # 39 hostile inputs against a running server
 ```
 
 The UI suite (Playwright) drives the real page against scripted event streams across 5 viewports and light/dark: layout overflow, WCAG contrast, 44px touch targets, keyboard focus, reduced motion, screen-reader announcements, XSS payloads in every field, malformed streams, failure recovery, double submits, and a strict Content-Security-Policy (no inline scripts, no third-party requests).
+
+## Deploy
+
+`deploy/modal_web.py` hosts the app publicly on Modal (CPU, no GPU). Create a Modal secret `redflag-keys` with `MODEL_API_KEY` and `BASETEN_API_KEY`, then `modal deploy deploy/modal_web.py`. The public build has a daily request cap and per-IP limits.
 
 ## Setup
 ```bash

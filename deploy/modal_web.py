@@ -4,7 +4,7 @@ import modal
 
 image = (modal.Image.debian_slim(python_version="3.12")
          .pip_install("openai", "python-dotenv", "httpx", "fastapi", "uvicorn", "python-multipart", "modal")
-         .env({"DAILY_CAP": "600", "PER_IP_PER_MIN": "10", "MAX_CONCURRENT": "6"})
+         .env({"DAILY_CAP": "600", "PER_IP_PER_MIN": "10", "MAX_CONCURRENT": "6", "REDFLAG_SANDBOX": "1"})
          .add_local_python_source("redflag")
          .add_local_dir("web", "/root/web"))
 

@@ -43,7 +43,7 @@ _DISABLED = {t for t in os.getenv("DISABLE_TOOLS", "").split(",") if t}  # ablat
 TOOLS = [t for t in TOOLS if t["function"]["name"] not in _DISABLED]
 
 _SANDBOX_OK = "inspect_link_sandbox" not in _DISABLED and (
-    os.path.exists(os.path.expanduser("~/.modal.toml")) or bool(os.getenv("MODAL_TOKEN_ID")))
+    os.path.exists(os.path.expanduser("~/.modal.toml")) or bool(os.getenv("MODAL_TOKEN_ID")) or os.getenv("REDFLAG_SANDBOX") == "1")
 
 DISPATCH = {"expand_url": expand_url, "rdap_lookup": rdap_lookup,
             "check_blocklists": check_blocklists, "official_contact_check": official_contact_check}

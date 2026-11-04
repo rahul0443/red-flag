@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+:root{--bg:#000;--card:#1c1c1e;--line:rgba(255,255,255,.12);--text:#f5f5f7;--mute:#a1a1a6;--red:#ff453a;--green:#32d74b;--blue:#2997ff;--orange:#ff9f0a}
+*{box-sizing:border-box}body{margin:0;background:#000;font:32px/1.35 -apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+.s{width:1920px;height:1080px;padding:96px 120px;display:flex;flex-direction:column;justify-content:center;position:relative;background:radial-gradient(1200px 700px at 80% -10%,#1b1b24 0,#000 70%)}
+h1{font-size:120px;line-height:1.02;letter-spacing:-.04em;margin:0 0 28px;font-weight:700}h1 em{font-style:normal;color:var(--red)}
+h2{font-size:72px;letter-spacing:-.03em;margin:0 0 48px;font-weight:700}
+p.sub{font-size:44px;color:var(--mute);max-width:1300px;margin:0}
+.tag{position:absolute;left:120px;top:64px;font-size:26px;color:var(--mute);letter-spacing:.02em}
+.row{display:flex;gap:28px;align-items:stretch}.box{flex:1;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:32px 34px}
+.box b{display:block;font-size:34px;margin-bottom:8px}.box span{font-size:26px;color:var(--mute);line-height:1.35}
+.arrow{align-self:center;font-size:48px;color:var(--mute)}
+.pills{display:flex;gap:16px;flex-wrap:wrap;margin-top:44px}.pill{font-size:28px;border:1px solid var(--line);border-radius:999px;padding:10px 24px;color:var(--mute)}.pill.m{color:var(--text);border-color:var(--blue)}
+table{border-collapse:collapse;width:100%;font-size:34px}th,td{padding:22px 28px;text-align:left;border-bottom:1px solid var(--line)}th{color:var(--mute);font-weight:500;font-size:26px;letter-spacing:.04em;text-transform:uppercase}
+td.n{font-variant-numeric:tabular-nums;font-weight:700}.g{color:var(--green)}.r{color:var(--red)}.o{color:var(--orange)}
+.note{font-size:28px;color:var(--mute);margin-top:34px;max-width:1500px}
+</style></head><body>
+<section class="s" id="s1"><div class="tag">Meta Global AI Developer Hackathon · Indie · Build for Your World</div>
+<h1>Red <em>Flag</em></h1><p class="sub">Scams, investigated. Forward a suspicious text, email, screenshot or voicemail. An agent checks it like a fraud analyst and shows its proof.</p>
+<div class="pills"><span class="pill m">Muse Spark</span><span class="pill m">Muse Voice Transcribe</span><span class="pill m">Muse Spark Open · Baseten</span><span class="pill">Modal sandbox</span></div></section>
+<section class="s" id="s2"><div class="tag">How it works</div><h2>An investigator, not a classifier</h2>
+<div class="row"><div class="box"><b>1 · Receive</b><span>Text, screenshot (vision) or voicemail (Muse Voice Transcribe)</span></div><div class="arrow">→</div>
+<div class="box"><b>2 · Investigate</b><span>Muse Spark picks tools: follow the link, domain age, phishing feeds, the real company's official details</span></div><div class="arrow">→</div>
+<div class="box"><b>3 · Look safely</b><span>Opens the link in an isolated cloud browser and screenshots the page</span></div><div class="arrow">→</div>
+<div class="box"><b>4 · Verdict</b><span>Scam · Suspicious · Looks Safe, with sourced evidence, in the message's language</span></div></div>
+<div class="pills"><span class="pill m">Open-weight second opinion in ~2 s</span><span class="pill m">Fails over between Muse Spark and Muse Spark Open</span><span class="pill">Never contacts the sender</span><span class="pill">Never sends your data to a link</span></div></section>
+<section class="s" id="s3"><div class="tag">Measured, and honest</div><h2>What we tested</h2>
+<table><tr><th></th><th>Muse Spark, no tools</th><th>Red Flag agent</th></tr>
+<tr><td>False alarms on 90 look-alike legitimate messages</td><td class="n r">5</td><td class="n g">1</td></tr>
+<tr><td>Scams caught of 89 realistic scams</td><td class="n">88</td><td class="n g">89</td></tr>
+<tr><td>Model calls per investigation</td><td class="n">n/a</td><td class="n g">1.4 (was 2.3)</td></tr>
+<tr><td>Prompt-injection attacks resisted</td><td class="n">24 / 24</td><td class="n g">24 / 24</td></tr>
+<tr><td>Six languages: scams caught · answers in the right language</td><td class="n">n/a</td><td class="n g">18/18 · 36/36</td></tr></table>
+<p class="note">The false-alarm gap (1 vs 5) is suggestive, not statistically significant (p = 0.21). Muse Spark alone is already strong; the agent's value is evidence you can verify. 147 automated tests. Numbers and code are in the repo.</p></section>
+</body></html>

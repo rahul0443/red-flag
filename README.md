@@ -6,7 +6,7 @@
 
 <p align="center"><img src="docs/img/result.png" alt="Red Flag catching a live fake Microsoft login page" width="900"></p>
 
-*A real run: a live phishing page, opened safely in an isolated browser, caught in seconds with the evidence shown.*
+*A real run: a live phishing page, opened safely in an isolated browser, caught in seconds with the evidence shown. Every claim in the verdict links back to the check that found it.*
 
 Built solo for the **Meta Global AI Developer Hackathon** (Indie track, "Build for Your World") with Meta's Muse Spark.
 
@@ -95,7 +95,7 @@ Optional: add `BASETEN_API_KEY` for the open-weight model, and run `modal token 
 - Treats the message, page text and tool output as untrusted data, so scam text cannot take control of the investigator.
 - Keeps nothing after the check. API keys live only in `.env`, which is never committed.
 
-## Limitations
+## Limitations (what it does not do yet)
 
 Small test sets, mostly written by us; the open-weight model is noisier on casual chat; official-company details cover about 65 commonly impersonated brands; no email-header (SPF/DKIM) checks yet; report links are US-specific; the public demo has a daily request cap to protect API credits.
 

@@ -65,7 +65,26 @@ cp .env.example .env                           # add your MODEL_API_KEY (Meta Mo
 uvicorn redflag.api.server:app --port 8000     # open http://localhost:8000
 ```
 
+Or with Docker:
+
+```bash
+docker build -t redflag . && docker run --env-file .env -p 8000:8000 redflag
+```
+
 Optional: add `BASETEN_API_KEY` for the open-weight model, and run `modal token new` to enable the isolated browser. Run the tests with `pip install -r requirements-dev.txt && playwright install chromium && pytest`.
+
+## Project layout
+
+| Path | What lives there |
+|---|---|
+| `redflag/agent/` | The investigation loop: tool calls, streaming events, failover between Muse Spark and Muse Spark Open, verdict safety floor |
+| `redflag/tools/` | The checks: link following, domain age (RDAP), phishing lists, official-domain comparison, email sender analysis, isolated-browser sandbox |
+| `redflag/inputs.py` | Screenshot (vision) and voicemail (Muse Voice Transcribe) to text |
+| `redflag/api/` | FastAPI server: live event stream, rate limits, daily cap, security headers |
+| `web/` | The single-page UI (plain HTML and JS, strict content-security policy) |
+| `deploy/` | Modal deployment for the live app and the isolated browser |
+| `evals/`, `scripts/` | Evaluation sets, runners, confidence intervals, latency and fuzz tests |
+| `tests/` | 157 automated tests, including browser UI tests |
 
 ## Safety, built in
 

@@ -22,6 +22,8 @@ Scams cost people billions every year, and older adults and non-English speakers
 
 ## How it works
 
+Two models work together: Muse Spark investigates and writes the verdict with sources, while Muse Spark Open gives a fast independent opinion, so you see agreement or disagreement at a glance.
+
 ```mermaid
 flowchart LR
     A[Text, screenshot or voicemail] -->|Muse Spark vision / Muse Voice Transcribe| B[Message text]
